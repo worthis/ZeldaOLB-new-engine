@@ -8,7 +8,8 @@
 
 #include "../helper/ProjectileHelper.h"
 
-PiegeColere::PiegeColere(int i, int j) : anim(0), animMax(16), vanim(120), enable(true) {
+PiegeColere::PiegeColere(int i, int j) : anim(0), animMax(16), vanim(120), enable(true)
+{
     x = i;
     y = j;
 
@@ -26,17 +27,22 @@ PiegeColere::PiegeColere(int i, int j) : anim(0), animMax(16), vanim(120), enabl
     chrono.reset();
 }
 
-PiegeColere::~PiegeColere() {
+PiegeColere::~PiegeColere()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void PiegeColere::loop() {
-    if (!enable) {
+void PiegeColere::loop()
+{
+    if (!enable)
+    {
         return;
     }
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
             snipe();
         }
@@ -44,14 +50,16 @@ void PiegeColere::loop() {
     }
 }
 
-void PiegeColere::draw(int offsetX, int offsetY) {
+void PiegeColere::draw(int offsetX, int offsetY)
+{
     WindowManager::getInstance()->draw(image, 0, 0, 16, 16, x - offsetX, y - offsetY);
 }
 
-void PiegeColere::snipe() {
+void PiegeColere::snipe()
+{
 
     // throw proj and play sound
-    Link* link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
+    Link *link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
@@ -66,26 +74,42 @@ void PiegeColere::snipe() {
     double coef1 = 0;
     double coef2 = 0;
 
-    if ((destx-origx) == 0) {anglx=0; angly=12;}
-    else if ((desty-origy) == 0) {anglx=12; angly=0;}
-    else {
-        coef1=((double)(desty-origy))/((double)(destx-origx));
-        coef2=((double)(destx-origx))/((double)(desty-origy));
-        anglx=(sqrt(12/(1+(coef1*coef1))));
-        angly=(sqrt(12/(1+(coef2*coef2))));
+    if ((destx - origx) == 0)
+    {
+        anglx = 0;
+        angly = 12;
     }
-    if (destx - origx < 0) anglx = -anglx;
-    if (desty - origy < 0) angly = -angly;
+    else if ((desty - origy) == 0)
+    {
+        anglx = 12;
+        angly = 0;
+    }
+    else
+    {
+        coef1 = ((double)(desty - origy)) / ((double)(destx - origx));
+        coef2 = ((double)(destx - origx)) / ((double)(desty - origy));
+        anglx = (sqrt(12 / (1 + (coef1 * coef1))));
+        angly = (sqrt(12 / (1 + (coef2 * coef2))));
+    }
+    if (destx - origx < 0)
+        anglx = -anglx;
+    if (desty - origy < 0)
+        angly = -angly;
 
-    if (anglx>4) anglx=4;
-    if (angly>4) angly=4;
-    if (anglx<-4) anglx=-4;
-    if (angly<-4) angly=-4;
+    if (anglx > 4)
+        anglx = 4;
+    if (angly > 4)
+        angly = 4;
+    if (anglx < -4)
+        anglx = -4;
+    if (angly < -4)
+        angly = -4;
 
     ProjectileHelper::getInstance()->addProjectile(TP_BOULE_COLERE, origx, origy, anglx, angly, getBoundingBox());
     AudioManager::getInstance()->playSound(TS_THROW);
 }
 
-void PiegeColere::disable() {
+void PiegeColere::disable()
+{
     enable = false;
 }

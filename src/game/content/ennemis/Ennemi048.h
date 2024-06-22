@@ -17,38 +17,37 @@
 
 #include "../types/Ennemi.h"
 
-class Ennemi048 : public Ennemi {
-    public :
-        Ennemi048(int x, int y);
-        ~Ennemi048();
+class Ennemi048 : public Ennemi
+{
+public:
+    Ennemi048(int x, int y);
+    ~Ennemi048();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void reset();
+    void reset();
 
-        int getDown();
+    int getDown();
 
-    protected :
+protected:
+    void giveItem(int x, int y);
 
-        void giveItem(int x, int y);
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-    private :
+    WImage *image;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        WImage* image;
-
-        Chrono chrono;
-
-        BoundingBox box;
+    BoundingBox box;
 };
 
-#endif  // Ennemi048.h
+#endif // Ennemi048.h

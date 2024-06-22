@@ -13,29 +13,29 @@
 
 #include "../types/Projectile.h"
 
-class ProjBaguetteGlace : public Projectile {
-    public :
-        ProjBaguetteGlace(int x, int y, Direction dir);
-        ~ProjBaguetteGlace();
+class ProjBaguetteGlace : public Projectile
+{
+public:
+    ProjBaguetteGlace(int x, int y, Direction dir);
+    ~ProjBaguetteGlace();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-    private :
-
-        int speed;
-        int dx;
-        int dy;
-        int level;
-        int force;
-        int parcouru;
-        int x0;
-        int y0;
+private:
+    int speed;
+    int dx;
+    int dy;
+    int level;
+    int force;
+    int parcouru;
+    int x0;
+    int y0;
 };
 
-#endif  // ProjBaguetteGlace.h
+#endif // ProjBaguetteGlace.h

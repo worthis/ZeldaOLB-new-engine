@@ -13,17 +13,17 @@
 
 #include <SDL2/SDL.h>
 
-class Timer {
-    public :
-        Timer();
-        ~Timer();
+class Timer
+{
+public:
+    Timer();
+    ~Timer();
 
-        void reset();
-        int getElapsedTime();
+    void reset();
+    int getElapsedTime();
 
-    private :
-
-        Uint32 lastAnimTime;
+private:
+    Uint32 lastAnimTime;
 };
 
-#endif  // Timer.h
+#endif // Timer.h

@@ -7,28 +7,38 @@
 
 #include "../../config/ConfigurationManager.h"
 
-Logo::Logo() : anim(0), animMax(15), vanim(60), first(true) {
+Logo::Logo() : anim(0), animMax(15), vanim(60), first(true)
+{
     wasFrench = ConfigurationManager::getInstance()->isFrench();
-    if (wasFrench) {
+    if (wasFrench)
+    {
         image = ResourceManager::getInstance()->loadImage("data/images/logos/logo_fond.png");
-    } else {
+    }
+    else
+    {
         image = ResourceManager::getInstance()->loadImage("data/images/logos/logo_fond_us.png");
     }
     imageLogo = ResourceManager::getInstance()->loadImage("data/images/logos/logo.png");
 }
 
-Logo::~Logo() {
+Logo::~Logo()
+{
     ResourceManager::getInstance()->free(image);
     ResourceManager::getInstance()->free(imageLogo);
 }
 
-void Logo::init() {
-    if (ConfigurationManager::getInstance()->isFrench() != wasFrench) {
+void Logo::init()
+{
+    if (ConfigurationManager::getInstance()->isFrench() != wasFrench)
+    {
         wasFrench = !wasFrench;
         ResourceManager::getInstance()->free(image);
-        if (wasFrench) {
+        if (wasFrench)
+        {
             image = ResourceManager::getInstance()->loadImage("data/images/logos/logo_fond.png");
-        } else {
+        }
+        else
+        {
             image = ResourceManager::getInstance()->loadImage("data/images/logos/logo_fond_us.png");
         }
     }
@@ -36,33 +46,42 @@ void Logo::init() {
     chrono.reset();
 }
 
-void Logo::handleEvents(Event* event) {
-    if (anim < animMax) return;
-    if (event->isPushed(kReturn) || event->isPushed(kSpace)) {
+void Logo::handleEvents(Event *event)
+{
+    if (anim < animMax)
+        return;
+    if (event->isPushed(kReturn) || event->isPushed(kSpace))
+    {
         AudioManager::getInstance()->playSound(TS_MENU1);
         MainController::getInstance()->setStep(TITRE);
     }
 }
 
-void Logo::loop() {
-    if (anim == animMax) return;
-    if (first) {
-        if (chrono.getElapsedTime() >= 500) {
+void Logo::loop()
+{
+    if (anim == animMax)
+        return;
+    if (first)
+    {
+        if (chrono.getElapsedTime() >= 500)
+        {
             first = false;
             chrono.reset();
         }
         return;
     }
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
         chrono.reset();
     }
 }
 
-void Logo::draw() {
-    if (first) return;
+void Logo::draw()
+{
+    if (first)
+        return;
     WindowManager::getInstance()->draw(image, 0, 0, 320, 240, 0, 0);
 
     WindowManager::getInstance()->draw(imageLogo, 144 * (anim % 4), 144 * (anim / 4), 144, 144, 88, 60);
-
 }

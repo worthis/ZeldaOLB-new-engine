@@ -16,19 +16,20 @@
 
 #include "Credits.h"
 
-class CreditsController {
-    public :
-        CreditsController();
-        ~CreditsController();
+class CreditsController
+{
+public:
+    CreditsController();
+    ~CreditsController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        Credits credits;
+private:
+    Credits credits;
 };
 
-#endif  // CreditsController.h
+#endif // CreditsController.h

@@ -15,18 +15,18 @@
 
 #include "TransitionRooms.h"
 
-class TransitionRoomsController {
-    public :
-        TransitionRoomsController();
-        ~TransitionRoomsController();
+class TransitionRoomsController
+{
+public:
+    TransitionRoomsController();
+    ~TransitionRoomsController();
 
-        void launch();
+    void launch();
 
-        void loop();
+    void loop();
 
-    private :
-
-        TransitionRooms transitionRooms;
+private:
+    TransitionRooms transitionRooms;
 };
 
-#endif  // TransitionRoomsController.h
+#endif // TransitionRoomsController.h

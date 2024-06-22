@@ -16,32 +16,32 @@
 #include "../../../../../engine/resources/WImage.h"
 #include "../../../../../engine/texts/Text.h"
 
-class CommandsMain {
-    public :
-        CommandsMain();
-        ~CommandsMain();
+class CommandsMain
+{
+public:
+    CommandsMain();
+    ~CommandsMain();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
+private:
+    void drawPage();
+    void drawTitle();
+    void drawWarning();
 
-        void drawPage();
-        void drawTitle();
-        void drawWarning();
+    void drawCadre(int x, int y, int w, int h);
 
-        void drawCadre(int x, int y, int w, int h);
+    int line;
+    bool warning;
 
-        int line;
-        bool warning;
+    Text *texts[8];
 
-        Text* texts[8];
-
-        WImage* image;
-        WImage* link;
-        int skin;
+    WImage *image;
+    WImage *link;
+    int skin;
 };
 
-#endif  // CommandsMain.h
+#endif // CommandsMain.h

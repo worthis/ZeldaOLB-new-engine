@@ -16,32 +16,32 @@
 #include "../../../../engine/resources/WImage.h"
 #include "../../../../engine/texts/Text.h"
 
-class OptionsGame {
-    public :
-        OptionsGame();
-        ~OptionsGame();
+class OptionsGame
+{
+public:
+    OptionsGame();
+    ~OptionsGame();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
+private:
+    void initTexts();
 
-        void initTexts();
+    void drawPage();
+    void drawTitle();
 
-        void drawPage();
-        void drawTitle();
+    void drawCadre(int x, int y, int w, int h);
 
-        void drawCadre(int x, int y, int w, int h);
+    int line;
 
-        int line;
+    Text *texts[9];
 
-        Text* texts[9];
-
-        WImage* image;
-        WImage* link;
-        int skin;
+    WImage *image;
+    WImage *link;
+    int skin;
 };
 
-#endif  // OptionsGame.h
+#endif // OptionsGame.h

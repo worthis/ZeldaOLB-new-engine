@@ -13,16 +13,16 @@
 
 #include "../types/Item.h"
 
-class MagieGrand : public Item {
-    public :
-        MagieGrand(int x, int y);
-        ~MagieGrand();
+class MagieGrand : public Item
+{
+public:
+    MagieGrand(int x, int y);
+    ~MagieGrand();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
-
+    void action();
 };
 
-#endif  // MagieGrand.h
+#endif // MagieGrand.h

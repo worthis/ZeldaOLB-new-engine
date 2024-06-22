@@ -17,33 +17,33 @@
 #include "../../engine/texts/Text.h"
 #include "../../engine/util/time/Metronome.h"
 
-class Title {
-    public :
-        Title();
-        ~Title();
+class Title
+{
+public:
+    Title();
+    ~Title();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
+    Chrono chrono;
 
-        int anim;
-        int animMax;
-        int vanim;
-        Chrono chrono;
+    WImage *images[4];
+    WImage *logo;
+    Text *text;
+    int textSize;
+    bool ready;
+    int alpha;
+    int wait;
 
-        WImage* images[4];
-        WImage* logo;
-        Text* text;
-        int textSize;
-        bool ready;
-        int alpha;
-        int wait;
-
-        Metronome* metronomeText;
+    Metronome *metronomeText;
 };
 
-#endif  // Title.h
+#endif // Title.h

@@ -13,26 +13,26 @@
 
 #include "../types/Projectile.h"
 
-class ProjArcMagique : public Projectile {
-    public :
-        ProjArcMagique(int x, int y, Direction dir);
-        ~ProjArcMagique();
+class ProjArcMagique : public Projectile
+{
+public:
+    ProjArcMagique(int x, int y, Direction dir);
+    ~ProjArcMagique();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void renvoie(Direction dir);
+    void renvoie(Direction dir);
 
-    private :
-
-        int speed;
-        int dx;
-        int dy;
-        int level;
-        int force;
-        bool retour;
+private:
+    int speed;
+    int dx;
+    int dy;
+    int level;
+    int force;
+    bool retour;
 };
 
-#endif  // ProjArcMagique.h
+#endif // ProjArcMagique.h

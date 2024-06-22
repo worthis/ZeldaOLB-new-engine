@@ -13,19 +13,17 @@
 
 #include <SDL2/SDL.h>
 
-class Chrono {
-    public :
-        Chrono();
-        ~Chrono();
+class Chrono
+{
+public:
+    Chrono();
+    ~Chrono();
 
-        void reset();
-        int getElapsedTime();
+    void reset();
+    int getElapsedTime();
 
-    private :
-
-        Uint32 lastAnimTime;
+private:
+    Uint32 lastAnimTime;
 };
 
-#endif  // Chrono.h
-
-
+#endif // Chrono.h

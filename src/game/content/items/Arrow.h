@@ -13,16 +13,16 @@
 
 #include "../types/Item.h"
 
-class Arrow : public Item {
-    public :
-        Arrow(int x, int y);
-        ~Arrow();
+class Arrow : public Item
+{
+public:
+    Arrow(int x, int y);
+    ~Arrow();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
-
+    void action();
 };
 
-#endif  // Arrow.h
+#endif // Arrow.h

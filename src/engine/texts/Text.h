@@ -13,43 +13,43 @@
 
 #include "../common/Common.h"
 
-class Text {
-    public :
-        Text(string txt);
-        ~Text();
+class Text
+{
+public:
+    Text(string txt);
+    ~Text();
 
-        void display(int x, int y, int l = -1);     // display on a line
-        void displayBox(int x, int y, int l = -1);  // display on a box
+    void display(int x, int y, int l = -1);    // display on a line
+    void displayBox(int x, int y, int l = -1); // display on a box
 
-        void setBox(int w, int h);
-        bool hasNext();
-        void next();
+    void setBox(int w, int h);
+    bool hasNext();
+    void next();
 
-        int getWBox();
-        int getHBox();
-        int getLength();
-        int getLengthInBox();
-        string getText();
-        char charAtInBox(int i);
+    int getWBox();
+    int getHBox();
+    int getLength();
+    int getLengthInBox();
+    string getText();
+    char charAtInBox(int i);
 
-        int getSize();
+    int getSize();
 
-    private :
-        void computeLength();
-        void cutBox(); // cut text to inBox and outBox
-        int wordSize(string txt, unsigned int i); // return size of a word from i
-        int sizeToCenter(string txt, unsigned int i); // return size of words to center from i
+private:
+    void computeLength();
+    void cutBox();                                // cut text to inBox and outBox
+    int wordSize(string txt, unsigned int i);     // return size of a word from i
+    int sizeToCenter(string txt, unsigned int i); // return size of words to center from i
 
-        void displayInternal(int x, int y, int l);     // display on a line
+    void displayInternal(int x, int y, int l); // display on a line
 
-        int wBox;
-        int hBox;
-        int length;
-        int lengthInBox;
-        string text;
-        string inBox;
-        string outBox;
-
+    int wBox;
+    int hBox;
+    int length;
+    int lengthInBox;
+    string text;
+    string inBox;
+    string outBox;
 };
 
-#endif  // Text.h
+#endif // Text.h

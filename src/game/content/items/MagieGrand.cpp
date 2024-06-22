@@ -4,7 +4,8 @@
 #include "../../../engine/window/WindowManager.h"
 #include "../../../engine/audio/AudioManager.h"
 
-MagieGrand::MagieGrand(int i, int j) {
+MagieGrand::MagieGrand(int i, int j)
+{
 
     x = i;
     y = j - 10;
@@ -23,15 +24,20 @@ MagieGrand::MagieGrand(int i, int j) {
     box.setH(16);
 }
 
-MagieGrand::~MagieGrand() {
+MagieGrand::~MagieGrand()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void MagieGrand::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
+void MagieGrand::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
             anim++;
-            if (anim > animMax) {
+            if (anim > animMax)
+            {
                 ready = true;
             }
             chrono.reset();
@@ -39,33 +45,47 @@ void MagieGrand::loop() {
     }
 }
 
-void MagieGrand::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void MagieGrand::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (ready) {
+    if (ready)
+    {
         dstY += 10;
-    } else {
-        if (anim <= 10) dstY += anim;
-        else if (anim <= 14) dstY += 10 - (anim - 10);
-        else if (anim <= 18) dstY += 6 + (anim - 14);
-        else dstY += 10;
+    }
+    else
+    {
+        if (anim <= 10)
+            dstY += anim;
+        else if (anim <= 14)
+            dstY += 10 - (anim - 10);
+        else if (anim <= 18)
+            dstY += 6 + (anim - 14);
+        else
+            dstY += 10;
     }
 
     WindowManager::getInstance()->draw(image, 24, 3, 6, 4, x - offsetX + 1, y - offsetY + 22);
     WindowManager::getInstance()->draw(image, 8, 63, 8, 16, dstX, dstY);
 }
 
-void MagieGrand::action() {
-    if (!ready) return;
+void MagieGrand::action()
+{
+    if (!ready)
+        return;
 
-    if (getLink()->getStatus()->getMagic() == getLink()->getStatus()->getMaxMagic()) {
+    if (getLink()->getStatus()->getMagic() == getLink()->getStatus()->getMaxMagic())
+    {
         AudioManager::getInstance()->playSound(TS_ITEM);
-    } else {
+    }
+    else
+    {
         AudioManager::getInstance()->playSound(TS_MAGICCHARGE);
     }
 

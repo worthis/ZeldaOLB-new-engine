@@ -3,7 +3,8 @@
 #include "../../../engine/resources/ResourceManager.h"
 #include "../../../engine/window/WindowManager.h"
 
-Splash::Splash(int i, int j)  : x(i), y(j), anim(0), animMax(3), vanim(40) {
+Splash::Splash(int i, int j) : x(i), y(j), anim(0), animMax(3), vanim(40)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/effects/splash.png", true);
     chrono.reset();
 
@@ -17,31 +18,39 @@ Splash::Splash(int i, int j)  : x(i), y(j), anim(0), animMax(3), vanim(40) {
     box.setH(height);
 }
 
-Splash::~Splash() {
+Splash::~Splash()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Splash::loop() {
-    if (chrono.getElapsedTime() >= vanim) {
+void Splash::loop()
+{
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             alive = false;
         }
         chrono.reset();
     }
 }
 
-void Splash::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Splash::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
     WindowManager::getInstance()->draw(image, anim * width, 0, width, height, x - offsetX, y - offsetY);
 }
 
-int Splash::getX() {
+int Splash::getX()
+{
     return x;
 }
 
-int Splash::getY() {
+int Splash::getY()
+{
     return y;
 }

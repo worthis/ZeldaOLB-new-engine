@@ -19,16 +19,17 @@
 
 #include "Loopable.h"
 
-class Effect : public Loopable {
-    public :
-        Effect();
-        virtual ~Effect() = 0;
+class Effect : public Loopable
+{
+public:
+    Effect();
+    virtual ~Effect() = 0;
 
-        virtual void loop() = 0;
-        virtual void draw(int offsetX, int offsetY) = 0;
+    virtual void loop() = 0;
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        virtual int getX() = 0;
-        virtual int getY() = 0;
+    virtual int getX() = 0;
+    virtual int getY() = 0;
 };
 
-#endif  // Effect.h
+#endif // Effect.h

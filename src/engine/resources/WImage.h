@@ -17,17 +17,18 @@
 #include "../common/Common.h"
 #include "WResource.h"
 
-class WImage : public WResource {
-    public :
-        WImage(string filename, bool alpha = false);
-        WImage(int w, int h, bool alpha = false);
-        ~WImage();
-        SDL_Texture* getImage();
-        void setAlpha(int alpha); // 0 to 255
-    private :
-        WImage();
+class WImage : public WResource
+{
+public:
+    WImage(string filename, bool alpha = false);
+    WImage(int w, int h, bool alpha = false);
+    ~WImage();
+    SDL_Texture *getImage();
+    void setAlpha(int alpha); // 0 to 255
+private:
+    WImage();
 
-        SDL_Texture* image;
+    SDL_Texture *image;
 };
 
-#endif  // WImage.h
+#endif // WImage.h

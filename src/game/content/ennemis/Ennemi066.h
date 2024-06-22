@@ -22,57 +22,55 @@
 
 class Map;
 
-class Ennemi066 : public Ennemi {
-    public :
-        Ennemi066(int x, int y, Map* map);
-        ~Ennemi066();
+class Ennemi066 : public Ennemi
+{
+public:
+    Ennemi066(int x, int y, Map *map);
+    ~Ennemi066();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void reset();
-        bool isResetable();
+    void reset();
+    bool isResetable();
 
-        int getDown();
+    int getDown();
 
-    protected :
+protected:
+    void giveItem(int x, int y);
 
-        void giveItem(int x, int y);
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-    private :
+    WImage *image;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        WImage* image;
+    BoundingBox box;
 
-        Chrono chrono;
+    Ennemi068 *tentaculeHG;
+    Ennemi068 *tentaculeBG;
+    Ennemi069 *tentaculeHD;
+    Ennemi069 *tentaculeBD;
 
-        BoundingBox box;
+    Ennemi068 *tentaculeTopG1;
+    Ennemi068 *tentaculeTopG2;
+    Ennemi069 *tentaculeTopD1;
+    Ennemi069 *tentaculeTopD2;
 
-        Ennemi068* tentaculeHG;
-        Ennemi068* tentaculeBG;
-        Ennemi069* tentaculeHD;
-        Ennemi069* tentaculeBD;
+    int animTentacules;
+    int steps[4];
 
-        Ennemi068* tentaculeTopG1;
-        Ennemi068* tentaculeTopG2;
-        Ennemi069* tentaculeTopD1;
-        Ennemi069* tentaculeTopD2;
-
-
-        int animTentacules;
-        int steps[4];
-
-        void wakeUp();
-        void wakeUp(int nb);
-        void setSteps(int value);
+    void wakeUp();
+    void wakeUp(int nb);
+    void setSteps(int value);
 };
 
-#endif  // Ennemi066.h
+#endif // Ennemi066.h

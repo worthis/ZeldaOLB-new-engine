@@ -16,19 +16,19 @@
 
 #include "OptionsMain.h"
 
-class OptionsMainController {
-    public :
-        OptionsMainController();
-        ~OptionsMainController();
+class OptionsMainController
+{
+public:
+    OptionsMainController();
+    ~OptionsMainController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        OptionsMain menu;
+private:
+    OptionsMain menu;
 };
 
-#endif  // OptionsMainController.h
+#endif // OptionsMainController.h

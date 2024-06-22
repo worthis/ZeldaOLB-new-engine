@@ -14,23 +14,22 @@
 #include "../../content/CommonGame.h"
 #include "../../content/scene/Camera.h"
 
-class TransitionRooms {
-    public :
-        TransitionRooms();
-        ~TransitionRooms();
+class TransitionRooms
+{
+public:
+    TransitionRooms();
+    ~TransitionRooms();
 
-        void loop();
+    void loop();
 
-        void init();
+    void init();
 
-    private :
-
-        Camera* camera;
-        int dstX;
-        int dstY;
-        int moveLink;
-        Direction direction;
-
+private:
+    Camera *camera;
+    int dstX;
+    int dstY;
+    int moveLink;
+    Direction direction;
 };
 
-#endif  // TransitionRooms.h
+#endif // TransitionRooms.h

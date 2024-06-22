@@ -8,7 +8,6 @@
 
 */
 
-
 #ifndef __ENNEMI022_H__
 #define __ENNEMI022_H__
 
@@ -18,36 +17,36 @@
 
 #include "../types/Ennemi.h"
 
-class Ennemi022 : public Ennemi {
-    public :
-        Ennemi022(int x, int y);
-        ~Ennemi022();
+class Ennemi022 : public Ennemi
+{
+public:
+    Ennemi022(int x, int y);
+    ~Ennemi022();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
+    bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
 
-        void reset();
+    void reset();
 
-        bool isToAvoid(Collision c);
+    bool isToAvoid(Collision c);
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    WImage *image;
 
-        WImage* image;
+    Chrono chrono;
 
-        Chrono chrono;
-
-        BoundingBox box;
+    BoundingBox box;
 };
 
-#endif  // Ennemi022.h
+#endif // Ennemi022.h

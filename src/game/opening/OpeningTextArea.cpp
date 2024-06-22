@@ -7,28 +7,40 @@
 
 #include "../MainController.h"
 
-OpeningTextArea::OpeningTextArea() : anim(0), animMax(0), vanim(40), ready(false), text(0), id(0) {
+OpeningTextArea::OpeningTextArea() : anim(0), animMax(0), vanim(40), ready(false), text(0), id(0)
+{
 }
 
-OpeningTextArea::~OpeningTextArea() {
+OpeningTextArea::~OpeningTextArea()
+{
     delete text;
 }
 
-void OpeningTextArea::handleActions(Action* action) {
-    if (action->isAction(ACTION)) {
-        if (ready) {
-            if (text->hasNext()) {
+void OpeningTextArea::handleActions(Action *action)
+{
+    if (action->isAction(ACTION))
+    {
+        if (ready)
+        {
+            if (text->hasNext())
+            {
                 text->next();
                 start();
                 AudioManager::getInstance()->playSound(TS_TEXTNEXT);
-            } else if (hasLogicalNext()) {
+            }
+            else if (hasLogicalNext())
+            {
                 start();
                 AudioManager::getInstance()->playSound(TS_TEXTNEXT);
-            } else {
+            }
+            else
+            {
                 stop();
                 AudioManager::getInstance()->playSound(TS_TEXTEND);
             }
-        } else {
+        }
+        else
+        {
             anim = animMax;
             ready = true;
         }
@@ -36,10 +48,14 @@ void OpeningTextArea::handleActions(Action* action) {
     }
 }
 
-void OpeningTextArea::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
-            do {
+void OpeningTextArea::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
+            do
+            {
                 ready = (++anim == animMax);
             } while (!ready && text->charAtInBox(anim) == ' ');
             AudioManager::getInstance()->playSound(TS_TEXT, 1);
@@ -48,38 +64,47 @@ void OpeningTextArea::loop() {
     }
 }
 
-void OpeningTextArea::draw() {
+void OpeningTextArea::draw()
+{
     text->displayBox(32 + 8, 158 + 8, anim);
 }
 
-void OpeningTextArea::init() {
+void OpeningTextArea::init()
+{
     setTextId(84);
     start();
 }
 
-void OpeningTextArea::start() {
+void OpeningTextArea::start()
+{
     chrono.reset();
     anim = 0;
     animMax = text->getLengthInBox();
     ready = false;
 }
 
-void OpeningTextArea::stop() {
+void OpeningTextArea::stop()
+{
     MainController::getInstance()->setStep(GAME);
 }
 
-void OpeningTextArea::setTextId(int textId) {
+void OpeningTextArea::setTextId(int textId)
+{
     delete text;
     text = TextManager::getInstance()->getText(textId);
     text->setBox(256 - 16, 64 - 16);
     id = textId;
 }
 
-bool OpeningTextArea::hasLogicalNext() {
+bool OpeningTextArea::hasLogicalNext()
+{
     int next = 0;
-    if (id < 88) {
+    if (id < 88)
+    {
         next = id + 1;
-    } else {
+    }
+    else
+    {
         return false;
     }
     setTextId(next);

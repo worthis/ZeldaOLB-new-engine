@@ -18,28 +18,33 @@
 #include "MapOcarina.h"
 #include "MapDonjon.h"
 
-enum MapStep {MAP_OVERWORLD, MAP_OCARINA, MAP_DONJON};
-
-class MapController {
-    public :
-        MapController();
-        ~MapController();
-
-        void launch();
-
-        void handleActions(Action* action);
-        void loop();
-        void draw();
-
-        void setStep(int mapId, bool withTp = false);
-
-    private :
-
-        MapOverworld overworld;
-        MapOcarina ocarina;
-        MapDonjon donjon;
-
-        MapStep step;
+enum MapStep
+{
+    MAP_OVERWORLD,
+    MAP_OCARINA,
+    MAP_DONJON
 };
 
-#endif  // MapController.h
+class MapController
+{
+public:
+    MapController();
+    ~MapController();
+
+    void launch();
+
+    void handleActions(Action *action);
+    void loop();
+    void draw();
+
+    void setStep(int mapId, bool withTp = false);
+
+private:
+    MapOverworld overworld;
+    MapOcarina ocarina;
+    MapDonjon donjon;
+
+    MapStep step;
+};
+
+#endif // MapController.h

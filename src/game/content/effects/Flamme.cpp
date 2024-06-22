@@ -5,7 +5,8 @@
 
 #include "../../MainController.h"
 
-Flamme::Flamme(int i, int j, Direction dir)  : x(i), y(j), direction(dir), anim(0), animMax(4), vanim(240) {
+Flamme::Flamme(int i, int j, Direction dir) : x(i), y(j), direction(dir), anim(0), animMax(4), vanim(240)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/effects/feu.png", true);
     chrono.reset();
 
@@ -19,26 +20,31 @@ Flamme::Flamme(int i, int j, Direction dir)  : x(i), y(j), direction(dir), anim(
     box.setH(height);
 }
 
-Flamme::~Flamme() {
+Flamme::~Flamme()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Flamme::loop() {
+void Flamme::loop()
+{
 
-    MainController::getInstance()->getGameController()->getSceneController()->
-        getScene()->testDegat(&box, direction, 1, TA_MAGIC, TE_FEU);
+    MainController::getInstance()->getGameController()->getSceneController()->getScene()->testDegat(&box, direction, 1, TA_MAGIC, TE_FEU);
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             alive = false;
         }
         chrono.reset();
     }
 }
 
-void Flamme::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Flamme::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -50,15 +56,18 @@ void Flamme::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, srcX, 0, width, height, dstX, dstY);
 }
 
-int Flamme::getX() {
+int Flamme::getX()
+{
     return x;
 }
 
-int Flamme::getY() {
+int Flamme::getY()
+{
     return y;
 }
 
-void Flamme::slide(int dx, int dy) {
+void Flamme::slide(int dx, int dy)
+{
     x += dx;
     y += dy;
 }

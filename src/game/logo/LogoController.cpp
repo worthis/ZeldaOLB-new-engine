@@ -1,23 +1,29 @@
 #include "LogoController.h"
 
-LogoController::LogoController() {
+LogoController::LogoController()
+{
 }
 
-LogoController::~LogoController() {
+LogoController::~LogoController()
+{
 }
 
-void LogoController::launch() {
+void LogoController::launch()
+{
     logo.init();
 }
 
-void LogoController::handleEvents(Event* event) {
+void LogoController::handleEvents(Event *event)
+{
     logo.handleEvents(event);
 }
 
-void LogoController::loop() {
+void LogoController::loop()
+{
     logo.loop();
 }
 
-void LogoController::draw() {
+void LogoController::draw()
+{
     logo.draw();
 }

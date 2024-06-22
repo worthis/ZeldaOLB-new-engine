@@ -9,7 +9,8 @@
 
 #include "../../MainController.h"
 
-Ennemi039::Ennemi039(int i, int j) : anim(0), animMax(1), vanim(180) {
+Ennemi039::Ennemi039(int i, int j) : anim(0), animMax(1), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi39.png", true);
     chrono.reset();
 
@@ -22,8 +23,8 @@ Ennemi039::Ennemi039(int i, int j) : anim(0), animMax(1), vanim(180) {
     width = 24;
     height = 25;
 
-    box.setX(x+4);
-    box.setY(y+9);
+    box.setX(x + 4);
+    box.setY(y + 9);
     box.setW(16);
     box.setH(16);
 
@@ -42,11 +43,13 @@ Ennemi039::Ennemi039(int i, int j) : anim(0), animMax(1), vanim(180) {
     forceEnn = 10;
 }
 
-Ennemi039::~Ennemi039() {
+Ennemi039::~Ennemi039()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi039::reset() {
+void Ennemi039::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -56,38 +59,48 @@ void Ennemi039::reset() {
     checkPosition();
 }
 
-void Ennemi039::ennLoop() {
+void Ennemi039::ennLoop()
+{
 
     // retrieve target position ( = link ^^)
-    Link* link = getLink();
+    Link *link = getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
 
     int dist = abs(x + width / 2 - dstX) + abs(y + height - dstY);
-    if (dist <= maxDist) {
+    if (dist <= maxDist)
+    {
         pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
 
         move(dir.first, dir.second);
 
-        if (link->getBoundingBox()->intersect(getBoundingBox())) {
+        if (link->getBoundingBox()->intersect(getBoundingBox()))
+        {
             testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
         }
-    } else {
+    }
+    else
+    {
         idle = true;
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
-        if (!gel) anim++;
-        if (anim > animMax) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
+        if (!gel)
+            anim++;
+        if (anim > animMax)
+        {
             anim = 0;
         }
         chrono.reset();
     }
 }
 
-void Ennemi039::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi039::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -97,20 +110,24 @@ void Ennemi039::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, direction * width, anim * height + (gel ? height * 2 : 0), width, height, dstX, dstY);
 }
 
-int Ennemi039::getX() {
+int Ennemi039::getX()
+{
     return x;
 }
 
-int Ennemi039::getY() {
+int Ennemi039::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi039::getBoundingBox() {
+BoundingBox *Ennemi039::getBoundingBox()
+{
     box.setX(x + 4);
     box.setY(y + 9);
     return &box;
 }
 
-bool Ennemi039::hasEffect(TypeAttack type, TypeEffect effect, Direction dir) {
+bool Ennemi039::hasEffect(TypeAttack type, TypeEffect effect, Direction dir)
+{
     return type == TA_ARROW;
 }

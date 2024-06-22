@@ -14,37 +14,36 @@
 #include "../../content/CommonGame.h"
 #include "../../content/scene/Map.h"
 
-class TransitionMaps {
-    public :
-        TransitionMaps();
-        ~TransitionMaps();
+class TransitionMaps
+{
+public:
+    TransitionMaps();
+    ~TransitionMaps();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        void init();
+    void init();
 
-    private :
+private:
+    int getOffsetXForMap(Map *map);
+    int getOffsetYForMap(Map *map);
+    int getSecondMapId(int x, int y);
 
-        int getOffsetXForMap(Map* map);
-        int getOffsetYForMap(Map* map);
-        int getSecondMapId(int x, int y);
+    int offset;
+    int offsetMax;
+    int offsetX;
+    int offsetY;
+    Direction direction;
 
-        int offset;
-        int offsetMax;
-        int offsetX;
-        int offsetY;
-        Direction direction;
+    Map *map1;
+    Map *map2;
+    BoundingBox *box1;
+    BoundingBox *box2;
 
-        Map* map1;
-        Map* map2;
-        BoundingBox* box1;
-        BoundingBox* box2;
-
-        WImage* filterForest;
-        WImage* filterRain[3];
-        int alpha;
-
+    WImage *filterForest;
+    WImage *filterRain[3];
+    int alpha;
 };
 
-#endif  // TransitionMaps.h
+#endif // TransitionMaps.h

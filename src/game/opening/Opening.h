@@ -16,27 +16,27 @@
 #include "../../engine/resources/WImage.h"
 #include "../../engine/util/time/Metronome.h"
 
-class Opening {
-    public :
-        Opening();
-        ~Opening();
+class Opening
+{
+public:
+    Opening();
+    ~Opening();
 
-        void init();
+    void init();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        void nextStep();
+    void nextStep();
 
-    private :
+private:
+    WImage *imageFond1;
+    WImage *imageFond2;
+    WImage *imageIntro[5];
 
-        WImage* imageFond1;
-        WImage* imageFond2;
-        WImage* imageIntro[5];
+    Metronome *metronome;
 
-        Metronome* metronome;
-
-        int etape;
+    int etape;
 };
 
-#endif  // Opening.h
+#endif // Opening.h

@@ -10,7 +10,8 @@
 
 #include "../effects/Flamme.h"
 
-ProjBaguetteFeu::ProjBaguetteFeu(int i, int j, Direction dir) : speed(4), dx(0), dy(0), level(0), force(4) {
+ProjBaguetteFeu::ProjBaguetteFeu(int i, int j, Direction dir) : speed(4), dx(0), dy(0), level(0), force(4)
+{
     x = i;
     y = j;
     direction = dir;
@@ -19,11 +20,20 @@ ProjBaguetteFeu::ProjBaguetteFeu(int i, int j, Direction dir) : speed(4), dx(0),
     width = 17;
     height = 17;
 
-    switch(direction) {
-        case N : dy = -speed; break;
-        case S : dy = speed; break;
-        case W : dx = -speed; break;
-        case E : dx = speed; break;
+    switch (direction)
+    {
+    case N:
+        dy = -speed;
+        break;
+    case S:
+        dy = speed;
+        break;
+    case W:
+        dx = -speed;
+        break;
+    case E:
+        dx = speed;
+        break;
     }
 
     box.setW(width);
@@ -32,83 +42,127 @@ ProjBaguetteFeu::ProjBaguetteFeu(int i, int j, Direction dir) : speed(4), dx(0),
     image = ResourceManager::getInstance()->loadImage("data/images/projectiles/magie.png", true);
 }
 
-ProjBaguetteFeu::~ProjBaguetteFeu() {
+ProjBaguetteFeu::~ProjBaguetteFeu()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void ProjBaguetteFeu::projLoop() {
+void ProjBaguetteFeu::projLoop()
+{
 
-    if (!alive) {
+    if (!alive)
+    {
         return;
     }
 
     int ddx = dx;
     int ddy = dy;
 
-    if (dx != 0 && x % speed != 0) {
+    if (dx != 0 && x % speed != 0)
+    {
         int tmp = x % speed;
-        if (dx > 0) {
+        if (dx > 0)
+        {
             ddx = speed - tmp;
-        } else {
+        }
+        else
+        {
             ddx = -tmp;
         }
     }
 
-    if (dy != 0 && y % speed != 0) {
+    if (dy != 0 && y % speed != 0)
+    {
         int tmp = y % speed;
-        if (dy > 0) {
+        if (dy > 0)
+        {
             ddy = speed - tmp;
-        } else {
+        }
+        else
+        {
             ddy = -tmp;
         }
     }
 
     // compute bounding box for collisions
     BoundingBox bb;
-    bb.setX(x + 8); bb.setY(y + 8);
-    bb.setW(1); bb.setH(1);
+    bb.setX(x + 8);
+    bb.setY(y + 8);
+    bb.setW(1);
+    bb.setH(1);
 
-    Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+    Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
 
     // check level +
     Collision c = (Collision)scene->getMap()->getMur(bb.getX(), bb.getY());
-    switch (direction) {
-        case N : if (c == MUR_H || c == MUR_HG || c == MUR_HD) level ++; break;
-        case S : if (c == MUR_B || c == MUR_BG || c == MUR_BD) level ++; break;
-        case W : if (c == MUR_G || c == MUR_HG || c == MUR_BG) level ++; break;
-        case E : if (c == MUR_D || c == MUR_HD || c == MUR_BD) level ++; break;
+    switch (direction)
+    {
+    case N:
+        if (c == MUR_H || c == MUR_HG || c == MUR_HD)
+            level++;
+        break;
+    case S:
+        if (c == MUR_B || c == MUR_BG || c == MUR_BD)
+            level++;
+        break;
+    case W:
+        if (c == MUR_G || c == MUR_HG || c == MUR_BG)
+            level++;
+        break;
+    case E:
+        if (c == MUR_D || c == MUR_HD || c == MUR_BD)
+            level++;
+        break;
     }
 
-    if (scene->checkCollisions(&bb, (Collisionable*)this, false, false, false, level)) {
+    if (scene->checkCollisions(&bb, (Collisionable *)this, false, false, false, level))
+    {
         x += ddx;
         y += ddy;
 
-        if (!level && scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_FEU)) {
+        if (!level && scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_FEU))
+        {
             alive = false;
         }
-
-    } else {
+    }
+    else
+    {
         alive = false;
     }
 
-    if (!alive) {
+    if (!alive)
+    {
         AudioManager::getInstance()->playSound(TS_BURN);
         scene->getMap()->addEffect(new Flamme(x, y, direction));
         return;
     }
 
     // check level -
-    switch (direction) {
-        case N : if (c == MUR_B || c == MUR_BG || c == MUR_BD) level --; break;
-        case S : if (c == MUR_H || c == MUR_HG || c == MUR_HD) level --; break;
-        case W : if (c == MUR_D || c == MUR_HD || c == MUR_BD) level --; break;
-        case E : if (c == MUR_G || c == MUR_HG || c == MUR_BG) level --; break;
+    switch (direction)
+    {
+    case N:
+        if (c == MUR_B || c == MUR_BG || c == MUR_BD)
+            level--;
+        break;
+    case S:
+        if (c == MUR_H || c == MUR_HG || c == MUR_HD)
+            level--;
+        break;
+    case W:
+        if (c == MUR_D || c == MUR_HD || c == MUR_BD)
+            level--;
+        break;
+    case E:
+        if (c == MUR_G || c == MUR_HG || c == MUR_BG)
+            level--;
+        break;
     }
-
 }
 
-void ProjBaguetteFeu::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void ProjBaguetteFeu::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -118,7 +172,8 @@ void ProjBaguetteFeu::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, 51 + 17 * direction, 0, 17, 17, dstX, dstY);
 }
 
-BoundingBox* ProjBaguetteFeu::getBoundingBox() {
+BoundingBox *ProjBaguetteFeu::getBoundingBox()
+{
     box.setX(x);
     box.setY(y);
     return &box;

@@ -16,13 +16,15 @@
 #include "../common/Common.h"
 #include "WResource.h"
 
-class WMusic : public WResource {
-    public :
-        WMusic(string filename);
-        ~WMusic();
-        FMUSIC_MODULE* getMusic();
-    private :
-        FMUSIC_MODULE* music;
+class WMusic : public WResource
+{
+public:
+    WMusic(string filename);
+    ~WMusic();
+    FMUSIC_MODULE *getMusic();
+
+private:
+    FMUSIC_MODULE *music;
 };
 
-#endif  // WMusic.h
+#endif // WMusic.h

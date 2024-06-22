@@ -16,25 +16,26 @@
 
 #include "Scene.h"
 
-class SceneController {
-    public :
-        SceneController();
-        ~SceneController();
+class SceneController
+{
+public:
+    SceneController();
+    ~SceneController();
 
-        void launch(Save* sv);
+    void launch(Save *sv);
 
-        void saveData();
+    void saveData();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        Scene* getScene();
+    Scene *getScene();
 
-        void setStep(SceneStep s);
+    void setStep(SceneStep s);
 
-    private :
-        Scene scene;
+private:
+    Scene scene;
 };
 
-#endif  // SceneController.h
+#endif // SceneController.h

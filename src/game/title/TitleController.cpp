@@ -1,23 +1,29 @@
 #include "TitleController.h"
 
-TitleController::TitleController() {
+TitleController::TitleController()
+{
 }
 
-TitleController::~TitleController() {
+TitleController::~TitleController()
+{
 }
 
-void TitleController::launch() {
+void TitleController::launch()
+{
     title.init();
 }
 
-void TitleController::handleEvents(Event* event) {
+void TitleController::handleEvents(Event *event)
+{
     title.handleEvents(event);
 }
 
-void TitleController::loop() {
+void TitleController::loop()
+{
     title.loop();
 }
 
-void TitleController::draw() {
+void TitleController::draw()
+{
     title.draw();
 }

@@ -20,38 +20,37 @@
 #include "Collisionable.h"
 #include "Loopable.h"
 
-class Object : public Collisionable, public Loopable {
-    public :
-        Object();
-        virtual ~Object() = 0;
+class Object : public Collisionable, public Loopable
+{
+public:
+    Object();
+    virtual ~Object() = 0;
 
-        virtual void loop();
-        virtual void draw(int offsetX, int offsetY) = 0;
+    virtual void loop();
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        virtual BoundingBox* getSecondBoundingBox(); // can be used for colisions
+    virtual BoundingBox *getSecondBoundingBox(); // can be used for colisions
 
-        bool isAttackable();
+    bool isAttackable();
 
-        virtual void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
+    virtual void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
 
-        virtual bool action(Direction dir);
+    virtual bool action(Direction dir);
 
-    protected :
+protected:
+    WImage *image;
 
-        WImage* image;
+    int x;
+    int y;
 
-        int x;
-        int y;
+    bool attackable;
 
-        bool attackable;
-
-        BoundingBox box;
-
+    BoundingBox box;
 };
 
-#endif  // Object.h
+#endif // Object.h

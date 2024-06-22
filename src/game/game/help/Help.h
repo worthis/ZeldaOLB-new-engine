@@ -15,26 +15,25 @@
 #include "../../../engine/texts/Text.h"
 #include "../../keys/Action.h"
 
+class Help
+{
+public:
+    Help();
+    ~Help();
 
-class Help {
-    public :
-        Help();
-        ~Help();
+    void init();
 
-        void init();
+    void handleActions(Action *action);
+    void draw();
 
-        void handleActions(Action* action);
-        void draw();
+private:
+    void cadre(int x, int y, int w, int h);
 
-    private :
+    int page;
 
-        void cadre(int x, int y, int w, int h);
+    WImage *image;
 
-        int page;
-
-        WImage* image;
-
-        Text* texts[26];
+    Text *texts[26];
 };
 
-#endif  // Help.h
+#endif // Help.h

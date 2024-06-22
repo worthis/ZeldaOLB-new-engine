@@ -17,34 +17,34 @@
 
 #include "../types/Ennemi.h"
 
-class Ennemi042 : public Ennemi {
-    public :
-        Ennemi042(int x, int y);
-        ~Ennemi042();
+class Ennemi042 : public Ennemi
+{
+public:
+    Ennemi042(int x, int y);
+    ~Ennemi042();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
+    bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
 
-        void reset();
+    void reset();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    WImage *image;
 
-        WImage* image;
+    Chrono chrono;
 
-        Chrono chrono;
-
-        BoundingBox box;
+    BoundingBox box;
 };
 
-#endif  // Ennemi042.h
+#endif // Ennemi042.h

@@ -20,48 +20,47 @@
 #include "../types/Ennemi.h"
 #include "Ennemi058.h"
 
-class Ennemi057 : public Ennemi {
-    public :
-        Ennemi057(int x, int y, Map* map);
-        ~Ennemi057();
+class Ennemi057 : public Ennemi
+{
+public:
+    Ennemi057(int x, int y, Map *map);
+    ~Ennemi057();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void reset();
-        bool isResetable();
+    void reset();
+    bool isResetable();
 
-    protected :
+protected:
+    void giveItem(int x, int y);
 
-        void giveItem(int x, int y);
+    void afterHit();
 
-        void afterHit();
+private:
+    void addEnnemi(int i);
+    bool tryToAddEnnemi(int x, int y, int i);
 
-    private :
+    int anim;
+    int animMax;
+    int vanim;
 
-        void addEnnemi(int i);
-        bool tryToAddEnnemi(int x, int y, int i);
+    WImage *image;
+    WImage *imageBis;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Ennemi058 *ennemis[3];
 
-        WImage* image;
-        WImage* imageBis;
+    Chrono chrono;
 
-        Ennemi058* ennemis[3];
+    BoundingBox box;
 
-        Chrono chrono;
-
-        BoundingBox box;
-
-        int cooldown;
-        bool encyclopedie;
+    int cooldown;
+    bool encyclopedie;
 };
 
-#endif  // Ennemi057.h
+#endif // Ennemi057.h

@@ -22,94 +22,93 @@
 
 #include "../helper/ItemRandomizer.h"
 
-class Ennemi : public Collisionable, public Loopable {
-    public :
-        Ennemi();
-        virtual ~Ennemi() = 0;
+class Ennemi : public Collisionable, public Loopable
+{
+public:
+    Ennemi();
+    virtual ~Ennemi() = 0;
 
-        void loop();
-        virtual void draw(int offsetX, int offsetY) = 0;
+    void loop();
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        virtual void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect, BoundingBox* box);
+    virtual void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect, BoundingBox *box);
 
-        virtual int getX() = 0;
-        virtual int getY() = 0;
+    virtual int getX() = 0;
+    virtual int getY() = 0;
 
-        virtual BoundingBox* getBoundingBox() = 0;
+    virtual BoundingBox *getBoundingBox() = 0;
 
-        bool isIdle();
+    bool isIdle();
 
-        virtual void reset() = 0;
-        virtual bool isResetable();
-        virtual bool isHittable();
+    virtual void reset() = 0;
+    virtual bool isResetable();
+    virtual bool isHittable();
 
-    protected :
+protected:
+    virtual BoundingBox *getBoundingBoxForDamage();
 
-        virtual BoundingBox* getBoundingBoxForDamage();
+    virtual void ennLoop() = 0;
 
-        virtual void ennLoop() = 0;
+    virtual bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
 
-        virtual bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
+    virtual void giveItem(int x, int y);
 
-        virtual void giveItem(int x, int y);
+    virtual void beforeHit(TypeAttack typeAtt, TypeEffect effect);
 
-        virtual void beforeHit(TypeAttack typeAtt, TypeEffect effect);
+    virtual void afterHit();
 
-        virtual void afterHit();
+    virtual void afterFall();
 
-        virtual void afterFall();
+    Link *getLink();
 
-        Link* getLink();
+    bool testDegatOnLink(BoundingBox *box, Direction dir, int force, TypeAttack type, TypeEffect effect);
 
-        bool testDegatOnLink(BoundingBox* box, Direction dir, int force, TypeAttack type, TypeEffect effect);
+    void move(int dx, int dy, bool ignoreIdle = false);
 
-        void move(int dx, int dy, bool ignoreIdle = false);
+    void moveX(int dx);
 
-        void moveX(int dx);
+    void moveY(int dy);
 
-        void moveY(int dy);
+    void jumpBack(Direction dir);
 
-        void jumpBack(Direction dir);
+    int type;
 
-        int type;
+    int x;
+    int y;
 
-        int x;
-        int y;
+    int life;
+    int maxLife;
+    int invul;
+    int recul;
+    int vitesseRecul;
 
-        int life;
-        int maxLife;
-        int invul;
-        int recul;
-        int vitesseRecul;
+    int maxDist;
+    Direction direction;
 
-        int maxDist;
-        Direction direction;
+    int startX;
+    int startY;
+    Direction startDir;
 
-        int startX;
-        int startY;
-        Direction startDir;
+    bool idle;
 
-        bool idle;
+    ItemRandomizer items;
 
-        ItemRandomizer items;
+    int gel;
+    int maxGel;
 
-        int gel;
-        int maxGel;
+    bool isBoss;
+    bool stunnable;
 
-        bool isBoss;
-        bool stunnable;
+    int forceEnn;
 
-        int forceEnn;
+private:
+    void computeProjection();
 
-    private :
+    Link *link;
 
-        void computeProjection();
-
-        Link* link;
-
-        int toucheX;
-        int toucheY;
-        int reculRestant;
+    int toucheX;
+    int toucheY;
+    int reculRestant;
 };
 
-#endif  // Ennemi.h
+#endif // Ennemi.h

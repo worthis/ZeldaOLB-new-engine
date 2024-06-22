@@ -8,30 +8,49 @@
 
 #include "../../MainController.h"
 
-ProjBouleDemi::ProjBouleDemi(int i, int j, double dx, double dy, BoundingBox* safeB) : dx(dx), dy(dy), force(1), parcouru(0), retour(false), safeBox(safeB) {
+ProjBouleDemi::ProjBouleDemi(int i, int j, double dx, double dy, BoundingBox *safeB) : dx(dx), dy(dy), force(1), parcouru(0), retour(false), safeBox(safeB)
+{
     x = i - 3;
     y = j - 3;
     longX = i;
     longY = j;
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 16; i++)
+    {
         histX[i] = longX;
         histY[i] = longY;
     }
-    if (dx > 0) {
-        if (dy > 0) {
-            if (dx > dy) direction = E;
-            else direction = S;
-        } else {
-            if (dx > -dy) direction = E;
-            else direction = N;
+    if (dx > 0)
+    {
+        if (dy > 0)
+        {
+            if (dx > dy)
+                direction = E;
+            else
+                direction = S;
         }
-    } else {
-        if (dy > 0) {
-            if (-dx > dy) direction = W;
-            else direction = S;
-        } else {
-            if (-dx > -dy) direction = W;
-            else direction = N;
+        else
+        {
+            if (dx > -dy)
+                direction = E;
+            else
+                direction = N;
+        }
+    }
+    else
+    {
+        if (dy > 0)
+        {
+            if (-dx > dy)
+                direction = W;
+            else
+                direction = S;
+        }
+        else
+        {
+            if (-dx > -dy)
+                direction = W;
+            else
+                direction = N;
         }
     }
 
@@ -47,44 +66,54 @@ ProjBouleDemi::ProjBouleDemi(int i, int j, double dx, double dy, BoundingBox* sa
     image = ResourceManager::getInstance()->loadImage("data/images/projectiles/bouleDemi.png", true);
 }
 
-ProjBouleDemi::~ProjBouleDemi() {
+ProjBouleDemi::~ProjBouleDemi()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void ProjBouleDemi::projLoop() {
-    if (!alive) {
+void ProjBouleDemi::projLoop()
+{
+    if (!alive)
+    {
         return;
     }
 
-    Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+    Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
 
     // compute bounding box for collisions
-    box.setX(longX - 3 + dx); box.setY(longY - 3 + dy);
-    box.setW(7); box.setH(7);
+    box.setX(longX - 3 + dx);
+    box.setY(longY - 3 + dy);
+    box.setW(7);
+    box.setH(7);
 
     longX += dx;
     longY += dy;
 
-    if (retour) {
-        if (scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE)) {
+    if (retour)
+    {
+        if (scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE))
+        {
             alive = false;
             return;
         }
-    } else {
-        if (scene->testDegatOnLink(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE)
-             || scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE, false)) {
+    }
+    else
+    {
+        if (scene->testDegatOnLink(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE) || scene->testDegat(getBoundingBox(), direction, force, TA_MAGIC, TE_GRAVITE, false))
+        {
             alive = false;
             return;
         }
     }
 
-    if (((safeBox == 0 || retour) && scene->checkCollisions(&box, (Collisionable*)this, false))
-        || ((safeBox != 0 && !retour) && scene->checkCollisions(&box, (Collisionable*)this, false, false, false, false, true,
-                                                   safeBox->getX(), safeBox->getY(), safeBox->getW(), safeBox->getH()))) {
+    if (((safeBox == 0 || retour) && scene->checkCollisions(&box, (Collisionable *)this, false)) || ((safeBox != 0 && !retour) && scene->checkCollisions(&box, (Collisionable *)this, false, false, false, false, true,
+                                                                                                                                                         safeBox->getX(), safeBox->getY(), safeBox->getW(), safeBox->getH())))
+    {
 
         parcouru++;
         // update hist
-        for (int i = 15; i > 0; i--) {
+        for (int i = 15; i > 0; i--)
+        {
             histX[i] = histX[i - 1];
             histY[i] = histY[i - 1];
         }
@@ -96,26 +125,37 @@ void ProjBouleDemi::projLoop() {
         int maxX = minX;
         int minY = (int)longY;
         int maxY = minY;
-        if (minX > (int)histX[2]) minX = (int)histX[2];
-        if (maxX < (int)histX[2]) maxX = (int)histX[2];
-        if (minY > (int)histY[2]) minY = (int)histY[2];
-        if (maxY < (int)histY[2]) maxY = (int)histY[2];
-        if (minX > (int)histX[4]) minX = (int)histX[4];
-        if (maxX < (int)histX[4]) maxX = (int)histX[4];
-        if (minY > (int)histY[4]) minY = (int)histY[4];
-        if (maxY < (int)histY[4]) maxY = (int)histY[4];
+        if (minX > (int)histX[2])
+            minX = (int)histX[2];
+        if (maxX < (int)histX[2])
+            maxX = (int)histX[2];
+        if (minY > (int)histY[2])
+            minY = (int)histY[2];
+        if (maxY < (int)histY[2])
+            maxY = (int)histY[2];
+        if (minX > (int)histX[4])
+            minX = (int)histX[4];
+        if (maxX < (int)histX[4])
+            maxX = (int)histX[4];
+        if (minY > (int)histY[4])
+            minY = (int)histY[4];
+        if (maxY < (int)histY[4])
+            maxY = (int)histY[4];
         x = minX - 3;
         y = minY - 3;
         width = maxX - minX + 4;
         height = maxY - minY + 4;
-
-    } else {
+    }
+    else
+    {
         alive = false;
     }
 }
 
-void ProjBouleDemi::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void ProjBouleDemi::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -124,11 +164,13 @@ void ProjBouleDemi::draw(int offsetX, int offsetY) {
 
     WindowManager::getInstance()->draw(image, 0, 0, 7, 7, dstX, dstY);
 
-    if (parcouru >= 2) {
+    if (parcouru >= 2)
+    {
         dstX = histX[2] - 1 - offsetX;
         dstY = histY[2] - 1 - offsetY;
         WindowManager::getInstance()->draw(image, 7, 0, 4, 4, dstX, dstY);
-        if (parcouru >= 4) {
+        if (parcouru >= 4)
+        {
             dstX = histX[4] - 1 - offsetX;
             dstY = histY[4] - 1 - offsetY;
             WindowManager::getInstance()->draw(image, 11, 0, 3, 3, dstX, dstY);
@@ -136,30 +178,38 @@ void ProjBouleDemi::draw(int offsetX, int offsetY) {
     }
 }
 
-BoundingBox* ProjBouleDemi::getBoundingBox() {
+BoundingBox *ProjBouleDemi::getBoundingBox()
+{
     return &box;
 }
 
-int ProjBouleDemi::getX() {return x;}
-int ProjBouleDemi::getY() {return y;}
-int ProjBouleDemi::getDown() {return y + 240;}
+int ProjBouleDemi::getX() { return x; }
+int ProjBouleDemi::getY() { return y; }
+int ProjBouleDemi::getDown() { return y + 240; }
 
-void ProjBouleDemi::renvoie(Direction dir) {
-    if (!retour) {
+void ProjBouleDemi::renvoie(Direction dir)
+{
+    if (!retour)
+    {
 
-        switch (dir) {
-            case N :
-                if (dy > 0) dy = -dy;
-                break;
-            case S :
-                if (dy < 0) dy = -dy;
-                break;
-            case W :
-                if (dx > 0) dx = -dx;
-                break;
-            case E :
-                if (dx < 0) dx = -dx;
-                break;
+        switch (dir)
+        {
+        case N:
+            if (dy > 0)
+                dy = -dy;
+            break;
+        case S:
+            if (dy < 0)
+                dy = -dy;
+            break;
+        case W:
+            if (dx > 0)
+                dx = -dx;
+            break;
+        case E:
+            if (dx < 0)
+                dx = -dx;
+            break;
         }
 
         AudioManager::getInstance()->playSound(TS_HITENNEMY);

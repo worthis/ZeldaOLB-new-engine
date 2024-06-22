@@ -18,46 +18,46 @@
 
 #include "../../Save.h"
 
-class MainMenu {
-    public :
-        MainMenu();
-        ~MainMenu();
+class MainMenu
+{
+public:
+    MainMenu();
+    ~MainMenu();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
+private:
+    void drawPage();
+    void drawTitle();
+    void drawSaves();
+    void drawLoad();
+    void drawConfirm();
 
-        void drawPage();
-        void drawTitle();
-        void drawSaves();
-        void drawLoad();
-        void drawConfirm();
+    void drawCadre(int x, int y, int w, int h);
 
-        void drawCadre(int x, int y, int w, int h);
+    int line;
+    int column;
 
-        int line;
-        int column;
+    bool load;
+    bool confirm;
 
-        bool load;
-        bool confirm;
+    int subLine;
 
-        int subLine;
+    Text *texts[12];
 
-        Text* texts[12];
+    WImage *image;
+    WImage *link;
+    WImage *status;
+    WImage *fairy;
+    WImage *stuff;
+    WImage *inventaire;
 
-        WImage* image;
-        WImage* link;
-        WImage* status;
-        WImage* fairy;
-        WImage* stuff;
-        WImage* inventaire;
+    int skin;
 
-        int skin;
-
-        Save* saves[3];
+    Save *saves[3];
 };
 
-#endif  // MainMenu.h
+#endif // MainMenu.h

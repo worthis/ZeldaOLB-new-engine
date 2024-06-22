@@ -13,24 +13,22 @@
 
 #include "Chrono.h"
 
-class Metronome {
-    public :
-        Metronome(int max, int delay);
-        ~Metronome();
+class Metronome
+{
+public:
+    Metronome(int max, int delay);
+    ~Metronome();
 
-        void reset();
-        void loop();
-        int getValue();
+    void reset();
+    void loop();
+    int getValue();
 
-    private :
+private:
+    int value;
+    int max;
+    float delay;
 
-        int value;
-        int max;
-        float delay;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Metronome.h
-
-
+#endif // Metronome.h

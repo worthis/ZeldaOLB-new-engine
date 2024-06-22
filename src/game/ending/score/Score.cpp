@@ -7,28 +7,34 @@
 #include "../../../engine/texts/TextManager.h"
 #include "../../../engine/audio/AudioManager.h"
 
-Score::Score() {
+Score::Score()
+{
     fond = ResourceManager::getInstance()->loadImage("data/images/ending/arbre.png");
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i < 12; i++)
+    {
         texts[i] = 0;
     }
 }
 
-Score::~Score() {
+Score::~Score()
+{
     ResourceManager::getInstance()->free(fond);
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i < 12; i++)
+    {
         delete texts[i];
     }
 }
 
-void Score::init() {
+void Score::init()
+{
 
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i < 12; i++)
+    {
         delete texts[i];
         texts[i] = 0;
     }
 
-    Save* save = MainController::getInstance()->getGameController()->getSave();
+    Save *save = MainController::getInstance()->getGameController()->getSave();
 
     texts[0] = TextManager::getInstance()->getText(537);
     texts[1] = TextManager::getInstance()->getText(538);
@@ -39,11 +45,14 @@ void Score::init() {
     int hours = time / 3600;
     int minutes = (time % 3600) / 60;
     int seconds = time % 60;
-    if (hours < 10) os << "0";
+    if (hours < 10)
+        os << "0";
     os << hours << ":";
-    if (minutes < 10) os << "0";
+    if (minutes < 10)
+        os << "0";
     os << minutes << ":";
-    if (seconds < 10) os << "0";
+    if (seconds < 10)
+        os << "0";
     os << seconds;
     texts[2] = new Text(os.str());
 
@@ -57,68 +66,80 @@ void Score::init() {
 
     texts[7] = TextManager::getInstance()->getText(544);
 
-    GlobalSave* gs = GlobalSave::getInstance();
+    GlobalSave *gs = GlobalSave::getInstance();
     bool fullROTH = gs->isFullROTH();
     bool ultimeROTH = gs->isUltimeROTH();
     bool rushROTH = gs->isRushROTH();
 
-    Link* link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
-    Status* status = link->getStatus();
-    Inventory* inventory = link->getInventory();
+    Link *link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
+    Status *status = link->getStatus();
+    Inventory *inventory = link->getInventory();
 
-    if (status->getNbDeaths() == 0
-        && status->getMaxLife() == 30
-        && status->getMaxMagic() == 32
-        && !inventory->hasObject(FLACON_1)
-        && !inventory->hasObject(FLACON_2)
-        && !inventory->hasObject(FLACON_3)
-        && link->getTunique() == 1
-        && !link->getBouclier()) {
+    if (status->getNbDeaths() == 0 && status->getMaxLife() == 30 && status->getMaxMagic() == 32 && !inventory->hasObject(FLACON_1) && !inventory->hasObject(FLACON_2) && !inventory->hasObject(FLACON_3) && link->getTunique() == 1 && !link->getBouclier())
+    {
 
         texts[9] = TextManager::getInstance()->getText(ultimeROTH ? 550 : 549);
-
-    } else {
+    }
+    else
+    {
         int completion = save->getCompletion();
 
-        if (completion == 100) {
+        if (completion == 100)
+        {
             texts[9] = TextManager::getInstance()->getText(fullROTH ? 548 : 547);
-        } else if (completion >= 95) {
+        }
+        else if (completion >= 95)
+        {
             texts[9] = TextManager::getInstance()->getText(551);
-        } else if (completion >= 90) {
+        }
+        else if (completion >= 90)
+        {
             texts[9] = TextManager::getInstance()->getText(552);
-        } else if (completion >= 85) {
+        }
+        else if (completion >= 85)
+        {
             texts[9] = TextManager::getInstance()->getText(553);
-        } else {
+        }
+        else
+        {
             texts[9] = TextManager::getInstance()->getText(554);
         }
     }
 
     int line = 10;
 
-    if (time < 14400) {
+    if (time < 14400)
+    {
         texts[line++] = TextManager::getInstance()->getText(rushROTH ? 556 : 555);
     }
 
-    if (status->getNbDeaths() >= 100) {
+    if (status->getNbDeaths() >= 100)
+    {
         texts[line] = TextManager::getInstance()->getText(557);
-    } else if (status->getNbDeaths() >= 50) {
+    }
+    else if (status->getNbDeaths() >= 50)
+    {
         texts[line] = TextManager::getInstance()->getText(558);
     }
 
     texts[8] = TextManager::getInstance()->getText(texts[10] ? 546 : 545);
-
 }
 
-void Score::handleActions(Action* action) {
-    if (action->isAction(ACTION)) {
+void Score::handleActions(Action *action)
+{
+    if (action->isAction(ACTION))
+    {
         AudioManager::getInstance()->playSound(TS_MENU1);
         MainController::getInstance()->getEndingController()->setStep(END_CREDITS);
     }
 }
 
-void Score::draw() {
-    for (int j = 0; j < 3; j++) {
-        for (int i = 0; i < 7; i++) {
+void Score::draw()
+{
+    for (int j = 0; j < 3; j++)
+    {
+        for (int i = 0; i < 7; i++)
+        {
             WindowManager::getInstance()->draw(fond, 0, 0, 48, 96, i * 48, j * 96);
         }
     }
@@ -126,7 +147,7 @@ void Score::draw() {
     int letterSize = TextManager::getInstance()->getWSpace();
 
     // SCORES :
-    Text* text = texts[0];
+    Text *text = texts[0];
     int size = text->getLength() * letterSize;
     text->display(160 - (size / 2), 10);
 
@@ -155,7 +176,8 @@ void Score::draw() {
     // RANK
     texts[8]->display(10, 150);
     texts[9]->display(10, 170);
-    if (texts[10]) texts[10]->display(10, 190);
-    if (texts[11]) texts[11]->display(10, 210);
-
+    if (texts[10])
+        texts[10]->display(10, 190);
+    if (texts[11])
+        texts[11]->display(10, 210);
 }

@@ -13,22 +13,22 @@
 
 #include "../../keys/Action.h"
 
-class Ocarina {
-    public :
-        Ocarina();
-        ~Ocarina();
+class Ocarina
+{
+public:
+    Ocarina();
+    ~Ocarina();
 
-        void handleActions(Action* action);
-        void loop();
+    void handleActions(Action *action);
+    void loop();
 
-        void start();
-        void stop();
+    void start();
+    void stop();
 
-        void setSong(int id);
+    void setSong(int id);
 
-    private :
-
-        int id;
+private:
+    int id;
 };
 
-#endif  // Ocarina.h
+#endif // Ocarina.h

@@ -13,24 +13,24 @@
 
 #include "../types/Projectile.h"
 
-class ProjFeuLong : public Projectile {
-    public :
-        ProjFeuLong(int x, int y, Direction dir, bool byLink = false);
-        ~ProjFeuLong();
+class ProjFeuLong : public Projectile
+{
+public:
+    ProjFeuLong(int x, int y, Direction dir, bool byLink = false);
+    ~ProjFeuLong();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-    private :
-
-        int speed;
-        int dx;
-        int dy;
-        int level;
-        int force;
-        bool byLink;
+private:
+    int speed;
+    int dx;
+    int dy;
+    int level;
+    int force;
+    bool byLink;
 };
 
-#endif  // ProjFeuLong.h
+#endif // ProjFeuLong.h

@@ -13,21 +13,21 @@
 
 #include "../types/Item.h"
 
-class Coeur : public Item {
-    public :
-        Coeur(int x, int y, int id, bool withAnim);
-        ~Coeur();
+class Coeur : public Item
+{
+public:
+    Coeur(int x, int y, int id, bool withAnim);
+    ~Coeur();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
+    void action();
 
-        bool isPickable();
+    bool isPickable();
 
-    private :
-
-        int id;
+private:
+    int id;
 };
 
-#endif  // Coeur.h
+#endif // Coeur.h

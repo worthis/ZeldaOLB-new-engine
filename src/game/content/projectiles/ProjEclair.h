@@ -13,23 +13,23 @@
 
 #include "../types/Projectile.h"
 
-class ProjEclair : public Projectile {
-    public :
-        ProjEclair(int x, int y);
-        ~ProjEclair();
+class ProjEclair : public Projectile
+{
+public:
+    ProjEclair(int x, int y);
+    ~ProjEclair();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getX();
-        int getY();
-        int getDown();
+    int getX();
+    int getY();
+    int getDown();
 
-    private :
-
-        int force;
+private:
+    int force;
 };
 
-#endif  // ProjEclair.h
+#endif // ProjEclair.h

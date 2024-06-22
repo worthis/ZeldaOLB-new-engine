@@ -18,7 +18,8 @@
 
 #include "../effects/Debris.h"
 
-Stele::Stele(int i, int j, int t, bool b) : texte(t), broken(b) {
+Stele::Stele(int i, int j, int t, bool b) : texte(t), broken(b)
+{
     x = i;
     y = j;
 
@@ -33,28 +34,37 @@ Stele::Stele(int i, int j, int t, bool b) : texte(t), broken(b) {
     box.setH(broken ? -1 : (height - 16));
 }
 
-Stele::~Stele() {
+Stele::~Stele()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Stele::draw(int offsetX, int offsetY) {
-    if (broken) {
+void Stele::draw(int offsetX, int offsetY)
+{
+    if (broken)
+    {
         WindowManager::getInstance()->draw(image, 0, 32, 32, 16, x - offsetX, y - offsetY + 16);
-    } else {
+    }
+    else
+    {
         WindowManager::getInstance()->draw(image, 0, 0, width, height, x - offsetX, y - offsetY);
     }
 }
 
-bool Stele::action(Direction dir) {
-    if (dir == N && !broken) {
+bool Stele::action(Direction dir)
+{
+    if (dir == N && !broken)
+    {
         MainController::getInstance()->getGameController()->displayText(texte);
         return true;
     }
     return false;
 }
 
-void Stele::explose() {
-    if (broken) return;
+void Stele::explose()
+{
+    if (broken)
+        return;
     broken = true;
     box.setX(-1);
     box.setY(-1);
@@ -64,6 +74,7 @@ void Stele::explose() {
     MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap()->addEffect(new Debris(x + 16, y + 16, S, 1));
 }
 
-int Stele::getDown() {
+int Stele::getDown()
+{
     return broken ? -1 : y + height;
 }

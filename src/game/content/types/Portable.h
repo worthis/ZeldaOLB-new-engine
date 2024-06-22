@@ -13,78 +13,77 @@
 
 #include "Object.h"
 
-class Portable : public Object {
-    public :
-        Portable();
-        virtual ~Portable() = 0;
+class Portable : public Object
+{
+public:
+    Portable();
+    virtual ~Portable() = 0;
 
-        void loop();
+    void loop();
 
-        BoundingBox* getHandableBox();
+    BoundingBox *getHandableBox();
 
-        void lance(int down, Direction d, int v);
+    void lance(int down, Direction d, int v);
 
-        void lache(int down);
+    void lache(int down);
 
-        bool isPosable();
+    bool isPosable();
 
-        bool isCarriable();
+    bool isCarriable();
 
-        void drawWhenCarried(int xCenter, int yDown, int offsetX, int offsetY);
+    void drawWhenCarried(int xCenter, int yDown, int offsetX, int offsetY);
 
-        void setDirection(Direction dir);
+    void setDirection(Direction dir);
 
-        int getPoids();
+    int getPoids();
 
-        virtual void onLift();
+    virtual void onLift();
 
-        virtual void portLoop() = 0;
+    virtual void portLoop() = 0;
 
-        virtual bool isCollision(Collision c);
+    virtual bool isCollision(Collision c);
 
-        virtual void stopBeforeUp();
+    virtual void stopBeforeUp();
 
-    protected :
+protected:
+    void setPosable(bool p);
 
-        void setPosable(bool p);
+    virtual void impact();
 
-        virtual void impact();
+    virtual void onContact();
 
-        virtual void onContact();
+    bool carried;
 
-        bool carried;
+    bool carriable;
 
-        bool carriable;
+    bool moving;
 
-        bool moving;
+    Direction direction;
 
-        Direction direction;
+    int dx;
 
-        int dx;
+    int dy;
 
-        int dy;
+    int air; // = height
 
-        int air; // = height
+    int poids;
 
-        int poids;
+    bool safeMode;
 
-        bool safeMode;
+    int maxDist;
 
-        int maxDist;
+private:
+    bool isOnWater(BoundingBox *b);
 
-    private :
+    bool isOnGap(BoundingBox *b);
 
-        bool isOnWater(BoundingBox* b);
+    bool posable;
 
-        bool isOnGap(BoundingBox* b);
+    BoundingBox handableBox;
 
-        bool posable;
+    int speed;
 
-        BoundingBox handableBox;
-
-        int speed;
-
-        int level;
+    int level;
 };
 
-#endif  // Portable.h
+#endif // Portable.h

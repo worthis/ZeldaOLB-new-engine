@@ -21,37 +21,42 @@
 #include "audio/OptionsAudioController.h"
 #include "commands/OptionsCommandsController.h"
 
-enum OptionsStep {OPTIONS_MAIN, OPTIONS_GAME, OPTIONS_AUDIO, OPTIONS_COMMANDS};
-
-class OptionsController {
-    public :
-        OptionsController();
-        ~OptionsController();
-
-        void launch();
-
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
-
-        void setStep(OptionsStep newStep);
-
-        void setInternalStep(OptionsStep newStep); // set step without transition
-
-        OptionsCommandsController* getOptionsCommandsController();
-
-    private :
-
-        OptionsStep step;
-        OptionsStep nextStep;
-
-        SimpleTransition transition;
-
-        OptionsMainController main;
-        OptionsGameController game;
-        OptionsAudioController audio;
-        OptionsCommandsController commands;
+enum OptionsStep
+{
+    OPTIONS_MAIN,
+    OPTIONS_GAME,
+    OPTIONS_AUDIO,
+    OPTIONS_COMMANDS
 };
 
-#endif  // OptionsController.h
+class OptionsController
+{
+public:
+    OptionsController();
+    ~OptionsController();
 
+    void launch();
+
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
+
+    void setStep(OptionsStep newStep);
+
+    void setInternalStep(OptionsStep newStep); // set step without transition
+
+    OptionsCommandsController *getOptionsCommandsController();
+
+private:
+    OptionsStep step;
+    OptionsStep nextStep;
+
+    SimpleTransition transition;
+
+    OptionsMainController main;
+    OptionsGameController game;
+    OptionsAudioController audio;
+    OptionsCommandsController commands;
+};
+
+#endif // OptionsController.h

@@ -15,17 +15,18 @@
 #include "../resources/WMusic.h"
 #include "../resources/WSound.h"
 
-class AudioConfiguration {
-    public :
-        AudioConfiguration();
-        virtual ~AudioConfiguration() = 0;
+class AudioConfiguration
+{
+public:
+    AudioConfiguration();
+    virtual ~AudioConfiguration() = 0;
 
-        virtual string getMusicName(int id) = 0;
-        virtual WSound* getSound(int id) = 0;
+    virtual string getMusicName(int id) = 0;
+    virtual WSound *getSound(int id) = 0;
 
-        virtual void loadSounds() = 0;
+    virtual void loadSounds() = 0;
 
-        virtual int getNbSounds() = 0;
+    virtual int getNbSounds() = 0;
 };
 
-#endif  // AudioConfiguration.h
+#endif // AudioConfiguration.h

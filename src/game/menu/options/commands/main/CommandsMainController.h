@@ -16,19 +16,19 @@
 
 #include "CommandsMain.h"
 
-class CommandsMainController {
-    public :
-        CommandsMainController();
-        ~CommandsMainController();
+class CommandsMainController
+{
+public:
+    CommandsMainController();
+    ~CommandsMainController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        CommandsMain menu;
+private:
+    CommandsMain menu;
 };
 
-#endif  // CommandsMainController.h
+#endif // CommandsMainController.h

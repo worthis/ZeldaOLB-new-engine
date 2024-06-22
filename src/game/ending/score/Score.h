@@ -18,21 +18,21 @@
 
 #include "../../keys/Action.h"
 
-class Score {
-    public :
-        Score();
-        ~Score();
+class Score
+{
+public:
+    Score();
+    ~Score();
 
-        void init();
+    void init();
 
-        void handleActions(Action* action);
-        void draw();
+    void handleActions(Action *action);
+    void draw();
 
-    private :
+private:
+    Text *texts[12];
 
-        Text* texts[12];
-
-        WImage* fond;
+    WImage *fond;
 };
 
-#endif  // Score.h
+#endif // Score.h

@@ -20,36 +20,40 @@
 #include "records/RecordsController.h"
 #include "options/OptionsController.h"
 
-enum MenuStep {MENU_MAIN, MENU_OPTIONS, MENU_RECORDS};
-
-class MenuController {
-    public :
-        MenuController();
-        ~MenuController();
-
-        void launch();
-
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
-
-        void setStep(MenuStep newStep);
-
-        void setInternalStep(MenuStep newStep); // set step without transition
-
-        OptionsController* getOptionsController();
-
-    private :
-
-        MenuStep step;
-        MenuStep nextStep;
-
-        SimpleTransition transition;
-
-        MainMenuController main;
-        RecordsController records;
-        OptionsController options;
+enum MenuStep
+{
+    MENU_MAIN,
+    MENU_OPTIONS,
+    MENU_RECORDS
 };
 
-#endif  // MenuController.h
+class MenuController
+{
+public:
+    MenuController();
+    ~MenuController();
 
+    void launch();
+
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
+
+    void setStep(MenuStep newStep);
+
+    void setInternalStep(MenuStep newStep); // set step without transition
+
+    OptionsController *getOptionsController();
+
+private:
+    MenuStep step;
+    MenuStep nextStep;
+
+    SimpleTransition transition;
+
+    MainMenuController main;
+    RecordsController records;
+    OptionsController options;
+};
+
+#endif // MenuController.h

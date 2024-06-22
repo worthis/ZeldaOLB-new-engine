@@ -15,21 +15,21 @@
 
 #include "Teleport.h"
 
-class TeleportController {
-    public :
-        TeleportController();
-        ~TeleportController();
+class TeleportController
+{
+public:
+    TeleportController();
+    ~TeleportController();
 
-        void launch();
+    void launch();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        void setTeleport(int map, int x, int y, Direction dir, bool instant, bool reload, bool etage = false);
+    void setTeleport(int map, int x, int y, Direction dir, bool instant, bool reload, bool etage = false);
 
-    private :
-
-        Teleport teleport;
+private:
+    Teleport teleport;
 };
 
-#endif  // TeleportController.h
+#endif // TeleportController.h

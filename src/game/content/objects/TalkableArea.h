@@ -13,21 +13,21 @@
 
 #include "../types/Object.h"
 
-class TalkableArea : public Object {
-    public :
-        TalkableArea(int x, int y, int texte);
-        ~TalkableArea();
+class TalkableArea : public Object
+{
+public:
+    TalkableArea(int x, int y, int texte);
+    ~TalkableArea();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        bool action(Direction dir);
+    bool action(Direction dir);
 
-    private :
+private:
+    int getDynamicText();
 
-        int getDynamicText();
-
-        int texte;
+    int texte;
 };
 
-#endif  // TalkableArea.h
+#endif // TalkableArea.h

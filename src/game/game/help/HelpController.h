@@ -15,19 +15,20 @@
 
 #include "Help.h"
 
-class HelpController {
-    public :
-        HelpController();
-        ~HelpController();
+class HelpController
+{
+public:
+    HelpController();
+    ~HelpController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        Help help;
+private:
+    Help help;
 };
 
-#endif  // HelpController.h
+#endif // HelpController.h

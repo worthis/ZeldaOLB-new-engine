@@ -13,16 +13,16 @@
 
 #include "../types/Item.h"
 
-class Bomb : public Item {
-    public :
-        Bomb(int x, int y);
-        ~Bomb();
+class Bomb : public Item
+{
+public:
+    Bomb(int x, int y);
+    ~Bomb();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
-
+    void action();
 };
 
-#endif  // Bomb.h
+#endif // Bomb.h

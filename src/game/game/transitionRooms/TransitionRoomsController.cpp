@@ -1,15 +1,19 @@
 #include "TransitionRoomsController.h"
 
-TransitionRoomsController::TransitionRoomsController() {
+TransitionRoomsController::TransitionRoomsController()
+{
 }
 
-TransitionRoomsController::~TransitionRoomsController() {
+TransitionRoomsController::~TransitionRoomsController()
+{
 }
 
-void TransitionRoomsController::launch() {
+void TransitionRoomsController::launch()
+{
     transitionRooms.init();
 }
 
-void TransitionRoomsController::loop() {
+void TransitionRoomsController::loop()
+{
     transitionRooms.loop();
 }

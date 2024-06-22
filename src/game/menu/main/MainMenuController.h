@@ -16,19 +16,19 @@
 
 #include "MainMenu.h"
 
-class MainMenuController {
-    public :
-        MainMenuController();
-        ~MainMenuController();
+class MainMenuController
+{
+public:
+    MainMenuController();
+    ~MainMenuController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        MainMenu menu;
+private:
+    MainMenu menu;
 };
 
-#endif  // MainMenuController.h
+#endif // MainMenuController.h

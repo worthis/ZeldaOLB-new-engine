@@ -21,32 +21,32 @@
 
 #include "../types/Effect.h"
 
-class Feuilles : public Effect {
-    public :
-        Feuilles(int x, int y, int type);
-        ~Feuilles();
+class Feuilles : public Effect
+{
+public:
+    Feuilles(int x, int y, int type);
+    ~Feuilles();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-    private :
+private:
+    int x;
+    int y;
+    int type;
 
-        int x;
-        int y;
-        int type;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    BoundingBox box;
 
-        BoundingBox box;
+    WImage *image;
 
-        WImage* image;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Feuilles.h
+#endif // Feuilles.h

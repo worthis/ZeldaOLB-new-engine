@@ -1,19 +1,24 @@
 #include "CommandsMainController.h"
 
-CommandsMainController::CommandsMainController() {
+CommandsMainController::CommandsMainController()
+{
 }
 
-CommandsMainController::~CommandsMainController() {
+CommandsMainController::~CommandsMainController()
+{
 }
 
-void CommandsMainController::launch() {
+void CommandsMainController::launch()
+{
     menu.init();
 }
 
-void CommandsMainController::handleEvents(Event* event) {
+void CommandsMainController::handleEvents(Event *event)
+{
     menu.handleEvents(event);
 }
 
-void CommandsMainController::draw() {
+void CommandsMainController::draw()
+{
     menu.draw();
 }

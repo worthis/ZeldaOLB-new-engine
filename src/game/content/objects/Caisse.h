@@ -13,27 +13,26 @@
 
 #include "../types/Poussable.h"
 
-class Caisse : public Poussable {
-    public :
-        Caisse(int x, int y, int id = 0);
-        ~Caisse();
+class Caisse : public Poussable
+{
+public:
+    Caisse(int x, int y, int id = 0);
+    ~Caisse();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void pousse(Direction d, int v = 1);
-        int getDown();
+    void pousse(Direction d, int v = 1);
+    int getDown();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-    private :
+private:
+    int x0;
+    int y0;
 
-        int x0;
-        int y0;
-
-        int type;
-
+    int type;
 };
 
-#endif  // Caisse.h
+#endif // Caisse.h

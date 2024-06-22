@@ -1,23 +1,29 @@
 #include "StoryController.h"
 
-StoryController::StoryController() {
+StoryController::StoryController()
+{
 }
 
-StoryController::~StoryController() {
+StoryController::~StoryController()
+{
 }
 
-void StoryController::launch() {
+void StoryController::launch()
+{
     story.init();
 }
 
-void StoryController::handleActions(Action* action) {
+void StoryController::handleActions(Action *action)
+{
     story.handleActions(action);
 }
 
-void StoryController::loop() {
+void StoryController::loop()
+{
     story.loop();
 }
 
-void StoryController::draw() {
+void StoryController::draw()
+{
     story.draw();
 }

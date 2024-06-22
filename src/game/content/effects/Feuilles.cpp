@@ -3,7 +3,8 @@
 #include "../../../engine/resources/ResourceManager.h"
 #include "../../../engine/window/WindowManager.h"
 
-Feuilles::Feuilles(int i, int j, int t)  : x(i), y(j), type(t), anim(0), animMax(6), vanim(120) {
+Feuilles::Feuilles(int i, int j, int t) : x(i), y(j), type(t), anim(0), animMax(6), vanim(120)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/effects/buisson.png", true);
     chrono.reset();
 
@@ -17,23 +18,29 @@ Feuilles::Feuilles(int i, int j, int t)  : x(i), y(j), type(t), anim(0), animMax
     box.setH(height);
 }
 
-Feuilles::~Feuilles() {
+Feuilles::~Feuilles()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Feuilles::loop() {
+void Feuilles::loop()
+{
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             alive = false;
         }
         chrono.reset();
     }
 }
 
-void Feuilles::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Feuilles::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -46,10 +53,12 @@ void Feuilles::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, srcX, srcY, width, height, dstX, dstY);
 }
 
-int Feuilles::getX() {
+int Feuilles::getX()
+{
     return x;
 }
 
-int Feuilles::getY() {
+int Feuilles::getY()
+{
     return y;
 }

@@ -17,24 +17,24 @@
 
 #include "../CommonGame.h"
 
-class Shield {
-    public :
-        Shield(int i, bool onilink = false, bool hasMask = false);
-        ~Shield();
+class Shield
+{
+public:
+    Shield(int i, bool onilink = false, bool hasMask = false);
+    ~Shield();
 
-        void draw(int offsetX, int offsetY, Direction dir, Animation anim, int step, int charge);
+    void draw(int offsetX, int offsetY, Direction dir, Animation anim, int step, int charge);
 
-        int getLevel();
+    int getLevel();
 
-    private :
+private:
+    void draw(int dstX, int dstY, Direction dir);
 
-        void draw(int dstX, int dstY, Direction dir);
+    int level;
 
-        int level;
+    bool onilink;
 
-        bool onilink;
-
-        WImage* image;
+    WImage *image;
 };
 
-#endif  // Shield.h
+#endif // Shield.h

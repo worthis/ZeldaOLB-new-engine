@@ -15,23 +15,23 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class PiegeFeu : public Object {
-    public :
-        PiegeFeu(int x, int y);
-        ~PiegeFeu();
+class PiegeFeu : public Object
+{
+public:
+    PiegeFeu(int x, int y);
+    ~PiegeFeu();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-    private :
+private:
+    void snipe();
 
-        void snipe();
+    Chrono chrono;
 
-        Chrono chrono;
-
-        int anim;
-        int animMax;
-        int vanim;
+    int anim;
+    int animMax;
+    int vanim;
 };
 
-#endif  // PiegeFeu.h
+#endif // PiegeFeu.h

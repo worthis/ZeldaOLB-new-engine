@@ -14,27 +14,27 @@
 #include "../types/Object.h"
 #include "../scene/Map.h"
 
-class Interrupteur : public Object {
-    public :
-        Interrupteur(int x, int y, int type, bool used, Map* map, bool usable = true);
-        ~Interrupteur();
+class Interrupteur : public Object
+{
+public:
+    Interrupteur(int x, int y, int type, bool used, Map *map, bool usable = true);
+    ~Interrupteur();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-        void displayOnMap();
+    void displayOnMap();
 
-    private :
-
-        int type;
-        bool used;
-        bool usedTmp;
-        Map* map;
-        bool wasUsable;
-        bool usable;
+private:
+    int type;
+    bool used;
+    bool usedTmp;
+    Map *map;
+    bool wasUsable;
+    bool usable;
 };
 
-#endif  // Interrupteur.h
+#endif // Interrupteur.h

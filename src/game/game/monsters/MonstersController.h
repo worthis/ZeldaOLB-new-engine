@@ -15,19 +15,20 @@
 
 #include "Monsters.h"
 
-class MonstersController {
-    public :
-        MonstersController();
-        ~MonstersController();
+class MonstersController
+{
+public:
+    MonstersController();
+    ~MonstersController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        Monsters monsters;
+private:
+    Monsters monsters;
 };
 
-#endif  // MonstersController.h
+#endif // MonstersController.h

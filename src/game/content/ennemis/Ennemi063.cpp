@@ -12,7 +12,8 @@
 
 #include "../effects/FumeeBlanche.h"
 
-Ennemi063::Ennemi063(int i, int j) : anim(0), animMax(0), vanim(180) {
+Ennemi063::Ennemi063(int i, int j) : anim(0), animMax(0), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi63.png", true);
     chrono.reset();
 
@@ -29,8 +30,8 @@ Ennemi063::Ennemi063(int i, int j) : anim(0), animMax(0), vanim(180) {
     width = 58;
     height = 68;
 
-    box.setX(x+13);
-    box.setY(y+36);
+    box.setX(x + 13);
+    box.setY(y + 36);
     box.setW(32);
     box.setH(32);
 
@@ -49,11 +50,13 @@ Ennemi063::Ennemi063(int i, int j) : anim(0), animMax(0), vanim(180) {
     forceEnn = 5;
 }
 
-Ennemi063::~Ennemi063() {
+Ennemi063::~Ennemi063()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi063::reset() {
+void Ennemi063::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -65,13 +68,16 @@ void Ennemi063::reset() {
     checkPosition();
 }
 
-bool Ennemi063::isResetable() {
+bool Ennemi063::isResetable()
+{
     return alive;
 }
 
-void Ennemi063::ennLoop() {
+void Ennemi063::ennLoop()
+{
 
-    if (step == 0 && life <= 10) {
+    if (step == 0 && life <= 10)
+    {
         step = 1;
         moving = 1;
         chrono.reset();
@@ -83,10 +89,11 @@ void Ennemi063::ennLoop() {
         checkPosition();
     }
 
-    if (moving) {
+    if (moving)
+    {
 
         // retrieve target position ( = link ^^)
-        Link* link = getLink();
+        Link *link = getLink();
 
         int dstX = link->getX() + 8;
         int dstY = link->getY() + 24;
@@ -95,27 +102,36 @@ void Ennemi063::ennLoop() {
 
         move(dir.first, dir.second);
 
-        if (testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL)) {
+        if (testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL))
+        {
             life += (step == 0 ? 1 : 2);
-            if (life > maxLife) {
+            if (life > maxLife)
+            {
                 life = maxLife;
             }
         }
-
-    } else {
-        if (testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL)) {
+    }
+    else
+    {
+        if (testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL))
+        {
             life += (step == 0 ? 2 : 4);
-            if (life > maxLife) {
+            if (life > maxLife)
+            {
                 life = maxLife;
             }
         }
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
-        if (!gel) anim++;
-        if (anim > animMax) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
+        if (!gel)
+            anim++;
+        if (anim > animMax)
+        {
             anim = 0;
-            if (step == 1) {
+            if (step == 1)
+            {
                 step = 2;
                 y += 4;
                 width = 82;
@@ -123,15 +139,21 @@ void Ennemi063::ennLoop() {
                 checkPosition();
             }
         }
-        if (step == 0) {
-            if (beforeMove > 0) {
+        if (step == 0)
+        {
+            if (beforeMove > 0)
+            {
                 beforeMove--;
-                if (beforeMove == 0) {
+                if (beforeMove == 0)
+                {
                     moving = 1;
                 }
-            } else if (moving < 12) {
+            }
+            else if (moving < 12)
+            {
                 moving++;
-                if (moving == 12) {
+                if (moving == 12)
+                {
                     moving = 0;
                     beforeMove = 4;
                 }
@@ -141,48 +163,64 @@ void Ennemi063::ennLoop() {
     }
 }
 
-void Ennemi063::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi063::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (step == 0) {
+    if (step == 0)
+    {
         WindowManager::getInstance()->draw(image, 0, 0, width, height, dstX, dstY);
-    } else if (step == 1) {
+    }
+    else if (step == 1)
+    {
         WindowManager::getInstance()->draw(image, 0, 68, width, height, dstX, dstY);
-    } else if (step == 2) {
+    }
+    else if (step == 2)
+    {
         WindowManager::getInstance()->draw(image, 0, 128 + 56 * anim, width, height, dstX, dstY);
     }
 }
 
-int Ennemi063::getX() {
+int Ennemi063::getX()
+{
     return x;
 }
 
-int Ennemi063::getY() {
+int Ennemi063::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi063::getBoundingBox() {
-    if (step == 0) {
-        box.setX(x+13);
-        box.setY(y+36);
-    } else if (step == 1) {
-        box.setX(x+25);
-        box.setY(y+28);
-    } else if (step == 2) {
-        box.setX(x+25);
-        box.setY(y+24);
+BoundingBox *Ennemi063::getBoundingBox()
+{
+    if (step == 0)
+    {
+        box.setX(x + 13);
+        box.setY(y + 36);
+    }
+    else if (step == 1)
+    {
+        box.setX(x + 25);
+        box.setY(y + 28);
+    }
+    else if (step == 2)
+    {
+        box.setX(x + 25);
+        box.setY(y + 24);
     }
     return &box;
 }
 
-void Ennemi063::giveItem(int i, int j) {
+void Ennemi063::giveItem(int i, int j)
+{
     AudioManager::getInstance()->playSound(TS_KILLENNEMY);
-    Map* map = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap();
+    Map *map = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap();
     map->addEffect(new FumeeBlanche(i, j));
     map->addItem(ItemHelper::getInstance()->createItem(TI_COEUR, i, j, 3));
 }

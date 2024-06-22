@@ -6,7 +6,8 @@
 
 #include "../../MainController.h"
 
-Sphere::Sphere(int i, int j) : blue(false), invul(0) {
+Sphere::Sphere(int i, int j) : blue(false), invul(0)
+{
     x = i;
     y = j;
 
@@ -24,32 +25,40 @@ Sphere::Sphere(int i, int j) : blue(false), invul(0) {
     attackable = true;
 }
 
-Sphere::~Sphere() {
+Sphere::~Sphere()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Sphere::loop() {
-    if (invul) {
+void Sphere::loop()
+{
+    if (invul)
+    {
         invul--;
-        if (!invul) attackable = true;
+        if (!invul)
+            attackable = true;
     }
 }
 
-void Sphere::draw(int offsetX, int offsetY) {
+void Sphere::draw(int offsetX, int offsetY)
+{
     WindowManager::getInstance()->draw(image, blue ? 0 : 16, 0, 16, 16, x - offsetX, y - offsetY);
 }
 
-void Sphere::underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect) {
+void Sphere::underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect)
+{
     AudioManager::getInstance()->playSound(TS_HITENNEMY);
     attackable = false;
     invul = 24;
     bool succes = MainController::getInstance()->getGameController()->getSceneController()->getScene()->permuteBlocs(blue ? 0 : 1);
-    if (succes) {
+    if (succes)
+    {
         MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap()->switchSphere(!blue);
-        //blue = !blue;
+        // blue = !blue;
     }
 }
 
-void Sphere::setBlue(bool b) {
+void Sphere::setBlue(bool b)
+{
     blue = b;
 }

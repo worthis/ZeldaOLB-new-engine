@@ -12,7 +12,8 @@
 
 #include "../helper/ProjectileHelper.h"
 
-Ennemi027::Ennemi027(int i, int j) : anim(0), animMax(9), vanim(180) {
+Ennemi027::Ennemi027(int i, int j) : anim(0), animMax(9), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi27.png", true);
     chrono.reset();
 
@@ -26,7 +27,7 @@ Ennemi027::Ennemi027(int i, int j) : anim(0), animMax(9), vanim(180) {
     height = 17;
 
     box.setX(x);
-    box.setY(y+1);
+    box.setY(y + 1);
     box.setW(16);
     box.setH(16);
 
@@ -47,11 +48,13 @@ Ennemi027::Ennemi027(int i, int j) : anim(0), animMax(9), vanim(180) {
     forceEnn = 2;
 }
 
-Ennemi027::~Ennemi027() {
+Ennemi027::~Ennemi027()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi027::reset() {
+void Ennemi027::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -61,72 +64,101 @@ void Ennemi027::reset() {
     checkPosition();
 }
 
-void Ennemi027::ennLoop() {
+void Ennemi027::ennLoop()
+{
 
     // retrieve target position ( = link ^^)
-    Link* link = getLink();
+    Link *link = getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
 
     int dist = abs(x + width / 2 - dstX) + abs(y + height - dstY);
-    if (dist <= maxDist) {
-        if (anim < 8) {
+    if (dist <= maxDist)
+    {
+        if (anim < 8)
+        {
             pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
             move(dir.first, dir.second);
-        } else {
+        }
+        else
+        {
             idle = true;
         }
-        if (link->getBoundingBox()->intersect(getBoundingBox())) {
+        if (link->getBoundingBox()->intersect(getBoundingBox()))
+        {
             testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
         }
 
-        if (chrono.getElapsedTime() >= vanim) {
-            if (!gel) anim++;
-            if (anim > animMax) {
+        if (chrono.getElapsedTime() >= vanim)
+        {
+            if (!gel)
+                anim++;
+            if (anim > animMax)
+            {
                 anim = 0;
             }
-            if (anim == animMax) {
+            if (anim == animMax)
+            {
 
-                switch(direction) {
-                    case N : ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x+4, y - 8, N); break;
-                    case S : ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x+4, y + 12, S); break;
-                    case W : ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x - 4, y + 4, W); break;
-                    case E : ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x + 12, y + 4, E); break;
+                switch (direction)
+                {
+                case N:
+                    ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x + 4, y - 8, N);
+                    break;
+                case S:
+                    ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x + 4, y + 12, S);
+                    break;
+                case W:
+                    ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x - 4, y + 4, W);
+                    break;
+                case E:
+                    ProjectileHelper::getInstance()->addProjectile(TP_BOULET, x + 12, y + 4, E);
+                    break;
                 }
                 AudioManager::getInstance()->playSound(TS_THROW);
             }
             chrono.reset();
         }
-    } else {
+    }
+    else
+    {
         idle = true;
     }
 }
 
-void Ennemi027::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi027::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (anim < 8) {
-        WindowManager::getInstance()->draw(image, direction * width, (anim%2) * height, width, height, dstX, dstY);
-    } else {
-        WindowManager::getInstance()->draw(image, direction * width, (2 + (anim%2)) * height, width, height, dstX, dstY);
+    if (anim < 8)
+    {
+        WindowManager::getInstance()->draw(image, direction * width, (anim % 2) * height, width, height, dstX, dstY);
+    }
+    else
+    {
+        WindowManager::getInstance()->draw(image, direction * width, (2 + (anim % 2)) * height, width, height, dstX, dstY);
     }
 }
 
-int Ennemi027::getX() {
+int Ennemi027::getX()
+{
     return x;
 }
 
-int Ennemi027::getY() {
+int Ennemi027::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi027::getBoundingBox() {
+BoundingBox *Ennemi027::getBoundingBox()
+{
     box.setX(x);
     box.setY(y + 1);
     return &box;

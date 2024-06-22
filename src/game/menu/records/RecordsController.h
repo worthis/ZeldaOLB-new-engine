@@ -16,19 +16,19 @@
 
 #include "Records.h"
 
-class RecordsController {
-    public :
-        RecordsController();
-        ~RecordsController();
+class RecordsController
+{
+public:
+    RecordsController();
+    ~RecordsController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        Records menu;
+private:
+    Records menu;
 };
 
-#endif  // RecordsController.h
+#endif // RecordsController.h

@@ -1,11 +1,14 @@
 #include "Listable.h"
 
-Listable::Listable() {
+Listable::Listable()
+{
 }
 
-Listable::~Listable() {
+Listable::~Listable()
+{
 }
 
-int Listable::compareTo(Listable* other) {
+int Listable::compareTo(Listable *other)
+{
     return 0;
 }

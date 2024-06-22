@@ -15,41 +15,40 @@
 
 #include "../../keys/Action.h"
 
-class Camera {
-    public :
-        Camera();
-        ~Camera();
+class Camera
+{
+public:
+    Camera();
+    ~Camera();
 
-        void setX(int x);
-        void setY(int y);
-        void setW(int w);
-        void setH(int h);
+    void setX(int x);
+    void setY(int y);
+    void setW(int w);
+    void setH(int h);
 
-        void setBox(int x, int y, int w, int h);
-        void setPosition(int x, int y);
+    void setBox(int x, int y, int w, int h);
+    void setPosition(int x, int y);
 
-        void moveTo(int x, int y, int v = 2);
+    void moveTo(int x, int y, int v = 2);
 
-        void setBounds(int x, int y, int w, int h);
+    void setBounds(int x, int y, int w, int h);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void handleAction(Action* action, int x, int y);
-        void loop();
+    void handleAction(Action *action, int x, int y);
+    void loop();
 
-        bool isManuel();
-        void setManuel(bool b);
+    bool isManuel();
+    void setManuel(bool b);
 
-    private :
+private:
+    int vitesse;
+    int targetX;
+    int targetY;
+    bool manuel;
 
-        int vitesse;
-        int targetX;
-        int targetY;
-        bool manuel;
-
-        BoundingBox box;
-        BoundingBox bounds;
-
+    BoundingBox box;
+    BoundingBox bounds;
 };
 
-#endif  // Camera.h
+#endif // Camera.h

@@ -15,18 +15,19 @@
 #include "../engine/texts/TextConfiguration.h"
 #include "../engine/resources/WImage.h"
 
-class TextHelper : public TextConfiguration {
-    public :
-        TextHelper();
-        ~TextHelper();
+class TextHelper : public TextConfiguration
+{
+public:
+    TextHelper();
+    ~TextHelper();
 
-        void setLanguage(int i);
+    void setLanguage(int i);
 
-        string getVariableValue(int textId, int varId);
-        string getCommonValue(string tag);
+    string getVariableValue(int textId, int varId);
+    string getCommonValue(string tag);
 
-    private :
-        WImage* image;
+private:
+    WImage *image;
 };
 
-#endif  // TextHelper.h
+#endif // TextHelper.h

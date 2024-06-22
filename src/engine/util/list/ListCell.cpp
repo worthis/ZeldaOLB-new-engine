@@ -1,40 +1,54 @@
 #include "ListCell.h"
 
-ListCell::ListCell(Listable* obj) : content(obj), next(0) {
+ListCell::ListCell(Listable *obj) : content(obj), next(0)
+{
 }
 
-ListCell::~ListCell() {
+ListCell::~ListCell()
+{
     // we don't delete content when we delete the cell
     delete next;
 }
 
-int ListCell::compareTo(ListCell* other) {
-    if (content == 0 || other->content == 0) return 0;
+int ListCell::compareTo(ListCell *other)
+{
+    if (content == 0 || other->content == 0)
+        return 0;
     return content->compareTo(other->content);
 }
 
-void ListCell::add(ListCell* obj) {
-    if (obj == 0) {
+void ListCell::add(ListCell *obj)
+{
+    if (obj == 0)
+    {
         return;
     }
-    if (next == 0) {
+    if (next == 0)
+    {
         next = obj;
-    } else if (next->compareTo(obj) < 0) {
-        ListCell* tmp = obj->next;
+    }
+    else if (next->compareTo(obj) < 0)
+    {
+        ListCell *tmp = obj->next;
         obj->next = next;
         next = obj;
         next->add(tmp);
-    } else {
+    }
+    else
+    {
         next->add(obj);
     }
 }
 
-bool ListCell::remove(Listable* obj) {
-    if (next == 0) {
+bool ListCell::remove(Listable *obj)
+{
+    if (next == 0)
+    {
         return false;
     }
-    if (next->content == obj) {
-        ListCell* tmp = next->next;
+    if (next->content == obj)
+    {
+        ListCell *tmp = next->next;
         next->cleanNext();
         delete next;
         next = tmp;
@@ -43,34 +57,45 @@ bool ListCell::remove(Listable* obj) {
     return next->remove(obj);
 }
 
-void ListCell::merge(ListCell* obj) {
-    if (obj == 0) {
+void ListCell::merge(ListCell *obj)
+{
+    if (obj == 0)
+    {
         return;
     }
-    if (next == 0) {
+    if (next == 0)
+    {
         next = obj;
-    } else if (next->compareTo(obj) < 0) {
-        ListCell* tmp = obj->next;
+    }
+    else if (next->compareTo(obj) < 0)
+    {
+        ListCell *tmp = obj->next;
         obj->next = next;
         next = obj;
         next->merge(tmp);
-    } else {
+    }
+    else
+    {
         next->merge(obj);
     }
 }
 
-Listable* ListCell::getContent() {
+Listable *ListCell::getContent()
+{
     return content;
 }
 
-ListCell* ListCell::getNext() {
+ListCell *ListCell::getNext()
+{
     return next;
 }
 
-void ListCell::setNext(ListCell* obj) {
+void ListCell::setNext(ListCell *obj)
+{
     next = obj;
 }
 
-void ListCell::cleanNext() {
+void ListCell::cleanNext()
+{
     next = 0;
 }

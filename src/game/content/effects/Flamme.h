@@ -21,34 +21,34 @@
 
 #include "../types/Effect.h"
 
-class Flamme : public Effect {
-    public :
-        Flamme(int x, int y, Direction direction);
-        ~Flamme();
+class Flamme : public Effect
+{
+public:
+    Flamme(int x, int y, Direction direction);
+    ~Flamme();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        void slide(int dx, int dy);
+    void slide(int dx, int dy);
 
-    private :
+private:
+    int x;
+    int y;
+    Direction direction;
 
-        int x;
-        int y;
-        Direction direction;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    BoundingBox box;
 
-        BoundingBox box;
+    WImage *image;
 
-        WImage* image;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Flamme.h
+#endif // Flamme.h

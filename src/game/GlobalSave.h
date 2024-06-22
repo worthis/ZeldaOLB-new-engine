@@ -13,39 +13,39 @@
 
 #include "Save.h"
 
-class GlobalSave {
-    public :
-        static GlobalSave* getInstance();
+class GlobalSave
+{
+public:
+    static GlobalSave *getInstance();
 
-        void save();
-        void erase();
+    void save();
+    void erase();
 
-        void update(Save* save, bool endGame);
+    void update(Save *save, bool endGame);
 
-        bool isFullROTH();
-        bool isUltimeROTH();
-        bool isRushROTH();
-        bool isFullOLB();
-        bool isUltimeOLB();
-        bool isRushOLB();
-        int getBestTime();
+    bool isFullROTH();
+    bool isUltimeROTH();
+    bool isRushROTH();
+    bool isFullOLB();
+    bool isUltimeOLB();
+    bool isRushOLB();
+    int getBestTime();
 
-    private :
-        GlobalSave();
-        ~GlobalSave();
-        static GlobalSave instance;
+private:
+    GlobalSave();
+    ~GlobalSave();
+    static GlobalSave instance;
 
-        void init();
-        void load();
+    void init();
+    void load();
 
-        bool fullROTH;
-        bool rushROTH;
-        bool ultimeROTH;
-        bool fullOLB;
-        bool rushOLB;
-        bool ultimeOLB;
-        int bestTime;
-
+    bool fullROTH;
+    bool rushROTH;
+    bool ultimeROTH;
+    bool fullOLB;
+    bool rushOLB;
+    bool ultimeOLB;
+    int bestTime;
 };
 
-#endif  // GlobalSave.h
+#endif // GlobalSave.h

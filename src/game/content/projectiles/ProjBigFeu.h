@@ -13,31 +13,31 @@
 
 #include "../types/Projectile.h"
 
-class ProjBigFeu : public Projectile {
-    public :
-        ProjBigFeu(int x, int y, double dx, double dy);
-        ~ProjBigFeu();
+class ProjBigFeu : public Projectile
+{
+public:
+    ProjBigFeu(int x, int y, double dx, double dy);
+    ~ProjBigFeu();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getX();
-        int getY();
-        int getDown();
+    int getX();
+    int getY();
+    int getDown();
 
-        void renvoie(Direction dir);
+    void renvoie(Direction dir);
 
-    private :
-
-        int speed;
-        double dx;
-        double dy;
-        int force;
-        double longX;
-        double longY;
-        bool retour;
+private:
+    int speed;
+    double dx;
+    double dy;
+    int force;
+    double longX;
+    double longY;
+    bool retour;
 };
 
-#endif  // ProjBigFeu.h
+#endif // ProjBigFeu.h

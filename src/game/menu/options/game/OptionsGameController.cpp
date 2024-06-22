@@ -1,19 +1,24 @@
 #include "OptionsGameController.h"
 
-OptionsGameController::OptionsGameController() {
+OptionsGameController::OptionsGameController()
+{
 }
 
-OptionsGameController::~OptionsGameController() {
+OptionsGameController::~OptionsGameController()
+{
 }
 
-void OptionsGameController::launch() {
+void OptionsGameController::launch()
+{
     menu.init();
 }
 
-void OptionsGameController::handleEvents(Event* event) {
+void OptionsGameController::handleEvents(Event *event)
+{
     menu.handleEvents(event);
 }
 
-void OptionsGameController::draw() {
+void OptionsGameController::draw()
+{
     menu.draw();
 }

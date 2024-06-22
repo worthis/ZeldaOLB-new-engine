@@ -16,19 +16,20 @@
 
 #include "Title.h"
 
-class TitleController {
-    public :
-        TitleController();
-        ~TitleController();
+class TitleController
+{
+public:
+    TitleController();
+    ~TitleController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
 
-    private :
-        Title title;
+private:
+    Title title;
 };
 
-#endif  // TitleController.h
+#endif // TitleController.h

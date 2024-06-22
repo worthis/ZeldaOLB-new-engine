@@ -15,20 +15,20 @@
 
 #include "../link/Link.h"
 
-class ProjectileHelper {
-    public :
-        static ProjectileHelper* getInstance();
+class ProjectileHelper
+{
+public:
+    static ProjectileHelper *getInstance();
 
-        void addProjectile(TypeProjectile type, int x, int y, Direction dir);
-        void addProjectile(TypeProjectile type, int x, int y, double dx, double dy, BoundingBox* box = 0);
-        void addProjectile(TypeProjectile type, int x, int y, Link* link);
+    void addProjectile(TypeProjectile type, int x, int y, Direction dir);
+    void addProjectile(TypeProjectile type, int x, int y, double dx, double dy, BoundingBox *box = 0);
+    void addProjectile(TypeProjectile type, int x, int y, Link *link);
 
-    private :
-        ProjectileHelper();
-        ~ProjectileHelper();
+private:
+    ProjectileHelper();
+    ~ProjectileHelper();
 
-        static ProjectileHelper instance;
-
+    static ProjectileHelper instance;
 };
 
-#endif  // ProjectileHelper.h
+#endif // ProjectileHelper.h

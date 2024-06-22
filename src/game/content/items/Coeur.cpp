@@ -3,7 +3,8 @@
 #include "../../../engine/resources/ResourceManager.h"
 #include "../../../engine/window/WindowManager.h"
 
-Coeur::Coeur(int i, int j, int num, bool withAnim) : id(num) {
+Coeur::Coeur(int i, int j, int num, bool withAnim) : id(num)
+{
 
     x = i;
     y = j - 10;
@@ -24,15 +25,20 @@ Coeur::Coeur(int i, int j, int num, bool withAnim) : id(num) {
     ready = !withAnim;
 }
 
-Coeur::~Coeur() {
+Coeur::~Coeur()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Coeur::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
+void Coeur::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
             anim++;
-            if (anim > animMax) {
+            if (anim > animMax)
+            {
                 ready = true;
             }
             chrono.reset();
@@ -40,34 +46,45 @@ void Coeur::loop() {
     }
 }
 
-void Coeur::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Coeur::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-
-    if (ready) {
+    if (ready)
+    {
         dstY += 10;
-    } else {
-        if (anim <= 10) dstY += anim;
-        else if (anim <= 14) dstY += 10 - (anim - 10);
-        else if (anim <= 18) dstY += 6 + (anim - 14);
-        else dstY += 10;
+    }
+    else
+    {
+        if (anim <= 10)
+            dstY += anim;
+        else if (anim <= 14)
+            dstY += 10 - (anim - 10);
+        else if (anim <= 18)
+            dstY += 6 + (anim - 14);
+        else
+            dstY += 10;
     }
 
     WindowManager::getInstance()->draw(image, 24, 3, 6, 4, dstX + 4, y - offsetY + 21);
     WindowManager::getInstance()->draw(image, 30, 0, 14, 13, dstX, dstY);
 }
 
-void Coeur::action() {
-    if (!ready) return;
+void Coeur::action()
+{
+    if (!ready)
+        return;
     getLink()->trouveObjet(TI_COEUR, id);
     alive = false;
 }
 
-bool Coeur::isPickable() {
+bool Coeur::isPickable()
+{
     return false;
 }

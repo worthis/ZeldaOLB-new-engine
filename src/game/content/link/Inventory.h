@@ -16,70 +16,70 @@
 
 #include "../../Save.h"
 
-class Inventory {
-    public :
-        Inventory(Save* save);
-        ~Inventory();
+class Inventory
+{
+public:
+    Inventory(Save *save);
+    ~Inventory();
 
-        void saveData(Save* save);
+    void saveData(Save *save);
 
-        void draw(Equipment e, int x, int y);
+    void draw(Equipment e, int x, int y);
 
-        void setObject(Equipment e, int value = 1);
+    void setObject(Equipment e, int value = 1);
 
-        bool hasObject(Equipment e);
+    bool hasObject(Equipment e);
 
-        bool hasObject();
+    bool hasObject();
 
-        Equipment getCurrent();
+    Equipment getCurrent();
 
-        void setCurrent(Equipment e);
+    void setCurrent(Equipment e);
 
-        bool hasQuartCoeur(int i);
+    bool hasQuartCoeur(int i);
 
-        void setQuartCoeur(int i, int value = 1);
+    void setQuartCoeur(int i, int value = 1);
 
-        int nbQuartCoeur();
+    int nbQuartCoeur();
 
-        int totalQuartCoeur();
+    int totalQuartCoeur();
 
-        bool hasCoeur(int i);
+    bool hasCoeur(int i);
 
-        void setCoeur(int i, int value = 1);
+    void setCoeur(int i, int value = 1);
 
-        void setGraal(int i, int value = 1);
+    void setGraal(int i, int value = 1);
 
-        bool hasGraal(int i);
+    bool hasGraal(int i);
 
-        int nbGraals();
+    int nbGraals();
 
-        int getFlacon(int i);
+    int getFlacon(int i);
 
-        void setFlacon(int i, int value);
+    void setFlacon(int i, int value);
 
-        int getCurrentFlacon();
+    int getCurrentFlacon();
 
-        void setCurrentFlacon(int value);
+    void setCurrentFlacon(int value);
 
-    private :
+private:
+    void loadFromSave(Save *save);
 
-        void loadFromSave(Save* save);
+    void drawFlacon(int x, int y, int value);
 
-        void drawFlacon(int x, int y, int value);
+    int equipment[NB_EQPMT];
 
-        int equipment[NB_EQPMT];
+    Equipment current;
 
-        Equipment current;
+    WImage *inventaire;
 
-        WImage* inventaire;
+    int quartCoeur[NB_QUART_COEUR];
 
-        int quartCoeur[NB_QUART_COEUR];
+    int coeur[NB_COEUR];
 
-        int coeur[NB_COEUR];
+    int graals[NB_GRAALS];
 
-        int graals[NB_GRAALS];
-
-        int flacons[NB_FLACON];
+    int flacons[NB_FLACON];
 };
 
-#endif  // Inventory.h
+#endif // Inventory.h

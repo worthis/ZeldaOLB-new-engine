@@ -1,53 +1,67 @@
 #include "Camera.h"
 
-Camera::Camera() : vitesse(0), targetX(0), targetY(0), manuel(false) {
+Camera::Camera() : vitesse(0), targetX(0), targetY(0), manuel(false)
+{
 }
 
-Camera::~Camera() {
+Camera::~Camera()
+{
 }
 
-void Camera::setX(int x) {
-    if (x < bounds.getX()) {
+void Camera::setX(int x)
+{
+    if (x < bounds.getX())
+    {
         x = bounds.getX();
     }
-    if (x + box.getW() > bounds.getX() + bounds.getW()) {
+    if (x + box.getW() > bounds.getX() + bounds.getW())
+    {
         x = bounds.getX() + bounds.getW() - box.getW();
     }
     box.setX(x);
 }
 
-void Camera::setY(int y) {
-    if (y < bounds.getY()) {
+void Camera::setY(int y)
+{
+    if (y < bounds.getY())
+    {
         y = bounds.getY();
     }
-    if (y + box.getH() > bounds.getY() + bounds.getH()) {
+    if (y + box.getH() > bounds.getY() + bounds.getH())
+    {
         y = bounds.getY() + bounds.getH() - box.getH();
     }
     box.setY(y);
 }
 
-void Camera::setW(int w) {
-    if (w > bounds.getW()) {
+void Camera::setW(int w)
+{
+    if (w > bounds.getW())
+    {
         w = bounds.getW();
     }
     box.setW(w);
 }
 
-void Camera::setH(int h) {
-    if (h > bounds.getH()) {
+void Camera::setH(int h)
+{
+    if (h > bounds.getH())
+    {
         h = bounds.getH();
     }
     box.setH(h);
 }
 
-void Camera::setBox(int x, int y, int w, int h) {
+void Camera::setBox(int x, int y, int w, int h)
+{
     setW(w);
     setH(h);
     setX(x);
     setY(y);
 }
 
-void Camera::setPosition(int x, int y) {
+void Camera::setPosition(int x, int y)
+{
     x -= box.getW() / 2;
     y -= box.getH() / 2;
     setX(x);
@@ -57,20 +71,25 @@ void Camera::setPosition(int x, int y) {
     targetY = 0;
 }
 
-void Camera::moveTo(int x, int y, int v) {
+void Camera::moveTo(int x, int y, int v)
+{
     x -= box.getW() / 2;
     y -= box.getH() / 2;
 
-    if (x < bounds.getX()) {
+    if (x < bounds.getX())
+    {
         x = bounds.getX();
     }
-    if (x + box.getW() > bounds.getX() + bounds.getW()) {
+    if (x + box.getW() > bounds.getX() + bounds.getW())
+    {
         x = bounds.getX() + bounds.getW() - box.getW();
     }
-    if (y < bounds.getY()) {
+    if (y < bounds.getY())
+    {
         y = bounds.getY();
     }
-    if (y + box.getH() > bounds.getY() + bounds.getH()) {
+    if (y + box.getH() > bounds.getY() + bounds.getH())
+    {
         y = bounds.getY() + bounds.getH() - box.getH();
     }
     vitesse = v;
@@ -78,90 +97,125 @@ void Camera::moveTo(int x, int y, int v) {
     targetY = y;
 }
 
-void Camera::setBounds(int x, int y, int w, int h) {
+void Camera::setBounds(int x, int y, int w, int h)
+{
     bounds.setX(x);
     bounds.setY(y);
     bounds.setW(w);
     bounds.setH(h);
 }
 
-BoundingBox* Camera::getBoundingBox() {
+BoundingBox *Camera::getBoundingBox()
+{
     return &box;
 }
 
-void Camera::handleAction(Action* action, int i, int j) {
+void Camera::handleAction(Action *action, int i, int j)
+{
     i -= (box.getW() / 2);
     j -= (box.getH() / 2);
     int x = box.getX();
     int y = box.getY();
-    if (action->isAction(UP)) y-=2;
-    if (action->isAction(DOWN)) y+=2;
-    if (action->isAction(LEFT)) x-=2;
-    if (action->isAction(RIGHT)) x+=2;
+    if (action->isAction(UP))
+        y -= 2;
+    if (action->isAction(DOWN))
+        y += 2;
+    if (action->isAction(LEFT))
+        x -= 2;
+    if (action->isAction(RIGHT))
+        x += 2;
 
     int maxDist = 64;
-    if (y < j - maxDist) y = j - maxDist;
-    if (y > j + maxDist) y = j + maxDist;
-    if (x < i - maxDist) x = i - maxDist;
-    if (x > i + maxDist) x = i + maxDist;
+    if (y < j - maxDist)
+        y = j - maxDist;
+    if (y > j + maxDist)
+        y = j + maxDist;
+    if (x < i - maxDist)
+        x = i - maxDist;
+    if (x > i + maxDist)
+        x = i + maxDist;
 
     setX(x);
     setY(y);
 }
 
-void Camera::loop() {
-    if (vitesse > 0) {
+void Camera::loop()
+{
+    if (vitesse > 0)
+    {
 
         int oldX = box.getX();
         int diffX = targetX - box.getX();
-        if (diffX > 0) {
-            if (diffX < vitesse) {
+        if (diffX > 0)
+        {
+            if (diffX < vitesse)
+            {
                 setX(targetX);
-            } else {
+            }
+            else
+            {
                 setX(oldX + vitesse);
             }
-        } else if (diffX < 0) {
-            if (diffX > -vitesse) {
+        }
+        else if (diffX < 0)
+        {
+            if (diffX > -vitesse)
+            {
                 setX(targetX);
-            } else {
+            }
+            else
+            {
                 setX(oldX - vitesse);
             }
         }
 
         int oldY = box.getY();
         int diffY = targetY - box.getY();
-        if (diffY > 0) {
-            if (diffY < vitesse) {
+        if (diffY > 0)
+        {
+            if (diffY < vitesse)
+            {
                 setY(targetY);
-            } else {
+            }
+            else
+            {
                 setY(oldY + vitesse);
             }
-        } else if (diffY < 0) {
-            if (diffY > -vitesse) {
+        }
+        else if (diffY < 0)
+        {
+            if (diffY > -vitesse)
+            {
                 setY(targetY);
-            } else {
+            }
+            else
+            {
                 setY(oldY - vitesse);
             }
         }
 
-
-        if (diffX != 0 && oldX == box.getX()) {
+        if (diffX != 0 && oldX == box.getX())
+        {
             targetX = box.getX();
         }
-        if (diffY != 0 && oldY == box.getY()) {
+        if (diffY != 0 && oldY == box.getY())
+        {
             targetY = box.getY();
         }
 
-        if (box.getX() == targetX && box.getY() == targetY) {
+        if (box.getX() == targetX && box.getY() == targetY)
+        {
             vitesse = 0;
         }
     }
 }
 
-bool Camera::isManuel() {
+bool Camera::isManuel()
+{
     return manuel;
 }
 
-void Camera::setManuel(bool b) {
+void Camera::setManuel(bool b)
+{
     manuel = b;
 }

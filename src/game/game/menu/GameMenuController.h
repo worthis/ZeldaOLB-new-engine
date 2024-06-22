@@ -16,23 +16,24 @@
 
 #include "Menu.h"
 
-class GameMenuController {
-    public :
-        GameMenuController();
-        ~GameMenuController();
+class GameMenuController
+{
+public:
+    GameMenuController();
+    ~GameMenuController();
 
-        void init();
+    void init();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        Menu* getMenu();
+    Menu *getMenu();
 
-    private :
-        Menu menu;
+private:
+    Menu menu;
 };
 
-#endif  // GameMenuController.h
+#endif // GameMenuController.h

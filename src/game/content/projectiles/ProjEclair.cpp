@@ -7,7 +7,8 @@
 
 #include "../../MainController.h"
 
-ProjEclair::ProjEclair(int i, int j) {
+ProjEclair::ProjEclair(int i, int j)
+{
     x = i - 41;
     y = j;
 
@@ -30,22 +31,27 @@ ProjEclair::ProjEclair(int i, int j) {
     image = ResourceManager::getInstance()->loadImage("data/images/projectiles/eclair.png", true);
 }
 
-ProjEclair::~ProjEclair() {
+ProjEclair::~ProjEclair()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void ProjEclair::projLoop() {
-    if (!alive) {
+void ProjEclair::projLoop()
+{
+    if (!alive)
+    {
         return;
     }
 
-    Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+    Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
 
     scene->testDegatOnLink(getBoundingBox(), direction, force, TA_MAGIC, TE_ELECTRIC);
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
             alive = false;
         }
@@ -53,8 +59,10 @@ void ProjEclair::projLoop() {
     }
 }
 
-void ProjEclair::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void ProjEclair::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -64,10 +72,11 @@ void ProjEclair::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, anim * width, 0, width, height, dstX, dstY);
 }
 
-BoundingBox* ProjEclair::getBoundingBox() {
+BoundingBox *ProjEclair::getBoundingBox()
+{
     return &box;
 }
 
-int ProjEclair::getX() {return x;}
-int ProjEclair::getY() {return y;}
-int ProjEclair::getDown() {return y + 240;}
+int ProjEclair::getX() { return x; }
+int ProjEclair::getY() { return y; }
+int ProjEclair::getDown() { return y + 240; }

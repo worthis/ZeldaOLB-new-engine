@@ -16,19 +16,19 @@
 
 #include "OptionsAudio.h"
 
-class OptionsAudioController {
-    public :
-        OptionsAudioController();
-        ~OptionsAudioController();
+class OptionsAudioController
+{
+public:
+    OptionsAudioController();
+    ~OptionsAudioController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        OptionsAudio audio;
+private:
+    OptionsAudio audio;
 };
 
-#endif  // OptionsAudioController.h
+#endif // OptionsAudioController.h

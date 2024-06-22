@@ -2,36 +2,45 @@
 
 #include "../../MainController.h"
 
-SceneController::SceneController() {
+SceneController::SceneController()
+{
 }
 
-SceneController::~SceneController() {
+SceneController::~SceneController()
+{
 }
 
-void SceneController::launch(Save* sv) {
+void SceneController::launch(Save *sv)
+{
     scene.init(sv);
 }
 
-void SceneController::handleActions(Action* action) {
+void SceneController::handleActions(Action *action)
+{
     scene.handleActions(action);
 }
 
-void SceneController::loop() {
+void SceneController::loop()
+{
     scene.loop();
 }
 
-void SceneController::draw() {
+void SceneController::draw()
+{
     scene.draw();
 }
 
-Scene* SceneController::getScene() {
+Scene *SceneController::getScene()
+{
     return &scene;
 }
 
-void SceneController::setStep(SceneStep s) {
+void SceneController::setStep(SceneStep s)
+{
     scene.setStep(s);
 }
 
-void SceneController::saveData() {
+void SceneController::saveData()
+{
     scene.saveData();
 }

@@ -1,19 +1,24 @@
 #include "WResource.h"
 
-WResource::WResource() : count(0), name("") {
+WResource::WResource() : count(0), name("")
+{
 }
 
-WResource::~WResource() {
+WResource::~WResource()
+{
 }
 
-string WResource::getName() {
+string WResource::getName()
+{
     return name;
 }
 
-void WResource::load() {
+void WResource::load()
+{
     count++;
 }
 
-int WResource::unload() {
+int WResource::unload()
+{
     return --count;
 }

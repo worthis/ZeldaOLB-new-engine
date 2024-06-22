@@ -16,14 +16,15 @@
 #include "../common/Common.h"
 #include "WResource.h"
 
-class WSound : public WResource {
-    public :
-        WSound(string filename);
-        ~WSound();
-        FSOUND_SAMPLE* getSound();
-    private :
-        FSOUND_SAMPLE* sound;
+class WSound : public WResource
+{
+public:
+    WSound(string filename);
+    ~WSound();
+    FSOUND_SAMPLE *getSound();
+
+private:
+    FSOUND_SAMPLE *sound;
 };
 
-#endif  // WSound.h
-
+#endif // WSound.h

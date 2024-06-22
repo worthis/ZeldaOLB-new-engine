@@ -17,41 +17,41 @@
 
 class Map;
 
-class Ennemi024 : public Ennemi {
-    public :
-        Ennemi024(int x, int y, bool water);
-        ~Ennemi024();
+class Ennemi024 : public Ennemi
+{
+public:
+    Ennemi024(int x, int y, bool water);
+    ~Ennemi024();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void reset();
-        bool isResetable();
+    void reset();
+    bool isResetable();
 
-        bool isToAvoid(Collision c);
+    bool isToAvoid(Collision c);
 
-    private :
+private:
+    void moveX(int dx);
+    void moveY(int dy);
 
-        void moveX(int dx);
-        void moveY(int dy);
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    WImage *image;
 
-        WImage* image;
+    Chrono chrono;
 
-        Chrono chrono;
+    BoundingBox box;
 
-        BoundingBox box;
-
-        bool inWater;
-        int vitesse;
+    bool inWater;
+    int vitesse;
 };
 
-#endif  // Ennemi024.h
+#endif // Ennemi024.h

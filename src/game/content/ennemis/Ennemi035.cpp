@@ -12,7 +12,8 @@
 
 #include "../effects/FumeeBlanche.h"
 
-Ennemi035::Ennemi035(int i, int j) : anim(0), animMax(3), vanim(180) {
+Ennemi035::Ennemi035(int i, int j) : anim(0), animMax(3), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi35.png", true);
     chrono.reset();
 
@@ -28,8 +29,8 @@ Ennemi035::Ennemi035(int i, int j) : anim(0), animMax(3), vanim(180) {
     width = 32;
     height = 32;
 
-    box.setX(x+8);
-    box.setY(y+16);
+    box.setX(x + 8);
+    box.setY(y + 16);
     box.setW(16);
     box.setH(16);
 
@@ -47,11 +48,13 @@ Ennemi035::Ennemi035(int i, int j) : anim(0), animMax(3), vanim(180) {
     forceEnn = 4;
 }
 
-Ennemi035::~Ennemi035() {
+Ennemi035::~Ennemi035()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi035::reset() {
+void Ennemi035::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -63,16 +66,19 @@ void Ennemi035::reset() {
     checkPosition();
 }
 
-bool Ennemi035::isResetable() {
+bool Ennemi035::isResetable()
+{
     return alive;
 }
 
-void Ennemi035::ennLoop() {
+void Ennemi035::ennLoop()
+{
 
-    if (moving) {
+    if (moving)
+    {
 
         // retrieve target position ( = link ^^)
-        Link* link = getLink();
+        Link *link = getLink();
 
         int dstX = link->getX() + 8;
         int dstY = link->getY() + 24;
@@ -82,24 +88,33 @@ void Ennemi035::ennLoop() {
         move(dir.first, dir.second);
 
         testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL);
-
-    } else {
+    }
+    else
+    {
         testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL);
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
-        if (!gel) anim++;
-        if (anim > animMax) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
+        if (!gel)
+            anim++;
+        if (anim > animMax)
+        {
             anim = 0;
         }
-        if (beforeMove > 0) {
+        if (beforeMove > 0)
+        {
             beforeMove--;
-            if (beforeMove == 0) {
+            if (beforeMove == 0)
+            {
                 moving = 1;
             }
-        } else if (moving < 12) {
+        }
+        else if (moving < 12)
+        {
             moving++;
-            if (moving == 12) {
+            if (moving == 12)
+            {
                 moving = 0;
                 beforeMove = 4;
             }
@@ -108,8 +123,10 @@ void Ennemi035::ennLoop() {
     }
 }
 
-void Ennemi035::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi035::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -117,21 +134,25 @@ void Ennemi035::draw(int offsetX, int offsetY) {
     int dstY = y - offsetY;
 
     int anim2 = anim;
-    if (anim2 > 2) anim2 = 1;
+    if (anim2 > 2)
+        anim2 = 1;
 
     WindowManager::getInstance()->draw(image, anim2 * width, 0, width, height, dstX, dstY);
 }
 
-int Ennemi035::getX() {
+int Ennemi035::getX()
+{
     return x;
 }
 
-int Ennemi035::getY() {
+int Ennemi035::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi035::getBoundingBox() {
-    box.setX(x+8);
-    box.setY(y+16);
+BoundingBox *Ennemi035::getBoundingBox()
+{
+    box.setX(x + 8);
+    box.setY(y + 16);
     return &box;
 }

@@ -18,26 +18,26 @@
 
 #include "../../keys/Action.h"
 
-class Final {
-    public :
-        Final();
-        ~Final();
+class Final
+{
+public:
+    Final();
+    ~Final();
 
-        void init();
+    void init();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        Chrono chrono;
-
-        WImage* images[30];
+    WImage *images[30];
 };
 
-#endif  // Final.h
+#endif // Final.h

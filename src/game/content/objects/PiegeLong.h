@@ -15,40 +15,40 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class PiegeLong : public Object {
-    public :
-        PiegeLong(int x, int y, Direction dir);
-        ~PiegeLong();
+class PiegeLong : public Object
+{
+public:
+    PiegeLong(int x, int y, Direction dir);
+    ~PiegeLong();
 
-        void loop();
+    void loop();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-        Direction getDirection();
+    Direction getDirection();
 
-    private :
+private:
+    void moveY(int dy);
 
-        void moveY(int dy);
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        Chrono chrono;
+    Direction direction;
 
-        Direction direction;
+    int x0;
+    int y0;
+    int y1;
+    Direction dir0;
 
-        int x0;
-        int y0;
-        int y1;
-        Direction dir0;
-
-        int force;
+    int force;
 };
 
-#endif  // PiegeLong.h
+#endif // PiegeLong.h

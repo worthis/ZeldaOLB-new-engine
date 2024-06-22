@@ -13,20 +13,19 @@
 
 #include "../types/Item.h"
 
-class PetiteCle : public Item {
-    public :
-        PetiteCle(int x, int y, int id, bool withAnim);
-        ~PetiteCle();
+class PetiteCle : public Item
+{
+public:
+    PetiteCle(int x, int y, int id, bool withAnim);
+    ~PetiteCle();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
+    void action();
 
-    private :
-
-        int id;
-
+private:
+    int id;
 };
 
-#endif  // PetiteCle.h
+#endif // PetiteCle.h

@@ -16,48 +16,49 @@
 #include "AudioHelper.h"
 #include "TextHelper.h"
 
-class ConfigurationManager {
-    public :
-        static ConfigurationManager* getInstance();
+class ConfigurationManager
+{
+public:
+    static ConfigurationManager *getInstance();
 
-        void init(string filename, string keys, string joystick);
+    void init(string filename, string keys, string joystick);
 
-        void initTexts();
+    void initTexts();
 
-        void save();
+    void save();
 
-        bool isFrench();
-        string getSkinName();
+    bool isFrench();
+    string getSkinName();
 
-        int getVolume();
-        int getVolson();
-        int getLang();
-        int getSkin();
-        bool isFull();
+    int getVolume();
+    int getVolson();
+    int getLang();
+    int getSkin();
+    bool isFull();
 
-        void setVolume(int v);
-        void setVolson(int v);
-        void setLang(int l);
-        void setSkin(int s);
-        void setFull(bool f);
+    void setVolume(int v);
+    void setVolson(int v);
+    void setLang(int l);
+    void setSkin(int s);
+    void setFull(bool f);
 
-        void close();
+    void close();
 
-    private :
-        ConfigurationManager();
-        ~ConfigurationManager();
-        static ConfigurationManager instance;
+private:
+    ConfigurationManager();
+    ~ConfigurationManager();
+    static ConfigurationManager instance;
 
-        bool haveToSave;
-        string file;
-        int volume;
-        int volson;
-        int lang;
-        int skin;
-        bool full;
+    bool haveToSave;
+    string file;
+    int volume;
+    int volson;
+    int lang;
+    int skin;
+    bool full;
 
-        AudioHelper* audio;
-        TextHelper* text;
+    AudioHelper *audio;
+    TextHelper *text;
 };
 
-#endif  // ConfigurationManager.h
+#endif // ConfigurationManager.h

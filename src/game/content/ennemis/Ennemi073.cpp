@@ -12,7 +12,8 @@
 
 #include "../helper/ProjectileHelper.h"
 
-Ennemi073::Ennemi073(int i, int j, Map* map) : anim(0), animMax(3), vanim(180), cooldown(1) {
+Ennemi073::Ennemi073(int i, int j, Map *map) : anim(0), animMax(3), vanim(180), cooldown(1)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi73.png", true);
     chrono.reset();
 
@@ -35,10 +36,13 @@ Ennemi073::Ennemi073(int i, int j, Map* map) : anim(0), animMax(3), vanim(180), 
     tail.setW(16);
     tail.setH(112);
 
-    if (map != 0) {
-        otherBoss = new Ennemi074(200*16-104, 240-152);
+    if (map != 0)
+    {
+        otherBoss = new Ennemi074(200 * 16 - 104, 240 - 152);
         map->addEnnemi(otherBoss);
-    } else {
+    }
+    else
+    {
         otherBoss = 0;
     }
 
@@ -53,42 +57,51 @@ Ennemi073::Ennemi073(int i, int j, Map* map) : anim(0), animMax(3), vanim(180), 
     forceEnn = 24;
 }
 
-Ennemi073::~Ennemi073() {
+Ennemi073::~Ennemi073()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi073::reset() {
+void Ennemi073::reset()
+{
     Ennemi::reset();
     chrono.reset();
     anim = 0;
     cooldown = 1;
 }
 
-bool Ennemi073::isResetable() {
+bool Ennemi073::isResetable()
+{
     return alive;
 }
 
-void Ennemi073::ennLoop() {
+void Ennemi073::ennLoop()
+{
 
     testDegatOnLink(getBoundingBox(), direction, forceEnn, TA_PHYSIC, TE_NORMAL);
     testDegatOnLink(getBoundingBoxTail(), direction, forceEnn, TA_PHYSIC, TE_NORMAL);
 
-    if (y < 240) {
+    if (y < 240)
+    {
         y++;
         checkPosition();
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
-        //if (y < 0) y++;
+    if (chrono.getElapsedTime() >= vanim)
+    {
+        // if (y < 0) y++;
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
-            if (y == 240) cooldown++;
+            if (y == 240)
+                cooldown++;
         }
-        if (cooldown == 4) {
+        if (cooldown == 4)
+        {
 
             // retrieve target position ( = link ^^)
-            Link* link = getLink();
+            Link *link = getLink();
 
             int dstX = link->getX() + 8;
             int dstY = link->getY() + 24;
@@ -104,21 +117,36 @@ void Ennemi073::ennLoop() {
             double coef1 = 0;
             double coef2 = 0;
 
-            if ((destx-origx) == 0) {anglx=0; angly=12;}
-            else if ((desty-origy) == 0) {anglx=12; angly=0;}
-            else {
-                coef1=((double)(desty-origy))/((double)(destx-origx));
-                coef2=((double)(destx-origx))/((double)(desty-origy));
-                anglx=(sqrt(12/(1+(coef1*coef1))));
-                angly=(sqrt(12/(1+(coef2*coef2))));
+            if ((destx - origx) == 0)
+            {
+                anglx = 0;
+                angly = 12;
             }
-            if (destx - origx < 0) anglx = -anglx;
-            if (desty - origy < 0) angly = -angly;
+            else if ((desty - origy) == 0)
+            {
+                anglx = 12;
+                angly = 0;
+            }
+            else
+            {
+                coef1 = ((double)(desty - origy)) / ((double)(destx - origx));
+                coef2 = ((double)(destx - origx)) / ((double)(desty - origy));
+                anglx = (sqrt(12 / (1 + (coef1 * coef1))));
+                angly = (sqrt(12 / (1 + (coef2 * coef2))));
+            }
+            if (destx - origx < 0)
+                anglx = -anglx;
+            if (desty - origy < 0)
+                angly = -angly;
 
-            if (anglx>4) anglx=4;
-            if (angly>4) angly=4;
-            if (anglx<-4) anglx=-4;
-            if (angly<-4) angly=-4;
+            if (anglx > 4)
+                anglx = 4;
+            if (angly > 4)
+                angly = 4;
+            if (anglx < -4)
+                anglx = -4;
+            if (angly < -4)
+                angly = -4;
 
             ProjectileHelper::getInstance()->addProjectile(TP_BIG_FEU, origx, origy, anglx, angly);
             AudioManager::getInstance()->playSound(TS_THROW);
@@ -128,59 +156,75 @@ void Ennemi073::ennLoop() {
     }
 }
 
-void Ennemi073::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi073::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (cooldown || anim) {
+    if (cooldown || anim)
+    {
         WindowManager::getInstance()->draw(image, anim * width, 0, width, height, dstX, dstY);
-    } else {
+    }
+    else
+    {
         WindowManager::getInstance()->draw(image, 4 * width, 0, width, height, dstX, dstY);
     }
 }
 
-int Ennemi073::getX() {
+int Ennemi073::getX()
+{
     return x;
 }
 
-int Ennemi073::getY() {
+int Ennemi073::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi073::getBoundingBox() {
+BoundingBox *Ennemi073::getBoundingBox()
+{
     box.setX(x + 36);
     box.setY(y + 38);
     return &box;
 }
 
-BoundingBox* Ennemi073::getBoundingBoxTail() {
+BoundingBox *Ennemi073::getBoundingBoxTail()
+{
     tail.setX(x + 30);
     tail.setY(y + 38);
     return &tail;
 }
 
-bool Ennemi073::hasEffect(TypeAttack type, TypeEffect effect, Direction dir) {
+bool Ennemi073::hasEffect(TypeAttack type, TypeEffect effect, Direction dir)
+{
     return effect == TE_GLACE;
 }
 
-void Ennemi073::afterHit() {
-    if (life < 50 && otherBoss != 0 && otherBoss->getY() == 240-152) {
+void Ennemi073::afterHit()
+{
+    if (life < 50 && otherBoss != 0 && otherBoss->getY() == 240 - 152)
+    {
         otherBoss->start();
         otherBoss = 0;
     }
 }
 
-void Ennemi073::giveItem(int i, int j) {
+void Ennemi073::giveItem(int i, int j)
+{
     AudioManager::getInstance()->playSound(TS_KILLENNEMY);
-    Map* map = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap();
-    if (map->nbEnnemis() == 0) {
+    Map *map = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getMap();
+    if (map->nbEnnemis() == 0)
+    {
         map->addEffect(new FumeeBlanche(i, j));
-        map->addItem(ItemHelper::getInstance()->createItem(TI_COEUR, 190*16+1, 22*16, 10));
-    } else {
+        map->addItem(ItemHelper::getInstance()->createItem(TI_COEUR, 190 * 16 + 1, 22 * 16, 10));
+    }
+    else
+    {
         Ennemi::giveItem(i, j);
     }
 }

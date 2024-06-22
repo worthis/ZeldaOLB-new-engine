@@ -13,30 +13,30 @@
 
 #include "Object.h"
 
-class Poussable : public Object {
-    public :
-        Poussable();
-        virtual ~Poussable() = 0;
+class Poussable : public Object
+{
+public:
+    Poussable();
+    virtual ~Poussable() = 0;
 
-        void loop();
+    void loop();
 
-        virtual void pousse(Direction d, int v = 2) = 0;
+    virtual void pousse(Direction d, int v = 2) = 0;
 
-        int getPoids();
+    int getPoids();
 
-    protected :
+protected:
+    bool isOnWater(BoundingBox *b);
 
-        bool isOnWater(BoundingBox* b);
+    virtual bool isOnGap(BoundingBox *b);
 
-        virtual bool isOnGap(BoundingBox* b);
+    bool moving;
 
-        bool moving;
+    int dx;
 
-        int dx;
+    int dy;
 
-        int dy;
-
-        int poids;
+    int poids;
 };
 
-#endif  // Poussable.h
+#endif // Poussable.h

@@ -8,7 +8,8 @@
 
 #include "../../MainController.h"
 
-Jarre::Jarre(int i, int j, int id, TypeItem it, Map* mp) : type(id), item(it), map(mp) {
+Jarre::Jarre(int i, int j, int id, TypeItem it, Map *mp) : type(id), item(it), map(mp)
+{
     x = i;
     y = j;
     x0 = x;
@@ -31,48 +32,64 @@ Jarre::Jarre(int i, int j, int id, TypeItem it, Map* mp) : type(id), item(it), m
     map->setSol(x, y, 1815 + type, MUR);
 }
 
-Jarre::~Jarre() {
+Jarre::~Jarre()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Jarre::portLoop() {
+void Jarre::portLoop()
+{
     // nothing to do
 }
 
-void Jarre::draw(int offsetX, int offsetY) {
-    if (alive && (carried || moving)) {
+void Jarre::draw(int offsetX, int offsetY)
+{
+    if (alive && (carried || moving))
+    {
         // shadow
-        if (moving) {
+        if (moving)
+        {
             WindowManager::getInstance()->draw(image, 100, 106, 12, 6, x - offsetX + 2, y - offsetY + height - 6);
         }
         WindowManager::getInstance()->draw(image, 112, 16 * type, 16, 16, x - offsetX, y - offsetY);
     }
 }
 
-void Jarre::impact() {
+void Jarre::impact()
+{
     AudioManager::getInstance()->playSound(TS_BREAK);
     map->addEffect(new Debris(x + 8, y + 8, direction, 1));
     alive = false;
 }
 
-void Jarre::onLift() {
-    if (item == TI_INTERRUPTEUR) {
+void Jarre::onLift()
+{
+    if (item == TI_INTERRUPTEUR)
+    {
         map->displayInterruptor(x, y);
         return;
     }
     map->setSol(x0, y0, 1817, PIERRE);
-    if (item != TI_NO_ITEM) {
-        if ((item != TI_RUBIS_VERT && item != TI_RUBIS_BLEU && item != TI_RUBIS_ROUGE)
-            || MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink()->getStatus()->getMaxRupees()) {
-            if (item == TI_CLE) {
-                if (map->getId() == 20) {
-                    if (map->getBounds()->getY() == 240 && !MainController::getInstance()->getGameController()->getSceneController()->getScene()->getCoffre(6, 12)) {
+    if (item != TI_NO_ITEM)
+    {
+        if ((item != TI_RUBIS_VERT && item != TI_RUBIS_BLEU && item != TI_RUBIS_ROUGE) || MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink()->getStatus()->getMaxRupees())
+        {
+            if (item == TI_CLE)
+            {
+                if (map->getId() == 20)
+                {
+                    if (map->getBounds()->getY() == 240 && !MainController::getInstance()->getGameController()->getSceneController()->getScene()->getCoffre(6, 12))
+                    {
                         map->addItem(ItemHelper::getInstance()->createItem(TI_CLE, x + 8, y + 2, 12, true));
-                    } else if (!MainController::getInstance()->getGameController()->getSceneController()->getScene()->getCoffre(6, 13)) {
+                    }
+                    else if (!MainController::getInstance()->getGameController()->getSceneController()->getScene()->getCoffre(6, 13))
+                    {
                         map->addItem(ItemHelper::getInstance()->createItem(TI_CLE, x + 8, y + 2, 13, true));
                     }
                 }
-            } else {
+            }
+            else
+            {
                 map->addItem(ItemHelper::getInstance()->createItem(item, x + 8, y + 2));
                 item = TI_NO_ITEM;
             }
@@ -80,11 +97,13 @@ void Jarre::onLift() {
     }
 }
 
-bool Jarre::isResetable() {
+bool Jarre::isResetable()
+{
     return true;
 }
 
-void Jarre::reset() {
+void Jarre::reset()
+{
     x = x0;
     y = y0;
     map->setSol(x, y, 1815 + type, MUR);
@@ -96,6 +115,7 @@ void Jarre::reset() {
     checkPosition();
 }
 
-void Jarre::removeItem() {
+void Jarre::removeItem()
+{
     item = TI_NO_ITEM;
 }

@@ -13,28 +13,28 @@
 
 #include "../types/Object.h"
 
-class Coffre : public Object {
-    public :
-        Coffre(int x, int y, int type, bool opened, TypeItem object, int id = 0);
-        ~Coffre();
+class Coffre : public Object
+{
+public:
+    Coffre(int x, int y, int type, bool opened, TypeItem object, int id = 0);
+    ~Coffre();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        bool action(Direction dir);
+    bool action(Direction dir);
 
-        bool isOpened();
-        void open(bool showContent = false);
-        void close(TypeItem object, int id = 0);
+    bool isOpened();
+    void open(bool showContent = false);
+    void close(TypeItem object, int id = 0);
 
-        int getDown();
+    int getDown();
 
-    private :
-
-        int type;
-        bool opened;
-        TypeItem object;
-        int objId;
-        int displayContent;
+private:
+    int type;
+    bool opened;
+    TypeItem object;
+    int objId;
+    int displayContent;
 };
 
-#endif  // Coffre.h
+#endif // Coffre.h

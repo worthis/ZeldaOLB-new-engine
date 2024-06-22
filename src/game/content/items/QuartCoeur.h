@@ -13,21 +13,20 @@
 
 #include "../types/Item.h"
 
-class QuartCoeur : public Item {
-    public :
-        QuartCoeur(int x, int y, int id);
-        ~QuartCoeur();
+class QuartCoeur : public Item
+{
+public:
+    QuartCoeur(int x, int y, int id);
+    ~QuartCoeur();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        void action();
+    void action();
 
-        bool isPickable();
+    bool isPickable();
 
-    private :
-
-        int id;
-
+private:
+    int id;
 };
 
-#endif  // QuartCoeur.h
+#endif // QuartCoeur.h

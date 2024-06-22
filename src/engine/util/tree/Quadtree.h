@@ -18,29 +18,30 @@
 /**
     this class describes a quadtree
 */
-class Quadtree {
-    public :
-        Quadtree();
-        ~Quadtree();
+class Quadtree
+{
+public:
+    Quadtree();
+    ~Quadtree();
 
-        void setBox(int x, int y, int w, int h);
+    void setBox(int x, int y, int w, int h);
 
-        void add(Node* obj);
-        bool remove(Node* obj);
+    void add(Node *obj);
+    bool remove(Node *obj);
 
-        int size();
-        int length();
+    int size();
+    int length();
 
-        void get(BoundingBox* box, List* list);
-        void getAll(List* list);
+    void get(BoundingBox *box, List *list);
+    void getAll(List *list);
 
-        void resetNodes(BoundingBox* bb);
+    void resetNodes(BoundingBox *bb);
 
-        void removeDeadNodes();
+    void removeDeadNodes();
 
-    private :
-        Node* root;
-        BoundingBox box;
+private:
+    Node *root;
+    BoundingBox box;
 };
 
-#endif  // Quadtree.h
+#endif // Quadtree.h

@@ -9,7 +9,8 @@
 
 #include "../../MainController.h"
 
-Ennemi018::Ennemi018(int i, int j) : anim(0), animMax(1), vanim(180) {
+Ennemi018::Ennemi018(int i, int j) : anim(0), animMax(1), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi18.png", true);
     chrono.reset();
 
@@ -45,11 +46,13 @@ Ennemi018::Ennemi018(int i, int j) : anim(0), animMax(1), vanim(180) {
     forceEnn = 1;
 }
 
-Ennemi018::~Ennemi018() {
+Ennemi018::~Ennemi018()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi018::reset() {
+void Ennemi018::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -61,76 +64,96 @@ void Ennemi018::reset() {
     checkPosition();
 }
 
-void Ennemi018::ennLoop() {
+void Ennemi018::ennLoop()
+{
 
     // retrieve target position ( = link ^^)
-    Link* link = getLink();
+    Link *link = getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
 
     int dist = abs(x + 8 - dstX) + abs(y + height - dstY);
-    if (dist <= maxDist) {
-        if (height < 32) {
+    if (dist <= maxDist)
+    {
+        if (height < 32)
+        {
             height++;
             y--;
             maxDist = 200;
-        } else {
+        }
+        else
+        {
             pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
 
             move(dir.first, dir.second);
 
-            if (link->getBoundingBox()->intersect(getBoundingBox())) {
+            if (link->getBoundingBox()->intersect(getBoundingBox()))
+            {
                 testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
             }
         }
-    } else {
+    }
+    else
+    {
         idle = true;
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
         }
         chrono.reset();
     }
 }
 
-void Ennemi018::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi018::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (height == 14) {
+    if (height == 14)
+    {
         WindowManager::getInstance()->draw(image, 0, 28, width, height, dstX, dstY);
-    } else {
+    }
+    else
+    {
         WindowManager::getInstance()->draw(image, 2, 42, 12, 6, dstX + 2, dstY + height - 6); // shadow
         WindowManager::getInstance()->draw(image, 0, anim * 14, 16, 14, dstX, dstY);
     }
 }
 
-int Ennemi018::getX() {
+int Ennemi018::getX()
+{
     return x;
 }
 
-int Ennemi018::getY() {
+int Ennemi018::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi018::getBoundingBox() {
+BoundingBox *Ennemi018::getBoundingBox()
+{
     box.setX(x);
     box.setY(y + height - 16);
     return &box;
 }
 
-bool Ennemi018::isCollision(Collision c) {
+bool Ennemi018::isCollision(Collision c)
+{
     return true;
 }
 
-bool Ennemi018::isToAvoid(Collision c) {
+bool Ennemi018::isToAvoid(Collision c)
+{
     return false;
 }

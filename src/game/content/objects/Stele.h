@@ -13,22 +13,22 @@
 
 #include "../types/Object.h"
 
-class Stele : public Object {
-    public :
-        Stele(int x, int y, int texte, bool broken);
-        ~Stele();
+class Stele : public Object
+{
+public:
+    Stele(int x, int y, int texte, bool broken);
+    ~Stele();
 
-        void draw(int offsetX, int offsetY);
-        bool action(Direction dir);
+    void draw(int offsetX, int offsetY);
+    bool action(Direction dir);
 
-        void explose();
+    void explose();
 
-        int getDown();
+    int getDown();
 
-    private :
-
-        int texte;
-        bool broken;
+private:
+    int texte;
+    bool broken;
 };
 
-#endif  // Stele.h
+#endif // Stele.h

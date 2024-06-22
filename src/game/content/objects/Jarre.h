@@ -14,30 +14,30 @@
 #include "../types/Portable.h"
 #include "../scene/Map.h"
 
-class Jarre : public Portable {
-    public :
-        Jarre(int x, int y, int id, TypeItem item, Map* map);
-        ~Jarre();
+class Jarre : public Portable
+{
+public:
+    Jarre(int x, int y, int id, TypeItem item, Map *map);
+    ~Jarre();
 
-        void portLoop();
-        void draw(int offsetX, int offsetY);
+    void portLoop();
+    void draw(int offsetX, int offsetY);
 
-        void impact();
+    void impact();
 
-        void onLift();
+    void onLift();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-        void removeItem();
+    void removeItem();
 
-    private :
-
-        int type;
-        int x0;
-        int y0;
-        TypeItem item;
-        Map* map;
+private:
+    int type;
+    int x0;
+    int y0;
+    TypeItem item;
+    Map *map;
 };
 
-#endif  // Jarre.h
+#endif // Jarre.h

@@ -15,14 +15,13 @@
 
 #include "Drawable.h"
 
-class Loopable : public Drawable {
-    public :
-        Loopable();
-        virtual ~Loopable() = 0;
+class Loopable : public Drawable
+{
+public:
+    Loopable();
+    virtual ~Loopable() = 0;
 
-        virtual void loop() = 0;
+    virtual void loop() = 0;
 };
 
-#endif  // Loopable.h
-
-
+#endif // Loopable.h

@@ -16,29 +16,29 @@
 #include "../../engine/resources/WImage.h"
 #include "../../engine/util/time/Chrono.h"
 
-class Logo {
-    public :
-        Logo();
-        ~Logo();
+class Logo
+{
+public:
+    Logo();
+    ~Logo();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    bool first;
+    bool wasFrench;
 
-        bool first;
-        bool wasFrench;
-
-        WImage* image;
-        WImage* imageLogo;
-        Chrono chrono;
+    WImage *image;
+    WImage *imageLogo;
+    Chrono chrono;
 };
 
-#endif  // Logo.h
+#endif // Logo.h

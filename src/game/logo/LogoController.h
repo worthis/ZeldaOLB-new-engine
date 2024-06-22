@@ -16,20 +16,20 @@
 
 #include "Logo.h"
 
-class LogoController {
-    public :
-        LogoController();
-        ~LogoController();
+class LogoController
+{
+public:
+    LogoController();
+    ~LogoController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
 
-    private :
-
-        Logo logo;
+private:
+    Logo logo;
 };
 
-#endif  // LogoController.h
+#endif // LogoController.h

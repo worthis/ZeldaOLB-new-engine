@@ -16,30 +16,30 @@
 #include "../../../../engine/resources/WImage.h"
 #include "../../../../engine/texts/Text.h"
 
-class OptionsMain {
-    public :
-        OptionsMain();
-        ~OptionsMain();
+class OptionsMain
+{
+public:
+    OptionsMain();
+    ~OptionsMain();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
+private:
+    void drawPage();
+    void drawTitle();
 
-        void drawPage();
-        void drawTitle();
+    void drawCadre(int x, int y, int w, int h);
 
-        void drawCadre(int x, int y, int w, int h);
+    int line;
 
-        int line;
+    Text *texts[5];
 
-        Text* texts[5];
-
-        WImage* image;
-        WImage* link;
-        int skin;
+    WImage *image;
+    WImage *link;
+    int skin;
 };
 
-#endif  // OptionsMain.h
+#endif // OptionsMain.h

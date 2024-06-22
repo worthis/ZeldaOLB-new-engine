@@ -16,19 +16,20 @@
 
 #include "Score.h"
 
-class ScoreController {
-    public :
-        ScoreController();
-        ~ScoreController();
+class ScoreController
+{
+public:
+    ScoreController();
+    ~ScoreController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        Score score;
+private:
+    Score score;
 };
 
-#endif  // ScoreController.h
+#endif // ScoreController.h

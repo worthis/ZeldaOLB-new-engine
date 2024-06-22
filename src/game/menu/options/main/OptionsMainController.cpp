@@ -1,19 +1,24 @@
 #include "OptionsMainController.h"
 
-OptionsMainController::OptionsMainController() {
+OptionsMainController::OptionsMainController()
+{
 }
 
-OptionsMainController::~OptionsMainController() {
+OptionsMainController::~OptionsMainController()
+{
 }
 
-void OptionsMainController::launch() {
+void OptionsMainController::launch()
+{
     menu.init();
 }
 
-void OptionsMainController::handleEvents(Event* event) {
+void OptionsMainController::handleEvents(Event *event)
+{
     menu.handleEvents(event);
 }
 
-void OptionsMainController::draw() {
+void OptionsMainController::draw()
+{
     menu.draw();
 }

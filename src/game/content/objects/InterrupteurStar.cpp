@@ -5,7 +5,8 @@
 
 #include "../../MainController.h"
 
-InterrupteurStar::InterrupteurStar(int i, int j, bool down, Map* mp, bool us) : used(down), map(mp), usable(us) {
+InterrupteurStar::InterrupteurStar(int i, int j, bool down, Map *mp, bool us) : used(down), map(mp), usable(us)
+{
     x = i;
     y = j;
 
@@ -22,49 +23,59 @@ InterrupteurStar::InterrupteurStar(int i, int j, bool down, Map* mp, bool us) : 
     wasUsable = usable;
 
     // init map with motif and collisions
-    if (usable) {
+    if (usable)
+    {
         displayOnMap();
     }
-
 }
 
-InterrupteurStar::~InterrupteurStar() {
+InterrupteurStar::~InterrupteurStar()
+{
 }
 
-void InterrupteurStar::loop() {
-    if (used || !usable) {
+void InterrupteurStar::loop()
+{
+    if (used || !usable)
+    {
         return;
     }
 
     BoundingBox bb(x + 4, y + 4, 8, 8);
-    Link* link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
+    Link *link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
 
-    if (!used && usable && (!map->checkCollisions(&bb, this, false, false, false, false, true) || bb.intersect(link->getBoundingBox()))) {
+    if (!used && usable && (!map->checkCollisions(&bb, this, false, false, false, false, true) || bb.intersect(link->getBoundingBox())))
+    {
         map->switchStar();
         map->activateInterStar(x, y);
         map->setSol(x, y, 3174, PIERRE);
     }
 }
 
-void InterrupteurStar::draw(int offsetX, int offsetY) {
+void InterrupteurStar::draw(int offsetX, int offsetY)
+{
 }
 
-bool InterrupteurStar::isResetable() {
+bool InterrupteurStar::isResetable()
+{
     return !wasUsable;
 }
 
-void InterrupteurStar::reset() {
+void InterrupteurStar::reset()
+{
     usable = wasUsable;
 }
 
-void InterrupteurStar::displayOnMap() {
+void InterrupteurStar::displayOnMap()
+{
     usable = true;
     map->setSol(x, y, used ? 3174 : 3175, PIERRE);
 }
 
-void InterrupteurStar::switchMode() {
+void InterrupteurStar::switchMode()
+{
     used = !used;
-    if (usable) {
+    if (usable)
+    {
         displayOnMap();
     }
 }

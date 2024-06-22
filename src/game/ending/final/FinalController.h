@@ -16,19 +16,20 @@
 
 #include "Final.h"
 
-class FinalController {
-    public :
-        FinalController();
-        ~FinalController();
+class FinalController
+{
+public:
+    FinalController();
+    ~FinalController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        Final final;
+private:
+    Final final;
 };
 
-#endif  // FinalController.h
+#endif // FinalController.h

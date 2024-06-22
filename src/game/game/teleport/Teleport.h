@@ -16,33 +16,32 @@
 
 #include "../../../engine/renderer/CircularTransition.h"
 
-class Teleport {
-    public :
-        Teleport();
-        ~Teleport();
+class Teleport
+{
+public:
+    Teleport();
+    ~Teleport();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        void init();
+    void init();
 
-        void setTeleport(int map, int x, int y, Direction dir, bool instant, bool reload, bool etage = false);
+    void setTeleport(int map, int x, int y, Direction dir, bool instant, bool reload, bool etage = false);
 
-    private :
+private:
+    void mid();
+    void end();
 
-        void mid();
-        void end();
+    int dstMap;
+    int dstX;
+    int dstY;
+    Direction direction;
+    bool instant;
+    bool reload;
+    bool etage;
 
-        int dstMap;
-        int dstX;
-        int dstY;
-        Direction direction;
-        bool instant;
-        bool reload;
-        bool etage;
-
-        CircularTransition transition;
-
+    CircularTransition transition;
 };
 
-#endif  // Teleport.h
+#endif // Teleport.h

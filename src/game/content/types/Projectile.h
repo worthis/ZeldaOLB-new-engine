@@ -20,43 +20,42 @@
 #include "Collisionable.h"
 #include "Loopable.h"
 
-class Projectile : public Collisionable, public Loopable {
-    public :
-        Projectile();
-        virtual ~Projectile() = 0;
+class Projectile : public Collisionable, public Loopable
+{
+public:
+    Projectile();
+    virtual ~Projectile() = 0;
 
-        void loop();
-        virtual void draw(int offsetX, int offsetY) = 0;
+    void loop();
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool isCollision(Collision c);
+    bool isCollision(Collision c);
 
-        virtual void renvoie(Direction dir);
+    virtual void renvoie(Direction dir);
 
-    protected :
+protected:
+    virtual void projLoop() = 0;
 
-        virtual void projLoop() = 0;
+    int x;
+    int y;
+    Direction direction;
 
-        int x;
-        int y;
-        Direction direction;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    WImage *image;
 
-        WImage* image;
+    Chrono chrono;
 
-        Chrono chrono;
+    BoundingBox box;
 
-        BoundingBox box;
-
-    private :
-
+private:
 };
 
-#endif  // Projectile.h
+#endif // Projectile.h

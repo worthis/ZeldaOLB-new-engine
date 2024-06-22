@@ -17,38 +17,38 @@
 
 #include "../types/Ennemi.h"
 
-class Ennemi058 : public Ennemi {
-    public :
-        Ennemi058(int x, int y);
-        ~Ennemi058();
+class Ennemi058 : public Ennemi
+{
+public:
+    Ennemi058(int x, int y);
+    ~Ennemi058();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void reset();
-        bool isResetable();
-        void setResetableToFalse();
-        bool isHittable();
+    void reset();
+    bool isResetable();
+    void setResetableToFalse();
+    bool isHittable();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
+    bool resetable;
 
-        int anim;
-        int animMax;
-        int vanim;
-        bool resetable;
+    WImage *image;
 
-        WImage* image;
+    Chrono chrono;
 
-        Chrono chrono;
+    BoundingBox box;
 
-        BoundingBox box;
-
-        int cooldown;
+    int cooldown;
 };
 
-#endif  // Ennemi058.h
+#endif // Ennemi058.h

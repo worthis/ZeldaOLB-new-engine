@@ -16,37 +16,37 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class PiegeMurs : public Object {
-    public :
-        PiegeMurs(int x, int y, Map* map, Direction dir=E);
-        ~PiegeMurs();
+class PiegeMurs : public Object
+{
+public:
+    PiegeMurs(int x, int y, Map *map, Direction dir = E);
+    ~PiegeMurs();
 
-        void loop();
+    void loop();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-        int getDown();
+    int getDown();
 
-        Direction getDirection();
+    Direction getDirection();
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        Chrono chrono;
+    Direction direction;
 
-        Direction direction;
+    PiegeMurs *other;
 
-        PiegeMurs* other;
-
-        int x0;
+    int x0;
 };
 
-#endif  // PiegeMurs.h
+#endif // PiegeMurs.h

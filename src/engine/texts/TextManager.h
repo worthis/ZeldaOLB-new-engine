@@ -18,38 +18,39 @@
 
 #include <vector>
 
-class TextManager {
-    public :
-        static TextManager* getInstance();
+class TextManager
+{
+public:
+    static TextManager *getInstance();
 
-        void setConfiguration(TextConfiguration* conf);
+    void setConfiguration(TextConfiguration *conf);
 
-        int getWSpace();
-        int getWSize();
-        int getHSize();
+    int getWSpace();
+    int getWSize();
+    int getHSize();
 
-        Text* getText(int id);
-        WImage* getImage();
+    Text *getText(int id);
+    WImage *getImage();
 
-        void drawLetter(char c, int i, int j, int style = 0);
+    void drawLetter(char c, int i, int j, int style = 0);
 
-        void displayNumber(int n, int digits, int x, int y);
+    void displayNumber(int n, int digits, int x, int y);
 
-        void reloadTexts();
+    void reloadTexts();
 
-    private :
-        TextManager();
-        ~TextManager();
-        static TextManager instance;
+private:
+    TextManager();
+    ~TextManager();
+    static TextManager instance;
 
-        void loadTextsFromFile(string filename);
+    void loadTextsFromFile(string filename);
 
-        void drawLetterInternal(char c, int i, int j, int style);
+    void drawLetterInternal(char c, int i, int j, int style);
 
-        void displayNumberInternal(int d, int x, int y);
+    void displayNumberInternal(int d, int x, int y);
 
-        TextConfiguration* config;
-        vector<string> texts;
+    TextConfiguration *config;
+    vector<string> texts;
 };
 
-#endif  // TextManager.h
+#endif // TextManager.h

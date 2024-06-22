@@ -16,19 +16,19 @@
 
 #include "OptionsGame.h"
 
-class OptionsGameController {
-    public :
-        OptionsGameController();
-        ~OptionsGameController();
+class OptionsGameController
+{
+public:
+    OptionsGameController();
+    ~OptionsGameController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        OptionsGame menu;
+private:
+    OptionsGame menu;
 };
 
-#endif  // OptionsGameController.h
+#endif // OptionsGameController.h

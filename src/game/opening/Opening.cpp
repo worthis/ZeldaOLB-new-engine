@@ -6,13 +6,16 @@
 #include "../../engine/audio/AudioManager.h"
 #include "../../engine/texts/TextManager.h"
 
-Opening::Opening() : etape(0) {
+Opening::Opening() : etape(0)
+{
     imageFond1 = ResourceManager::getInstance()->loadImage("data/images/intro/fond1.png", true);
     imageFond2 = ResourceManager::getInstance()->loadImage("data/images/intro/fond2.png");
 
     ostringstream oss;
-    for (int i = 0; i < 5; i++) {
-        oss.str(""); oss << (i + 1);
+    for (int i = 0; i < 5; i++)
+    {
+        oss.str("");
+        oss << (i + 1);
         imageIntro[i] = ResourceManager::getInstance()->loadImage(("data/images/intro/intro" + oss.str() + ".png").c_str());
     }
 
@@ -20,44 +23,55 @@ Opening::Opening() : etape(0) {
     metronome->reset();
 }
 
-Opening::~Opening() {
+Opening::~Opening()
+{
     ResourceManager::getInstance()->free(imageFond1);
     ResourceManager::getInstance()->free(imageFond2);
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         ResourceManager::getInstance()->free(imageIntro[i]);
     }
 }
 
-void Opening::init() {
+void Opening::init()
+{
     etape = 0;
     metronome->reset();
     AudioManager::getInstance()->playMusic(2);
 }
 
-void Opening::loop() {
+void Opening::loop()
+{
     metronome->loop();
 }
 
-void Opening::draw() {
+void Opening::draw()
+{
 
     int anim = metronome->getValue();
 
     int srcX = 0;
 
-    for (int j=0; j<240; j+=16) {
-        for (int i=0; i<320; i+=16) {
+    for (int j = 0; j < 240; j += 16)
+    {
+        for (int i = 0; i < 320; i += 16)
+        {
             srcX = 16 - anim % 16;
-            if (i > 16 && i < 288 && j > 144 && j < 224) {
+            if (i > 16 && i < 288 && j > 144 && j < 224)
+            {
                 srcX += 32;
             }
             WindowManager::getInstance()->draw(imageFond2, srcX, anim % 16, 16, 16, i, j);
         }
     }
 
-    for (int j = 0; j < 240; j += 32) {
-        for (int i = 0; i < 320; i += 32) {
+    for (int j = 0; j < 240; j += 32)
+    {
+        for (int i = 0; i < 320; i += 32)
+        {
             srcX = anim;
-            if (i > 16 && i < 288 && j > 144 && j < 224) {
+            if (i > 16 && i < 288 && j > 144 && j < 224)
+            {
                 srcX += 64;
             }
             WindowManager::getInstance()->draw(imageFond1, srcX, anim, 32, 32, i, j);
@@ -67,8 +81,10 @@ void Opening::draw() {
     WindowManager::getInstance()->draw(imageIntro[etape], 0, 0, 320, 111, 0, 17);
 }
 
-void Opening::nextStep() {
-    if (etape < 4) {
+void Opening::nextStep()
+{
+    if (etape < 4)
+    {
         etape++;
     }
 }

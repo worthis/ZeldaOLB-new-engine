@@ -24,48 +24,56 @@
 #include "game/GameController.h"
 #include "ending/EndingController.h"
 
-enum MainStep {LOGO, TITRE, MENU, OPENING, GAME, ENDING};
-
-class MainController {
-    public :
-        static MainController* getInstance();
-
-        void init();
-        void close();
-
-        void control(Event* event); // dispatch event, display scene, etc.
-        void setStep(MainStep newStep);
-
-        void setInternalStep(MainStep newStep); // set step without transition
-
-        MainStep getStep();
-
-        MenuController* getMenuController();
-        OpeningController* getOpeningController();
-        GameController* getGameController();
-        EndingController* getEndingController();
-
-    private :
-        MainController();
-        ~MainController();
-        static MainController instance;
-
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
-
-
-        MainStep step;
-        MainStep nextStep;
-
-        SimpleTransition transition;
-
-        LogoController* logo;
-        TitleController* title;
-        MenuController* menu;
-        OpeningController* opening;
-        GameController* game;
-        EndingController* ending;
+enum MainStep
+{
+    LOGO,
+    TITRE,
+    MENU,
+    OPENING,
+    GAME,
+    ENDING
 };
 
-#endif  // MainController.h
+class MainController
+{
+public:
+    static MainController *getInstance();
+
+    void init();
+    void close();
+
+    void control(Event *event); // dispatch event, display scene, etc.
+    void setStep(MainStep newStep);
+
+    void setInternalStep(MainStep newStep); // set step without transition
+
+    MainStep getStep();
+
+    MenuController *getMenuController();
+    OpeningController *getOpeningController();
+    GameController *getGameController();
+    EndingController *getEndingController();
+
+private:
+    MainController();
+    ~MainController();
+    static MainController instance;
+
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
+
+    MainStep step;
+    MainStep nextStep;
+
+    SimpleTransition transition;
+
+    LogoController *logo;
+    TitleController *title;
+    MenuController *menu;
+    OpeningController *opening;
+    GameController *game;
+    EndingController *ending;
+};
+
+#endif // MainController.h

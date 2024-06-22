@@ -2,20 +2,23 @@
 
 #include "../../MainController.h"
 
-Object::Object() {
+Object::Object()
+{
     attackable = false;
 }
 
-Object::~Object() {
+Object::~Object()
+{
 }
 
-void Object::loop() {
+void Object::loop()
+{
 }
 
-int Object::getX() {return x;}
-int Object::getY() {return y;}
-BoundingBox* Object::getBoundingBox() {return &box;}
-bool Object::isAttackable() {return attackable;}
+int Object::getX() { return x; }
+int Object::getY() { return y; }
+BoundingBox *Object::getBoundingBox() { return &box; }
+bool Object::isAttackable() { return attackable; }
 void Object::underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect) {}
-bool Object::action(Direction dir) {return false;}
-BoundingBox* Object::getSecondBoundingBox() {return 0;}
+bool Object::action(Direction dir) { return false; }
+BoundingBox *Object::getSecondBoundingBox() { return 0; }

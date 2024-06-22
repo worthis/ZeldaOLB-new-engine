@@ -8,7 +8,8 @@
 
 #include "../helper/ProjectileHelper.h"
 
-PiegeDemi::PiegeDemi(int i, int j) : anim(0), animMax(16), vanim(120), enable(true) {
+PiegeDemi::PiegeDemi(int i, int j) : anim(0), animMax(16), vanim(120), enable(true)
+{
     x = i;
     y = j;
 
@@ -26,17 +27,22 @@ PiegeDemi::PiegeDemi(int i, int j) : anim(0), animMax(16), vanim(120), enable(tr
     chrono.reset();
 }
 
-PiegeDemi::~PiegeDemi() {
+PiegeDemi::~PiegeDemi()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void PiegeDemi::loop() {
-    if (!enable) {
+void PiegeDemi::loop()
+{
+    if (!enable)
+    {
         return;
     }
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
             snipe();
         }
@@ -44,14 +50,16 @@ void PiegeDemi::loop() {
     }
 }
 
-void PiegeDemi::draw(int offsetX, int offsetY) {
+void PiegeDemi::draw(int offsetX, int offsetY)
+{
     WindowManager::getInstance()->draw(image, 0, 0, 16, 16, x - offsetX, y - offsetY);
 }
 
-void PiegeDemi::snipe() {
+void PiegeDemi::snipe()
+{
 
     // throw proj and play sound
-    Link* link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
+    Link *link = MainController::getInstance()->getGameController()->getSceneController()->getScene()->getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
@@ -66,26 +74,42 @@ void PiegeDemi::snipe() {
     double coef1 = 0;
     double coef2 = 0;
 
-    if ((destx-origx) == 0) {anglx=0; angly=12;}
-    else if ((desty-origy) == 0) {anglx=12; angly=0;}
-    else {
-        coef1=((double)(desty-origy))/((double)(destx-origx));
-        coef2=((double)(destx-origx))/((double)(desty-origy));
-        anglx=(sqrt(12/(1+(coef1*coef1))));
-        angly=(sqrt(12/(1+(coef2*coef2))));
+    if ((destx - origx) == 0)
+    {
+        anglx = 0;
+        angly = 12;
     }
-    if (destx - origx < 0) anglx = -anglx;
-    if (desty - origy < 0) angly = -angly;
+    else if ((desty - origy) == 0)
+    {
+        anglx = 12;
+        angly = 0;
+    }
+    else
+    {
+        coef1 = ((double)(desty - origy)) / ((double)(destx - origx));
+        coef2 = ((double)(destx - origx)) / ((double)(desty - origy));
+        anglx = (sqrt(12 / (1 + (coef1 * coef1))));
+        angly = (sqrt(12 / (1 + (coef2 * coef2))));
+    }
+    if (destx - origx < 0)
+        anglx = -anglx;
+    if (desty - origy < 0)
+        angly = -angly;
 
-    if (anglx>4) anglx=4;
-    if (angly>4) angly=4;
-    if (anglx<-4) anglx=-4;
-    if (angly<-4) angly=-4;
+    if (anglx > 4)
+        anglx = 4;
+    if (angly > 4)
+        angly = 4;
+    if (anglx < -4)
+        anglx = -4;
+    if (angly < -4)
+        angly = -4;
 
     ProjectileHelper::getInstance()->addProjectile(TP_BOULE_DEMI, origx, origy, anglx, angly, getBoundingBox());
     AudioManager::getInstance()->playSound(TS_THROW);
 }
 
-void PiegeDemi::disable() {
+void PiegeDemi::disable()
+{
     enable = false;
 }

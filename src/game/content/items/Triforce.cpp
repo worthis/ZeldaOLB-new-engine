@@ -3,7 +3,8 @@
 #include "../../../engine/resources/ResourceManager.h"
 #include "../../../engine/window/WindowManager.h"
 
-Triforce::Triforce(int i, int j) {
+Triforce::Triforce(int i, int j)
+{
 
     x = i;
     y = j - 10;
@@ -24,15 +25,20 @@ Triforce::Triforce(int i, int j) {
     ready = false;
 }
 
-Triforce::~Triforce() {
+Triforce::~Triforce()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Triforce::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
+void Triforce::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
             anim++;
-            if (anim > animMax) {
+            if (anim > animMax)
+            {
                 ready = true;
             }
             chrono.reset();
@@ -40,34 +46,45 @@ void Triforce::loop() {
     }
 }
 
-void Triforce::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Triforce::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-
-    if (ready) {
+    if (ready)
+    {
         dstY += 10;
-    } else {
-        if (anim <= 10) dstY += anim;
-        else if (anim <= 14) dstY += 10 - (anim - 10);
-        else if (anim <= 18) dstY += 6 + (anim - 14);
-        else dstY += 10;
+    }
+    else
+    {
+        if (anim <= 10)
+            dstY += anim;
+        else if (anim <= 14)
+            dstY += 10 - (anim - 10);
+        else if (anim <= 18)
+            dstY += 6 + (anim - 14);
+        else
+            dstY += 10;
     }
 
     WindowManager::getInstance()->draw(image, 24, 3, 6, 4, dstX + 10, y - offsetY + 34);
     WindowManager::getInstance()->draw(image, 128, 86, 26, 26, dstX, dstY);
 }
 
-void Triforce::action() {
-    if (!ready) return;
+void Triforce::action()
+{
+    if (!ready)
+        return;
     getLink()->trouveObjet(TI_TRIFORCE);
     alive = false;
 }
 
-bool Triforce::isPickable() {
+bool Triforce::isPickable()
+{
     return false;
 }

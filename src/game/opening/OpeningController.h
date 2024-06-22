@@ -17,22 +17,23 @@
 #include "Opening.h"
 #include "OpeningTextArea.h"
 
-class OpeningController {
-    public :
-        OpeningController();
-        ~OpeningController();
+class OpeningController
+{
+public:
+    OpeningController();
+    ~OpeningController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
 
-        void nextStep();
+    void nextStep();
 
-    private :
-        Opening opening;
-        OpeningTextArea text;
+private:
+    Opening opening;
+    OpeningTextArea text;
 };
 
-#endif  // OpeningController.h
+#endif // OpeningController.h

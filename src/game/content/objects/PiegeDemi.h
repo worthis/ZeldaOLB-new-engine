@@ -15,27 +15,27 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class PiegeDemi : public Object {
-    public :
-        PiegeDemi(int x, int y);
-        ~PiegeDemi();
+class PiegeDemi : public Object
+{
+public:
+    PiegeDemi(int x, int y);
+    ~PiegeDemi();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void disable();
+    void disable();
 
-    private :
+private:
+    void snipe();
 
-        void snipe();
+    Chrono chrono;
 
-        Chrono chrono;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
-
-        bool enable;
+    bool enable;
 };
 
-#endif  // PiegeDemi.h
+#endif // PiegeDemi.h

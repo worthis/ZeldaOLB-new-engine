@@ -13,17 +13,18 @@
 
 #include "../types/Item.h"
 
-class Triforce : public Item {
-    public :
-        Triforce(int x, int y);
-        ~Triforce();
+class Triforce : public Item
+{
+public:
+    Triforce(int x, int y);
+    ~Triforce();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
+    void action();
 
-        bool isPickable();
+    bool isPickable();
 };
 
-#endif  // Triforce.h
+#endif // Triforce.h

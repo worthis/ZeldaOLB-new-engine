@@ -15,34 +15,34 @@
 
 #include <SDL2/SDL.h>
 
-class SimpleTransition {
-    public :
-        SimpleTransition();
-        ~SimpleTransition();
+class SimpleTransition
+{
+public:
+    SimpleTransition();
+    ~SimpleTransition();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        bool isRunning();
+    bool isRunning();
 
-        void start();
+    void start();
 
-        bool isWaiting();
+    bool isWaiting();
 
-        void restart();
+    void restart();
 
-        bool isAchieved();
+    bool isAchieved();
 
-        void reset();
+    void reset();
 
-    private :
+private:
+    void init();
 
-        void init();
-
-        SDL_Texture* texture;
-        bool run;
-        int step;
-        int alpha;
+    SDL_Texture *texture;
+    bool run;
+    int step;
+    int alpha;
 };
 
-#endif  // SimpleTransition.h
+#endif // SimpleTransition.h

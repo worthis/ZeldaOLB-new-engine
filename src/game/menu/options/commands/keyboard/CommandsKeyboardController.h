@@ -16,19 +16,19 @@
 
 #include "CommandsKeyboard.h"
 
-class CommandsKeyboardController {
-    public :
-        CommandsKeyboardController();
-        ~CommandsKeyboardController();
+class CommandsKeyboardController
+{
+public:
+    CommandsKeyboardController();
+    ~CommandsKeyboardController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        CommandsKeyboard menu;
+private:
+    CommandsKeyboard menu;
 };
 
-#endif  // CommandsKeyboardController.h
+#endif // CommandsKeyboardController.h

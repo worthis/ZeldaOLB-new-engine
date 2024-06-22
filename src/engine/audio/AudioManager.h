@@ -15,47 +15,48 @@
 
 #include "AudioConfiguration.h"
 
-class AudioManager {
-    public :
-        static AudioManager* getInstance();
+class AudioManager
+{
+public:
+    static AudioManager *getInstance();
 
-        void init();
+    void init();
 
-        void setConfiguration(AudioConfiguration* conf);
+    void setConfiguration(AudioConfiguration *conf);
 
-        void playMusic(int i);
-        void stopMusic();
-        void replayMusic();
-        void playSound(int i, int chl = -1);
+    void playMusic(int i);
+    void stopMusic();
+    void replayMusic();
+    void playSound(int i, int chl = -1);
 
-        int isPlaying(int chl);
-        void stopSound(int chl);
+    int isPlaying(int chl);
+    void stopSound(int chl);
 
-        int getVolumeMusic();
-        int getVolumeSound();
+    int getVolumeMusic();
+    int getVolumeSound();
 
-        void setVolumeMusic(int v);
-        void setVolumeSound(int v);
+    void setVolumeMusic(int v);
+    void setVolumeSound(int v);
 
-        void setPreviousMusic(int m);
+    void setPreviousMusic(int m);
 
-        void close();
+    void close();
 
-    private :
-        AudioManager();
-        ~AudioManager();
-        static AudioManager instance;
+private:
+    AudioManager();
+    ~AudioManager();
+    static AudioManager instance;
 
-        WMusic* current;
-        int music;
-        int volumeMusic;
-        int volumeSound;
-        AudioConfiguration* config;
-        int previous_volume;
-        int previous_volson;
-        bool playing;
-        bool SOUND;
-        int previousMusic;
+    WMusic *current;
+    int music;
+    int volumeMusic;
+    int volumeSound;
+    AudioConfiguration *config;
+    int previous_volume;
+    int previous_volson;
+    bool playing;
+    bool SOUND;
+    int previousMusic;
 };
 
-#endif  // AudioManager.h
+#endif // AudioManager.h

@@ -16,28 +16,29 @@
 /**
     this class describes a sorted list
 */
-class List {
-    public :
-        List();
-        ~List();
+class List
+{
+public:
+    List();
+    ~List();
 
-        void add(Listable* obj);
-        bool remove(Listable* obj);
-        Listable* remove(int i);
+    void add(Listable *obj);
+    bool remove(Listable *obj);
+    Listable *remove(int i);
 
-        int size();
-        void merge(List* other);
+    int size();
+    void merge(List *other);
 
-        Listable* get(int i);
+    Listable *get(int i);
 
-        void iterateOnFirst();
-        bool hasNext();
-        Listable* getNext();
+    void iterateOnFirst();
+    bool hasNext();
+    Listable *getNext();
 
-    private :
-        ListCell* head;
-        ListCell* current;
-        int length;
+private:
+    ListCell *head;
+    ListCell *current;
+    int length;
 };
 
-#endif  // List.h
+#endif // List.h

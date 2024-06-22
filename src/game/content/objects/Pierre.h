@@ -14,28 +14,28 @@
 #include "../types/Portable.h"
 #include "../scene/Map.h"
 
-class Pierre : public Portable {
-    public :
-        Pierre(int x, int y, int id, Map* map, bool resetable = true);
-        ~Pierre();
+class Pierre : public Portable
+{
+public:
+    Pierre(int x, int y, int id, Map *map, bool resetable = true);
+    ~Pierre();
 
-        void portLoop();
-        void draw(int offsetX, int offsetY);
+    void portLoop();
+    void draw(int offsetX, int offsetY);
 
-        void impact();
+    void impact();
 
-        void onLift();
+    void onLift();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-    private :
-
-        int type;
-        int x0;
-        int y0;
-        Map* map;
-        bool resetable;
+private:
+    int type;
+    int x0;
+    int y0;
+    Map *map;
+    bool resetable;
 };
 
-#endif  // Pierre.h
+#endif // Pierre.h

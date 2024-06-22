@@ -21,29 +21,29 @@
 
 #include "../types/Effect.h"
 
-class Plouf : public Effect {
-    public :
-        Plouf(int x, int y);
-        ~Plouf();
+class Plouf : public Effect
+{
+public:
+    Plouf(int x, int y);
+    ~Plouf();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-    private :
+private:
+    int x;
+    int y;
 
-        int x;
-        int y;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    WImage *image;
 
-        WImage* image;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Plouf.h
+#endif // Plouf.h

@@ -13,32 +13,32 @@
 
 #include "../types/Object.h"
 
-class PiegePics : public Object {
-    public :
-        PiegePics(int x, int y, Direction dir);
-        ~PiegePics();
+class PiegePics : public Object
+{
+public:
+    PiegePics(int x, int y, Direction dir);
+    ~PiegePics();
 
-        void loop();
+    void loop();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-    private :
+private:
+    void moveX(int dx);
+    void moveY(int dy);
 
-        void moveX(int dx);
-        void moveY(int dy);
+    Direction direction;
 
-        Direction direction;
+    int x0;
+    int y0;
+    Direction dir0;
 
-        int x0;
-        int y0;
-        Direction dir0;
-
-        int force;
+    int force;
 };
 
-#endif  // PiegePics.h
+#endif // PiegePics.h

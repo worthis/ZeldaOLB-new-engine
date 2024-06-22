@@ -17,22 +17,21 @@
 
 class Map;
 
-class MapInitializer {
-    public :
-        MapInitializer(Map* map);
-        ~MapInitializer();
+class MapInitializer
+{
+public:
+    MapInitializer(Map *map);
+    ~MapInitializer();
 
-        void init();
+    void init();
 
-    private :
+private:
+    Map *map;
 
-        Map* map;
-
-        void addEnnemi(Ennemi* ennemi);
-        void addItem(Item* item);
-        void addObject(Object* object);
-        void ouvrePorte(int x, int y, int type);
-
+    void addEnnemi(Ennemi *ennemi);
+    void addItem(Item *item);
+    void addObject(Object *object);
+    void ouvrePorte(int x, int y, int type);
 };
 
-#endif  // MapInitializer.h
+#endif // MapInitializer.h

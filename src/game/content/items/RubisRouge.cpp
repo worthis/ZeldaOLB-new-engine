@@ -4,7 +4,8 @@
 #include "../../../engine/window/WindowManager.h"
 #include "../../../engine/audio/AudioManager.h"
 
-RubisRouge::RubisRouge(int i, int j) {
+RubisRouge::RubisRouge(int i, int j)
+{
 
     x = i;
     y = j - 10;
@@ -23,15 +24,20 @@ RubisRouge::RubisRouge(int i, int j) {
     box.setH(16);
 }
 
-RubisRouge::~RubisRouge() {
+RubisRouge::~RubisRouge()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void RubisRouge::loop() {
-    if (chrono.getElapsedTime() >= vanim) {
+void RubisRouge::loop()
+{
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
-            if (!ready) {
+        if (anim > animMax)
+        {
+            if (!ready)
+            {
                 ready = true;
                 vanim = 120;
                 animMax = 7;
@@ -42,8 +48,10 @@ void RubisRouge::loop() {
     }
 }
 
-void RubisRouge::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void RubisRouge::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -51,23 +59,32 @@ void RubisRouge::draw(int offsetX, int offsetY) {
     int dstY = y - offsetY;
     int srcX = 0;
 
-
-    if (ready) {
+    if (ready)
+    {
         dstY += 10;
-        if (anim < 3) srcX = anim * 8;
-    } else {
-        if (anim <= 10) dstY += anim;
-        else if (anim <= 14) dstY += 10 - (anim - 10);
-        else if (anim <= 18) dstY += 6 + (anim - 14);
-        else dstY += 10;
+        if (anim < 3)
+            srcX = anim * 8;
+    }
+    else
+    {
+        if (anim <= 10)
+            dstY += anim;
+        else if (anim <= 14)
+            dstY += 10 - (anim - 10);
+        else if (anim <= 18)
+            dstY += 6 + (anim - 14);
+        else
+            dstY += 10;
     }
 
     WindowManager::getInstance()->draw(image, 24, 3, 6, 4, dstX + 1, y - offsetY + 22);
     WindowManager::getInstance()->draw(image, srcX, 35, 8, 14, dstX, dstY);
 }
 
-void RubisRouge::action() {
-    if (!ready) return;
+void RubisRouge::action()
+{
+    if (!ready)
+        return;
     AudioManager::getInstance()->playSound(TS_RUPEE);
     getLink()->getStatus()->updateRupees(20);
     alive = false;

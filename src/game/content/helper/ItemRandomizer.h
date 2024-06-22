@@ -14,26 +14,26 @@
 #include "ItemHelper.h"
 #include <vector>
 
-struct p_node {
+struct p_node
+{
     TypeItem type;
     int proba;
 };
 
-class ItemRandomizer {
-    public :
-        ItemRandomizer();
-        ~ItemRandomizer();
+class ItemRandomizer
+{
+public:
+    ItemRandomizer();
+    ~ItemRandomizer();
 
-        void addType(TypeItem type, int proba);
+    void addType(TypeItem type, int proba);
 
-        TypeItem selectType();
+    TypeItem selectType();
 
-    private :
+private:
+    TypeItem checkWithLink(TypeItem type);
 
-        TypeItem checkWithLink(TypeItem type);
-
-        vector<p_node> nodes;
-
+    vector<p_node> nodes;
 };
 
-#endif  // ItemRandomizer.h
+#endif // ItemRandomizer.h

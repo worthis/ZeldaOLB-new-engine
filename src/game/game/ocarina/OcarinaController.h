@@ -16,21 +16,21 @@
 
 #include "Ocarina.h"
 
-class OcarinaController {
-    public :
-        OcarinaController();
-        ~OcarinaController();
+class OcarinaController
+{
+public:
+    OcarinaController();
+    ~OcarinaController();
 
-        void launch();
+    void launch();
 
-        void setSong(int id);
+    void setSong(int id);
 
-        void handleActions(Action* action);
-        void loop();
+    void handleActions(Action *action);
+    void loop();
 
-    private :
-
-        Ocarina ocarina;
+private:
+    Ocarina ocarina;
 };
 
-#endif  // OcarinaController.h
+#endif // OcarinaController.h

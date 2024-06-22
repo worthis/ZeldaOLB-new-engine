@@ -16,22 +16,22 @@
 
 #include "TextArea.h"
 
-class TextController {
-    public :
-        TextController();
-        ~TextController();
+class TextController
+{
+public:
+    TextController();
+    ~TextController();
 
-        void launch();
+    void launch();
 
-        void setTextId(int textId);
+    void setTextId(int textId);
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-
-        TextArea text;
+private:
+    TextArea text;
 };
 
-#endif  // TextController.h
+#endif // TextController.h

@@ -21,34 +21,40 @@
 #include "credits/CreditsController.h"
 #include "final/FinalController.h"
 
-enum EndingStep {END_STORY, END_SCORE, END_CREDITS, END_END};
-
-class EndingController {
-    public :
-        EndingController();
-        ~EndingController();
-
-        void launch();
-
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
-
-        void setStep(EndingStep newStep);
-
-    private :
-
-        void setInternalStep(EndingStep newStep); // set step without transition
-
-        EndingStep step;
-        EndingStep nextStep;
-
-        SimpleTransition transition;
-
-        StoryController story;
-        ScoreController score;
-        CreditsController credits;
-        FinalController final;
+enum EndingStep
+{
+    END_STORY,
+    END_SCORE,
+    END_CREDITS,
+    END_END
 };
 
-#endif  // EndingController.h
+class EndingController
+{
+public:
+    EndingController();
+    ~EndingController();
+
+    void launch();
+
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
+
+    void setStep(EndingStep newStep);
+
+private:
+    void setInternalStep(EndingStep newStep); // set step without transition
+
+    EndingStep step;
+    EndingStep nextStep;
+
+    SimpleTransition transition;
+
+    StoryController story;
+    ScoreController score;
+    CreditsController credits;
+    FinalController final;
+};
+
+#endif // EndingController.h

@@ -13,30 +13,27 @@
 
 #include "Listable.h"
 
-class ListCell {
-    public :
-        ListCell(Listable* obj);
-        ~ListCell();
-        int compareTo(ListCell* other); // > 0 if this > other
+class ListCell
+{
+public:
+    ListCell(Listable *obj);
+    ~ListCell();
+    int compareTo(ListCell *other); // > 0 if this > other
 
-        void add(ListCell* obj);
-        bool remove(Listable* obj);
-        void merge(ListCell* obj);
+    void add(ListCell *obj);
+    bool remove(Listable *obj);
+    void merge(ListCell *obj);
 
-        Listable* getContent();
+    Listable *getContent();
 
-        ListCell* getNext();
-        void setNext(ListCell* obj);
+    ListCell *getNext();
+    void setNext(ListCell *obj);
 
-        void cleanNext();
+    void cleanNext();
 
-    private :
-
-        Listable* content;
-        ListCell* next;
+private:
+    Listable *content;
+    ListCell *next;
 };
 
-#endif  // ListCell.h
-
-
-
+#endif // ListCell.h

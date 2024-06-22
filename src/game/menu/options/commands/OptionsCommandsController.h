@@ -20,34 +20,38 @@
 #include "keyboard/CommandsKeyboardController.h"
 #include "joystick/CommandsJoystickController.h"
 
-enum CommandsStep {COMMANDS_MAIN, COMMANDS_KEYBOARD, COMMANDS_JOYSTICK};
-
-class OptionsCommandsController {
-    public :
-        OptionsCommandsController();
-        ~OptionsCommandsController();
-
-        void launch();
-
-        void handleEvents(Event* event);
-        void loop();
-        void draw();
-
-        void setStep(CommandsStep newStep);
-
-        void setInternalStep(CommandsStep newStep); // set step without transition
-
-    private :
-
-        CommandsStep step;
-        CommandsStep nextStep;
-
-        SimpleTransition transition;
-
-        CommandsMainController main;
-        CommandsKeyboardController keyboard;
-        CommandsJoystickController joystick;
+enum CommandsStep
+{
+    COMMANDS_MAIN,
+    COMMANDS_KEYBOARD,
+    COMMANDS_JOYSTICK
 };
 
-#endif  // OptionsCommandsController.h
+class OptionsCommandsController
+{
+public:
+    OptionsCommandsController();
+    ~OptionsCommandsController();
 
+    void launch();
+
+    void handleEvents(Event *event);
+    void loop();
+    void draw();
+
+    void setStep(CommandsStep newStep);
+
+    void setInternalStep(CommandsStep newStep); // set step without transition
+
+private:
+    CommandsStep step;
+    CommandsStep nextStep;
+
+    SimpleTransition transition;
+
+    CommandsMainController main;
+    CommandsKeyboardController keyboard;
+    CommandsJoystickController joystick;
+};
+
+#endif // OptionsCommandsController.h

@@ -19,61 +19,61 @@
 
 #include "../../content/CommonGame.h"
 
-class MapDonjon {
-    public :
-        MapDonjon();
-        ~MapDonjon();
+class MapDonjon
+{
+public:
+    MapDonjon();
+    ~MapDonjon();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        void launch();
+    void launch();
 
-    private :
+private:
+    int getEtageMin();
+    int getEtageMax();
+    int getEtageBoss();
 
-        int getEtageMin();
-        int getEtageMax();
-        int getEtageBoss();
+    bool bossIsAlive();
 
-        bool bossIsAlive();
+    void loadImages();
+    void drawMap();
 
-        void loadImages();
-        void drawMap();
+    int getWidth();
+    int getHeight();
+    int getOffsetX();
+    int getOffsetY();
 
-        int getWidth();
-        int getHeight();
-        int getOffsetX();
-        int getOffsetY();
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    bool started;
 
-        bool started;
+    int xLink;
+    int yLink;
 
-        int xLink;
-        int yLink;
+    int mapId;
+    int previousMapId;
 
-        int mapId;
-        int previousMapId;
+    int etage;
 
-        int etage;
+    bool wasFrench;
 
-        bool wasFrench;
+    int offsetForme;
+    int offsetSkin;
 
-        int offsetForme;
-        int offsetSkin;
+    WImage *imageMap;
+    WImage *imageLevel;
+    WImage *imageLevel2;
+    WImage *imageLink;
+    WImage *imageBoussole;
+    WImage *imageEtages[5];
+    WImage *imageEtagesN[5];
 
-        WImage* imageMap;
-        WImage* imageLevel;
-        WImage* imageLevel2;
-        WImage* imageLink;
-        WImage* imageBoussole;
-        WImage* imageEtages[5];
-        WImage* imageEtagesN[5];
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // MapDonjon.h
+#endif // MapDonjon.h

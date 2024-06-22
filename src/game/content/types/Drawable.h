@@ -15,18 +15,17 @@
 
 #include "../CommonGame.h"
 
-class Drawable : public Node {
-    public :
-        Drawable();
-        virtual ~Drawable();
+class Drawable : public Node
+{
+public:
+    Drawable();
+    virtual ~Drawable();
 
-        virtual void draw(int offsetX, int offsetY) = 0;
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        int compareTo(Listable* other);
+    int compareTo(Listable *other);
 
-        virtual int getDown(); // return y + h
+    virtual int getDown(); // return y + h
 };
 
-#endif  // Drawable.h
-
-
+#endif // Drawable.h

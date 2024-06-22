@@ -13,27 +13,27 @@
 
 #include "../types/Projectile.h"
 
-class ProjLapin : public Projectile {
-    public :
-        ProjLapin(int x, int y, double dx, double dy);
-        ~ProjLapin();
+class ProjLapin : public Projectile
+{
+public:
+    ProjLapin(int x, int y, double dx, double dy);
+    ~ProjLapin();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getX();
-        int getY();
-        int getDown();
+    int getX();
+    int getY();
+    int getDown();
 
-    private :
-
-        int speed;
-        double dx;
-        double dy;
-        double longX;
-        double longY;
+private:
+    int speed;
+    double dx;
+    double dy;
+    double longX;
+    double longY;
 };
 
-#endif  // ProjLapin.h
+#endif // ProjLapin.h

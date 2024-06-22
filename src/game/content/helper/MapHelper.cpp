@@ -1,8 +1,9 @@
 #include "MapHelper.h"
 
-MapHelper MapHelper::instance=MapHelper();
+MapHelper MapHelper::instance = MapHelper();
 
-MapHelper::MapHelper() {
+MapHelper::MapHelper()
+{
     herbeHaute.addType(TI_RUBIS_VERT, 7);
     herbeHaute.addType(TI_PETIT_COEUR, 7);
     herbeHaute.addType(TI_FLECHE, 7);
@@ -32,24 +33,32 @@ MapHelper::MapHelper() {
     buissonNeige.addType(TI_FLECHE, 2);
     buissonNeige.addType(TI_BOMBE, 2);
     buissonNeige.addType(TI_MAGIE_PEU, 2);
-
 }
 
-MapHelper::~MapHelper() {
+MapHelper::~MapHelper()
+{
 }
 
-MapHelper* MapHelper::getInstance() {
+MapHelper *MapHelper::getInstance()
+{
     return &instance;
 }
 
-ItemRandomizer* MapHelper::getItemRandomizer(TypeDons type) {
-    switch (type) {
-        case TD_HERBE_HAUTE : return &herbeHaute;
-        case TD_BUISSON_VERT : return &buissonVert;
-        case TD_BUISSON_ROSE : return &buissonRose;
-        case TD_BUISSON_OCRE : return &buissonOcre;
-        case TD_BUISSON_NEIGE : return &buissonNeige;
-        default : return &herbeHaute;
+ItemRandomizer *MapHelper::getItemRandomizer(TypeDons type)
+{
+    switch (type)
+    {
+    case TD_HERBE_HAUTE:
+        return &herbeHaute;
+    case TD_BUISSON_VERT:
+        return &buissonVert;
+    case TD_BUISSON_ROSE:
+        return &buissonRose;
+    case TD_BUISSON_OCRE:
+        return &buissonOcre;
+    case TD_BUISSON_NEIGE:
+        return &buissonNeige;
+    default:
+        return &herbeHaute;
     }
 }
-

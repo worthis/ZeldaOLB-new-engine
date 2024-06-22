@@ -6,7 +6,8 @@
 
 #include "../../MainController.h"
 
-PiegeLong::PiegeLong(int i, int j, Direction dir) : anim(0), animMax(3), vanim(240), direction(dir) {
+PiegeLong::PiegeLong(int i, int j, Direction dir) : anim(0), animMax(3), vanim(240), direction(dir)
+{
     x = i;
     y = j;
     x0 = x;
@@ -25,7 +26,8 @@ PiegeLong::PiegeLong(int i, int j, Direction dir) : anim(0), animMax(3), vanim(2
     box.setW(width);
     box.setH(height);
 
-    if (direction != N && direction != S) {
+    if (direction != N && direction != S)
+    {
         direction = S;
     }
 
@@ -34,77 +36,96 @@ PiegeLong::PiegeLong(int i, int j, Direction dir) : anim(0), animMax(3), vanim(2
     chrono.reset();
 }
 
-PiegeLong::~PiegeLong() {
+PiegeLong::~PiegeLong()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-Direction PiegeLong::getDirection() {
+Direction PiegeLong::getDirection()
+{
     return direction;
 }
 
-void PiegeLong::loop() {
-    Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+void PiegeLong::loop()
+{
+    Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
 
-    BoundingBox* bb = getBoundingBox();
+    BoundingBox *bb = getBoundingBox();
     scene->testDegat(bb, direction, force, TA_PHYSIC, TE_NORMAL);
     scene->testDegatOnLink(bb, direction, force, TA_PHYSIC, TE_NORMAL);
 
-    if (direction == N) {
+    if (direction == N)
+    {
         moveY(-2);
-    } else {
+    }
+    else
+    {
         moveY(2);
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
         }
         chrono.reset();
     }
 }
 
-void PiegeLong::draw(int offsetX, int offsetY) {
+void PiegeLong::draw(int offsetX, int offsetY)
+{
     WindowManager::getInstance()->draw(image, 0, height * anim, width, height, x - offsetX, y - offsetY);
 }
 
-BoundingBox* PiegeLong::getBoundingBox() {
+BoundingBox *PiegeLong::getBoundingBox()
+{
     box.setX(x);
     box.setY(y);
     return &box;
 }
 
-void PiegeLong::moveY(int dy) {
-    Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+void PiegeLong::moveY(int dy)
+{
+    Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
 
     int oldY = y;
 
-    BoundingBox* bb = getBoundingBox();
+    BoundingBox *bb = getBoundingBox();
     bb->setY(y + dy);
 
-    if (scene->checkCollisions(bb, this, false)) {
+    if (scene->checkCollisions(bb, this, false))
+    {
         y += dy;
         y1 = oldY;
         checkPosition();
     }
 
-    if (y == oldY) {
-        if (direction == N) {
+    if (y == oldY)
+    {
+        if (direction == N)
+        {
             direction = S;
-        } else {
+        }
+        else
+        {
             direction = N;
         }
-        if (getBoundingBox()->intersect(scene->getCamera()->getBoundingBox()) && y != y1) {
+        if (getBoundingBox()->intersect(scene->getCamera()->getBoundingBox()) && y != y1)
+        {
             AudioManager::getInstance()->playSound(TS_PICS);
         }
     }
 }
 
-bool PiegeLong::isResetable() {
+bool PiegeLong::isResetable()
+{
     return true;
 }
 
-void PiegeLong::reset() {
+void PiegeLong::reset()
+{
     x = x0;
     y = y0;
     y1 = y;

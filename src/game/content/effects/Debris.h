@@ -21,37 +21,37 @@
 
 #include "../types/Effect.h"
 
-class Debris : public Effect {
-    public :
-        Debris(int x, int y, Direction direction, int force, bool onLink = false, bool degat = true, bool top = false);
-        ~Debris();
+class Debris : public Effect
+{
+public:
+    Debris(int x, int y, Direction direction, int force, bool onLink = false, bool degat = true, bool top = false);
+    ~Debris();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        int getDown();
+    int getDown();
 
-    private :
+private:
+    int x;
+    int y;
 
-        int x;
-        int y;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Direction direction;
+    int force;
+    bool onLink;
+    bool degat;
+    bool top;
 
-        Direction direction;
-        int force;
-        bool onLink;
-        bool degat;
-        bool top;
+    WImage *image;
 
-        WImage* image;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Debris.h
+#endif // Debris.h

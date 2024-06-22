@@ -9,7 +9,8 @@
 
 #include "../../MainController.h"
 
-Ennemi032::Ennemi032(int i, int j) : anim(0), animMax(2), vanim(180) {
+Ennemi032::Ennemi032(int i, int j) : anim(0), animMax(2), vanim(180)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ennemis/ennemi32.png", true);
     chrono.reset();
 
@@ -23,7 +24,7 @@ Ennemi032::Ennemi032(int i, int j) : anim(0), animMax(2), vanim(180) {
     height = 23;
 
     box.setX(x);
-    box.setY(y+7);
+    box.setY(y + 7);
     box.setW(width);
     box.setH(16);
 
@@ -44,11 +45,13 @@ Ennemi032::Ennemi032(int i, int j) : anim(0), animMax(2), vanim(180) {
     forceEnn = 4;
 }
 
-Ennemi032::~Ennemi032() {
+Ennemi032::~Ennemi032()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Ennemi032::reset() {
+void Ennemi032::reset()
+{
     Ennemi::reset();
     chrono.reset();
     x = startX;
@@ -58,38 +61,47 @@ void Ennemi032::reset() {
     checkPosition();
 }
 
-void Ennemi032::ennLoop() {
+void Ennemi032::ennLoop()
+{
 
     // retrieve target position ( = link ^^)
-    Link* link = getLink();
+    Link *link = getLink();
 
     int dstX = link->getX() + 8;
     int dstY = link->getY() + 24;
 
     int dist = abs(x + (width / 2) - dstX) + abs(y + height - dstY);
-    if (dist <= maxDist) {
+    if (dist <= maxDist)
+    {
         pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
 
         move(dir.first, dir.second);
 
-        if (link->getBoundingBox()->intersect(getBoundingBox())) {
+        if (link->getBoundingBox()->intersect(getBoundingBox()))
+        {
             testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
         }
-    } else {
+    }
+    else
+    {
         idle = true;
     }
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
         }
         chrono.reset();
     }
 }
 
-void Ennemi032::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Ennemi032::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -99,16 +111,19 @@ void Ennemi032::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, anim * width, (gel ? height : 0), width, height, dstX, dstY);
 }
 
-int Ennemi032::getX() {
+int Ennemi032::getX()
+{
     return x;
 }
 
-int Ennemi032::getY() {
+int Ennemi032::getY()
+{
     return y;
 }
 
-BoundingBox* Ennemi032::getBoundingBox() {
+BoundingBox *Ennemi032::getBoundingBox()
+{
     box.setX(x);
-    box.setY(y+7);
+    box.setY(y + 7);
     return &box;
 }

@@ -17,43 +17,43 @@
 
 #include "KeyBinder.h"
 
-class JoystickBinder {
-    public :
-        static JoystickBinder* getInstance();
+class JoystickBinder
+{
+public:
+    static JoystickBinder *getInstance();
 
-        void init(string filename);
+    void init(string filename);
 
-        void save();
+    void save();
 
-        void restoreDefault();
+    void restoreDefault();
 
-        void addMenuEventsForJoystick(Event* event);
+    void addMenuEventsForJoystick(Event *event);
 
-        void addGameEventsForJoystick(Event* event);
+    void addGameEventsForJoystick(Event *event);
 
-        bool isJoystickInUsage(Event* event);
+    bool isJoystickInUsage(Event *event);
 
-        void setKey(BindableType type, Keys key);
+    void setKey(BindableType type, Keys key);
 
-        Keys getKey(BindableType type);
-        Keys getDefaultKey(BindableType type);
+    Keys getKey(BindableType type);
+    Keys getDefaultKey(BindableType type);
 
-        Text* getTextForType(BindableType type, int color = 0);
-        Text* getTextForKey(Keys key, int color = 0);
+    Text *getTextForType(BindableType type, int color = 0);
+    Text *getTextForKey(Keys key, int color = 0);
 
-        void forceToSave();
+    void forceToSave();
 
-    private :
-        JoystickBinder();
-        ~JoystickBinder();
-        static JoystickBinder instance;
+private:
+    JoystickBinder();
+    ~JoystickBinder();
+    static JoystickBinder instance;
 
-        bool rush;
-        bool haveToSave;
-        string file;
+    bool rush;
+    bool haveToSave;
+    string file;
 
-        Keys map[BT_UP];
-
+    Keys map[BT_UP];
 };
 
-#endif  // JoystickBinder.h
+#endif // JoystickBinder.h

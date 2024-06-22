@@ -11,17 +11,17 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-#define FULLSCREEN          true
-#define WINDOW_SIZE_W       640
-#define WINDOW_SIZE_H       480
+#define FULLSCREEN true
+#define WINDOW_SIZE_W 640
+#define WINDOW_SIZE_H 480
 
-#define GAME_SIZE_W         320
-#define GAME_SIZE_H         240
+#define GAME_SIZE_W 320
+#define GAME_SIZE_H 240
 
-#define CASE                16
+#define CASE 16
 
-#define SQRT_2              1.414213562
-#define PI                  3.14159265
+#define SQRT_2 1.414213562
+#define PI 3.14159265
 
 #include <sstream>
 #include <iostream>
@@ -33,5 +33,4 @@
 
 using namespace std;
 
-#endif  // Common.h
-
+#endif // Common.h

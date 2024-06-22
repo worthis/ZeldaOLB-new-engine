@@ -1,15 +1,19 @@
 #include "Timer.h"
 
-Timer::Timer() {
+Timer::Timer()
+{
 }
 
-Timer::~Timer() {
+Timer::~Timer()
+{
 }
 
-void Timer::reset() {
+void Timer::reset()
+{
     lastAnimTime = SDL_GetTicks();
 }
 
-int Timer::getElapsedTime() {
+int Timer::getElapsedTime()
+{
     return SDL_GetTicks() - lastAnimTime;
 }

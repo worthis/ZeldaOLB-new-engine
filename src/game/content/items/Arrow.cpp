@@ -4,7 +4,8 @@
 #include "../../../engine/window/WindowManager.h"
 #include "../../../engine/audio/AudioManager.h"
 
-Arrow::Arrow(int i, int j) {
+Arrow::Arrow(int i, int j)
+{
 
     x = i;
     y = j - 10;
@@ -23,15 +24,20 @@ Arrow::Arrow(int i, int j) {
     box.setH(16);
 }
 
-Arrow::~Arrow() {
+Arrow::~Arrow()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Arrow::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
+void Arrow::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
             anim++;
-            if (anim > animMax) {
+            if (anim > animMax)
+            {
                 ready = true;
             }
             chrono.reset();
@@ -39,21 +45,30 @@ void Arrow::loop() {
     }
 }
 
-void Arrow::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Arrow::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
 
-    if (ready) {
+    if (ready)
+    {
         dstY += 10;
-    } else {
-        if (anim <= 10) dstY += anim;
-        else if (anim <= 14) dstY += 10 - (anim - 10);
-        else if (anim <= 18) dstY += 6 + (anim - 14);
-        else dstY += 10;
+    }
+    else
+    {
+        if (anim <= 10)
+            dstY += anim;
+        else if (anim <= 14)
+            dstY += 10 - (anim - 10);
+        else if (anim <= 18)
+            dstY += 6 + (anim - 14);
+        else
+            dstY += 10;
     }
 
     int srcY = (getLink()->getInventory()->hasObject(ARC_FEE)) ? 22 : 7;
@@ -62,8 +77,10 @@ void Arrow::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, 24, srcY, 5, 15, dstX, dstY);
 }
 
-void Arrow::action() {
-    if (!ready) return;
+void Arrow::action()
+{
+    if (!ready)
+        return;
     AudioManager::getInstance()->playSound(TS_ITEM);
     getLink()->getStatus()->setArrows(getLink()->getStatus()->getArrows() + 5);
     alive = false;

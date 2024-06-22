@@ -13,23 +13,23 @@
 
 #include "../types/Projectile.h"
 
-class ProjBoulet : public Projectile {
-    public :
-        ProjBoulet(int x, int y, Direction dir);
-        ~ProjBoulet();
+class ProjBoulet : public Projectile
+{
+public:
+    ProjBoulet(int x, int y, Direction dir);
+    ~ProjBoulet();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-    private :
-
-        int speed;
-        int dx;
-        int dy;
-        int level;
-        int force;
+private:
+    int speed;
+    int dx;
+    int dy;
+    int level;
+    int force;
 };
 
-#endif  // ProjBoulet.h
+#endif // ProjBoulet.h

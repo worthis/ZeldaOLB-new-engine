@@ -17,50 +17,49 @@
 
 class Map;
 
-class Ennemi045 : public Ennemi {
-    public :
-        Ennemi045(int x, int y);
-        ~Ennemi045();
+class Ennemi045 : public Ennemi
+{
+public:
+    Ennemi045(int x, int y);
+    ~Ennemi045();
 
-        void ennLoop();
-        void draw(int offsetX, int offsetY);
+    void ennLoop();
+    void draw(int offsetX, int offsetY);
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
+    bool hasEffect(TypeAttack type, TypeEffect effect, Direction dir);
 
-        void reset();
-        bool isResetable();
+    void reset();
+    bool isResetable();
 
-    protected :
+protected:
+    BoundingBox *getBoundingBoxForDamage();
+    void giveItem(int x, int y);
 
-        BoundingBox* getBoundingBoxForDamage();
-        void giveItem(int x, int y);
+private:
+    void snipe();
 
-    private :
+    void moveX(int dx);
+    void moveY(int dy);
 
-        void snipe();
+    int anim;
+    int animMax;
+    int vanim;
+    int mask;
 
-        void moveX(int dx);
-        void moveY(int dy);
+    WImage *image;
 
-        int anim;
-        int animMax;
-        int vanim;
-        int mask;
+    Chrono chrono;
 
-        WImage* image;
+    BoundingBox box;
+    BoundingBox box2;
+    BoundingBox limit;
 
-        Chrono chrono;
-
-        BoundingBox box;
-        BoundingBox box2;
-        BoundingBox limit;
-
-        int cooldown;
+    int cooldown;
 };
 
-#endif  // Ennemi045.h
+#endif // Ennemi045.h

@@ -1,27 +1,34 @@
 #include "TextController.h"
 
-TextController::TextController() {
+TextController::TextController()
+{
 }
 
-TextController::~TextController() {
+TextController::~TextController()
+{
 }
 
-void TextController::launch() {
+void TextController::launch()
+{
     text.start();
 }
 
-void TextController::setTextId(int textId) {
+void TextController::setTextId(int textId)
+{
     text.setTextId(textId);
 }
 
-void TextController::handleActions(Action* action) {
+void TextController::handleActions(Action *action)
+{
     text.handleActions(action);
 }
 
-void TextController::loop() {
+void TextController::loop()
+{
     text.loop();
 }
 
-void TextController::draw() {
+void TextController::draw()
+{
     text.draw();
 }

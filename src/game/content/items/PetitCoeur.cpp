@@ -4,7 +4,8 @@
 #include "../../../engine/window/WindowManager.h"
 #include "../../../engine/audio/AudioManager.h"
 
-PetitCoeur::PetitCoeur(int i, int j) {
+PetitCoeur::PetitCoeur(int i, int j)
+{
 
     x = i - 1;
     y = j;
@@ -23,15 +24,20 @@ PetitCoeur::PetitCoeur(int i, int j) {
     box.setH(9);
 }
 
-PetitCoeur::~PetitCoeur() {
+PetitCoeur::~PetitCoeur()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void PetitCoeur::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
+void PetitCoeur::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
             anim++;
-            if (anim > animMax) {
+            if (anim > animMax)
+            {
                 ready = true;
             }
             chrono.reset();
@@ -39,8 +45,10 @@ void PetitCoeur::loop() {
     }
 }
 
-void PetitCoeur::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void PetitCoeur::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
 
@@ -48,11 +56,14 @@ void PetitCoeur::draw(int offsetX, int offsetY) {
     int dstY = y - offsetY;
     int srcX = 16;
 
-    if (anim <= 20) {
+    if (anim <= 20)
+    {
         srcX = (anim < 10) ? 0 : 8;
         dstY += anim / 3;
         dstX = dstX - 1 + ((anim / 6) % 3) + anim / 12;
-    } else {
+    }
+    else
+    {
         dstY += 7;
     }
 
@@ -60,11 +71,13 @@ void PetitCoeur::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, srcX, 0, 8, 7, dstX, dstY);
 }
 
-void PetitCoeur::action() {
-    if (!ready) return;
+void PetitCoeur::action()
+{
+    if (!ready)
+        return;
 
-
-    if (getLink()->getStatus()->getLife() == getLink()->getStatus()->getMaxLife()) {
+    if (getLink()->getStatus()->getLife() == getLink()->getStatus()->getMaxLife())
+    {
         AudioManager::getInstance()->playSound(TS_HEART);
     }
 

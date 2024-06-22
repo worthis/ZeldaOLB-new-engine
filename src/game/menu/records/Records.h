@@ -16,51 +16,51 @@
 #include "../../../engine/resources/WImage.h"
 #include "../../../engine/texts/Text.h"
 
-class Records {
-    public :
-        Records();
-        ~Records();
+class Records
+{
+public:
+    Records();
+    ~Records();
 
-        void init();
+    void init();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
+private:
+    void drawPage();
+    void drawTitle();
+    void drawFull();
+    void drawUltime();
+    void drawRush();
+    void drawConfirm();
 
-        void drawPage();
-        void drawTitle();
-        void drawFull();
-        void drawUltime();
-        void drawRush();
-        void drawConfirm();
+    void drawCadre(int x, int y, int w, int h);
 
-        void drawCadre(int x, int y, int w, int h);
+    bool fullROTH;
+    bool rushROTH;
+    bool ultimeROTH;
+    bool fullOLB;
+    bool rushOLB;
+    bool ultimeOLB;
 
-        bool fullROTH;
-        bool rushROTH;
-        bool ultimeROTH;
-        bool fullOLB;
-        bool rushOLB;
-        bool ultimeOLB;
+    int line;
+    int column;
 
-        int line;
-        int column;
+    bool helpFull;
+    bool helpRush;
+    bool helpUltime;
+    bool confirm;
 
-        bool helpFull;
-        bool helpRush;
-        bool helpUltime;
-        bool confirm;
+    int subLine;
 
-        int subLine;
+    Text *texts[23];
 
-        Text* texts[23];
-
-        WImage* image;
-        WImage* link;
-        WImage* fairy;
-        WImage* rangs;
-        int skin;
+    WImage *image;
+    WImage *link;
+    WImage *fairy;
+    WImage *rangs;
+    int skin;
 };
 
-#endif  // Records.h
+#endif // Records.h

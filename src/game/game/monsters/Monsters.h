@@ -17,33 +17,32 @@
 
 #include "../../content/types/Ennemi.h"
 
+class Monsters
+{
+public:
+    Monsters();
+    ~Monsters();
 
-class Monsters {
-    public :
-        Monsters();
-        ~Monsters();
+    void init();
 
-        void init();
+    void handleActions(Action *action);
+    void draw();
 
-        void handleActions(Action* action);
-        void draw();
+private:
+    void initPage();
 
-    private :
+    void cadre(int x, int y, int w, int h, int type);
 
-        void initPage();
+    int getNextPageFrom(int page);
+    int getPreviousPageFrom(int page);
+    bool isPageEmpty(int page);
 
-        void cadre(int x, int y, int w, int h, int type);
+    int page;
 
-        int getNextPageFrom(int page);
-        int getPreviousPageFrom(int page);
-        bool isPageEmpty(int page);
+    WImage *image;
 
-        int page;
-
-        WImage* image;
-
-        Text* texts[6];
-        Ennemi* ennemis[NB_MONSTERS];
+    Text *texts[6];
+    Ennemi *ennemis[NB_MONSTERS];
 };
 
-#endif  // Monsters.h
+#endif // Monsters.h

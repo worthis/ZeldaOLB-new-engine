@@ -13,24 +13,24 @@
 
 #include "../types/Projectile.h"
 
-class ProjArrow : public Projectile {
-    public :
-        ProjArrow(int x, int y, Direction dir, int type);
-        ~ProjArrow();
+class ProjArrow : public Projectile
+{
+public:
+    ProjArrow(int x, int y, Direction dir, int type);
+    ~ProjArrow();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-    private :
-
-        bool moving;
-        int speed;
-        int dx;
-        int dy;
-        int level;
-        int force;
+private:
+    bool moving;
+    int speed;
+    int dx;
+    int dy;
+    int level;
+    int force;
 };
 
-#endif  // ProjArrow.h
+#endif // ProjArrow.h

@@ -18,32 +18,30 @@
  * StopX and stopY stop the slide.
  * raz reinitializes the manager.
  */
-class SlideManager {
-    public :
-        SlideManager();
-        ~SlideManager();
+class SlideManager
+{
+public:
+    SlideManager();
+    ~SlideManager();
 
-        void setMoves(int dx, int dy, int vitesse);
+    void setMoves(int dx, int dy, int vitesse);
 
-        int getSlideX();
-        int getSlideY();
+    int getSlideX();
+    int getSlideY();
 
-        void stopX();
-        void stopY();
+    void stopX();
+    void stopY();
 
-        void raz();
+    void raz();
 
-    private :
+private:
+    void fillHisto(int dir, int vitesse);
+    void computeDistance(int dir);
 
-        void fillHisto(int dir, int vitesse);
-        void computeDistance(int dir);
-
-        int histo[4][16];
-        int speedToSlide[4]; // speed to begin to slide
-        int distanceToSlide[4];
-        int elan[4];
+    int histo[4][16];
+    int speedToSlide[4]; // speed to begin to slide
+    int distanceToSlide[4];
+    int elan[4];
 };
 
-#endif  // SlideManager.h
-
-
+#endif // SlideManager.h

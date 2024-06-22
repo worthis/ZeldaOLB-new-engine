@@ -15,33 +15,33 @@
 
 class Item;
 
-class ProjGrappin : public Projectile {
-    public :
-        ProjGrappin(int x, int y, Direction dir);
-        ~ProjGrappin();
+class ProjGrappin : public Projectile
+{
+public:
+    ProjGrappin(int x, int y, Direction dir);
+    ~ProjGrappin();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void slide(int dx, int dy);
+    void slide(int dx, int dy);
 
-    private :
+private:
+    int level;
+    int step;
+    bool aggripe;
+    int currentLength;
+    int maxLength;
 
-        int level;
-        int step;
-        bool aggripe;
-        int currentLength;
-        int maxLength;
+    int speed;
+    int dx;
+    int dy;
 
-        int speed;
-        int dx;
-        int dy;
+    Item *item;
 
-        Item* item;
-
-        int dstLink;
+    int dstLink;
 };
 
-#endif  // ProjGrappin.h
+#endif // ProjGrappin.h

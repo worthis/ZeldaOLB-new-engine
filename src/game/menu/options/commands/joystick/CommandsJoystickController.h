@@ -16,19 +16,19 @@
 
 #include "CommandsJoystick.h"
 
-class CommandsJoystickController {
-    public :
-        CommandsJoystickController();
-        ~CommandsJoystickController();
+class CommandsJoystickController
+{
+public:
+    CommandsJoystickController();
+    ~CommandsJoystickController();
 
-        void launch();
+    void launch();
 
-        void handleEvents(Event* event);
-        void draw();
+    void handleEvents(Event *event);
+    void draw();
 
-    private :
-
-        CommandsJoystick menu;
+private:
+    CommandsJoystick menu;
 };
 
-#endif  // CommandsJoystickController.h
+#endif // CommandsJoystickController.h

@@ -1,19 +1,24 @@
 #include "CommandsKeyboardController.h"
 
-CommandsKeyboardController::CommandsKeyboardController() {
+CommandsKeyboardController::CommandsKeyboardController()
+{
 }
 
-CommandsKeyboardController::~CommandsKeyboardController() {
+CommandsKeyboardController::~CommandsKeyboardController()
+{
 }
 
-void CommandsKeyboardController::launch() {
+void CommandsKeyboardController::launch()
+{
     menu.init();
 }
 
-void CommandsKeyboardController::handleEvents(Event* event) {
+void CommandsKeyboardController::handleEvents(Event *event)
+{
     menu.handleEvents(event);
 }
 
-void CommandsKeyboardController::draw() {
+void CommandsKeyboardController::draw()
+{
     menu.draw();
 }

@@ -18,25 +18,25 @@
 
 #include "../../keys/Action.h"
 
-class Credits {
-    public :
-        Credits();
-        ~Credits();
+class Credits
+{
+public:
+    Credits();
+    ~Credits();
 
-        void init();
+    void init();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
+private:
+    bool over;
+    int step;
+    int anim;
 
-        bool over;
-        int step;
-        int anim;
-
-        Text* texts[19];
-        WImage* images[7];
+    Text *texts[19];
+    WImage *images[7];
 };
 
-#endif  // Credits.h
+#endif // Credits.h

@@ -15,35 +15,35 @@
 
 #include <SDL2/SDL.h>
 
-class CircularTransition {
-    public :
-        CircularTransition();
-        ~CircularTransition();
+class CircularTransition
+{
+public:
+    CircularTransition();
+    ~CircularTransition();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-        bool isRunning();
+    bool isRunning();
 
-        void start(int x, int y);
+    void start(int x, int y);
 
-        bool isWaiting();
+    bool isWaiting();
 
-        void restart(int x, int y);
+    void restart(int x, int y);
 
-        bool isAchieved();
+    bool isAchieved();
 
-        void reset();
+    void reset();
 
-    private :
-
-        SDL_Surface* rect;
-        SDL_Texture* texture;
-        bool run;
-        int step;
-        int radius;
-        int x;
-        int y;
+private:
+    SDL_Surface *rect;
+    SDL_Texture *texture;
+    bool run;
+    int step;
+    int radius;
+    int x;
+    int y;
 };
 
-#endif  // CircularTransition.h
+#endif // CircularTransition.h

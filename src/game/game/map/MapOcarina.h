@@ -18,28 +18,28 @@
 
 #include "../../content/CommonGame.h"
 
-class MapOcarina {
-    public :
-        MapOcarina();
-        ~MapOcarina();
+class MapOcarina
+{
+public:
+    MapOcarina();
+    ~MapOcarina();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        void launch();
+    void launch();
 
-    private :
+private:
+    bool started;
+    bool teleport;
 
-        bool started;
-        bool teleport;
+    int position;
 
-        int position;
+    int offsetSkin;
 
-        int offsetSkin;
-
-        WImage* imageMap;
-        WImage* imageLink;
+    WImage *imageMap;
+    WImage *imageLink;
 };
 
-#endif  // MapOcarina.h
+#endif // MapOcarina.h

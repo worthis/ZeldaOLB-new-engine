@@ -20,43 +20,49 @@
 
 #include "../../keys/Action.h"
 
-enum TextStep {TEXT_START, TEXT_ON, TEXT_END, TEXT_OFF};
-
-class TextArea {
-    public :
-        TextArea();
-        ~TextArea();
-
-        void handleActions(Action* action);
-        void loop();
-        void draw();
-
-        void start();
-        void stop();
-
-        void setTextId(int textId);
-
-    private :
-
-        bool hasLogicalNext();
-
-        void drawAdditionalContent();
-
-        TextStep step;
-        int anim;
-        int animMax;
-        int vanim;
-
-        bool ready;
-
-        WImage* image;
-        WImage* imageCoeur;
-
-        Chrono chrono;
-
-        Text* text;
-
-        int id;
+enum TextStep
+{
+    TEXT_START,
+    TEXT_ON,
+    TEXT_END,
+    TEXT_OFF
 };
 
-#endif  // TextArea.h
+class TextArea
+{
+public:
+    TextArea();
+    ~TextArea();
+
+    void handleActions(Action *action);
+    void loop();
+    void draw();
+
+    void start();
+    void stop();
+
+    void setTextId(int textId);
+
+private:
+    bool hasLogicalNext();
+
+    void drawAdditionalContent();
+
+    TextStep step;
+    int anim;
+    int animMax;
+    int vanim;
+
+    bool ready;
+
+    WImage *image;
+    WImage *imageCoeur;
+
+    Chrono chrono;
+
+    Text *text;
+
+    int id;
+};
+
+#endif // TextArea.h

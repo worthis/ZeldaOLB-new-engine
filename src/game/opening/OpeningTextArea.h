@@ -20,37 +20,37 @@
 
 #include "../content/CommonGame.h"
 
-class OpeningTextArea {
-    public :
-        OpeningTextArea();
-        ~OpeningTextArea();
+class OpeningTextArea
+{
+public:
+    OpeningTextArea();
+    ~OpeningTextArea();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        void init();
+    void init();
 
-        void start();
-        void stop();
+    void start();
+    void stop();
 
-    private :
+private:
+    void setTextId(int textId);
 
-        void setTextId(int textId);
+    bool hasLogicalNext();
 
-        bool hasLogicalNext();
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    bool ready;
 
-        bool ready;
+    Chrono chrono;
 
-        Chrono chrono;
+    Text *text;
 
-        Text* text;
-
-        int id;
+    int id;
 };
 
-#endif  // OpeningTextArea.h
+#endif // OpeningTextArea.h

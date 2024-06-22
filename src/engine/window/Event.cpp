@@ -1,17 +1,22 @@
 #include "Event.h"
 
-Event::Event() {
-    for (int i = 0; i < NB_KEYS; i++) {
-         current[i] = false;
-         past[i] = false;
-     }
+Event::Event()
+{
+    for (int i = 0; i < NB_KEYS; i++)
+    {
+        current[i] = false;
+        past[i] = false;
+    }
 }
 
-Event::~Event() {
+Event::~Event()
+{
 }
 
-void Event::update(const Uint8* keys, bool capslock) {
-    for (int i = 0; i < NB_KEYS; i++) {
+void Event::update(const Uint8 *keys, bool capslock)
+{
+    for (int i = 0; i < NB_KEYS; i++)
+    {
         past[i] = current[i];
         current[i] = false;
     }
@@ -75,44 +80,54 @@ void Event::update(const Uint8* keys, bool capslock) {
 
     current[kF1] = keys[SDL_SCANCODE_F1];
 
-    if (current[RESIZE]) {
+    if (current[RESIZE])
+    {
         current[kReturn] = false;
     }
-
 }
 
-bool Event::isDown(Keys key) {
-    if (current == 0) {
+bool Event::isDown(Keys key)
+{
+    if (current == 0)
+    {
         return false;
     }
     return current[key];
 }
 
-bool Event::isPushed(Keys key) {
-    if (current == 0 || past == 0) {
+bool Event::isPushed(Keys key)
+{
+    if (current == 0 || past == 0)
+    {
         return false;
     }
     return current[key] && !past[key];
 }
 
-void Event::setEvent(Keys key, bool b) {
-    if (current != 0) {
+void Event::setEvent(Keys key, bool b)
+{
+    if (current != 0)
+    {
         current[key] = b;
     }
 }
 
-int Event::getMouseX() {
+int Event::getMouseX()
+{
     return mouseX;
 }
 
-int Event::getMouseY() {
+int Event::getMouseY()
+{
     return mouseY;
 }
 
-void Event::setMouseX(int mx) {
+void Event::setMouseX(int mx)
+{
     mouseX = mx;
 }
 
-void Event::setMouseY(int my) {
+void Event::setMouseY(int my)
+{
     mouseY = my;
 }

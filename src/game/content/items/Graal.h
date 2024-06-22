@@ -13,21 +13,21 @@
 
 #include "../types/Item.h"
 
-class Graal : public Item {
-    public :
-        Graal(int x, int y, int id);
-        ~Graal();
+class Graal : public Item
+{
+public:
+    Graal(int x, int y, int id);
+    ~Graal();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
+    void action();
 
-        bool isPickable();
+    bool isPickable();
 
-    private :
-
-        int id;
+private:
+    int id;
 };
 
-#endif  // Graal.h
+#endif // Graal.h

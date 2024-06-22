@@ -15,52 +15,52 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class Pnj : public Object {
-    public :
-        Pnj(int x, int y, int type, int texte);
-        ~Pnj();
+class Pnj : public Object
+{
+public:
+    Pnj(int x, int y, int type, int texte);
+    ~Pnj();
 
-        void loop();
+    void loop();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        bool action(Direction dir);
+    bool action(Direction dir);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getDown();
+    int getDown();
 
-        void moveTo(int x, int y, Direction dir);
+    void moveTo(int x, int y, Direction dir);
 
-    private :
+private:
+    void init();
 
-        void init();
+    int getDynamicText();
 
-        int getDynamicText();
+    void moveX(int dx);
+    void moveY(int dy);
 
-        void moveX(int dx);
-        void moveY(int dy);
+    int type;
+    int texte;
 
-        int type;
-        int texte;
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        Chrono chrono;
+    int w;
+    int h;
 
-        int w;
-        int h;
+    int displayW;
+    int displayH;
 
-        int displayW;
-        int displayH;
+    bool idle;
 
-        bool idle;
+    Direction direction;
 
-        Direction direction;
-
-        bool stop;
+    bool stop;
 };
 
-#endif  // Pnj.h
+#endif // Pnj.h

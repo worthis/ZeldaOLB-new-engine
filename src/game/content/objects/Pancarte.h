@@ -14,29 +14,29 @@
 #include "../types/Portable.h"
 #include "../scene/Map.h"
 
-class Pancarte : public Portable {
-    public :
-        Pancarte(int x, int y, int texte, Map* map);
-        ~Pancarte();
+class Pancarte : public Portable
+{
+public:
+    Pancarte(int x, int y, int texte, Map *map);
+    ~Pancarte();
 
-        void portLoop();
-        void draw(int offsetX, int offsetY);
+    void portLoop();
+    void draw(int offsetX, int offsetY);
 
-        void impact();
+    void impact();
 
-        bool action(Direction dir);
+    bool action(Direction dir);
 
-        void onLift();
+    void onLift();
 
-        bool isResetable();
-        void reset();
+    bool isResetable();
+    void reset();
 
-    private :
-
-        int texte;
-        int x0;
-        int y0;
-        Map* map;
+private:
+    int texte;
+    int x0;
+    int y0;
+    Map *map;
 };
 
-#endif  // Pancarte.h
+#endif // Pancarte.h

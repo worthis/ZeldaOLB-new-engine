@@ -20,56 +20,56 @@
 
 #include "../link/Link.h"
 
-class Item : public Collisionable, public Loopable {
-    public :
-        Item();
-        virtual ~Item() = 0;
+class Item : public Collisionable, public Loopable
+{
+public:
+    Item();
+    virtual ~Item() = 0;
 
-        virtual void loop();
-        virtual void draw(int offsetX, int offsetY) = 0;
+    virtual void loop();
+    virtual void draw(int offsetX, int offsetY) = 0;
 
-        int getX();
-        int getY();
+    int getX();
+    int getY();
 
-        void setX(int i);
-        void setY(int j);
+    void setX(int i);
+    void setY(int j);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        bool isReady();
-        bool isPersistent();
-        virtual bool isPickable();
+    bool isReady();
+    bool isPersistent();
+    virtual bool isPickable();
 
-        void reset();
-        bool isResetable();
+    void reset();
+    bool isResetable();
 
-        virtual void action() = 0;
+    virtual void action() = 0;
 
-        void pousseX(int dx);
-        void pousseY(int dy);
+    void pousseX(int dx);
+    void pousseY(int dy);
 
-    protected :
-        Link* getLink();
+protected:
+    Link *getLink();
 
-        int x;
-        int y;
+    int x;
+    int y;
 
-        int anim;
-        int animMax;
-        int vanim;
+    int anim;
+    int animMax;
+    int vanim;
 
-        bool ready;
-        bool persistent;
+    bool ready;
+    bool persistent;
 
-        WImage* image;
+    WImage *image;
 
-        Chrono chrono;
+    Chrono chrono;
 
-        BoundingBox box;
+    BoundingBox box;
 
-    private :
-        Link* link;
-
+private:
+    Link *link;
 };
 
-#endif  // Item.h
+#endif // Item.h

@@ -14,15 +14,17 @@
 #include "../common/Common.h"
 #include "WResource.h"
 
-class WFile : public WResource {
-    public :
-        WFile(string filename);
-        ~WFile();
-        char* getBuffer();
-        long getSize();
-    private :
-        char* buffer;
-        long size;
+class WFile : public WResource
+{
+public:
+    WFile(string filename);
+    ~WFile();
+    char *getBuffer();
+    long getSize();
+
+private:
+    char *buffer;
+    long size;
 };
 
-#endif  // WFile.h
+#endif // WFile.h

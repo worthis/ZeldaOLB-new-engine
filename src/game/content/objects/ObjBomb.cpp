@@ -8,12 +8,13 @@
 
 #include "../../MainController.h"
 
-ObjBomb::ObjBomb(int i, int j) : anim(0), animMax(30), vanim(120) {
+ObjBomb::ObjBomb(int i, int j) : anim(0), animMax(30), vanim(120)
+{
     x = i;
     y = j;
 
     image = ResourceManager::getInstance()->loadImage("data/images/objects/bombe.png", true);
-    //chrono.reset();
+    // chrono.reset();
 
     // for quadtree operations:
     width = 14;
@@ -30,34 +31,39 @@ ObjBomb::ObjBomb(int i, int j) : anim(0), animMax(30), vanim(120) {
     chrono.reset();
 }
 
-ObjBomb::~ObjBomb() {
+ObjBomb::~ObjBomb()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void ObjBomb::portLoop() {
+void ObjBomb::portLoop()
+{
 
-    if (chrono.getElapsedTime() >= vanim) {
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim == 30) {
+        if (anim == 30)
+        {
             x -= 9;
             y -= 9;
             height = 32;
             width = 32;
-            Scene* scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
-            BoundingBox* b = getHandableBox();
+            Scene *scene = MainController::getInstance()->getGameController()->getSceneController()->getScene();
+            BoundingBox *b = getHandableBox();
             scene->testDegat(b, S, 5, TA_EXPLO, TE_NORMAL);
             scene->testDegatOnLink(b, S, 5, TA_EXPLO, TE_NORMAL);
             AudioManager::getInstance()->playSound(TS_BOOM);
         }
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             alive = false;
         }
         chrono.reset();
     }
-
 }
 
-void ObjBomb::draw(int offsetX, int offsetY) {
+void ObjBomb::draw(int offsetX, int offsetY)
+{
 
     int dstX = x - offsetX;
     int dstY = y - offsetY;
@@ -67,46 +73,55 @@ void ObjBomb::draw(int offsetX, int offsetY) {
     int srcH = srcW;
 
     // draw shadow
-    if (!carried && anim < 29) {
+    if (!carried && anim < 29)
+    {
         WindowManager::getInstance()->draw(image, 2, 1, 12, 6, dstX + 1, dstY + height - 6);
     }
 
     WindowManager::getInstance()->draw(image, srcX, srcY, srcW, srcH, dstX, dstY);
 }
 
-void ObjBomb::impact() {
+void ObjBomb::impact()
+{
     AudioManager::getInstance()->playSound(TS_SOL);
 }
 
-void ObjBomb::reset() {
+void ObjBomb::reset()
+{
     alive = false;
 }
 
-bool ObjBomb::isResetable() {
+bool ObjBomb::isResetable()
+{
     return true;
 }
 
-void ObjBomb::pousseX(int dx) {
+void ObjBomb::pousseX(int dx)
+{
     setX(x + dx);
 }
 
-void ObjBomb::pousseY(int dy) {
+void ObjBomb::pousseY(int dy)
+{
     setY(y + dy);
 }
 
-void ObjBomb::setX(int i) {
-    if (i != x) {
+void ObjBomb::setX(int i)
+{
+    if (i != x)
+    {
         box.setX(box.getX() + (i - x));
         x = i;
         checkPosition();
     }
 }
 
-void ObjBomb::setY(int j) {
-    if (j != y) {
+void ObjBomb::setY(int j)
+{
+    if (j != y)
+    {
         box.setY(box.getY() + (j - y));
         y = j;
         checkPosition();
     }
 }
-

@@ -13,16 +13,16 @@
 
 #include "../types/Item.h"
 
-class RubisBleu : public Item {
-    public :
-        RubisBleu(int x, int y);
-        ~RubisBleu();
+class RubisBleu : public Item
+{
+public:
+    RubisBleu(int x, int y);
+    ~RubisBleu();
 
-        void loop();
-        void draw(int offsetX, int offsetY);
+    void loop();
+    void draw(int offsetX, int offsetY);
 
-        void action();
-
+    void action();
 };
 
-#endif  // RubisBleu.h
+#endif // RubisBleu.h

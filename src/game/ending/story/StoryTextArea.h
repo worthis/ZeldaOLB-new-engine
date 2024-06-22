@@ -21,39 +21,39 @@
 
 #include "../../keys/Action.h"
 
-class StoryTextArea {
-    public :
-        StoryTextArea();
-        ~StoryTextArea();
+class StoryTextArea
+{
+public:
+    StoryTextArea();
+    ~StoryTextArea();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-        void init();
+    void init();
 
-        void start();
-        void stop();
+    void start();
+    void stop();
 
-    private :
+private:
+    void setTextId(int textId);
 
-        void setTextId(int textId);
+    bool hasLogicalNext();
 
-        bool hasLogicalNext();
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    bool ready;
 
-        bool ready;
+    Chrono chrono;
 
-        Chrono chrono;
+    WImage *image;
 
-        WImage* image;
+    Text *text;
 
-        Text* text;
-
-        int id;
+    int id;
 };
 
-#endif  // StoryTextArea.h
+#endif // StoryTextArea.h

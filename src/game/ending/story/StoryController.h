@@ -16,19 +16,20 @@
 
 #include "StoryTextArea.h"
 
-class StoryController {
-    public :
-        StoryController();
-        ~StoryController();
+class StoryController
+{
+public:
+    StoryController();
+    ~StoryController();
 
-        void launch();
+    void launch();
 
-        void handleActions(Action* action);
-        void loop();
-        void draw();
+    void handleActions(Action *action);
+    void loop();
+    void draw();
 
-    private :
-        StoryTextArea story;
+private:
+    StoryTextArea story;
 };
 
-#endif  // StoryController.h
+#endif // StoryController.h

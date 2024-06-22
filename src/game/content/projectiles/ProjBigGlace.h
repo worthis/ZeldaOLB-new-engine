@@ -13,31 +13,31 @@
 
 #include "../types/Projectile.h"
 
-class ProjBigGlace : public Projectile {
-    public :
-        ProjBigGlace(int x, int y, double dx, double dy);
-        ~ProjBigGlace();
+class ProjBigGlace : public Projectile
+{
+public:
+    ProjBigGlace(int x, int y, double dx, double dy);
+    ~ProjBigGlace();
 
-        void projLoop();
-        void draw(int offsetX, int offsetY);
+    void projLoop();
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        int getX();
-        int getY();
-        int getDown();
+    int getX();
+    int getY();
+    int getDown();
 
-        void renvoie(Direction dir);
+    void renvoie(Direction dir);
 
-    private :
-
-        int speed;
-        double dx;
-        double dy;
-        int force;
-        double longX;
-        double longY;
-        bool retour;
+private:
+    int speed;
+    double dx;
+    double dy;
+    int force;
+    double longX;
+    double longY;
+    bool retour;
 };
 
-#endif  // ProjBigGlace.h
+#endif // ProjBigGlace.h

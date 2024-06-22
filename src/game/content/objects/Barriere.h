@@ -16,28 +16,28 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class Barriere : public Object {
-    public :
-        Barriere(int x, int y, Map* map);
-        ~Barriere();
+class Barriere : public Object
+{
+public:
+    Barriere(int x, int y, Map *map);
+    ~Barriere();
 
-        void loop();
+    void loop();
 
-        void draw(int offsetX, int offsetY);
+    void draw(int offsetX, int offsetY);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
+    void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
 
-    private :
+private:
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    int force;
 
-        int force;
-
-        Chrono chrono;
+    Chrono chrono;
 };
 
-#endif  // Barriere.h
+#endif // Barriere.h

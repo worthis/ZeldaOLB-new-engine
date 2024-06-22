@@ -15,46 +15,46 @@
 
 #include "../../../engine/util/time/Chrono.h"
 
-class Poule : public Portable {
-    public :
-        Poule(int x, int y);
-        ~Poule();
+class Poule : public Portable
+{
+public:
+    Poule(int x, int y);
+    ~Poule();
 
-        void portLoop();
-        void draw(int offsetX, int offsetY);
+    void portLoop();
+    void draw(int offsetX, int offsetY);
 
-        void impact();
+    void impact();
 
-        void onLift();
+    void onLift();
 
-        void stopBeforeUp();
+    void stopBeforeUp();
 
-        bool isCollision(Collision c);
+    bool isCollision(Collision c);
 
-        BoundingBox* getBoundingBox();
+    BoundingBox *getBoundingBox();
 
-        BoundingBox* getSecondBoundingBox();
+    BoundingBox *getSecondBoundingBox();
 
-        void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
+    void underAttack(Direction dir, int force, TypeAttack type, TypeEffect effect);
 
-        void enerve();
+    void enerve();
 
-    private :
+private:
+    void moveX(int dx);
+    void moveY(int dy);
 
-        void moveX(int dx);
-        void moveY(int dy);
+    int anim;
+    int animMax;
+    int vanim;
 
-        int anim;
-        int animMax;
-        int vanim;
+    Chrono chrono;
 
-        Chrono chrono;
+    int stop;
+    int invul;
+    int tolerance;
 
-        int stop;
-        int invul;
-        int tolerance;
-
-        BoundingBox box2;
+    BoundingBox box2;
 };
 
-#endif  // Poule.h
+#endif // Poule.h

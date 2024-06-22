@@ -3,7 +3,8 @@
 #include "../../../engine/resources/ResourceManager.h"
 #include "../../../engine/window/WindowManager.h"
 
-Graal::Graal(int i, int j, int num) : id(num) {
+Graal::Graal(int i, int j, int num) : id(num)
+{
     x = i;
     y = j;
     persistent = true;
@@ -26,22 +27,28 @@ Graal::Graal(int i, int j, int num) : id(num) {
     box.setH(16);
 }
 
-Graal::~Graal() {
+Graal::~Graal()
+{
     ResourceManager::getInstance()->free(image);
 }
 
-void Graal::loop() {
-    if (chrono.getElapsedTime() >= vanim) {
+void Graal::loop()
+{
+    if (chrono.getElapsedTime() >= vanim)
+    {
         anim++;
-        if (anim > animMax) {
+        if (anim > animMax)
+        {
             anim = 0;
         }
         chrono.reset();
     }
 }
 
-void Graal::draw(int offsetX, int offsetY) {
-    if (!alive) {
+void Graal::draw(int offsetX, int offsetY)
+{
+    if (!alive)
+    {
         return;
     }
     int dstX = x - offsetX;
@@ -49,11 +56,13 @@ void Graal::draw(int offsetX, int offsetY) {
     WindowManager::getInstance()->draw(image, 16 * anim, 112, 16, 16, dstX, dstY);
 }
 
-void Graal::action() {
+void Graal::action()
+{
     getLink()->trouveObjet(TI_GRAAL, id);
     alive = false;
 }
 
-bool Graal::isPickable() {
+bool Graal::isPickable()
+{
     return false;
 }

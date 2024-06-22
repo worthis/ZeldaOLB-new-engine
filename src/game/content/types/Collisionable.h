@@ -15,23 +15,21 @@
 
 #include "../../../engine/util/geometry/BoundingBox.h"
 
-class Collisionable {
-    public :
-        Collisionable();
-        virtual ~Collisionable() = 0;
+class Collisionable
+{
+public:
+    Collisionable();
+    virtual ~Collisionable() = 0;
 
-        virtual BoundingBox* getBoundingBox() = 0;
-        virtual bool isCollision(Collision c);
-        virtual bool isToAvoid(Collision c);
-        virtual bool isIdle();
+    virtual BoundingBox *getBoundingBox() = 0;
+    virtual bool isCollision(Collision c);
+    virtual bool isToAvoid(Collision c);
+    virtual bool isIdle();
 
-    protected :
-
-        bool isOnIce();
-        bool isOnWater();
-        bool isOnGap();
+protected:
+    bool isOnIce();
+    bool isOnWater();
+    bool isOnGap();
 };
 
-#endif  // Collisionable.h
-
-
+#endif // Collisionable.h

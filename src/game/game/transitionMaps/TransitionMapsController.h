@@ -15,19 +15,19 @@
 
 #include "TransitionMaps.h"
 
-class TransitionMapsController {
-    public :
-        TransitionMapsController();
-        ~TransitionMapsController();
+class TransitionMapsController
+{
+public:
+    TransitionMapsController();
+    ~TransitionMapsController();
 
-        void launch();
+    void launch();
 
-        void loop();
-        void draw();
+    void loop();
+    void draw();
 
-    private :
-
-        TransitionMaps transitionMaps;
+private:
+    TransitionMaps transitionMaps;
 };
 
-#endif  // TransitionMapsController.h
+#endif // TransitionMapsController.h

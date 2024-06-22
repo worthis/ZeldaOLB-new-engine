@@ -7,30 +7,42 @@
 
 #include "../../MainController.h"
 
-StoryTextArea::StoryTextArea() : anim(0), animMax(0), vanim(40), ready(false), text(0), id(0) {
+StoryTextArea::StoryTextArea() : anim(0), animMax(0), vanim(40), ready(false), text(0), id(0)
+{
     image = ResourceManager::getInstance()->loadImage("data/images/ending/fin.png");
 }
 
-StoryTextArea::~StoryTextArea() {
+StoryTextArea::~StoryTextArea()
+{
     ResourceManager::getInstance()->free(image);
     delete text;
 }
 
-void StoryTextArea::handleActions(Action* action) {
-    if (action->isAction(ACTION)) {
-        if (ready) {
-            if (text->hasNext()) {
+void StoryTextArea::handleActions(Action *action)
+{
+    if (action->isAction(ACTION))
+    {
+        if (ready)
+        {
+            if (text->hasNext())
+            {
                 text->next();
                 start();
                 AudioManager::getInstance()->playSound(TS_TEXTNEXT);
-            } else if (hasLogicalNext()) {
+            }
+            else if (hasLogicalNext())
+            {
                 start();
                 AudioManager::getInstance()->playSound(TS_TEXTNEXT);
-            } else {
+            }
+            else
+            {
                 stop();
                 AudioManager::getInstance()->playSound(TS_TEXTEND);
             }
-        } else {
+        }
+        else
+        {
             anim = animMax;
             ready = true;
         }
@@ -38,10 +50,14 @@ void StoryTextArea::handleActions(Action* action) {
     }
 }
 
-void StoryTextArea::loop() {
-    if (!ready) {
-        if (chrono.getElapsedTime() >= vanim) {
-            do {
+void StoryTextArea::loop()
+{
+    if (!ready)
+    {
+        if (chrono.getElapsedTime() >= vanim)
+        {
+            do
+            {
                 ready = (++anim == animMax);
             } while (!ready && text->charAtInBox(anim) == ' ');
             AudioManager::getInstance()->playSound(TS_TEXT, 1);
@@ -50,41 +66,50 @@ void StoryTextArea::loop() {
     }
 }
 
-void StoryTextArea::draw() {
+void StoryTextArea::draw()
+{
     WindowManager::getInstance()->draw(image, 0, 0, 320, 240, 0, 0);
     text->displayBox(8, 8, anim);
 }
 
-void StoryTextArea::init() {
+void StoryTextArea::init()
+{
     AudioManager::getInstance()->playMusic(37);
     setTextId(365);
     start();
 }
 
-void StoryTextArea::start() {
+void StoryTextArea::start()
+{
     chrono.reset();
     anim = 0;
     animMax = text->getLengthInBox();
     ready = false;
 }
 
-void StoryTextArea::stop() {
+void StoryTextArea::stop()
+{
     AudioManager::getInstance()->playSound(TS_MENU1);
     MainController::getInstance()->getEndingController()->setStep(END_SCORE);
 }
 
-void StoryTextArea::setTextId(int textId) {
+void StoryTextArea::setTextId(int textId)
+{
     delete text;
     text = TextManager::getInstance()->getText(textId);
     text->setBox(256 - 16 + 64, 64 - 16 + 158 + 32);
     id = textId;
 }
 
-bool StoryTextArea::hasLogicalNext() {
+bool StoryTextArea::hasLogicalNext()
+{
     int next = 0;
-    if (id < 366) {
+    if (id < 366)
+    {
         next = id + 1;
-    } else {
+    }
+    else
+    {
         return false;
     }
     setTextId(next);

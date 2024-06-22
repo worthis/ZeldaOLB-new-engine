@@ -1,19 +1,24 @@
 #include "TransitionMapsController.h"
 
-TransitionMapsController::TransitionMapsController() {
+TransitionMapsController::TransitionMapsController()
+{
 }
 
-TransitionMapsController::~TransitionMapsController() {
+TransitionMapsController::~TransitionMapsController()
+{
 }
 
-void TransitionMapsController::launch() {
+void TransitionMapsController::launch()
+{
     transitionMaps.init();
 }
 
-void TransitionMapsController::loop() {
+void TransitionMapsController::loop()
+{
     transitionMaps.loop();
 }
 
-void TransitionMapsController::draw() {
+void TransitionMapsController::draw()
+{
     transitionMaps.draw();
 }
