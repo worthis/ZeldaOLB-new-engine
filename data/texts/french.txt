@@ -1,0 +1,578 @@
+APPUYEZ SUR ENTREE
+ECRAN DE SELECTION
+OPTIONS
+RECORDS
+CHARGER
+EFFACER
+ANNULER
+EFFACER ?
+OUI
+NON
+JEU
+COMMANDES
+AUDIO
+RETOUR
+AFFICHAGE :
+PLEIN ECRAN
+FENETRE
+LANGUE :                         FRANCAIS
+LINK :
+ORIGINAL
+BLOND
+MUSIQUE :
+SONS :
+CLAVIER
+MANETTE
+AUCUNE MANETTE DETECTEE
+PAGE 1 / 2
+PAGE 2 / 2
+HAUT :
+BAS :
+GAUCHE :
+DROITE :
+COURIR :
+EPEE :
+OBJET :
+ACTION :
+MENU :
+TELEPORTATION (ONI-LINK) :
+CARTE :
+ENCYCLOPEDIE :
+QUITTER :
+DEFAUT
+CONFIRMER ?
+ECHAP
+TAB
+MAJ
+ESPACE
+ENTREE
+HAUT
+BAS
+GAUCHE
+DROITE
+OUI
+NON
+TYPE DE CLAVIER :
+AZERTY
+QWERTY
+CAMERA :
+PAGE 1 / 3
+PAGE 2 / 3
+PAGE 3 / 3
+MEILLEUR TEMPS :
+RANG DES 100 %
+RANG ULTIME
+RANG DE RAPIDITE
+RANG : INCONNU
+RANG : Héros d'Hyrule
+RANG : Frimeur
+RANG : Marathonien d'Hyrule
+RANG : Héros de Termina
+RANG : Crâneur
+RANG : Marathonien de Termina
+RANG : Héros des deux Mondes
+RANG : Maître Epéiste
+RANG : Marathonien des deux Mondes
+Finir le jeu à 100 %.
+Finir le jeu sans mourir,
+avec 15 coeurs au maximum,
+sans parler aux Grandes Fées,
+sans acheter de flacons,
+sans changer de tunique
+et sans bouclier.
+Finir le jeu en moins de
+quatre heures.
+Après la défaite de Ganon et la disparition de la Triforce, la légende laisse croire que la paix dura...       Mais derrière chaque légende se cache souvent une plus sombre réalité...
+La légende oublie qu'à la suite de ces évènements son héros fut frappé par une terrible malédiction...
+Jour après jour, Link se transformait en un monstre au pouvoir destructeur incontrôlable surnommé Oni-Link...
+Banni d'Hyrule, Link demanda conseil à la Princesse Zelda.
+Cette dernière lui indiqua son tout dernier espoir : un portail vers un monde secret...
+Oui... C'est par ici...                         Nous y sommes presque...
+Je suis désolée que tu ne puisses pas emmener   d'armes... Mais tu comprends... Tu risques de te transformer à tout moment...                    Ce serait trop dangereux...
+Ca y est ! C'est ici !                          Ne bouge plus, j'active le portail...                                                           Est-ce que tu es prêt ?
+AIDE : Appuie sur F1 pour consulter l'aide.
+Voulez-vous arrêter la partie ?                                    [c=2]CONTINUER[c=0]                                 SAUVEGARDER ET QUITTER                         QUITTER SANS SAUVEGARDER
+Voulez-vous arrêter la partie ?                                    CONTINUER                                 [c=2]SAUVEGARDER ET QUITTER[c=0]                         QUITTER SANS SAUVEGARDER
+Voulez-vous arrêter la partie ?                                    [c=0]CONTINUER                                 SAUVEGARDER ET QUITTER                         [c=2]QUITTER SANS SAUVEGARDER
+Tu as trouvé un quart de coeur !!!
+Encore [v=1] et tu gagneras un coeur supplémentaire !!!
+Ton nombre de coeurs vient d'augmenter !!!
+Tu as trouvé un flacon !!!
+Sers-t'en pour stocker des potions !
+Tu as trouvé un bouclier !!!                    Ta défense augmente d'un point !
+Tu as trouvé une petite épée !!!                Sers-t'en pour couper des ennemis ou des buissons en appuyant sur [EPEE] !
+Maintenir [EPEE] permet de préparer une attaque chargée !
+La puissance d'Excalibur a augmenté !                                                           Va vite au prochain temple !
+Excalibur a atteint sa puissance maximale !!!   Même Oni-Link ne devrait pas résister à sa lame !!!
+Tu as trouvé les gants !!!                      Tu peux désormais soulever les pierres légères en appuyant sur [ACTION].
+Tu as trouvé les Gants d'Or !!!                 Tu peux désormais soulever les pierres lourdes en appuyant sur [ACTION].
+Tu as obtenu l'arc !!!                          Utilise-le pour atteindre des cibles éloignées.
+Tu as trouvé le grand Arc des Fées!!!                                                           Tu tires désormais des flèches d'une puissance extraordinaire !!!
+Tu as trouvé les palmes !!!                     Tu peux désormais aller dans l'eau !
+Tu as trouvé le marteau magique !!!             Utilise-le pour écraser les obstacles.
+Tu as trouvé la lanterne !!!                    Utilise-la pour faire jaillir des flammes.
+Tu as obtenu une potion rouge !!!               Bois-la pour restaurer ton énergie !!!
+Tu as obtenu une potion verte !!!               Bois-la pour restaurer ta magie !!!
+Tu as obtenu une potion bleue !!!               Bois-la pour restaurer ton énergie et ta magie !!!
+Tu as trouvé la carte du donjon !!!             Tu peux la consulter en appuyant sur [CARTE] à l'intérieur du donjon !!!
+Tu as trouvé la boussole !!!                    L'emplacement des coffres et des boss est désormais indiqué sur la carte !!!
+Tu as trouvé la clé du boss !!!                 Tu peux désormais accéder à son repaire !!!
+Tu as trouvé une petite clé !!!                 Tu peux désormais ouvrir une porte verrouillée !!!
+Tu as obtenu un médaillon magique !!!           Ta défense vient d'augmenter !!!
+Tu as trouvé le grappin !!!                     Tu peux désormais franchir des précipices en le lançant contre des objets en bois !!!
+Tu as trouvé la baguette de feu !!!             Tu peux désormais envoyer de puissantes boules de feu !!!
+Tu as trouvé la baguette de glace !!!           Tu peux désormais envoyer de puissants projectiles givrants !!!
+                   Niveau 1 :                                                                                   Temple de Firone
+                   Niveau 2 :                                                                                     Mine de Ruto
+                   Niveau 3 :                                                                                  Temple de Latouane
+                   Niveau 4 :                                                                                     Manoir Hanté
+                   Niveau 5 :                                                                                    Temple d'Ordinn
+                   Niveau 6 :                                                                                 Colisée des Monstres
+                   Niveau 7 :                                                                                   Temple de Lanelle
+                   Niveau 8 :                                                                                    Temple de Zelda
+                   Niveau 9 :                                                                                     Manoir hanté
+                   Niveau 10 :                                                                                    Temple de Din
+                   Niveau 11 :                                                                                   Temple de Nayru
+                   Niveau 12 :                                                                                  Temple de Farore
+                   Niveau 13 :                                                                                   Temple de Xanto
+                   Niveau ? :                                                                                     Temple Secret
+                 Niveau Final :                                                                                  Tour du Destin
+GRAAL :
+STATUT :
+VIE       :
+MAGIE     :
+ONI LINK  :
+FORCE     :
+DEFENSE   :
+TEMPS     :
+AIDE 1 / 2
+AIDE 2 / 2
+Retour au jeu : F1           Suivant : Droite
+Retour au jeu : F1         Précédent : Gauche
+Coup d'épée :
+Attaque Tornade :              Maintenir épée
+Ouvrir / Parler / Soulever :
+Utiliser l'objet sélectionné :
+Menu de sélection d'objet :
+Courir :
+Téléportation (Oni-Link) :
+Carte (extérieur ou donjons) :
+Encyclopédie des monstres :
+Regarder autour :
+Sauvegarder / Quitter :
+Agrandir / Rétrécir :          CTRL et ENTREE
+MONSTRES 1
+MONSTRES 2
+MONSTRES 3
+MONSTRES 4
+MONSTRES 5
+MONSTRES 6
+O : Lac de Lanelle
+Grotte du portail scellé.                                                                       Entrée interdite.
+N : Plaine Est
+Temple de Firone                                                                                Sauvez les arbres, mangez du castor !
+Tu as trouvé les Bottes de Pégase !!!           Tu peux désormais courir à grande vitesse en    maintenant [COURSE] !!!
+Bonjour Link, je t'attendais.                                                                   Je m'appelle Pit, j'ai été chargé de surveiller cette grotte par la princesse Zelda.
+Elle m'a prévenu de ton arrivée et m'a demandé  de t'aider.                                     Ma maison est juste à côté, nous serons mieux pour parler, suis-moi.
+Pit t'attend dans la maison juste à côté.
+Pit t'a demandé de ne pas sortir de la forêt.
+S : Forêt interdite
+S : Lac de Lanelle
+N : Vers le Temple de Latouane
+N : Village de Ruto
+-Service Anti Monstres Urluberlus et Sauvages- (S.A.M.U.S.)                                                                                     Entrez si vous n'aimez pas les monstres.
+O : Ville de Rauru
+N : Village de Ruto                             S : Plaine Est
+S : Village de Ruto                             E : Vers le désert
+Entrée de la mine
+O : Vers le Temple de Latouane                  E : Village de Ruto
+Je vends un flacon pour 100 rubis, ça           t'intéresse ?                                                 [c=2]OUI[c=0]              NON
+Je vends un flacon pour 100 rubis, ça           t'intéresse ?                                                 [c=0]OUI              [c=2]NON
+Désolé, mais tu n'as pas assez de rubis.
+Merci beaucoup, voilà ton flacon.
+Reviens me voir si tu changes d'avis.
+Désolé, c'était mon seul flacon.
+Ne traîne pas dans mes pattes !
+Si tu cherches un sac de bombes, tu devrais     aller voir l'homme qui travaille à la mine, il  en utilise beaucoup.
+Il y a un passage secret à l'Ouest du village   qui mène au temple de Latouane, mais tu auras   besoin de bombes pour l'emprunter.
+L'accès à la mine est strictement interdit sur  ordre du maire depuis que des monstres en       sortent.
+Tu dis que quelqu'un est peut-être bloqué dans  la mine ? Et alors ?
+Le maire t'a autorisé à passer ?                Alors écarte-toi !
+...
+Bienvenue au village de Ruto.                                                                   Et tout à fait entre nous, méfie-toi de tout le monde ici...
+Ce village à la façade prospère est en vérité   le plus pauvre de Termina...                    Et il ne faut pas compter sur le maire pour que ça change...
+Les touristes qui viennent dans ce village sont soit perdus, soit complètement fous.                                                            Pour ma part j'ai toujours une carte sur moi.
+S : Vers la Plaine Est                          O : Vers le temple de Latouane                  E : Village de Ruto
+S : Plaine Est
+Temple de Latouane
+E : Terres oubliées
+Grotte de la Fée
+Temple de Din                                                                                   La puissance des fées récompensera les braves !
+Oasis féérique
+S : Village de Ruto                             O : Mort certaine
+O : Marais de la sorcière
+                      ???
+N : Ville de Rauru
+Temple de Lanelle
+E : Forêt interdite
+N : Plaine Est                                  O : Vers la ville de Rauru
+O : Plaine Ouest
+N : Terres oubliées                             S : Ville de Rauru
+N : Ville de Rauru                              S : Lac de Lanelle                              O : Plaine Ouest                                E : Plaine Est
+E : Plaine Est
+Sur ordre du maire, l'accès à cette région est  strictement interdit.
+Tu as reçu l'autorisation du maire ?            Sois prudent dans ce cas, ceux qui s'aventurent là-bas ne reviennent jamais...
+Je vends un meilleur bouclier pour 250 rubis, ça t'intéresse ?                                                [c=2]OUI[c=0]              NON
+Je vends un meilleur bouclier pour 250 rubis, ça t'intéresse ?                                                [c=0]OUI              [c=2]NON
+Merci beaucoup, voilà ton bouclier.
+Désolé, je n'ai plus rien en stock.
+Tu as trouvé un nouveau bouclier !!!            Ta défense augmente !
+Pourquoi est-ce encore à moi de m'occuper de ces poules ???
+J'aime balayer !
+Rauru est la plus belle ville du pays, de       nombreux visiteurs arrivent chaque jour pour la contempler.
+On dit qu'un instrument magique se trouve       quelque part sur les terres de Termina.         Je me demande si je le verrai un jour...
+Tu as trouvé l'instrument magique ???           Et moi qui espérais que ce soit un saxo...
+Mes parents se sont perdus.
+J'aime me promener !
+S : Ville de Rauru                              E : Maison hantée
+Temple de Farore                                                                                La puissance des fées récompensera les braves !
+Maison hantée                                                                                   Venez enrichir notre collection d'âmes !
+E : Vers le Temple Latouane
+O : Cimetière
+O : Village de Mido
+Secret du désert :                              Soulève les pierres de l'oiseau dans le sens des aiguilles d'une montre en finissant par l'oeil pour ouvrir le chemin.
+Temple de Zelda
+S : Marais de la sorcière
+E : Ville de Rauru
+N : Montagnes du destin
+Link, c'est Zelda, félicitations !!!            Rauru est en sécurité, pour le moment...        Va à la tour du destin au sommet de la montagne et stoppe Ganon !
+Tu ne peux pas fuir maintenant !
+O : Village de Kasuto                           E : Hutte de la sorcière
+N : Plaine Ouest                                S : Hutte de la sorcière
+Hutte aux potions                                                                               Venez échanger vos rubis contre les potions les plus puissantes du pays !!!
+E : Lac de Lanelle
+Colisée des monstres                                                                            Venez nombreux !
+N : Cimetière                                   S : Village de Kasuto
+Village de Kasuto                                                                                     -- Interdit aux humains (vivants) --
+Astuce : Maintient Ctrl pour regarder autour de toi avec les flèches de directions.
+N : Village de Kasuto                           E : Marais de la sorcière
+T'as l'air plutôt fort, tu devrais aller t'entraîner dans l'arène au Sud du village. On dit qu'un objet très utile y est caché...
+Tiens ?                                         Une nouvelle espèce ?                                                                           Est-ce que tu sais parler ?
+Ce village est le dernier rempart contre l'humanité.
+Bonjour, je suis un monstre débile.
+Bloqué ?                                                                                                                                        La solution n'est pourtant pas loin.
+S : Village de Kasuto
+Temple de Xanto                                                                                 Les morts ne racontent pas d'histoires...
+Avez-vous déjà essayé le marteau sur les crânes ?
+E : Plaine Ouest
+Village de Mido
+Est-ce que tous les jeunes de ton âge ont d'aussi mauvais goûts vestimentaires ?
+Bienvenue au village de Mido, mais ne te sens pas obligé de rester.
+Grrr... je pensais être enfin tranquille ici...
+Passe du destin                                                                                 Seul l'allié du bien et du mal franchira cette grotte.
+Temple de Nayru                                                                                 La puissance des fées récompensera les braves !
+S : Village de Mido
+Temple d'Ordinn
+La force des titans reviendra au héros légendaire...
+Félicitations !                                                                                 Tu as réussi à atteindre le sommet du mont Raplaplat !
+Tour du Destin                                                                                  Héros d'Hyrule prends garde, ici trône désormais le vil Ganon, ici se jouera l'avenir du monde.
+S : Plaine Ouest
+Seul le vide infini pourra ôter cette pierre.
+Tu as trouvé l'Ocarina du Temps !!!                                                             Sa puissance est telle qu'il stoppe le temps lorsque tu souffles dedans !
+Vous n'avez appris aucun thème.
+[c=2]- HYMNE DU VIDE[c=0]                                 - Ne rien jouer
+[c=0]- Hymne du vide                                 [c=2]- NE RIEN JOUER
+[c=2]- CHANT DE L'ENVOL[c=0]                              - Hymne du vide                                 - Ne rien jouer
+- Chant de l'envol                              [c=2]- HYMNE DU VIDE[c=0]                                 - Ne rien jouer
+[c=0]- Chant de l'envol                              - Hymne du vide                                 [c=2]- NE RIEN JOUER
+[c=2]- CHANT DE L'ENVOL[c=0]                              - Hymne du vide                                 - Chant de l'esprit                             - Ne rien jouer
+- Chant de l'envol                              [c=2]- HYMNE DU VIDE[c=0]                                 - Chant de l'esprit                             - Ne rien jouer
+- Chant de l'envol                              - Hymne du vide                                 [c=2]- CHANT DE L'ESPRIT[c=0]                             - Ne rien jouer
+[c=0]- Chant de l'envol                              - Hymne du vide                                 - Chant de l'esprit                             [c=2]- NE RIEN JOUER
+Tu ne dois pas te transformer ici !!!
+Tu ne peux pas entrer dans ce village sous cette apparence !!!
+Link, c'est Pit. Je te parle par télépathie. Tu ne dois en aucun cas te transformer dans un     village !                                       Je te téléporte à l'extérieur.
+Chef de projet, concepteur et programmeur :                                                                     Vincent Jouillat
+Scénariste :                                                                                                Lucie Pénalver (Lobalùz)
+Aide aux Graphismes :                                                                                             Harvestland
+Illustratrice :                                                                                                 Solène Jouillat
+Carte de Termina :                                                                                           Adrien Batis (Raiden)
+Temple de Firone
+Mine de Ruto
+Temple de Latouane
+Manoir Hanté
+Temple d'Ordinn
+Colisée des Monstres
+Temple de Lanelle
+Temple de Zelda
+Temple de Din
+Temple de Nayru
+Temple de Farore
+Temple de Xanto
+Temple Secret
+Tour du Destin
+Tu as trouvé Excalibur!!!                                                                       Sa puissance extraordinaire semble palpable !!!
+Tu as trouvé un Graal !!!
+Tu as trouvé un nouveau coeur !!!                                                               Ta vie maximale augmente d'un coeur !!!
+Souhaites-tu sauvegarder ?                                            [c=2]OUI[c=0]                                             NON
+Souhaites-tu sauvegarder ?                                            OUI                                             [c=2]NON[c=0]
+Souhaites-tu retourner à l'entrée du donjon ?                         [c=2]OUI[c=0]                                             NON
+Souhaites-tu retourner à l'entrée du donjon ?                         OUI                                             [c=2]NON[c=0]
+Tu as vaincu le monstre de cette mine ???       Félicitations !!!
+Je suis le chef des ouvriers, tu dis que tu me  cherchais ?
+Prends ce sac rempli de bombes, ça devrait      t'aider.
+Tu as trouvé le Sac de Bombes !!!               Il est rempli en plus !!!                       Appuie sur [INVENTAIRE] pour les équiper, puis sur [OBJECT] pour les utiliser.
+Tu es venu me sauver ?                          Merci beaucoup !
+En creusant des galeries nous avons découvert   ce repaire de monstres...
+Nous avons tous été capturés par les monstres   vivants dans ces cavernes.
+Notre chef est à l'étage en dessous, va vite le sauver !
+J'ai trouvé ça dans la mine, prends-la, ça      devrait t'aider!
+Je suis le bras droit du maire, il m'a envoyé   sauver sa fille...                              Mais je me suis fait avoir, il n'y a rien à faire contre ces fantômes...
+Ne reste pas ici, tu ne pourras rien faire avec tes armes actuelles...
+Pour continuer ta quête, suis le chemin à l'Ouest de la ville. Cet arc te permettra d'atteindre la sphère et d'ouvrir le chemin...
+Tu as vaincu le vampire et es venu me sauver ?  Merci infiniment ! Mon père est le maire de la  ville, va le voir, je suis sûre qu'il te récompensera.
+Ne t'en fais pas pour moi, je peux rentrer sans aide maintenant que le vampire n'est plus.
+Hall du Colisée
+Arène 1
+Arène 2
+Arène 3
+Arène 4
+Remise des prix
+Arène spéciale                                                                                  Venez tenter le prix spécial !!!
+Tu as trouvé une Cotte de Maille !!!                                                            Ta défense augmente !!!
+Tu as trouvé une meilleure Cotte de Maille !!!                                                  Ta défense augmente !!!
+Hihihihihi !!!                                  Félicitations Link ! Tu as réussi à te          débarrasser de ta malédiction. Et par la même   occasion tu m'as enfin libéré !!!
+Pour te récompenser de tes efforts je ne te     tuerai pas aujourd'hui, j'ai une mission plus   importante.
+Si tu tiens à m'arrêter, rejoins-moi au temple  des morts si tu en as le courage.               Adieu ! Hihihihihi !!!
+Link, c'est Zelda, je te parle par télépathie.  Je suis avec Pit, rejoins-nous vite, l'heure est grave.
+Je t'attendais Link.                            Je transmets la puissance de la déesse à ton    épée pour restituer le pouvoir d'Excalibur.
+Link, c'est Zelda, je te parle par télépathie.  N'entre surtout pas dans ce donjon sans être    parfaitement préparé, c'est sans doute un piège d'Oni-Link.
+Ainsi tu es venu ?                              Tu dois sans doute vouloir mourir, je vais me   faire un plaisir de t'exaucer.                  Hihihihihi !!!
+L'essence d'Oni-Link a été enfermée dans le     masque de l'Esprit !!!                          Tu as réussi !!!
+Grrrr !!! Tu n'as tout de même pas battu        Oni-Link ??? Impressionnant...                  J'imagine que tu ne t'attendais pas à me voir,  nous sommes pourtant dans le monde des morts.
+Oni-Link m'a donné l'énergie dont j'avais besoin pour me re-matérialiser, je suis donc de retour plus tôt que prévu.                             Gwahahahahaha !!!
+Au fait, tu te demandes peut-être d'où vient    Oni-Link ? C'est très simple, la dernière fois  je voulais m'assurer que tu ne te mettrais plus en travers de mon chemin, je me suis donc servi
+de la Triforce pour te changer en monstre à ma  solde. Hélas il n'y avait pas assez de ténèbres en toi, cette transformation n'a donc pas été   fulgurante...
+Assez parlé, j'ai de nombreux projets...        Je me ferais une joie de t'éliminer, mais je    n'en vois pas l'utilité...
+Pour ton information, seules les créatures des  ténèbres peuvent s'échapper d'ici.              Alors adieu! Gwahahahahaha !!!
+Onily ? Alors il vient ce café ???              Quoi ??? C'est toi Link ???
+                Monde des Morts
+Link, c'est Zelda, je te parle par télépathie.  C'est terrible, Ganon est de retour !!!
+Il a recréé son armée, qui s'apprête à attaquer Rauru !                                         Tu peux encore les arrêter, va vite les intercepter sur la plaine Ouest !
+Grrrr... Comment as-tu pu t'échapper du monde   des morts et arriver jusqu'ici ???
+Pourquoi t'entêtes-tu à venir m'affronter ?     Même si tu me terrasses je reviendrais toujours à la vie.
+Ta quête est vaine, abandonne tout espoir !                                                     Let's rock, baby !
+Tu as trouvé la Triforce !!!
+Débarrassé de la malédiction de Ganon, Link put   retourner à Hyrule sans risque.                                                                     La Triforce, Excalibur, ainsi que l'Ocarina furent remis à la famille royale d'Hyrule, tandis que le masque d'Oni-Link fut confié aux fées pour être caché par delà le temps et l'espace...                                                              Le portail menant à Termina fut scellé par la princesse Zelda et par Pit, pour ne jamais plus être ouvert, et ce terrible chapitre fut effacé de la légende...
+Le peuple d'Hyrule ne sut jamais ce qui se joua   dans les mystérieuses contrées de Termina, ni que le redoutable Ganon préparait déjà son retour...                                                    Mais ce que personne n'ignorait, fut le retour à  Hyrule de son héros, qui sera toujours là pour    défendre le Royaume face aux ténèbres.
+Tutoriel : appuie sur [ACTION] pour parler, lire ou ouvrir un coffre, et à nouveau sur [ACTION] pour passer les textes à l'écran.
+Appuie sur [ACTION] pour soulever un objet léger.
+Félicitations Link, tu as réussi à me trouver.  Je vais augmenter la capacité de ta réserve de  magie pour te récompenser.
+La capacité de ta jauge de magie a doublé !!!
+Tu as trouvé le Masque des Esprits !!!                                                          Une étrange aura s'en dégage...
+Félicitations, tu m'as trouvée !!!                                                              Je suis la grosse fée du désert, j'organise des collectes de rubis !
+Donne-moi vite 100 rubis !!!                                                                                  [c=2]OUI[c=0]              NON
+Donne-moi vite 100 rubis !!!                                                                                  [c=0]OUI              [c=2]NON
+Tu me fais perdre mon temps, oust !
+Tu n'as même pas assez !!!                      Tu me fais perdre mon temps, oust !
+J'augmente le nombre maximal de bombes que tu   peux transporter, merci qui ???
+J'augmente le nombre maximal de flèches que tu  peux transporter, merci qui ???
+J'ai assez de rubis, disparait !
+Je ne laisserai passer que les créatures        malfaisantes.
+Je ne laisserai passer que les créatures        bienfaisantes.
+Tu as l'air malfaisant...                       Ok tu peux passer !
+Tu as l'air bienfaisant...                      Ok tu peux passer !
+Link ! C'est Pit !!!                            Qu'est ce que tu fabriques ???                  Fonce à la plaine ouest !!!
+Tu dois te demander où tu es.                   Ici c'est Termina, et tu n'as pas besoin d'en   savoir plus à ce sujet...
+C'est une terre secrète qui aurait dû le rester, la princesse Zelda n'aurait jamais dû t'envoyer ici...
+Plus précisément tu te trouves dans la forêt de Termina. Dans cette forêt se trouve un temple,  et dans ce temple se trouve un objet sacré      capable de conjurer n'importe quel maléfice...
+Trouve cet objet, puis reviens me voir.         J'ouvrirai le portail à nouveau pour que tu     puisses repartir.
+Une dernière chose, ne quitte la forêt à aucun  prix ! Ta présence ici est secrète, et de plus, dans ton état tu constitues une menace pour tous ceux que tu croises...
+Bonne chance Link !
+Quoi ??? Le graal n'a pas réussi à te           débarrasser de la malédiction ???               C'est... impensable...
+Cette malédiction doit être terriblement        puissante... Mais si tu y regardes de plus près tout espoir n'est pas perdu...
+Le graal a eu un effet sur toi, tu as dû le     remarquer. Désormais tu mets plus de temps à te transformer.
+Mais c'est à double tranchant... Car une fois   transformé, tu le restes plus longtemps...
+Ecoute-moi bien Link, il reste encore 4 autres  graals dans les temples de Termina...           Il est dit que les 5 réunis ont autant de       pouvoir que la Triforce elle-même.
+Grâce au graal que tu as trouvé, tu es déjà un  peu moins dangereux, je t'autorise donc à       explorer librement Termina.
+Aventure-toi hors de cette forêt, cherche et    trouve ces graals, et tu seras sauvé.           Mais tu ne dois en aucun cas t'aventurer dans un village en étant métamorphosé.
+Prends cette carte avec toi, elle te sera       certainement utile...                           Bonne chance !
+Tu as trouvé la carte de Termina !!!                                                            Appuie sur [CARTE] lorsque tu es à l'extérieur pour la visualiser.
+Heureuse de te voir sain et sauf Link !         Maintenant que tu ne risques plus de te         transformer, j'ai pensé que tu apprécierais     d'avoir ceci...
+Tu vas hélas en avoir grand besoin...           Oni-Link a été libéré...                        Nous aurions dû le voir plus tôt...
+A chaque nouveau graal trouvé, la fréquence de  tes transformations diminuait, mais la durée    d'existence d'Oni-Link augmentait...
+De plus, le comportement d'Oni-Link me semble   étrange...                                      Sa nature destructrice aurait dû le pousser à   attaquer un village...
+Je devrais me réjouir, mais j'ai peur que de    savoir qu'il a des desseins plus importants     n'ait rien d'une bonne nouvelle...
+Nous avons toutefois établi un plan pour le     vaincre. Ecoute-moi attentivement...
+Excalibur est une arme redoutable, mais elle ne fera pas le poids contre Oni-Link...            ...pour l'instant...
+Il y a 3 temples secrets cachés à Termina. Dans ces temples se trouvent des fées dont les       pouvoirs augmenteront la puissance de ton épée. Trouve-les toutes !
+Tu seras alors en mesure de faire jeu égal avec Oni-Link.                                       Cependant, Oni-Link n'est qu'énergie et ne peut donc pas être vaincu...
+Le Masque des Esprits te permettra de l'enfermer à jamais. Pour ce faire, tu devras trouver ce masque, trouver l'Ocarina magique et trouver la mélodie qui l'enfermera...
+Ta quête ne fait que commencer...
+Trouve les 3 fées, le masque, l'Ocarina, et le  chant de l'esprit, puis va affronter Oni-Link !
+Comme tu le sais, Excalibur peut vaincre les    fantômes, renvoyer les attaques magiques, et    détruire les barrières magiques...              Fais-en bon usage...
+Tu as réussi !                                  Va vite affronter Oni-Link au temple de Xanto !
+Oni-Link t'attend au temple de Xanto, dans le   cimetière tout à l'Ouest de Termina.
+Il n'y a pas de temps à perdre !                Va immédiatement à la plaine Ouest intercepter l'armée de Ganon !
+Vite Link, t'attends quoi ?                     Noël ???
+Euh... Comment ça et moi ?                      Je... euh... ...protège la princesse, voilà !   Tu crois que c'est grâce à qui si elle n'a pas  été enlevée cette fois ? Hein ?
+Link... il y a une chose que j'aurais dû te dire depuis le début...                              Sur ce monde, Termina...
+Ce monde est très récent, il a été fabriqué de  toute pièce par la Triforce et par un voeu...   Les gens, leurs souvenirs et leurs histoires ont ainsi été fabriqués...
+Oui... Tu as bien deviné, c'est moi qui ai      demandé à la Triforce de créer ce monde... C'est un monde conçu pour contenir tout ce dont on peut avoir besoin.
+Tu y as trouvé les graals, Oni-Link a retrouvé  son maître, et Ganon a retrouvé...              ...la Triforce...
+J'ai créé ce monde pour servir de cachette à la Triforce, mais Ganon l'a retrouvée...
+Link ! Ce pays et ces gens ont été créés, mais  ils sont bien réels maintenant ! Si on ne fait  rien, ce monde ressemblera bientôt à l'ex-monde des ténèbres !
+Je m'en remets une fois de plus à toi, Link,    sauve ce monde!
+Bienvenue à la maison d'études des monstres en  tout genre !
+Tu te souviens sans doute de moi, tu m'as été   d'une grande aide à Hyrule.                     Euh... Tu te demandes comment je suis arrivé à Termina ? Euh... peu importe !
+Ce vaste monde regorge de monstres, alors je ne pouvais pas ne pas être du voyage !
+Je vais donc répertorier chaque monstre dans une nouvelle encyclopédie !                                                                         Avec ton aide, cela va de soi.
+Je n'ai hélas plus de quarts de coeurs, mais les devises sont ma nouvelle devise.                Je te paierai un bon prix chaque nouveau monstre ajouté à l'encyclopédie.
+Passe me voir régulièrement pour obtenir tes    gains. Si tu ne peux pas tout transporter, je   garderais l'excédent pour ta prochaine venue.
+Il suffit de battre de nouveaux monstres pour   qu'ils soient ajoutés.                          Tu peux consulter l'encyclopédie en appuyant sur [MONSTERS]!
+Mmm... tu es un drôle de spécimen...            Je t'ajoute à l'encyclopédie !!!
+Mmm... tu es un drôle de spécimen...
+Je te dois [v=1] rubis.
+Veux-tu être payé maintenant ?                                                                                [c=2]OUI[c=0]              NON
+Veux-tu être payé maintenant ?                                                                                [c=0]OUI              [c=2]NON
+J'ai un scoop pour toi, des monstres que tu     avais vaincu à Hyrule ont mystérieusement été   ramenés à la vie ! Ils se baladeraient dans les contrées de Termina...
+Il y en aurait 3.                               Si tu les bats, je t'offrirais un prix...       spécial...
+Tu as vaincu les 3 monstres rares ???           ...                                             Ta récompense t'attend au sous-sol...
+Tu as vaincu chaque monstre...                  C'est incroyable...
+Bonjour Link, comment vont tes bombes ?
+Je n'ai plus de prix à mettre en jeu, désolé.
+Un de ces coffres contient un quart de coeur, tu veux tenter ta chance pour 10 rubis ?           Tu ne pourras ouvrir qu'un seul coffre, ok ?                  [c=2]OUI[c=0]              NON
+Un de ces coffres contient un quart de coeur, tu veux tenter ta chance pour 10 rubis ?           Tu ne pourras ouvrir qu'un seul coffre, ok ?                  [c=0]OUI              [c=2]NON
+Choisis un coffre.
+Merci !
+Qu'est-ce que je vous sers ?
+Tu cherches l'homme qui travaille à la mine ?   Personne ne l'a revu depuis qu'ils ont condamné la mine... Il est peut-être encore coincé       dedans...
+Ce saloon était très fréquenté...               ...autrefois...
+JE suis le maire de ce village, et JE n'ai pas  envie de te parler !
+Tu dis que quelqu'un est peut-être bloqué dans  la mine ?                                                                                       ... ... ...
+Très bien, donne-moi 10 rubis et je t'autorise  à accéder à la mine. Ok ?                                     [c=2]OUI[c=0]              NON
+Très bien, donne-moi 10 rubis et je t'autorise  à accéder à la mine. Ok ?                                     [c=0]OUI              [c=2]NON
+Marché conclu, va parler au garde, il te        laissera passer...
+Tu n'as pas assez !
+Un petit coeur pour 2 rubis ?                                                                                 [c=2]OUI[c=0]              NON
+Un petit coeur pour 2 rubis ?                                                                                 [c=0]OUI              [c=2]NON
+Tu n'as pas besoin de ça.
+Une petite fiole de magie pour 10 rubis ?                                                                     [c=2]OUI[c=0]              NON
+Une petite fiole de magie pour 10 rubis ?                                                                     [c=0]OUI              [c=2]NON
+Une grande fiole de magie pour 20 rubis ?                                                                     [c=2]OUI[c=0]              NON
+Une grande fiole de magie pour 20 rubis ?                                                                     [c=0]OUI              [c=2]NON
+Choisis ce que tu veux.
+10 flèches pour 20 rubis ?                                                                                    [c=2]OUI[c=0]              NON
+10 flèches pour 20 rubis ?                                                                                    [c=0]OUI              [c=2]NON
+5 bombes pour 30 rubis ?                                                                                      [c=2]OUI[c=0]              NON
+5 bombes pour 30 rubis ?                                                                                      [c=0]OUI              [c=2]NON
+Il te faut un sac de bombes pour acheter ceci.
+Reviens me voir lorsque tu auras un flacon vide et je te vendrai des potions.
+Les potions rouges redonnent de l'énergie alors que les potions vertes redonnent de la magie.
+Que désires-tu ?                                                  [c=2]POTION ROUGE[c=0]                                    potion verte                                        rien
+Que désires-tu ?                                                  potion rouge                                    [c=2]POTION VERTE[c=0]                                        rien
+Que désires-tu ?                                                  [c=0]potion rouge                                    potion verte                                        [c=2]RIEN
+Une potion rouge pour 60 rubis ?                                                                              [c=2]OUI[c=0]              NON
+Une potion rouge pour 60 rubis ?                                                                              [c=0]OUI              [c=2]NON
+Une potion verte pour 40 rubis ?                                                                              [c=2]OUI[c=0]              NON
+Une potion verte pour 40 rubis ?                                                                              [c=0]OUI              [c=2]NON
+DROIT   D'ASIIIIIILE !!!!!!!!
+Ah vous aussi... les poules ? Hic !             Terribles aussi ces bestioles... Hic !
+J'étais un pêcheur dans le temps... Hic !       Mais depuis que je l'ai vu... Hic !             Cette terrible bête... Hic !                    Dans le lac... Hic !
+Tu as vaincu le monstre du lac tu dis ???       ... ... ...                                     De toute façon j'ai peur de l'eau... Hic !      (je préfère le vin) Hic !
+Hé! Hé! Hé!
+Bonjour ! Je sais tout de ce qui se dit en ville, viens me voir si tu as besoin d'infos.
+Tu veux savoir pourquoi le maire est si         silencieux ?                                    D'accord, mais je ne t'ai rien dit, ok ?
+Cette ville a un terrible secret...             La nuit, des jeunes filles se font enlever, on  ne les retrouve jamais... Je n'ose même plus    sortir...
+La nuit dernière, d'après les rumeurs, ce serait la fille du maire qui aurait disparu...
+Bonjour ! Monsieur-qui-a-peur-des-poules !      Hi! Hi! Hi!
+On raconte que tu aurais escaladé le mont       Raplaplat ? Félicitations! Hi! Hi! Hi!
+Tu... tu es au courant pour ma fille ?          C'est affreux... Ma chère fille...
+D'après l'enquête que je mène depuis le début de ces évènements, les jeunes filles enlevées seraient emmenées au manoir au Nord du village...
+J'ai déjà envoyé la garde là-bas, mais personne n'en est revenu...
+Alors ce matin, en découvrant que ma fille n'était plus là, j'ai supplié mon homme de main de me la ramener... C'est un combattant hors pair, mais il est anormalement long...
+Tu as l'air d'être un combattant, veux-tu aller voir ce qui s'y passe ?                         Tu seras grandement récompensé si tu sauves ma fille.
+Va voir le garde au Nord-Ouest du village, il te laissera passer.
+Sauve ma fille au manoir, Tu seras grandement   récompensé !
+Ma fille m'a tout raconté, je te dois énormément !!!
+Ecoute attentivement, je vais t'apprendre un    chant qui se transmet dans ma famille de        génération en génération :                      L'Hymne du Vide !
+Tu as appris l'Hymne du Vide !!!                                                                Utilise l'Ocarina pour le jouer !
+Tu as appris l'Hymne du Vide !!!                                                                Il te faut un instrument de musique pour le     jouer !
+L'Hymne du Vide a de mystérieux pouvoirs...     ...Je crois.
+Bonjour monsieur-mon-sauveur !
+Une potion bleue pour 160 rubis ?               Tu ne seras pas déçu...                                       [c=2]OUI[c=0]              NON
+Une potion bleue pour 160 rubis ?               Tu ne seras pas déçu...                                       [c=0]OUI              [c=2]NON
+Bonjour, ce n'est pas tous les jours qu'un      monstre aussi puissant nous fait l'honneur de sa visite...
+Tu devrais aller t'amuser dans le colisée au    Sud-Ouest du village, il y a un prix intéressant à gagner...
+Tu as gagné le prix du colisée ?                Impressionnant...
+Si tu crois être le monstre le plus effrayant de Termina, c'est que tu prends tes rêves pour la réalité mon pauvre ami...
+Crois-moi sur parole, le monstre du lac est de loin le plus terrifiant des monstres, je te conseille d'éviter par dessus tout de l'affronter.
+Le colisée au Sud d'ici est le principal        divertissement de ce village.                   Le but est d'aller le plus loin possible avant de se faire tuer.
+Mais on a toujours beaucoup de mal à trouver des volontaires, alors le chef a été contraint d'y placer des items de grande valeur.
+Veux-tu entendre mon histoire pour 10 rubis ?                                                                 [c=2]OUI[c=0]              NON
+Veux-tu entendre mon histoire pour 10 rubis ?                                                                 [c=0]OUI              [c=2]NON
+D'après le chef, au Nord d'ici se trouve le temple de Xanto, également connu sous le nom de temple des morts...
+Ce temple serait un passage du monde des vivants au monde des morts... Mais pour accéder au monde des morts, il faudrait traverser un labyrinthe infranchissable...
+Paie-moi à nouveau si tu veux que je répète.
+Tu cherches le Masque des Esprits ?             ... Tiens donc...
+Non, je ne sais pas où il se trouve, mais je    sais comment l'utiliser.                        Reviens me voir si tu le trouves et je pourrais t'aider.
+Tu as trouvé le Masque des Esprits ???          ...                                             Alors écoute-moi bien, je vais t'apprendre à l'utiliser.
+En présence d'un esprit affaiblit, tu devras jouer le chant des esprits à l'aide de ton ocarina. Ecoute le chant des esprits !
+Tu as appris le chant des esprits !!!                                                           Utilise l'Ocarina pour le jouer !
+Le Masque des Esprits ne sert qu'une fois, fais-en bon usage...
+Tu as enfermé un esprit terriblement puissant... Veille à ce qu'il ne tombe pas en de mauvaises mains...
+Notre village accueille rarement des            visiteurs...                                    Cela vient peut-être du fait que nous avons bloqué l'entrée...
+Tu es le seul visiteur que j'ai eu depuis que je vis ici...                                      Je suis un ancien aventurier, j'étais très doué comme chasseur de trésor...
+Un jour j'ai entendu l'histoire du trésor de la pyramide, un objet magique...                   Mais ce désert causa ma perte, je n'ai jamais pu le traverser, il est bien trop dangereux...
+Tu sembles aussi déterminé que je l'étais dans  mon jeune temps... Je te propose un marché...
+Ramène-moi le trésor de la pyramide, et je      t'offrirai mon plus précieux trésor.
+Tu as trouvé le trésor ???                      Une baguette de feu, hein ?                     ...                                             ...
+Cette baguette te servira plus qu'à moi...      Tu peux la garder...
+Accepte cette récompense pour avoir montré à un vieillard le trésor qu'il a cherché toute sa    vie...                                          Le chant de l'envol !!!
+Joué avec un instrument magique, ce chant permet de se téléporter. J'espérais pouvoir traverser le désert avec, mais je n'ai jamais trouvé l'instrument adéquat...
+Tu as appris le chant de l'envol !!!                                                            Utilise l'Ocarina pour le jouer !
+Tutoriel : lorsque la jauge de colère est       pleine, tu te transformes en Oni-Link.          Ton allonge et ta force augmentent alors que ta défense diminue.
+En Oni-Link, tu ne peux plus utiliser les objets équipables, mais tu peux te téléporter à l'entrée lorsque tu es dans un donjon en appuyant sur [TELEPORT].
+A chaque ennemi vaincu par Oni-Link, ta jauge   diminue. Une fois vide, Link reprend sa forme   normale.
+Ca ne fonctionne pas...
+SCORES :
+Temps de jeu :
+Mort [v=1] fois
+Mort [v=1] fois
+Quarts de coeurs : [v=1] / 16
+Objets : [v=1] / 82
+Types d'ennemis vaincus : [v=1] / 62
+Félicitations, tu as fini le jeu à [v=1] % !!!
+RANG :
+RANGS :
+- Héros de Termina
+- Héros des deux Mondes
+- Crâneur
+- Maître Epéiste
+- Perfectionniste
+- Fan de Zelda
+- Joueur confirmé
+- Joueur débutant
+- Marathonien de Termina
+- Marathonien des deux Mondes
+- Mort-vivant
+- Kamikaze
+Concepteur / Développeur :
+Vincent Jouillat
+Scénariste :
+Lucie Pénalver (Lobalùz)
+Illustrations :
+Solène Jouillat
+Carte de Termina :
+Adrien Baptis
+Graphismes :
+Solène Jouillat
+Harvestland
+Testeurs :
+Emmanuel Fantapie
+Gaëtan Biccheri
+Alexandre Chevalier
+Remerciements :
+à Nintendo pour avoir créé la licence Zelda
+à la communauté du forum zeldaroth.fr
+pour son soutien depuis des années !
