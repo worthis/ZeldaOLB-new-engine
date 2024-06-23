@@ -401,11 +401,11 @@ void Scene::draw()
         WindowManager::getInstance()->draw(filterSky[2], 0, 0, 320, 240, 0, 0);
         if (displayLightning1)
         {
-            WindowManager::getInstance()->draw(lightning, 32 * (lightning1Duration / 4), 0, 32, 64, lightning1X, 0);
+            WindowManager::getInstance()->draw(lightning, 32 * int(lightning1Duration * 0.25), 0, 32, 64, lightning1X, 0);
         }
         if (displayLightning2)
         {
-            WindowManager::getInstance()->draw(lightning, 32 * (lightning2Duration / 4), 64, 32, 64, lightning2X, 0);
+            WindowManager::getInstance()->draw(lightning, 32 * int(lightning2Duration * 0.25), 64, 32, 64, lightning2X, 0);
         }
     }
     if (map->getId() == 14 || map->getId() == 25 || map->getId() == 28)
@@ -425,7 +425,7 @@ void Scene::draw()
     // forest effect
     if (map->getId() == 1)
     {
-        WindowManager::getInstance()->draw(filterForest, (box->getX() / 2) % 256, (box->getY() / 2) % 256, 320, 240, 0, 0);
+        WindowManager::getInstance()->draw(filterForest, int(box->getX() * 0.5) % 256, int(box->getY() * 0.5) % 256, 320, 240, 0, 0);
     }
     else if ((map->getId() == 7 || map->getId() == 8) && avancement >= AV_ZELDA_CHEZ_PIT && avancement < AV_FILLE_MAIRE_SAUVEE)
     {
