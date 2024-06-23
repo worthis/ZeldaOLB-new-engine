@@ -96,6 +96,11 @@ bool ConfigurationManager::isFrench()
     return lang == 0;
 }
 
+bool ConfigurationManager::isRussian()
+{
+    return lang == 3;
+}
+
 string ConfigurationManager::getSkinName()
 {
     switch (skin)

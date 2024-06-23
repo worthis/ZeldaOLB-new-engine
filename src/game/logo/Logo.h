@@ -29,12 +29,14 @@ public:
     void draw();
 
 private:
+    void loadLogoFond();
+
     int anim;
     int animMax;
     int vanim;
+    int lastLang;
 
     bool first;
-    bool wasFrench;
 
     WImage *image;
     WImage *imageLogo;

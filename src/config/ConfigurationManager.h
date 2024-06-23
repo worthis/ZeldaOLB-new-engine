@@ -28,6 +28,7 @@ public:
     void save();
 
     bool isFrench();
+    bool isRussian();
     string getSkinName();
 
     int getVolume();
