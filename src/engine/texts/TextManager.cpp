@@ -156,10 +156,10 @@ void TextManager::drawLetterInternal(char c, int i, int j, int style)
     if (val == 32)
         return;
 
-    // minuscules a-z
-    if (val >= 97 && val <= 122)
+    // chiffres
+    if (val >= 48 && val <= 57)
     {
-        x = w * (26 + (val - 97));
+        x = w * (52 + (val - 48));
     }
 
     // majuscules A-Z
@@ -168,159 +168,174 @@ void TextManager::drawLetterInternal(char c, int i, int j, int style)
         x = w * (val - 65);
     }
 
-    // chiffres
-    if (val >= 48 && val <= 57)
+    // minuscules a-z
+    if (val >= 97 && val <= 122)
     {
-        x = w * (52 + (val - 48));
+        x = w * (26 + (val - 97));
     }
 
-    if (c == '�')
+    switch (val)
     {
+    case 224:
+        // à
         x = w * 62;
-    }
-    if (c == '�')
-    {
+        break;
+    case 226:
+        // â
         x = w * 63;
-    }
-    if (c == '�')
-    {
+        break;
+    case 228:
+        // ä
         x = w * 64;
-    }
-    if (c == '�')
-    {
+        break;
+    case 231:
+        // ç
         x = w * 65;
-    }
-    if (c == '�')
-    {
+        break;
+    case 232:
+        // è
         x = w * 66;
-    }
-    if (c == '�')
-    {
+        break;
+    case 233:
+        // é
         x = w * 67;
-    }
-    if (c == '�')
-    {
+        break;
+    case 235:
+        // ë
         x = w * 68;
-    }
-    if (c == '�')
-    {
+        break;
+    case 234:
+        // ê
         x = w * 69;
-    }
-    if (c == '�')
-    {
+        break;
+    case 239:
+        // ï
         x = w * 70;
-    }
-    if (c == '�')
-    {
+        break;
+    case 238:
+        // î
         x = w * 71;
-    }
-    if (c == '�')
-    {
+        break;
+    case 244:
+        // ô
         x = w * 72;
-    }
-    if (c == '�')
-    {
+        break;
+    case 246:
+        // ö
         x = w * 73;
-    }
-    if (c == '�')
-    {
+        break;
+    case 249:
+        // ù
         x = w * 74;
-    }
-    if (c == '�')
-    {
+        break;
+    case 251:
+        // û
         x = w * 75;
-    }
-    if (c == '�')
-    {
+        break;
+    case 252:
+        // ü
         x = w * 76;
-    }
-    if (c == '-')
-    {
+        break;
+    case 45:
+        // -
         x = w * 77;
-    }
-    if (c == '.')
-    {
+        break;
+    case 46:
+        // .
         x = w * 78;
-    }
-    if (c == ',')
-    {
+        break;
+    case 44:
+        // ,
         x = w * 79;
-    }
-    if (c == '\'')
-    {
+        break;
+    case 39:
+        // '
         x = w * 80;
-    }
-    if (c == '!')
-    {
+        break;
+    case 33:
+        // !
         x = w * 81;
-    }
-    if (c == '?')
-    {
+        break;
+    case 63:
+        // ?
         x = w * 82;
-    }
-    if (c == ':')
-    {
+        break;
+    case 58:
+        // :
         x = w * 83;
-    }
-    if (c == '%')
-    {
+        break;
+    case 37:
+        // %
         x = w * 84;
-    }
-    if (c == '(')
-    {
+        break;
+    case 40:
+        // (
         x = w * 85;
-    }
-    if (c == ')')
-    {
+        break;
+    case 41:
+        // )
         x = w * 86;
-    }
-    if (c == '/')
-    {
+        break;
+    case 47:
+        // /
         x = w * 87;
-    }
-    if (c == '@')
-    {
+        break;
+    case 64:
+        // @
         x = w * 88;
-    }
-    if (c == '+')
-    {
+        break;
+    case 43:
+        // +
         x = w * 89;
-    }
-    if (c == '=')
-    {
+        break;
+    case 61:
+        // =
         x = w * 90;
-    }
-    if (c == ';')
-    {
+        break;
+    case 59:
+        // ;
         x = w * 93;
-    }
-    if (c == '�')
-    {
+        break;
+    case 250:
+        // ú
         x = w * 94;
-    }
-    if (c == '�')
-    {
+        break;
+    case 237:
+        // í
         x = w * 95;
-    }
-    if (c == '�')
-    {
+        break;
+    case 191:
+        // ¿
         x = w * 96;
-    }
-    if (c == '�')
-    {
+        break;
+    case 161:
+        // ¡
         x = w * 97;
-    }
-    if (c == '�')
-    {
+        break;
+    case 243:
+        // ó
         x = w * 98;
-    }
-    if (c == '�')
-    {
+        break;
+    case 225:
+        // á
         x = w * 99;
-    }
-    if (c == '�')
-    {
+        break;
+    case 241:
+        // ñ
         x = w * 100;
+        break;
+    default:
+        break;
+    }
+
+    // cyrillic chars
+    if (config->getTextfile() == "data/texts/russian.txt")
+    {
+        if (val >= 192 && val <= 255)
+        {
+            x = w * (val - 192);
+            y += 6 * getHSize();
+        }
     }
 
     // sprite.SetSubRect(sf::IntRect(x, y, x + w, y + h));

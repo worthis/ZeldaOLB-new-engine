@@ -87,7 +87,7 @@ void OptionsGame::handleEvents(Event *event)
             int language = ConfigurationManager::getInstance()->getLang();
             language--;
             if (language < 0)
-                language = 2;
+                language = 3;
             ConfigurationManager::getInstance()->setLang(language);
             AudioManager::getInstance()->playSound(TS_MENU3);
             initTexts();
@@ -113,7 +113,7 @@ void OptionsGame::handleEvents(Event *event)
         {
             int language = ConfigurationManager::getInstance()->getLang();
             language++;
-            if (language > 2)
+            if (language > 3)
                 language = 0;
             ConfigurationManager::getInstance()->setLang(language);
             AudioManager::getInstance()->playSound(TS_MENU3);

@@ -44,7 +44,7 @@ void ConfigurationManager::init(string filename, string keys, string joystick)
 
     if (skin > 1)
         skin = 1;
-    if (lang > 2)
+    if (lang > 3)
         lang = 0;
     if (volume > 128)
         volume = 64;
