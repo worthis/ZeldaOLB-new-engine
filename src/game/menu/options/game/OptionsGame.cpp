@@ -7,7 +7,7 @@
 #include "../../../../engine/texts/TextManager.h"
 #include "../../../../config/ConfigurationManager.h"
 
-OptionsGame::OptionsGame() : line(3), skin(0)
+OptionsGame::OptionsGame() : line(2), skin(0)
 {
     image = ResourceManager::getInstance()->loadImage("data/images/menus/cadres.png");
     link = ResourceManager::getInstance()->loadImage("data/images/menus/curseur.png", true);
@@ -53,7 +53,7 @@ void OptionsGame::initTexts()
 void OptionsGame::handleEvents(Event *event)
 {
 
-    if ((event->isPushed(kReturn) || event->isPushed(kSpace)) && line == 3)
+    if ((event->isPushed(kReturn) || event->isPushed(kSpace)) && line == 2)
     {
         MainController::getInstance()->getMenuController()->getOptionsController()->setStep(OPTIONS_MAIN);
         AudioManager::getInstance()->playSound(TS_MENU2);
@@ -64,25 +64,19 @@ void OptionsGame::handleEvents(Event *event)
     {
         line--;
         if (line < 0)
-            line = 3;
+            line = 2;
         AudioManager::getInstance()->playSound(TS_MENU3);
     }
     if (event->isPushed(kDown))
     {
         line++;
-        if (line > 3)
+        if (line > 2)
             line = 0;
         AudioManager::getInstance()->playSound(TS_MENU3);
     }
     if (event->isPushed(kLeft))
     {
         if (line == 0)
-        {
-            AudioManager::getInstance()->playSound(TS_MENU3);
-            bool isFull = WindowManager::getInstance()->isFullScreen();
-            WindowManager::getInstance()->setFullScreen(!isFull);
-        }
-        else if (line == 1)
         {
             int language = ConfigurationManager::getInstance()->getLang();
             language--;
@@ -92,7 +86,7 @@ void OptionsGame::handleEvents(Event *event)
             AudioManager::getInstance()->playSound(TS_MENU3);
             initTexts();
         }
-        else if (line == 2)
+        else if (line == 1)
         {
             skin--;
             if (skin < 0)
@@ -105,12 +99,6 @@ void OptionsGame::handleEvents(Event *event)
     {
         if (line == 0)
         {
-            AudioManager::getInstance()->playSound(TS_MENU3);
-            bool isFull = WindowManager::getInstance()->isFullScreen();
-            WindowManager::getInstance()->setFullScreen(!isFull);
-        }
-        else if (line == 1)
-        {
             int language = ConfigurationManager::getInstance()->getLang();
             language++;
             if (language > 3)
@@ -119,7 +107,7 @@ void OptionsGame::handleEvents(Event *event)
             AudioManager::getInstance()->playSound(TS_MENU3);
             initTexts();
         }
-        else if (line == 2)
+        else if (line == 1)
         {
             skin++;
             if (skin > 1)
@@ -133,7 +121,7 @@ void OptionsGame::handleEvents(Event *event)
 void OptionsGame::draw()
 {
     drawPage();
-    WindowManager::getInstance()->draw(link, skin * 16, 0, 16, 21, 26, 53 + 48 * line);
+    WindowManager::getInstance()->draw(link, skin * 16, 0, 16, 21, 26, 53 + 16 + 64 * line);
 }
 
 void OptionsGame::drawPage()
@@ -150,21 +138,14 @@ void OptionsGame::drawPage()
 
     drawTitle();
 
-    drawCadre(16, 48, 288, 32);
-    drawCadre(16, 96, 288, 32);
-    drawCadre(16, 144, 288, 32);
+    drawCadre(16, 48 + 16, 288, 32);
+    drawCadre(16, 144 - 16, 288, 32);
     drawCadre(16, 192, 136, 32);
 
-    texts[1]->display(44, 56);
-    int size = texts[WindowManager::getInstance()->isFullScreen() ? 2 : 3]->getLength() * letterSize;
-    texts[WindowManager::getInstance()->isFullScreen() ? 2 : 3]->display(290 - size, 56);
-
-    texts[4]->display(44, 104);
-
-    texts[5]->display(44, 152);
-    size = texts[6 + skin]->getLength() * letterSize;
-    texts[6 + skin]->display(290 - size, 152);
-
+    texts[4]->display(44, 56 + 16);
+    texts[5]->display(44, 104 + 32);
+    int size = texts[6 + skin]->getLength() * letterSize;
+    texts[6 + skin]->display(290 - size, 104 + 32);
     size = texts[8]->getLength() * letterSize;
     texts[8]->display(16 + (136 - size) / 2, 200);
 }
