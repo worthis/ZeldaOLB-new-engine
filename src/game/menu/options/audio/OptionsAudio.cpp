@@ -55,6 +55,13 @@ void OptionsAudio::handleEvents(Event *event)
         return;
     }
 
+    if (event->isPushed(KeyBinder::getInstance()->getKey(BT_ACTION)))
+    {
+        MainController::getInstance()->getMenuController()->getOptionsController()->setStep(OPTIONS_MAIN);
+        AudioManager::getInstance()->playSound(TS_MENU2);
+        return;
+    }
+
     if (event->isPushed(kUp))
     {
         line--;

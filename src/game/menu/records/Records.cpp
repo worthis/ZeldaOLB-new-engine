@@ -151,6 +151,13 @@ void Records::init()
 
 void Records::handleEvents(Event *event)
 {
+    if (event->isPushed(KeyBinder::getInstance()->getKey(BT_ACTION)))
+    {
+        MainController::getInstance()->getMenuController()->setStep(MENU_MAIN);
+        AudioManager::getInstance()->playSound(TS_MENU2);
+        return;
+    }
+
     if (event->isPushed(kReturn) || event->isPushed(kSpace))
     {
 
