@@ -68,15 +68,19 @@ void Event::update(const Uint8 *keys, bool capslock)
     current[kSemicol] = keys[SDLK_SEMICOLON];
     current[kEscape] = keys[SDLK_ESCAPE];
     current[kTab] = keys[SDLK_TAB];
-    current[kShift] = capslock || keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT];
-    current[kCtrl] = keys[SDLK_LCTRL] || keys[SDLK_RCTRL];
-    current[kAlt] = keys[SDLK_LALT] || keys[SDLK_RALT];
+    current[kLShift] = keys[SDLK_LSHIFT];
+    current[kRShift] = keys[SDLK_RSHIFT];
+    current[kLCtrl] = keys[SDLK_LCTRL];
+    current[kRCtrl] = keys[SDLK_RCTRL];
+    current[kLAlt] = keys[SDLK_LALT];
+    current[kRAlt] = keys[SDLK_RALT];
     current[kSpace] = keys[SDLK_SPACE];
+    current[kBackspace] = keys[SDLK_BACKSPACE];
     current[kReturn] = keys[SDLK_RETURN] || keys[SDLK_KP_ENTER];
 
     current[QUIT] = false;
-    current[RESIZE] = current[kCtrl] && current[kReturn];
-    current[QUIT_FORCED] = current[kAlt] && keys[SDLK_F4];
+    current[RESIZE] = (current[kLCtrl] || current[kRCtrl]) && current[kReturn];
+    current[QUIT_FORCED] = (current[kLAlt] || current[kRAlt]) && keys[SDLK_F4];
 
     current[kF1] = keys[SDLK_F1];
 
