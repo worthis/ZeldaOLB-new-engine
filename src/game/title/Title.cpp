@@ -98,7 +98,7 @@ void Title::draw()
 {
     WindowManager::getInstance()->draw(images[anim], 0, 0, 320, 240, 0, 0);
     if (alpha)
-        WindowManager::getInstance()->draw(logo, 0, 0, 149, 149, 85, 45);
+        WindowManager::getInstance()->draw(logo, 0, 0, 150, 149, 85, 45);
     if (ready && metronomeText->getValue())
         text->display((320 - textSize) / 2, 200);
 }
