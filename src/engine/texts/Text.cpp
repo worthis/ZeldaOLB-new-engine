@@ -21,7 +21,7 @@ void Text::displayInternal(int x, int y, int l)
 
     int space = TextManager::getInstance()->getWSpace();
 
-    if (l == -1)
+    if (l < 0)
     {
         l = length;
     }
@@ -43,6 +43,10 @@ void Text::displayInternal(int x, int y, int l)
                 else if (text[begin + 1] == '/' && text[i - 1] == 'r')
                 {
                     // /center, do nothing
+                }
+                else if (text[begin + 1] == 'b' && text[i - 1] == 'r')
+                {
+                    // br, do nothing
                 }
                 else
                 {
@@ -112,9 +116,11 @@ void Text::displayBox(int x, int y, int l)
                     center = sizeToCenter(inBox, i + 1);
                     countRow += (nbRows - center) / 2;
                 }
-                else if (text[begin + 1] == '/' && text[i - 1] == 'r')
+                else if ((text[begin + 1] == '/' && text[i - 1] == 'r') ||
+                         (text[begin + 1] == 'b' && text[i - 1] == 'r'))
                 {
                     // /center -> go to the next line
+                    // br -> go to the next line
                     countRow = 0;
                     countLine++;
                 }
@@ -331,9 +337,11 @@ void Text::cutBox()
                     center = sizeToCenter(inBox, i + 1);
                     countRow += (nbRows - center) / 2;
                 }
-                else if (text[begin + 1] == '/' && text[i - 1] == 'r')
+                else if ((text[begin + 1] == '/' && text[i - 1] == 'r') ||
+                         (text[begin + 1] == 'b' && text[i - 1] == 'r'))
                 {
                     // /center -> go to the next line
+                    // br -> go to the next line
                     countRow = 0;
                     countLine++;
                     if (countLine >= nbLines && i + 1 < text.length())
@@ -390,7 +398,7 @@ void Text::cutBox()
         }
     }
     inBox = text;
-    outBox = "";
+    outBox.clear();
 }
 
 int Text::wordSize(string txt, unsigned int i)
