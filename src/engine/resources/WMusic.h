@@ -11,7 +11,7 @@
 #ifndef __WMUSIC_H__
 #define __WMUSIC_H__
 
-#include <FMOD/fmod.h>
+#include <SDL/SDL_mixer.h>
 
 #include "../common/Common.h"
 #include "WResource.h"
@@ -21,10 +21,10 @@ class WMusic : public WResource
 public:
     WMusic(string filename);
     ~WMusic();
-    FMUSIC_MODULE *getMusic();
+    Mix_Music *getMusic();
 
 private:
-    FMUSIC_MODULE *music;
+    Mix_Music *music;
 };
 
 #endif // WMusic.h

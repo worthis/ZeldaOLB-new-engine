@@ -3,15 +3,15 @@
 WMusic::WMusic(string filename)
 {
     name = filename;
-    music = FMUSIC_LoadSong(name.c_str());
+    music = Mix_LoadMUS(name.c_str());
 }
 
 WMusic::~WMusic()
 {
-    FMUSIC_FreeSong(music);
+    Mix_FreeMusic(music);
 }
 
-FMUSIC_MODULE *WMusic::getMusic()
+Mix_Music *WMusic::getMusic()
 {
     return music;
 }

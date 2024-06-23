@@ -3,15 +3,15 @@
 WSound::WSound(string filename)
 {
     name = filename;
-    sound = FSOUND_Sample_Load(FSOUND_FREE, name.c_str(), 0, 0, 0);
+    sound = Mix_LoadWAV(FSOUND_FREE, name.c_str(), 0, 0, 0);
 }
 
 WSound::~WSound()
 {
-    FSOUND_Sample_Free(sound);
+    Mix_FreeChunk(sound);
 }
 
-FSOUND_SAMPLE *WSound::getSound()
+Mix_Chunk *WSound::getSound()
 {
     return sound;
 }

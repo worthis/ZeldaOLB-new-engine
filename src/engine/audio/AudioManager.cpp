@@ -20,10 +20,15 @@ AudioManager *AudioManager::getInstance()
 
 void AudioManager::init()
 {
-    SOUND = FSOUND_Init(44100, 32, 0);
+    if (SDL_InitSubSystem(SDL_INIT_AUDIO) == -1)
+    {
+        SOUND = false;
+    }
+
     if (SOUND)
     {
-        previous_volson = FSOUND_GetSFXMasterVolume();
+        Mix_OpenAudio(44100, AUDIO_S16SYS, 2, 1024);
+        previous_volson = Mix_VolumeMusic(volumeMusic);
     }
 }
 
@@ -33,12 +38,16 @@ void AudioManager::close()
     {
         if (current != 0)
         {
-            FMUSIC_StopSong(current->getMusic());
-            FMUSIC_SetMasterVolume(current->getMusic(), previous_volume);
+            Mix_PauseMusic();
+        }
+        Mix_VolumeMusic(previous_volume);
+        if (current != 0)
+        {
+            Mix_HaltMusic();
             delete current;
         }
-        FSOUND_SetSFXMasterVolume(previous_volson);
-        FSOUND_Close();
+
+        Mix_CloseAudio();
     }
 }
 
@@ -64,21 +73,23 @@ int AudioManager::getVolumeSound()
 void AudioManager::setVolumeMusic(int v)
 {
     volumeMusic = v * 2;
-    if (current != 0)
+    if (SOUND)
     {
-        if (previous_volume == -1)
-        {
-            previous_volume = FMUSIC_GetMasterVolume(current->getMusic());
-        }
-        FMUSIC_SetMasterVolume(current->getMusic(), volumeMusic);
+        Mix_VolumeMusic(volumeMusic);
     }
 }
 
 void AudioManager::setVolumeSound(int v)
 {
     volumeSound = v * 2;
+
     if (SOUND)
-        FSOUND_SetSFXMasterVolume(volumeSound);
+    {
+        for (int i = 0; i < config->getNbSounds(); i++)
+        {
+            Mix_VolumeChunk(config->getSound(i)->getSound(), volumeSound);
+        }
+    }
 }
 
 void AudioManager::playMusic(int i)
@@ -90,17 +101,11 @@ void AudioManager::playMusic(int i)
             music = i;
             if (current != 0)
             {
-                FMUSIC_StopSong(current->getMusic());
+                Mix_HaltMusic();
                 delete current;
             }
             current = new WMusic(config->getMusicName(i));
-            if (previous_volume == -1)
-            {
-                previous_volume = FMUSIC_GetMasterVolume(current->getMusic());
-            }
-            FMUSIC_SetMasterVolume(current->getMusic(), volumeMusic);
-            FMUSIC_SetLooping(current->getMusic(), 1);
-            FMUSIC_PlaySong(current->getMusic());
+            Mix_PlayMusic(current->getMusic(), -1);
             playing = true;
         }
     }
@@ -111,7 +116,7 @@ void AudioManager::stopMusic()
     if (SOUND)
     {
         previousMusic = music;
-        FMUSIC_StopSong(current->getMusic());
+        Mix_HaltMusic();
         playing = false;
     }
 }
@@ -131,13 +136,9 @@ void AudioManager::setPreviousMusic(int m)
 
 void AudioManager::playSound(int i, int chl)
 {
-    if (chl == -1)
-    {
-        chl = FSOUND_FREE;
-    }
     if (SOUND)
     {
-        FSOUND_PlaySound(chl, config->getSound(i)->getSound());
+        Mix_PlayChannel(chl, config->getSound(i)->getSound(), 0);
     }
 }
 
@@ -145,7 +146,7 @@ int AudioManager::isPlaying(int chl)
 {
     if (SOUND)
     {
-        return FSOUND_IsPlaying(chl);
+        return Mix_Playing(chl);
     }
     return 0;
 }
@@ -154,6 +155,6 @@ void AudioManager::stopSound(int chl)
 {
     if (SOUND)
     {
-        FSOUND_StopSound(chl);
+        Mix_HaltChannel(chl);
     }
 }
