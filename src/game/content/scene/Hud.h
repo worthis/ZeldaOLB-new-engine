@@ -19,7 +19,7 @@
 class Hud
 {
 public:
-    Hud(Status *status, Inventory *inventory, bool isFrench);
+    Hud(Status *status, Inventory *inventory, int lang);
     ~Hud();
 
     void loop();
@@ -45,7 +45,7 @@ private:
 
     Status *status;
     Inventory *inventory;
-    bool french;
+    int currentLang;
     int animOni; // set to 20 to remove jauge
     int animBoss;
     int animBoss2;

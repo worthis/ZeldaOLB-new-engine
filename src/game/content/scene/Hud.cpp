@@ -6,8 +6,8 @@
 
 #include "../../MainController.h"
 
-Hud::Hud(Status *status, Inventory *inventory, bool isFrench) : status(status), inventory(inventory), french(isFrench), animOni(0),
-                                                                animBoss(0), animBoss2(0), animBossX(0), bossLife(0), bossMaxLife(0), bossLife2(0), bossMaxLife2(0), removeBoss(false), etage(0), displayEtg(0)
+Hud::Hud(Status *status, Inventory *inventory, int lang) : status(status), inventory(inventory), currentLang(lang), animOni(0),
+                                                           animBoss(0), animBoss2(0), animBossX(0), bossLife(0), bossMaxLife(0), bossLife2(0), bossMaxLife2(0), removeBoss(false), etage(0), displayEtg(0)
 {
     image = ResourceManager::getInstance()->loadImage("data/images/status/status.png", true);
     chiffres = ResourceManager::getInstance()->loadImage("data/images/status/chiffres.png", true);
@@ -87,7 +87,22 @@ void Hud::drawEtage()
 {
     if (displayEtg)
     {
-        WindowManager::getInstance()->draw(level, french ? 0 : 32, 32 - etage * 16, 32, 16, 288, 0);
+        int srcX;
+
+        switch (currentLang)
+        {
+        case 0:
+            srcX = 0;
+            break;
+        case 3:
+            srcX = 64;
+            break;
+        default:
+            srcX = 32;
+            break;
+        }
+
+        WindowManager::getInstance()->draw(level, srcX, 32 - etage * 16, 32, 16, 288, 0);
     }
 }
 
@@ -150,8 +165,8 @@ void Hud::drawLife()
 {
 
     // life
-    int srcY = french ? 17 : 0;
-    int srcH = french ? 8 : 7;
+    int srcY = (currentLang == 0) ? 17 : 0;
+    int srcH = (currentLang == 0) ? 8 : 7;
     WindowManager::getInstance()->draw(image, 158, srcY, 44, srcH, 250, 10);
 
     // hearts

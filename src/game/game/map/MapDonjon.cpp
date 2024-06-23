@@ -11,19 +11,9 @@
 
 MapDonjon::MapDonjon() : anim(0), animMax(1), vanim(480), started(false), xLink(0), yLink(0), offsetForme(0), offsetSkin(0)
 {
-    wasFrench = ConfigurationManager::getInstance()->isFrench();
-    if (wasFrench)
-    {
-        imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon.png");
-        imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level.png");
-        imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2.png");
-    }
-    else
-    {
-        imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon_us.png");
-        imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level_us.png");
-        imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2_us.png");
-    }
+    lastLang = ConfigurationManager::getInstance()->getLang();
+
+    loadDonjonImages();
 
     imageLink = ResourceManager::getInstance()->loadImage("data/images/maps/link.png", true);
     imageBoussole = ResourceManager::getInstance()->loadImage("data/images/maps/boussole.png", true);
@@ -147,25 +137,16 @@ void MapDonjon::draw()
 
 void MapDonjon::launch()
 {
-
-    if (ConfigurationManager::getInstance()->isFrench() != wasFrench)
+    int currentLang = ConfigurationManager::getInstance()->getLang();
+    if (lastLang != currentLang)
     {
-        wasFrench = !wasFrench;
+        lastLang = currentLang;
+
         ResourceManager::getInstance()->free(imageMap);
         ResourceManager::getInstance()->free(imageLevel);
         ResourceManager::getInstance()->free(imageLevel2);
-        if (wasFrench)
-        {
-            imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon.png");
-            imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level.png");
-            imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2.png");
-        }
-        else
-        {
-            imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon_us.png");
-            imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level_us.png");
-            imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2_us.png");
-        }
+
+        loadDonjonImages();
     }
 
     offsetSkin = ConfigurationManager::getInstance()->getSkin() * 15;
@@ -1390,4 +1371,27 @@ bool MapDonjon::bossIsAlive()
     default:
         return false;
     }
+}
+
+void MapDonjon::loadDonjonImages()
+{
+    if (ConfigurationManager::getInstance()->isFrench())
+    {
+        imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon.png");
+        imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level.png");
+        imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2.png");
+        return;
+    }
+
+    if (ConfigurationManager::getInstance()->isRussian())
+    {
+        imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon_ru.png");
+        imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level_ru.png");
+        imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2_ru.png");
+        return;
+    }
+
+    imageMap = ResourceManager::getInstance()->loadImage("data/images/maps/donjon_us.png");
+    imageLevel = ResourceManager::getInstance()->loadImage("data/images/maps/level_us.png");
+    imageLevel2 = ResourceManager::getInstance()->loadImage("data/images/maps/level2_us.png");
 }

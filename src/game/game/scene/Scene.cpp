@@ -83,7 +83,7 @@ void Scene::init(Save *sv)
     }
 
     link = new Link(save, metronome);
-    hud = new Hud(link->getStatus(), link->getInventory(), ConfigurationManager::getInstance()->isFrench());
+    hud = new Hud(link->getStatus(), link->getInventory(), ConfigurationManager::getInstance()->getLang());
 
     map = new Map(save->getMap(), metronome);
     map->load();
