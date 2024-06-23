@@ -13,7 +13,7 @@
 
 #include "../common/Common.h"
 
-#include <SDL2/SDL.h>
+#include <SDL/SDL.h>
 
 class CircularTransition
 {
@@ -38,7 +38,6 @@ public:
 
 private:
     SDL_Surface *rect;
-    SDL_Texture *texture;
     bool run;
     int step;
     int radius;

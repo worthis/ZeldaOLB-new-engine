@@ -5,14 +5,12 @@
 CircularTransition::CircularTransition()
 {
     rect = SDL_CreateRGBSurface(0, GAME_SIZE_W, GAME_SIZE_H, 32, 0, 0, 0, 0);
-    texture = 0;
     reset();
 }
 
 CircularTransition::~CircularTransition()
 {
     SDL_FreeSurface(rect);
-    SDL_DestroyTexture(texture);
 }
 
 void CircularTransition::loop()
@@ -37,15 +35,13 @@ void CircularTransition::loop()
     if (radius > 0)
     {
         WindowManager::getInstance()->filledEllipseRGBA(rect, x, y, radius, radius * 2 / 3, 0, 0, 255, 255);
-        SDL_SetColorKey(rect, SDL_TRUE, SDL_MapRGB(rect->format, 0, 0, 255));
+        SDL_SetColorKey(rect, SDL_SRCCOLORKEY, SDL_MapRGB(rect->format, 0, 0, 255));
     }
 }
 
 void CircularTransition::draw()
 {
-    SDL_DestroyTexture(texture);
-    texture = SDL_CreateTextureFromSurface(WindowManager::getInstance()->getRenderer(), rect);
-    WindowManager::getInstance()->draw(texture);
+    WindowManager::getInstance()->draw(rect);
 }
 
 bool CircularTransition::isRunning()
@@ -85,5 +81,5 @@ void CircularTransition::reset()
     step = 0;
     radius = 320;
     WindowManager::getInstance()->filledEllipseRGBA(rect, 160, 120, radius, radius * 2 / 3, 0, 0, 255, 255);
-    SDL_SetColorKey(rect, SDL_TRUE, SDL_MapRGB(rect->format, 0, 0, 255));
+    SDL_SetColorKey(rect, SDL_SRCCOLORKEY, SDL_MapRGB(rect->format, 0, 0, 255));
 }

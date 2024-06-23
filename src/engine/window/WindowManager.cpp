@@ -3,9 +3,273 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*!
+\brief Alpha adjustment table for custom blitter.
+The table provides values for a modified, non-linear
+transfer function which maintain brightness.
+*/
+const unsigned int GFX_ALPHA_ADJUST_ARRAY[256] = {
+	0,	 /* 0 */
+	15,	 /* 1 */
+	22,	 /* 2 */
+	27,	 /* 3 */
+	31,	 /* 4 */
+	35,	 /* 5 */
+	39,	 /* 6 */
+	42,	 /* 7 */
+	45,	 /* 8 */
+	47,	 /* 9 */
+	50,	 /* 10 */
+	52,	 /* 11 */
+	55,	 /* 12 */
+	57,	 /* 13 */
+	59,	 /* 14 */
+	61,	 /* 15 */
+	63,	 /* 16 */
+	65,	 /* 17 */
+	67,	 /* 18 */
+	69,	 /* 19 */
+	71,	 /* 20 */
+	73,	 /* 21 */
+	74,	 /* 22 */
+	76,	 /* 23 */
+	78,	 /* 24 */
+	79,	 /* 25 */
+	81,	 /* 26 */
+	82,	 /* 27 */
+	84,	 /* 28 */
+	85,	 /* 29 */
+	87,	 /* 30 */
+	88,	 /* 31 */
+	90,	 /* 32 */
+	91,	 /* 33 */
+	93,	 /* 34 */
+	94,	 /* 35 */
+	95,	 /* 36 */
+	97,	 /* 37 */
+	98,	 /* 38 */
+	99,	 /* 39 */
+	100, /* 40 */
+	102, /* 41 */
+	103, /* 42 */
+	104, /* 43 */
+	105, /* 44 */
+	107, /* 45 */
+	108, /* 46 */
+	109, /* 47 */
+	110, /* 48 */
+	111, /* 49 */
+	112, /* 50 */
+	114, /* 51 */
+	115, /* 52 */
+	116, /* 53 */
+	117, /* 54 */
+	118, /* 55 */
+	119, /* 56 */
+	120, /* 57 */
+	121, /* 58 */
+	122, /* 59 */
+	123, /* 60 */
+	124, /* 61 */
+	125, /* 62 */
+	126, /* 63 */
+	127, /* 64 */
+	128, /* 65 */
+	129, /* 66 */
+	130, /* 67 */
+	131, /* 68 */
+	132, /* 69 */
+	133, /* 70 */
+	134, /* 71 */
+	135, /* 72 */
+	136, /* 73 */
+	137, /* 74 */
+	138, /* 75 */
+	139, /* 76 */
+	140, /* 77 */
+	141, /* 78 */
+	141, /* 79 */
+	142, /* 80 */
+	143, /* 81 */
+	144, /* 82 */
+	145, /* 83 */
+	146, /* 84 */
+	147, /* 85 */
+	148, /* 86 */
+	148, /* 87 */
+	149, /* 88 */
+	150, /* 89 */
+	151, /* 90 */
+	152, /* 91 */
+	153, /* 92 */
+	153, /* 93 */
+	154, /* 94 */
+	155, /* 95 */
+	156, /* 96 */
+	157, /* 97 */
+	158, /* 98 */
+	158, /* 99 */
+	159, /* 100 */
+	160, /* 101 */
+	161, /* 102 */
+	162, /* 103 */
+	162, /* 104 */
+	163, /* 105 */
+	164, /* 106 */
+	165, /* 107 */
+	165, /* 108 */
+	166, /* 109 */
+	167, /* 110 */
+	168, /* 111 */
+	168, /* 112 */
+	169, /* 113 */
+	170, /* 114 */
+	171, /* 115 */
+	171, /* 116 */
+	172, /* 117 */
+	173, /* 118 */
+	174, /* 119 */
+	174, /* 120 */
+	175, /* 121 */
+	176, /* 122 */
+	177, /* 123 */
+	177, /* 124 */
+	178, /* 125 */
+	179, /* 126 */
+	179, /* 127 */
+	180, /* 128 */
+	181, /* 129 */
+	182, /* 130 */
+	182, /* 131 */
+	183, /* 132 */
+	184, /* 133 */
+	184, /* 134 */
+	185, /* 135 */
+	186, /* 136 */
+	186, /* 137 */
+	187, /* 138 */
+	188, /* 139 */
+	188, /* 140 */
+	189, /* 141 */
+	190, /* 142 */
+	190, /* 143 */
+	191, /* 144 */
+	192, /* 145 */
+	192, /* 146 */
+	193, /* 147 */
+	194, /* 148 */
+	194, /* 149 */
+	195, /* 150 */
+	196, /* 151 */
+	196, /* 152 */
+	197, /* 153 */
+	198, /* 154 */
+	198, /* 155 */
+	199, /* 156 */
+	200, /* 157 */
+	200, /* 158 */
+	201, /* 159 */
+	201, /* 160 */
+	202, /* 161 */
+	203, /* 162 */
+	203, /* 163 */
+	204, /* 164 */
+	205, /* 165 */
+	205, /* 166 */
+	206, /* 167 */
+	206, /* 168 */
+	207, /* 169 */
+	208, /* 170 */
+	208, /* 171 */
+	209, /* 172 */
+	210, /* 173 */
+	210, /* 174 */
+	211, /* 175 */
+	211, /* 176 */
+	212, /* 177 */
+	213, /* 178 */
+	213, /* 179 */
+	214, /* 180 */
+	214, /* 181 */
+	215, /* 182 */
+	216, /* 183 */
+	216, /* 184 */
+	217, /* 185 */
+	217, /* 186 */
+	218, /* 187 */
+	218, /* 188 */
+	219, /* 189 */
+	220, /* 190 */
+	220, /* 191 */
+	221, /* 192 */
+	221, /* 193 */
+	222, /* 194 */
+	222, /* 195 */
+	223, /* 196 */
+	224, /* 197 */
+	224, /* 198 */
+	225, /* 199 */
+	225, /* 200 */
+	226, /* 201 */
+	226, /* 202 */
+	227, /* 203 */
+	228, /* 204 */
+	228, /* 205 */
+	229, /* 206 */
+	229, /* 207 */
+	230, /* 208 */
+	230, /* 209 */
+	231, /* 210 */
+	231, /* 211 */
+	232, /* 212 */
+	233, /* 213 */
+	233, /* 214 */
+	234, /* 215 */
+	234, /* 216 */
+	235, /* 217 */
+	235, /* 218 */
+	236, /* 219 */
+	236, /* 220 */
+	237, /* 221 */
+	237, /* 222 */
+	238, /* 223 */
+	238, /* 224 */
+	239, /* 225 */
+	240, /* 226 */
+	240, /* 227 */
+	241, /* 228 */
+	241, /* 229 */
+	242, /* 230 */
+	242, /* 231 */
+	243, /* 232 */
+	243, /* 233 */
+	244, /* 234 */
+	244, /* 235 */
+	245, /* 236 */
+	245, /* 237 */
+	246, /* 238 */
+	246, /* 239 */
+	247, /* 240 */
+	247, /* 241 */
+	248, /* 242 */
+	248, /* 243 */
+	249, /* 244 */
+	249, /* 245 */
+	250, /* 246 */
+	250, /* 247 */
+	251, /* 248 */
+	251, /* 249 */
+	252, /* 250 */
+	252, /* 251 */
+	253, /* 252 */
+	253, /* 253 */
+	254, /* 254 */
+	255	 /* 255 */
+};
+
 WindowManager WindowManager::instance = WindowManager();
 
-WindowManager::WindowManager() : fullScreen(FULLSCREEN), event(0), joystick(0), window(0), open(false)
+WindowManager::WindowManager() : fullScreen(FULLSCREEN), event(0), joystick(0), window(0), windowTmp(0), open(false)
 {
 	buttonA = false;
 	buttonB = false;
@@ -38,7 +302,8 @@ int WindowManager::init()
 			printf("Could not load SDL : %s\n", SDL_GetError());
 			return -1;
 		}
-		atexit(SDL_Quit);
+
+		// atexit(SDL_Quit);
 	}
 	return 0;
 }
@@ -47,30 +312,13 @@ int WindowManager::createWindow(string title, string iconName, bool full)
 {
 	if (window == 0)
 	{
-		fullScreen = full;
+		fullScreen = true;
+
+		SDL_WM_SetCaption(title.c_str(), NULL);
 		SDL_ShowCursor(fullScreen ? SDL_DISABLE : SDL_ENABLE);
 
-		window = SDL_CreateWindow(title.c_str(),
-								  SDL_WINDOWPOS_CENTERED,
-								  SDL_WINDOWPOS_CENTERED,
-								  WINDOW_SIZE_W,
-								  WINDOW_SIZE_H,
-								  SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_FULLSCREEN_DESKTOP);
-
-		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
-		screen = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, GAME_SIZE_W, GAME_SIZE_H);
-		SDL_SetRenderTarget(renderer, screen);
-
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		SDL_RenderClear(renderer);
-
-		SDL_SetWindowFullscreen(window, fullScreen ? (Uint32)SDL_WINDOW_FULLSCREEN_DESKTOP : SDL_FALSE);
-
-		SDL_Surface *icon = SDL_LoadBMP(iconName.c_str());
-		SDL_SetColorKey(icon, SDL_TRUE, SDL_MapRGB(icon->format, 0, 0, 0));
-		SDL_SetWindowIcon(window, icon);
-		SDL_FreeSurface(icon);
+		window = SDL_SetVideoMode(WINDOW_SIZE_W, WINDOW_SIZE_H, 32, SDL_HWSURFACE | SDL_DOUBLEBUF | SDL_FULLSCREEN);
+		windowTmp = SDL_CreateRGBSurface(SDL_HWSURFACE, GAME_SIZE_W, GAME_SIZE_H, 32, 0, 0, 0, 0);
 
 		event = new Event();
 		lastAnimTime = SDL_GetTicks();
@@ -89,12 +337,6 @@ bool WindowManager::isOpened()
 
 void WindowManager::setFullScreen(bool b)
 {
-	if (fullScreen != b)
-	{
-		fullScreen = b;
-		SDL_SetWindowFullscreen(window, fullScreen ? (Uint32)SDL_WINDOW_FULLSCREEN_DESKTOP : SDL_FALSE);
-		SDL_ShowCursor(fullScreen ? SDL_DISABLE : SDL_ENABLE);
-	}
 }
 
 bool WindowManager::isFullScreen()
@@ -105,7 +347,7 @@ bool WindowManager::isFullScreen()
 Event *WindowManager::getEvent()
 {
 
-	const Uint8 *keys = SDL_GetKeyboardState(NULL);
+	const Uint8 *keys = SDL_GetKeyState(NULL);
 	SDL_JoystickUpdate();
 
 	if (joystick != 0)
@@ -366,50 +608,43 @@ void WindowManager::close()
 
 void WindowManager::display()
 {
+	SDL_Surface *tmp = zoomSurface(windowTmp, 2, 2, 0);
+	SDL_BlitSurface(tmp, NULL, window, NULL);
+	SDL_FreeSurface(tmp);
 
-	SDL_SetRenderTarget(renderer, NULL);
-	SDL_RenderCopy(renderer, screen, NULL, NULL);
+	SDL_Flip(window);
 
-	int rw, rh;
-	SDL_GetWindowSize(window, &rw, &rh);
-	SDL_RenderSetScale(renderer, ((double)rw) / ((double)GAME_SIZE_W), ((double)rh) / ((double)GAME_SIZE_H));
-
-	SDL_RenderPresent(renderer);
-	SDL_RenderClear(renderer);
 	if (SDL_GetTicks() < lastAnimTime + (1000 / 60))
 		SDL_Delay(lastAnimTime + (1000 / 60) - SDL_GetTicks());
 	lastAnimTime = SDL_GetTicks();
-
-	SDL_SetRenderTarget(renderer, screen);
 }
 
-SDL_Renderer *WindowManager::getRenderer()
+void WindowManager::draw(SDL_Surface *object)
 {
-	return renderer;
-}
-
-void WindowManager::draw(SDL_Texture *object)
-{
-	SDL_RenderCopy(renderer, object, NULL, NULL);
+	SDL_BlitSurface(object, NULL, windowTmp, NULL);
 }
 
 void WindowManager::draw(WImage *image, int srcX, int srcY, int srcW, int srcH, int dstX, int dstY, int alpha)
 {
 	SDL_Rect src = {srcX, srcY, srcW, srcH};
 	SDL_Rect dst = {dstX, dstY, srcW, srcH};
-	SDL_RenderCopy(renderer, image->getImage(), &src, &dst);
+	SDL_BlitSurface(image->getImage(), &src, windowTmp, &dst);
+}
+
+void WindowManager::draw(SDL_Surface *object, int srcX, int srcY, int srcW, int srcH, int dstX, int dstY, int alpha)
+{
+	SDL_Rect src = {srcX, srcY, srcW, srcH};
+	SDL_Rect dst = {dstX, dstY, srcW, srcH};
+	SDL_BlitSurface(object, &src, windowTmp, &dst);
 }
 
 void WindowManager::exit()
 {
-	if (SDL_JoystickGetAttached(joystick))
+	if (SDL_JoystickOpened(0))
 	{
 		SDL_JoystickClose(joystick);
 	}
-	SDL_SetRenderTarget(renderer, NULL);
-	SDL_DestroyTexture(screen);
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
+	SDL_FreeSurface(windowTmp);
 	SDL_ShowCursor(SDL_ENABLE);
 	SDL_Quit();
 }

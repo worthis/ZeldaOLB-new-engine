@@ -11,7 +11,7 @@
 #ifndef __CHRONO_H__
 #define __CHRONO_H__
 
-#include <SDL2/SDL.h>
+#include <SDL/SDL.h>
 
 class Chrono
 {

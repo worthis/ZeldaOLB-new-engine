@@ -3,7 +3,7 @@
 WSound::WSound(string filename)
 {
     name = filename;
-    sound = Mix_LoadWAV(FSOUND_FREE, name.c_str(), 0, 0, 0);
+    sound = Mix_LoadWAV(name.c_str());
 }
 
 WSound::~WSound()

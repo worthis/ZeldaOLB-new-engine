@@ -11,8 +11,8 @@
 #ifndef __WIMAGE_H__
 #define __WIMAGE_H__
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 #include "../common/Common.h"
 #include "WResource.h"
@@ -23,12 +23,12 @@ public:
     WImage(string filename, bool alpha = false);
     WImage(int w, int h, bool alpha = false);
     ~WImage();
-    SDL_Texture *getImage();
+    SDL_Surface *getImage();
     void setAlpha(int alpha); // 0 to 255
 private:
     WImage();
 
-    SDL_Texture *image;
+    SDL_Surface *image;
 };
 
 #endif // WImage.h

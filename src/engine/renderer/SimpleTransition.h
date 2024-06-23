@@ -13,7 +13,7 @@
 
 #include "../common/Common.h"
 
-#include <SDL2/SDL.h>
+#include <SDL/SDL.h>
 
 class SimpleTransition
 {
@@ -37,9 +37,7 @@ public:
     void reset();
 
 private:
-    void init();
-
-    SDL_Texture *texture;
+    SDL_Surface *rect;
     bool run;
     int step;
     int alpha;

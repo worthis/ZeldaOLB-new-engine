@@ -18,7 +18,6 @@ Credits::Credits() : over(false), step(0), anim(0)
         os << (i + 1);
         string filename = "data/images/ending/credits/credits_" + os.str() + ".png";
         images[i] = ResourceManager::getInstance()->loadImage(filename);
-        SDL_SetTextureBlendMode(images[i]->getImage(), SDL_BLENDMODE_BLEND);
         os.str("");
     }
 }

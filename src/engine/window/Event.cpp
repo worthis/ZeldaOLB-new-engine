@@ -21,64 +21,64 @@ void Event::update(const Uint8 *keys, bool capslock)
         current[i] = false;
     }
 
-    current[kUp] = keys[SDL_SCANCODE_UP];
-    current[kDown] = keys[SDL_SCANCODE_DOWN];
-    current[kLeft] = keys[SDL_SCANCODE_LEFT];
-    current[kRight] = keys[SDL_SCANCODE_RIGHT];
+    current[kUp] = keys[SDLK_UP];
+    current[kDown] = keys[SDLK_DOWN];
+    current[kLeft] = keys[SDLK_LEFT];
+    current[kRight] = keys[SDLK_RIGHT];
 
-    current[kA] = keys[SDL_SCANCODE_A];
-    current[kB] = keys[SDL_SCANCODE_B];
-    current[kC] = keys[SDL_SCANCODE_C];
-    current[kD] = keys[SDL_SCANCODE_D];
-    current[kE] = keys[SDL_SCANCODE_E];
-    current[kF] = keys[SDL_SCANCODE_F];
-    current[kG] = keys[SDL_SCANCODE_G];
-    current[kH] = keys[SDL_SCANCODE_H];
-    current[kI] = keys[SDL_SCANCODE_I];
-    current[kJ] = keys[SDL_SCANCODE_J];
-    current[kK] = keys[SDL_SCANCODE_K];
-    current[kL] = keys[SDL_SCANCODE_L];
-    current[kM] = keys[SDL_SCANCODE_M];
-    current[kN] = keys[SDL_SCANCODE_N];
-    current[kO] = keys[SDL_SCANCODE_O];
-    current[kP] = keys[SDL_SCANCODE_P];
-    current[kQ] = keys[SDL_SCANCODE_Q];
-    current[kR] = keys[SDL_SCANCODE_R];
-    current[kS] = keys[SDL_SCANCODE_S];
-    current[kT] = keys[SDL_SCANCODE_T];
-    current[kU] = keys[SDL_SCANCODE_U];
-    current[kV] = keys[SDL_SCANCODE_V];
-    current[kW] = keys[SDL_SCANCODE_W];
-    current[kX] = keys[SDL_SCANCODE_X];
-    current[kY] = keys[SDL_SCANCODE_Y];
-    current[kZ] = keys[SDL_SCANCODE_Z];
+    current[kA] = keys[SDLK_a];
+    current[kB] = keys[SDLK_b];
+    current[kC] = keys[SDLK_c];
+    current[kD] = keys[SDLK_d];
+    current[kE] = keys[SDLK_e];
+    current[kF] = keys[SDLK_f];
+    current[kG] = keys[SDLK_g];
+    current[kH] = keys[SDLK_h];
+    current[kI] = keys[SDLK_i];
+    current[kJ] = keys[SDLK_j];
+    current[kK] = keys[SDLK_k];
+    current[kL] = keys[SDLK_l];
+    current[kM] = keys[SDLK_m];
+    current[kN] = keys[SDLK_n];
+    current[kO] = keys[SDLK_o];
+    current[kP] = keys[SDLK_p];
+    current[kQ] = keys[SDLK_q];
+    current[kR] = keys[SDLK_r];
+    current[kS] = keys[SDLK_s];
+    current[kT] = keys[SDLK_t];
+    current[kU] = keys[SDLK_u];
+    current[kV] = keys[SDLK_v];
+    current[kW] = keys[SDLK_w];
+    current[kX] = keys[SDLK_x];
+    current[kY] = keys[SDLK_y];
+    current[kZ] = keys[SDLK_z];
 
-    current[k0] = keys[SDL_SCANCODE_0] || keys[SDL_SCANCODE_KP_0];
-    current[k1] = keys[SDL_SCANCODE_1] || keys[SDL_SCANCODE_KP_1];
-    current[k2] = keys[SDL_SCANCODE_2] || keys[SDL_SCANCODE_KP_2];
-    current[k3] = keys[SDL_SCANCODE_3] || keys[SDL_SCANCODE_KP_3];
-    current[k4] = keys[SDL_SCANCODE_4] || keys[SDL_SCANCODE_KP_4];
-    current[k5] = keys[SDL_SCANCODE_5] || keys[SDL_SCANCODE_KP_5];
-    current[k6] = keys[SDL_SCANCODE_6] || keys[SDL_SCANCODE_KP_6];
-    current[k7] = keys[SDL_SCANCODE_7] || keys[SDL_SCANCODE_KP_7];
-    current[k8] = keys[SDL_SCANCODE_8] || keys[SDL_SCANCODE_KP_8];
-    current[k9] = keys[SDL_SCANCODE_9] || keys[SDL_SCANCODE_KP_9];
+    current[k0] = keys[SDLK_0] || keys[SDLK_KP0];
+    current[k1] = keys[SDLK_1] || keys[SDLK_KP1];
+    current[k2] = keys[SDLK_2] || keys[SDLK_KP2];
+    current[k3] = keys[SDLK_3] || keys[SDLK_KP3];
+    current[k4] = keys[SDLK_4] || keys[SDLK_KP4];
+    current[k5] = keys[SDLK_5] || keys[SDLK_KP5];
+    current[k6] = keys[SDLK_6] || keys[SDLK_KP6];
+    current[k7] = keys[SDLK_7] || keys[SDLK_KP7];
+    current[k8] = keys[SDLK_8] || keys[SDLK_KP8];
+    current[k9] = keys[SDLK_9] || keys[SDLK_KP9];
 
-    current[kComma] = keys[SDL_SCANCODE_COMMA];
-    current[kSemicol] = keys[SDL_SCANCODE_SEMICOLON];
-    current[kEscape] = keys[SDL_SCANCODE_ESCAPE];
-    current[kTab] = keys[SDL_SCANCODE_TAB];
-    current[kShift] = capslock || keys[SDL_SCANCODE_LSHIFT] || keys[SDL_SCANCODE_RSHIFT];
-    current[kCtrl] = keys[SDL_SCANCODE_LCTRL] || keys[SDL_SCANCODE_RCTRL];
-    current[kAlt] = keys[SDL_SCANCODE_LALT] || keys[SDL_SCANCODE_RALT];
-    current[kSpace] = keys[SDL_SCANCODE_SPACE];
-    current[kReturn] = keys[SDL_SCANCODE_RETURN] || keys[SDL_SCANCODE_KP_ENTER];
+    current[kComma] = keys[SDLK_COMMA];
+    current[kSemicol] = keys[SDLK_SEMICOLON];
+    current[kEscape] = keys[SDLK_ESCAPE];
+    current[kTab] = keys[SDLK_TAB];
+    current[kShift] = capslock || keys[SDLK_LSHIFT] || keys[SDLK_RSHIFT];
+    current[kCtrl] = keys[SDLK_LCTRL] || keys[SDLK_RCTRL];
+    current[kAlt] = keys[SDLK_LALT] || keys[SDLK_RALT];
+    current[kSpace] = keys[SDLK_SPACE];
+    current[kReturn] = keys[SDLK_RETURN] || keys[SDLK_KP_ENTER];
 
     current[QUIT] = false;
     current[RESIZE] = current[kCtrl] && current[kReturn];
-    current[QUIT_FORCED] = current[kAlt] && keys[SDL_SCANCODE_F4];
+    current[QUIT_FORCED] = current[kAlt] && keys[SDLK_F4];
 
-    current[kF1] = keys[SDL_SCANCODE_F1];
+    current[kF1] = keys[SDLK_F1];
 
     if (current[RESIZE])
     {
