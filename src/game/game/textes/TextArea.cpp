@@ -24,7 +24,8 @@ TextArea::~TextArea()
 
 void TextArea::handleActions(Action *action)
 {
-    if (action->isAction(ACTION))
+    if (action->isAction(ACTION) ||
+        action->isAction(HIT))
     {
         if (ready)
         {
