@@ -7,7 +7,7 @@
 #include "../../../../engine/texts/TextManager.h"
 #include "../../../../config/ConfigurationManager.h"
 
-OptionsMain::OptionsMain() : line(3), skin(0)
+OptionsMain::OptionsMain() : line(2), skin(0)
 {
     image = ResourceManager::getInstance()->loadImage("data/images/menus/cadres.png");
     link = ResourceManager::getInstance()->loadImage("data/images/menus/curseur.png", true);
@@ -54,16 +54,12 @@ void OptionsMain::handleEvents(Event *event)
             AudioManager::getInstance()->playSound(TS_MENU1);
             break;
         case 1:
-            MainController::getInstance()->getMenuController()->getOptionsController()->setStep(OPTIONS_COMMANDS);
-            AudioManager::getInstance()->playSound(TS_MENU1);
-            break;
-        case 2:
             MainController::getInstance()->getMenuController()->getOptionsController()->setStep(OPTIONS_AUDIO);
             AudioManager::getInstance()->playSound(TS_MENU1);
             break;
-        case 3:
+        case 2:
             MainController::getInstance()->getMenuController()->setStep(MENU_MAIN);
-            AudioManager::getInstance()->playSound(TS_MENU2);
+            AudioManager::getInstance()->playSound(TS_MENU1);
             break;
         default:
             break;
@@ -75,13 +71,13 @@ void OptionsMain::handleEvents(Event *event)
     {
         line--;
         if (line < 0)
-            line = 3;
+            line = 2;
         AudioManager::getInstance()->playSound(TS_MENU3);
     }
     if (event->isPushed(kDown))
     {
         line++;
-        if (line > 3)
+        if (line > 2)
             line = 0;
         AudioManager::getInstance()->playSound(TS_MENU3);
     }
@@ -90,7 +86,7 @@ void OptionsMain::handleEvents(Event *event)
 void OptionsMain::draw()
 {
     drawPage();
-    WindowManager::getInstance()->draw(link, skin * 16, 0, 16, 21, 26, 53 + 48 * line);
+    WindowManager::getInstance()->draw(link, skin * 16, 0, 16, 21, 26, 53 + 16 + 64 * line);
 }
 
 void OptionsMain::drawPage()
@@ -105,20 +101,16 @@ void OptionsMain::drawPage()
 
     drawTitle();
 
-    drawCadre(16, 48, 288, 32);
-    drawCadre(16, 96, 288, 32);
-    drawCadre(16, 144, 288, 32);
+    drawCadre(16, 48 + 16, 288, 32);
+    drawCadre(16, 144 - 16, 288, 32);
     drawCadre(16, 192, 136, 32);
 
     int letterSize = TextManager::getInstance()->getWSpace();
     int size = texts[1]->getLength() * letterSize;
-    texts[1]->display((320 - size) / 2, 56);
-
-    size = texts[2]->getLength() * letterSize;
-    texts[2]->display((320 - size) / 2, 104);
+    texts[1]->display((320 - size) / 2, 56 + 16);
 
     size = texts[3]->getLength() * letterSize;
-    texts[3]->display((320 - size) / 2, 152);
+    texts[3]->display((320 - size) / 2, 104 + 32);
 
     size = texts[4]->getLength() * letterSize;
     texts[4]->display(16 + (136 - size) / 2, 200);
