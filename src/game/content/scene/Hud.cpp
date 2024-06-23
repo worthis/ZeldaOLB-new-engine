@@ -163,10 +163,26 @@ void Hud::drawBonus()
 
 void Hud::drawLife()
 {
-
     // life
-    int srcY = (currentLang == 0) ? 17 : 0;
-    int srcH = (currentLang == 0) ? 8 : 7;
+    int srcY;
+    int srcH;
+
+    switch (currentLang)
+    {
+    case 0:
+        srcY = 17;
+        srcH = 8;
+        break;
+    case 3:
+        srcY = 25;
+        srcH = 8;
+        break;
+    default:
+        srcY = 0;
+        srcH = 7;
+        break;
+    }
+
     WindowManager::getInstance()->draw(image, 158, srcY, 44, srcH, 250, 10);
 
     // hearts
