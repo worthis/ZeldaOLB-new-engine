@@ -1,578 +1,578 @@
-PRESS ENTER
-SELECTION SCREEN
-OPTIONS
-RECORDS
-LOAD
-DELETE
-CANCEL
-DELETE?
-YES
-NO
-GAME
-COMMANDS
-AUDIO
-RETURN
-DISPLAY :
-FULL SCREEN
-WINDOWED MODE
-LANGUAGE:                         ENGLISH
-LINK:
-ORIGINAL
-BLOND
-MUSIC:
-SOUNDS:
-KEYBOARD
-GAMEPAD
-NO GAMEPAD FOUND
-PAGE 1 / 2
-PAGE 2 / 2
-TOP :
-BOTTOM :
-LEFT :
-RIGHT :
-RUN :
-SWORD :
-OBJECT :
-ACTION :
-MENU :
-TELEPORTATION (ONI-LINK) :
-MAP :
-ENCYCLOPEDIA :
-QUIT :
-DEFAULT
-CONFIRM ?
+НАЖМИТЕ START
+ВЫБОР ИГРЫ
+НАСТРОЙКИ
+РЕКОРДЫ
+ЗАГРУЗИТЬ
+УДАЛИТЬ
+ОТМЕНА
+УДАЛИТЬ?
+ДА
+НЕТ
+ИГРА
+УПРАВЛЕНИЕ
+АУДИО
+НАЗАД
+ЭКРАН:
+ПОЛНЫЙ
+ОКОННЫЙ
+ЯЗЫК:                             РУССКИЙ
+ЛИНК:
+ОРИГИНАЛ
+БЛОНДИН
+МУЗЫКА:
+ЗВУКИ:
+КЛАВИАТУРА
+ГЕЙМПАД
+ГЕЙМПАД НЕ НАЙДЕН
+СТРАНИЦА 1 / 2
+СТРАНИЦА 2 / 2
+ВВЕРХ:
+ВНИЗ:
+ВЛЕВО:
+ВПРАВО:
+БЕГ:
+МЕЧ:
+ПРЕДМЕТ:
+ДЕЙСТВИЕ:
+МЕНЮ:
+ТЕЛЕПОРТАЦИЯ (ОНИ-ЛИНК):
+КАРТА:
+МОНСТРОПЕДИЯ:
+ВЫХОД:
+ПО-УМОЛЧАНИЮ
+ПРИНЯТЬ?
 ESC
 TAB
 SHIFT
 SPACE
 ENTER
-TOP
-BOTTOM
+UP
+DOWN
 LEFT
 RIGHT
-YES
-NO
-KEYBOARD LAYOUT :
+ДА
+НЕТ
+РАСКЛАДКА КЛАВИАТУРЫ:
 AZERTY
 QWERTY
-CAMERA :
-PAGE 1 / 3
-PAGE 2 / 3
-PAGE 3 / 3
-BEST TIME:
-100% RANK
-ULTIMATE RANK
-SPEED RANK
-RANK : UNKNOWN
-RANK : Hyrule's Hero
-RANK : Show-off
-RANK : Hylian marathon runner
-RANK : Termina's Hero
-RANK : Big-head
-RANK : Termina marathon runner
-RANK : Heroes of two worlds
-RANK : Master Swordsman
-RANK : Two worlds marathon runner
-Complete game at 100%.
-Complete game without dying,
-with at most 15 hearts,
-without buying any bottle,
-without changing tunic,
-without shield, nor 
-speaking to Great Fairies.
-Complete game in less than
-four hours.
-After Ganon's defeat and Triforce's disappearing, the legend lets us believe that peace has lasted...          But beneath each legend, a darker reality is often hidden...
-The legend forgets that after these events, the hero was brought down by a terrible curse...
-Day by day, Link was transforming into an incontrollable and destructive powered monster named Oni-Link...
-Banished from Hyrule, Link asked for advice from Princess Zelda.
-She indicated to him his last hope : a portal to a secret world...
-Yes... It's this way...                         We are very near...
-I'm sorry you can't have weapons with you...    But you see... You might transform yourself     whenever...                                     It's too dangerous...
-Here we are! That's it!                         Don't move anymore, I set the portal...                                                         Are you ready?
-HELP : Press F1 to read the help.
-Would you like to quit?                                            [c=2]CONTINUE[c=0]                                      SAVE AND QUIT                                QUIT WITHOUT SAVING
-Would you like to quit?                                            [c=0]CONTINUE                                      [c=2]SAVE AND QUIT[c=0]                                QUIT WITHOUT SAVING
-Would you like to quit?                                            [c=0]CONTINUE                                      SAVE AND QUIT                                [c=2]QUIT WITHOUT SAVING
-You have found a Piece of Heart!!!
-[v=1] more until you receive a new Heart Container!!!
-You have obtained one more Heart Container!!!
-You have found a bottle!!!
-Use it to store potions!
-You got a shield!!!                             Your defense has increased !!!
-You got a small sword!!!                        Press [EPEE] to slash bushes or enemies!
-Hold down [EPEE] to prepare a charged attack!
-The power of the Master Sword rises !                                                           Go quickly to the next temple!
-The Master Sword reach its maximal power!!!     Even Oni-Link should be too weak to face it!!!
-You got the gloves!!!                           Press [ACTION] to lift objects. 
-You find the Golden Gloves!!!                   Now you can lift heavy stones pressing [ACTION].
-You got the bow!!!                              Use it to reach remote targets.
-You find the Great Fairy Bow!!!                 Your bow now fires devastating silver arrows!!!
-You got the flippers!!!                         You can now swim in the water! 
-You got the magic hammer!!!                     Use it to crush obstacles.
-You got the lamp!!!                             Use it to create a flame.
-You got a red potion!!!                         Use it to get all your hearts back!!!  
-You got a green potion!!!                       Use it to get all your magic back!!!
-You got a blue potion!!!                        Use it to get all your hearts and magic back!!! 
-You have found the dungeon's map!!!             When inside the dungeon, press [CARTE] to view it!!!
-You have found the compass!!!                   Chests and bosses are now marked on the map!!!
-You have found the boss key!!!                  Use it to enter it's lair!!!!
-You have found a small key!!!                   Use it to open a locked door!!!!
-You have found a magic medallion!!!             Your defense has increased!!!
-You have found the Switch Hook!!!               You can now cross chasms by throwing it against wooden objects!!!
-You have found the Fire Rod!!!                  You can now cast powerful fireballs!!!
-You have found the Ice Rod!!!                   You can now cast powerful ice balls!!!
-                    Level 1:                                                                                      Faron Temple
-                    Level 2:                                                                                        Ruto Mine
-                    Level 3:                                                                                      Ordona Temple
-                    Level 4:                                                                                     Haunted Mansion
-                    Level 5:                                                                                      Eldin Temple
-                    Level 6:                                                                                   Monsters' Colosseum
-                    Level 7:                                                                                     Lanayru Temple
-                    Level 8:                                                                                      Zelda Temple
-                    Level 9:                                                                                     Haunted Mansion
-                    Level 10:                                                                                      Din Temple
-                    Level 11:                                                                                     Nayru Temple
-                    Level 12:                                                                                     Farore Temple
-                    Level 13:                                                                                     Xanto Temple
-                    Level ?:                                                                                      Secret Temple
-                  Final Level:                                                                                    Destiny Tower
-GRAALS:
-STATUS:
-LIFE:
-MAGIC:
-ONI LINK:
-STRENGTH:
-DEFENSE:
-TIME:
-HELP 1/2
-HELP 2/2
-Back to game: F1                 Next : Right
-Back to game: F1              Previous : Left
-Sword strike:
-Charged attack:                Hold the sword
-Open / Talk / Lift :
-Use selected object:                        
-Selection item menu:
-Run:
-Teleportation (Oni-Link):
-Map  (outdoor or dungeons):
-Monsters' encyclopedia:
-Look around:
-Save / Quit:
-Full screen / Windowed:       CTRL and RETURN
-MONSTERS 1
-MONSTERS 2
-MONSTERS 3
-MONSTERS 4
-MONSTERS 5
-MONSTERS 6
-W: Lanayru Lake
-Sealed portal cave.                                                                             No Entry.
-N: East Field
-Faron Temple                                                                                    Save trees, eat a beaver!!!
-You find Pegasus Boots!!!                       Hold [COURSE] to run !
-Good morning Link, I was waiting for you.                                                       My name is Pit, I have been charged by Princess Zelda to watch on this cave.
-She warned me you were coming and asked me to   help you.                                       My house is just here, we'll be more comfortable to talk, follow me.
-Pit is waiting for you in the house just right here.
-Pit told you not to go out of the forest.
-S: Forbidden Forest
-S: Lanayru Lake
-N: To Ordona Temple
-N: Ruto Village
--Super Anti Monsters Ultimate Society-         (S.A.M.U.S.)                                                                                     Come in if you don't like monsters.
-W: Rauru City
-N: Ruto Village                                 S: East Field
-S: Ruto Village                                 E: To the desert
-Mine entrance
-W: To Ordona Temple                             E: Ruto Village
-An empty bottle for 100 rupees?                                                                               [c=2]YES[c=0]              NO
-An empty bottle for 100 rupees?                                                                               [c=0]YES              [c=2]NO
-Sorry, you don't have enough rupees.
-Thanks, here is your bottle.
-Come back if you change your mind.
-Sorry, I had only one bottle.
-Get out of my way!
-If you are looking for a bomb bag, you should go to see the man working in the mine, he uses a lot of bombs.
-There is a secret passage to the west of the    village which leads to Ordona Temple, but you   will need bombs to take it.
-The mayor strictly forbade the access to the    mine because monsters go out.
-You are saying that maybe someone is locked in  the mine? So what?
-The mayor allowed you to pass? So move along!
+КАМЕРА:
+СТРАНИЦА 1 / 3
+СТРАНИЦА 2 / 3
+СТРАНИЦА 3 / 3
+ЛУЧШЕЕ ВРЕМЯ:
+100% РАНГ
+ВЫСШИЙ РАНГ
+РАНГ СКОРОСТИ
+РАНГ: НЕИЗВЕСТЕН
+РАНГ: Герой Хайрула
+РАНГ: Хвастунишка
+РАНГ: Марафонец Хайрула
+РАНГ: Герой Термины
+РАНГ: Большеголовый
+РАНГ: Марафонец Термины
+РАНГ: Герой Двух Миров
+РАНГ: Мастер Меча
+РАНГ: Марафонец Двух Миров
+Пройти игру на 100%.
+Пройти игру не умирая,
+имея не более 15 Сердец,
+не покупая бутылки,
+не меняя свою одежду,
+без щита, и не встречая
+Великих Фей.
+Пройти игру менее, чем
+за четыре часа.
+После поражения Ганона и исчезновения Трифорса легенда убеждает нас в том, что воцарился мир...[br]Но за каждой легендой часто скрывается более мрачная реальность...
+Легенда умалчивает, что после всех этих приключений на героя обрушилось страшное проклятие...
+День за днем Линк превращался в неуправляемого и разрушительного монстра по имени Они-Линк...
+Изгнанный из Хайрула, Линк обратился за помощью к Принцессе Зельде.
+Она подсказала ему его последнюю надежду: портал в тайный мир...
+Да... Нам сюда...[br]Мы уже почти на месте...
+Мне жаль, но ты не можешь взять с собой оружие... Ты знаешь... Ты можешь перевоплотиться в любой момент...[br]Это очень опасно...
+Вот мы и пришли! Вот он![br]Стой и не двигайся больше, я открываю портал...[br][br]Ты готов??
+ПОМОЩЬ: Нажми SELECT, чтобы ознакомиться со справкой по игре.
+Хочешь выйти из игры в главное меню? [center][c=2]ПРОДОЛЖИТЬ[c=0][/center][center]СОХРАНИТЬ И ВЫЙТИ[/center][center]ВЫЙТИ БЕЗ СОХРАНЕНИЯ[/center]
+Хочешь выйти из игры в главное меню? [center][c=0]ПРОДОЛЖИТЬ[/center][center][c=2]СОХРАНИТЬ И ВЫЙТИ[c=0][/center][center]ВЫЙТИ БЕЗ СОХРАНЕНИЯ[/center]
+Хочешь выйти из игры в главное меню? [center][c=0]ПРОДОЛЖИТЬ[/center][center]СОХРАНИТЬ И ВЫЙТИ[/center][center][c=2]ВЫЙТИ БЕЗ СОХРАНЕНИЯ[c=0][/center]
+Ты нашел Частицу Сердца!!!
+Найди еще [v=1] из них и ты соберешь новый Контейнер с Сердцем!!!
+Ты собрал Контейнер с Сердцем!!!
+Ты нашел бутылку!!!
+Используй ее, чтобы носить зелья с собой!
+Ты получил Щит!!![br]Твоя защита увеличилась!!!
+Ты получил Короткий Меч!!![br]Нажимай [EPEE], чтобы рубить кусты и врагов!
+Зажимай [EPEE], чтобы подготовить круговую атаку!
+Сила Меча Мастера растет![br][br]Быстрее отправляйся в следующий храм!
+Меч Мастера достиг своей максимальной силы!!![br]Даже Они-Линк не сможет устоять перед его клинком!!!
+Ты нашел Перчатки!!![br]Нажимай [ACTION], чтобы поднимать предметы.
+Ты нашел Золотые перчатки!!![br]Теперь ты можешь поднимать тяжелые камни, нажимая на кнопку [ACTION].
+Ты нашел Лук!!![br]Используй его, чтобы достигать цели на расстоянии.  
+Ты нашел Лук Великих Фей!!![br]Теперь ты можешь стрелять разрушительными серебрянными стрелами!!!
+Ты нашел Ласты!!![br]Теперь ты можешь плыть по воде!
+Ты нашел Волшебный Молот!!![br]Используй его, чтобы сокрушать препятствия.
+Ты нашел Лампу!!![br]Используй ее, чтобы разжечь пламя.
+Ты получил красное зелье!!![br]Используй его, чтобы восстановить свои сердца!!!  
+Ты получил зеленое зелье!!![br]Используй его, чтобы восстановить свою магию!!!
+Ты получил синее зелье!!![br]Используй его, чтобы восстановить свои сердца и магию!!! 
+Ты нашел Карту Подземелья!!![br]Находясь в Подземелье, нажми [CARTE], чтобы посмотреть ее!!!
+Ты нашел Компас!!![br]Сундуки и босс теперь помечены на карте!!!
+Ты нашел Ключ Босса!!![br]Используй его, чтобы войти в его логово!!!
+Ты нашел малый ключ!!![br]Используй его, чтобы открыть запертую дверь!!!
+Ты нашел волшебный медальон!!![br]Твоя защита увеличилась!!!
+Ты нашел Гарпун!!![br]Теперь ты можешь преодолевать пропасти, метнув его в деревянные предметы!!!
+Ты нашел Огненный Жезл!!![br]Теперь ты можешь метать мощные огненные шары!!!
+Ты нашел Ледяной Жезл!!![br]Теперь ты можешь метать мощные ледяные шары!!!
+[center]Уровень 1:[/center][center]Храм Фарона[/center]
+[center]Уровень 2:[/center][center]Шахта Руто[/center]
+[center]Уровень 3:[/center][center]Храм Ордоны[/center]
+[center]Уровень 4:[/center][center]Особняк с привидениями[/center]
+[center]Уровень 5:[/center][center]Храм Элдин[/center]
+[center]Уровень 6:[/center][center]Колизей Чудовищ[/center]
+[center]Уровень 7:[/center][center]Храм Ланайру[/center]
+[center]Уровень 8:[/center][center]Храм Зельды[/center]
+[center]Уровень 9:[/center][center]Особняк с привидениями[/center]
+[center]Уровень 10:[/center][center]Храм Дин[/center]
+[center]Уровень 11:[/center][center]Храм Нейрю[/center]
+[center]Уровень 12:[/center][center]Храм Фароре[/center]
+[center]Уровень 13:[/center][center]Храм Занта[/center]
+[center]Уровень ?:[/center][center]Тайный Храм[/center]
+[center]Последний уровень:[/center][center]Башня Судьбы[/center]
+ГРААЛИ:
+СОСТОЯНИЕ:
+ЖИЗНЬ:
+МАГИЯ:
+ОНИ-ЛИНК:
+СИЛА:
+ЗАЩИТА:
+ВРЕМЯ:
+ПОМОЩЬ 1/2
+ПОМОЩЬ 2/2
+Вернуться в игру: SELECT       Дальше: Вправо
+Вернуться в игру: SELECT         Назад: Влево
+Удар мечом:
+Круговая атака:         Удерживать Удар мечом
+Открыть / Говорить / Поднять:
+Использовать выбранный предмет:                       
+Выбрать предмет:
+Бег:
+Телепортация (Они-Линк):
+Карта (снаружи или в подземельях):
+Энциклопедия монстров:
+Осмотреться:
+Сохранить / Выйти:
+Полноэкранный / Оконный:        CTRL и RETURN
+БЕСТИАРИЙ 1
+БЕСТИАРИЙ 2
+БЕСТИАРИЙ 3
+БЕСТИАРИЙ 4
+БЕСТИАРИЙ 5
+БЕСТИАРИЙ 6
+З : Озеро Ланайру
+Запечатанная пещера портала.[br][br]Не входить!
+С : Восточное Поле
+Храм Фарона[br][br]Спаси деревья, съешь бобра!!!
+Ты нашел Сапоги Пегаса!!![br]Зажимай [COURSE], чтобы бежать!
+Доброе утро, Линк. Я ждал тебя.[br][br]Меня зовут Пит. Принцесса Зельда поручила мне следить за этой пещерой.
+Она предупредила, что ты скоро появишься здесь и попросила помочь.[br]Мой дом как раз тут рядом, там нам будет удобней пообщаться, иди за мной.
+Пит ждет тебя в домике тут неподалеку.
+Пит велел тебе не выходить из леса.
+Ю : Запретный Лес
+Ю : Озеро Ланайру
+С : К Храму Ордоны
+С : Деревня Руто
+-Супер Анти Монстро Ультимативное Сообщество- (С.А.М.У.С.)[br][br]Входи, если не любишь монстров.
+З : Город Рауру
+С : Деревня Руто[br]Ю : Восточное Поле
+Ю : Деревня Руто[br]В : В пустыню
+Вход в Шахту
+З : К Храму Ордоны[br]В : Деревня Руто
+Не нужна пустая бутылка за 100 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Не нужна пустая бутылка за 100 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Извини, но твоих рупий недостаточно!
+Благодарю, вот ваша бутылка.
+Возвращайтесь, если передумаете.
+Прошу прощения, но это была моя последняя бутылка.
+С дороги!
+Если ты ищешь сумку с бомбами, то тебе стоит поговорить с шахтером, он всегда использует много бомб.
+К западу от деревни есть секретный проход, ведущий к Храму Ордоны, но чтобы пройти по нему тебе понадобятся бомбы.
+Глава деревни строго-настрого запретил проход в шахту, она просто кишит чудовищами.
+Говоришь, что кто-то может быть заперт в шахте? И что с того?
+Глава разрешил тебе пройти?[br]Так проходи!
 ...
-Welcome to the Ruto village.                                                                    And just between us, don't trust anyone here...
-Even if this village seems to be wealthy at     first sight, it's actually the poorest in       Termina... And we cannot rely on the mayor to   change that...
-Tourists who come here used to be either lost,  or totally mad.                                                                                 For my part, I always have a map with me.
-S: To East Field                                W: To Ordona Temple                             E: Ruto Village
-S: East Field
-Ordona Temple
-E: Forgotten Land
-Fairy Cave
-Din Temple                                                                                      Fairies' power will reward bravery!
-Enchanting Oasis
-S: Ruto Village                                 W: Sure Death
-W: Witch's Swamp
+Добро пожаловать в деревню Руто.[br][br]И, по-секрету, не советую здесь никому доверять...
+На первый взгляд вам может показаться, что наша деревня довольно зажиточна, но на самом деле мы - самый бедный поселок в Термине... И нет никакой надежды, что наш глава хоть как-то сможет исправить эту ситуацию...
+Обычно, прибывающие сюда туристы, либо пропадают, либо сходят с ума.[br][br]Поэтому, я всегда ношу с собой карту.
+Ю : К Восточному Полю[br]З : К Храму Ордоны[br]В : Деревня Руто
+Ю : Восточное Поле
+Храм Ордоны
+В : Забытые Земли
+Пещера Фей
+Храм Дин[br][br]Сила фей вознаградит за храбрость!
+Чарующий Оазис
+Ю : Деревня Руто[br]З : Верная смерть
+З : Ведьмино Болото
                       ???
-N: Rauru City
-Lanayru Temple
-E: Forbidden Forest
-N: East Field                                   W: To Rauru City
-W: West Field
-N: Forgotten Land                               S: Rauru City
-N: Rauru City                                   S: Lanayru Lake                                 W: West Field                                   E: East Field
-E: East Field
-Under orders by the mayor, access to this area  is strictly forbidden.
-You received the mayor's authorization?         So be careful, those who venture over there     never come back...
-A better shield for 250 rupees?                                                                               [c=2]YES[c=0]              NO
-A better shield for 250 rupees?                                                                               [c=0]YES              [c=2]NO
-Thanks, here is your shield.
-Sorry, I have nothing in stock anymore.
-You find a new shield!!!                        Your defense has increased !
-But why do I have to care for these hens        again???
-I like to sweep!
-Rauru is the most beautiful city of the country, a lot of visitors come every day to visit it.
-A magical instrument is said to be somewhere in Termina.                                        I wonder if I might see it some day...
-You found the magical instrument???             I hoped that was a saxo...
-My parents are lost.
-I like to wander!
-S: Rauru City                                   E: Haunted House
-Farore Temple                                                                                   Fairies' power will reward bravery!
-Haunted House                                                                                   Come to enrich our soul collection!
-E: To Ordona Temple
-W: Graveyard
-W: Mido Village
-Desert's secret :                               Lift the bird's stones clockwise ending by the eye to open the way.
-Zelda Temple
-S: Witch's Swamp
-E: Rauru City
-N: Destiny Mountains
-Link, it's Zelda, congratulations!!!            Rauru is safe, for the moment...                Go to the Destiny Tower at the peak of the      mountain and stop Ganon!
-You cannot run away now!
-W: Kasuto Village                               E: Witch's Hut
-N: West Field                                   S: Witch's Hut
-Potions Hut                                                                                     Come trade your rupees for the most powerful    potions of the country!!!
-E: Lanayru Lake
-Monsters' Colosseum                                                                             Come all!
-N: Graveyard                                    S: Kasuto Village
-Kasuto Village                                                                                            -- Not for humans (alive) --
-Tip : Hold Ctrl to look around with the keyboard arrows.
-N: Kasuto Village                               E: Witch's Swamp
-You look pretty strong, you should train in the arena at the South of the village. A very useful object is said to be hidden inside...
-Uh?                                             A new species?                                                                                  Do you know how to speak?
-This village is the last rampart against humanity.
-Hello, I am a dummy monster.
-Stuck?                                                                                                                                          Though the solution is not so far.
-S: Kasuto Village
-Xanto Temple                                                                                    Dead men tell no tales...
-Did you ever try the hammer on skulls?
-E: West Field
-Mido Village
-Do all teenagers have no fashion sense as you do?
-Welcome in the Mido village, but don't feel obliged to stay here.
-Grrr... I thought I would be alone here...
-Destiny Way                                                                                     Only an ally of Good and Evil will get over this cave.
-Nayru Temple                                                                                    Fairies' power will reward bravery!
-S: Mido Village
-Eldin Temple
-Titans' strength will go to the legendary hero...
-Congratulations!                                                                                You succeeded in climbing the Flatty Mountain!
-Destiny Tower                                   Hero of Hyrule watch out, vile Ganon now sits   here enthroned, the future of the world will be at stake here.
-S: West Field
-Only the immeasurable emptiness can remove this stone.
-You find the Ocarina of Time!!!                                                                 He has such a power that he can stop the time when you blow in!
-You still didn't learn any song.
-[c=2]- ELEGY OF EMPTINESS[c=0]                            - Don't play
-[c=0]- Elegy of Emptiness                            [c=2]- DON'T PLAY
-[c=2]- SONG OF SOARING[c=0]                               - Elegy of Emptiness                            - Don't play
-- Song of Soaring                               [c=2]- ELEGY OF EMPTINESS[c=0]                            - Don't play
-[c=0]- Song of Soaring                               - Elegy of Emptiness                            [c=2]- DON'T PLAY
-[c=2]- SONG OF SOARING[c=0]                               - Elegy of Emptiness                            - Song of Spirit                                - Don't play
-- Song of Soaring                               [c=2]- ELEGY OF EMPTINESS[c=0]                            - Song of Spirit                                - Don't play
-- Song of Soaring                               - Elegy of Emptiness                            [c=2]- SONG OF SPIRIT[c=0]                                - Don't play
-[c=0]- Song of Soaring                               - Elegy of Emptiness                            - Song of Spirit                                [c=2]- DON'T PLAY
-You must not transform yourself here!!!
-You cannot go in this village with this appearance !!!
-Link, it's Pit. I am talking with you by        telepathy. You must under no circumstances      transform yourself in a village!                I will teleport you outside.
-Team leader, creator and programmer :                                                                           Vincent Jouillat
-Scriptwriter :                                                                                              Lucie Pйnalver (Lobalщz)
-Help to the Graphics :                                                                                            Harvestland
-Illustrator :                                                                                                   Solиne Jouillat
-Map of Termina :                                                                                             Adrien Batis (Raiden)
-Faron Temple
-Ruto Mine
-Ordona Temple
-Haunted Mansion
-Eldin Temple
-Monsters' Colosseum
-Lanayru Temple
-Zelda Temple
-Din Temple
-Nayru Temple
-Farore Temple
-Xanto Temple
-Secret Temple
-Destiny Tower
-You find the Master Sword!!!                                                                    Its amazing power seems to be palpable !!!
-You find a Graal!!!
-You find a New Heart!!!                                                                         Your maximal energy rises by one heart!!!
-Do you want to save?                                                  [c=2]YES[c=0]                                             NO
-Do you want to save?                                                  YES                                             [c=2]NO[c=0]
-Do you want to go back to the dungeon's         entrance?                                                             [c=2]YES[c=0]                                             NO
-Do you want to go back to the dungeon's         entrance?                                                             YES                                             [c=2]NO[c=0]
-You defeated the monster of the mine???         Congratulations!!!
-I am the chief of the workers, you say you were looking for me?
-Take this bag full of bomb, it may help you.
-You find the Bomb Bag!!!                        And it's full!!!                                Press [INVENTAIRE] to set them up, and [OBJECT] to use them.
-You came to save me?                            Thank you very much!
-Digging in these galleries we discovered this   hang-out of monsters...
-We all have been captured by the monsters living in these caverns.
-Our chief is on the floor downstairs, go quickly to save him!
-I found that in the mine, take it, it could help you!
-I am the right hand man of the mayor, he sent me to save his daughter...                         But I've been had, there is nothing to do against these ghosts...
-Don't stay here, you can't do anything with your actual weapons...
-To continue your quest, follow the road at the west of the City. This bow will allow you to reach the sphere and open the way...
-You defeated the vampire and came to save me?   Thank you so much! My father is the mayor of the City, go and see him, I'm sure he will reward you.
-Don't worry about me, I can go back home by     myself now that the vampire is dead.
-Colosseum Hall
-Arena 1
-Arena 2
-Arena 3
-Arena 4
-Prize giving
-Special Arena                                                                                   Come and try the special prize!!!
-You find a Coat of Mail!!!                                                                      Your defense has increased !!!
-You find a better Coat of Mail!!!                                                               Your defense has increased !!!
-Hihihihihi!!!                                   Congratulation Link! You succeeded in getting   rid of your curse. And in the same way you      released me!!!
-In reward for your efforts I won't kill you     today, I have a more important mission.
-If you really want to stop me, meet me in the   dead temple if you are brave enough.            Farewell! Hihihihihi!!!
-Link, it's Zelda, I am talking with you by      telepathy. I am with Pit, rejoin us quickly, the situation is serious.
-I was waiting for you Link.                     I hand the power of the Goddness over to your   sword to restore the strenght of the Master     Sword.
-Link, it's Zelda, I am talking to you by        telepathy. Do not go in this dungeon if you are not perfectly prepared, it's probably a trap by Oni-Link.
-So you've come?                                 You probably want to die, it will be a pleasure to grant your wish.                             Hihihihihi!!!
-The substance of Oni-Link have been locked in   the Spirit Mask!!!                              You succeed!!!
-Grrrr!!! I can't believe you defeated           Oni-Link??? Impressive...                       I suppose you didn't expect to see me, though we are in the dead world.
-Oni-Link gave me the energy I needed to         rematerialize, so I am back earlier than I      expected.                                       Gwahahahahaha !!!
-By the way, maybe you wonder where Oni-Link is  from?                                           It's very easy, last time I wanted to be sure   you would never disturb me again, so I used the
-Triforce to change you into a monster in my     legion. But there was not enough darkness in    your heart, so this transformation was not      dazzling...
-Enough said, I have a lot of plans...           It would be a great pleasure to eliminate you,  but I don't think it would be useful...
-For your information, only creatures of the dark can get out of here.                            So farewell! Gwahahahahaha !!!
-Onily? So where is my coffee???                 What??? It's you Link???
-                   Dead World
-Link, it's Zelda, I am talking to you by        telepathy. It's terrible, Ganon is back!!!
-He has recreated his army, which is getting     ready to attack Rauru!                          You still can stop them, go quickly to the West Field and intercept this army!
-Grrrr... But how could you escape from the world of the deads and arrive here???
-Why do you persist to challenge me?             Even if you strike me down I will always return to life.
-Your quest is vain, abandon all hope!                                                           Let's rock, baby!
-You find the Triforce !!!
-Got rid of Ganon's curse, Link could return in    Hyrule safely.                                                                                      The Triforce, the Master Sword, and the Ocarina were handed over to the Royal Family of Hyrule, while Oni-Link Mask was entrusted to the Fairies to be hidden over space and time...                                                                     The portal leading to Termina was sealed by Princess Zelda and by Pit, so that it could never be opened again, and this terrible chapter was erased from the legend...
-People of Hyrule never knew what happened in the  mysterious land of Termina, neither did they know that formidable Ganon was already preparing his   return...                                         But what everybody knew, was the return in Hyrule of its hero, who will always be there to protect  the Realm against the darkness.
-Tutorial : Press [ACTION] to talk, read or open a chest, and [ACTION] again to pass the texts on the screen on.
-Press [ACTION] to lift a light object.
-Congratulations Link, for finding me.           I will raise the busload of your magic container to reward you.
-The busload of your magic container doubles !!!
-You find the Spirit Mask!!!                                                                     A strange aura shroud around it...
-Congratulations, you found me!!!                                                                I am the desert Big Fairy, I organize rupees collections!
-Give me 100 rupees quickly!!!                                                                                 [c=2]YES[c=0]              NO
-Give me 100 rupees quickly!!!                                                                                 [c=0]YES              [c=2]NO
-You make me lose my time, off you go!
-You don't have enough rupees!!!                 You make me lose my time, off you go!
-I raise the maximum amount of bombs you can     carry on, thanks to who???
-I raise the maximum amount of arrows you can    carry on, thanks to who???
-I have enough rupees, disappear!
-I let go through only maleficious creatures.
-I let go through only beneficent creatures.
-You look maleficious...                         Ok you can go!
-You look beneficent...                          Ok you can go!
-Link! It's Pit!!!                               What are you doing???                           Get a move on to the West Field!!!
-You must wonder where you are.                  This is Termina, and you don't need to know more than that...
-It's a secret land which should remain secret,  Princess Zelda should have never sent you       here...
-More precisely you are in the Termina Forest. In this forest there is a temple, and in this temple there is a sacred object able to conjure any evil spell...
-Find this object, and come back to see me.      I will open the portal again for your departure.
-A last thing, do not go out of the forest under no circumstances! Your presence here is secret, and besides, in your state you are a threat for all people you come cross...
-Good Luck Link!
-What ??? The graal didn't succeed in getting rid of the curse???                                 That's... unthinkable...
-This curse must be frightfully powerful... But  on closer examination, all hope is not lost...
-The graal had an effect on you, you probably    noticed it. From now on you take more time to   transform yourself.
-But it's double-edged... When you are transformed, you stay that way for a longer time...
-Listen to me carefully Link, there are again 4  other graals in the temples of Termina...       It is said that the 5 combined have as much     power as the Triforce itself.
-Thanks to the graal you found, you are a bit    less dangerous, so I authorize you to explore   Termina freely.
-Venture out of this forest, search and find     these graals, and you will be saved.            But you must not go in a village if you are     transformed.
-Take this map with you, it will probably be     useful...                                       Good Luck!
-You find the Termina map!!!                                                                     Press [CARTE] when you are outside to see it.
-I'm happy to see you safe and sound!            Now that you don't risk being transformed       anymore, I thought you would appreciate to have this...
-Unfortunately you will need it...               Oni-Link has been liberated...                  We could have seen it before...
-Each time you found a new graal, the frequency  of your transformations dampenned, but the      lenght of Oni-Link's life has risen...
-Besides, Oni-Link's behavior is strange...      With his destructive temperament he should have attacked a village...
-I should wallow, but I'm afraid that he has more important projects which is absolutely not good news...
-However, we have drawn up a plan to vanquish him. Listen to me carefully...
-The Master Sword is a formidable weapon, but it won't be useful to face Oni-Link...             ...for the moment...
-There are 3 secret temples hidden in Termina. In these temples are fairies whose powers will raise the strenght of your sword. Find them all!
-Then you will be on equal footing with Oni-Link. However, Oni-Link is only energy so he can't be killed...
-The Spirit Mask will allow you to lock him inside forever. To do this, you will have to find this mask, find the magical Ocarina and find the melody which may lock him...
-Your quest is just beginning...
-Find the 3 fairies, the mask, the Ocarina, and  the song of spirit, and then go to face         Oni-Link!
-As you know, the Master Sword can defeat ghosts, reflect magical attacks back, and destroy       magical fences...                               Put it to good use...
-You succeed !                                   Hurry and confront Oni-Link at the Temple of    Xanto!
-Oni-Link is waiting for you at the Temple of    Xanto, in the graveyard just west of Termina.
-There is not time to loose!                     Go immediately to the West Field to intercept   Ganon's army!
-Hurry up Link, what are you waiting for?        Christmas ???
-Er... What about me ?                           I... er... ...protect the princess, that's it!  Who do you think has kept her from being kidnapped this time ? Huh ?
-Link... there is a thing I should have told you since the beginning...                          This world, Termina...
-This world is very new, it's a creation of the  Triforce through a wish...                      People, their memories and their stories have also been created...
-Yes... as you guessed, it's me who asked the    Triforce to create this world... It's a world   built to contain all we might need.
-You found there the graals, Oni-Link found his  master, and Ganon found...                      ...the Triforce...
-I created this world to be used as a hideaway   for the Triforce, but Ganon found it...
-Link! This land and these people have been      created, but they are truly real now! If we     don't do anything, this land will soon look like the ancient Dark World!
-I leave it to you again, Link, save this world!
-Welcome to the study house of all kind of       monsters!
-You probably remember me, you helped me a lot in Hyrule.                                         Uh... You wonder how I came in Termina? Uh... doesn't matter!
-This vast world has an abundance of monsters, so I had to be on the trip!
-I will list all monsters in a new encyclopedia!                                                                                                 With your help, of course.
-Unfortunately I don't have pieces of heart      anymore, but currency is my new currency.       I will pay you a good price for each new monster added in the encyclopedia.
-Come here regularly to get your winnings. If you can't carry all, I will keep the surplus for your next visit.
-You just have to beat a new enemy to add him in the encyclopedia.                               You can see it by pressing [MONSTERS]!
-Mmm... you are a curious specimen...            I will add you in the encyclopedia!!!
-Mmm... you are a curious specimen...
-I owe you [v=1] rupees.
-Do you want to be paid now?                                                                                   [c=2]YES[c=0]              NO
-Do you want to be paid now?                                                                                   [c=0]YES              [c=2]NO
-I have a scoop for you, monsters you defeated in Hyrule have been mysteriously brought to the life! They are supposed to wander in Termina...
-They are said to be three.                      If you beat them all, I will give you a...      special prize...
-You defeated the 3 rare monsters???             ...                                             You reward is waiting for you downstairs...
-You defeated all monsters...                    It's incredible...
-Hello Link, how are your bombs?
-I don't have anymore prizes to bring into play, sorry.
-One of these chests contains a piece of heart,  do you want to try for 10 rupees?               You will be allowed to open just one chest, ok?                [c=2]YES[c=0]              NO
-One of these chests contains a piece of heart,  do you want to try for 10 rupees?               You will be allowed to open just one chest, ok?                [c=0]YES              [c=2]NO
-Choose a chest.
-Thanks!
-What would you like to drink?
-You are looking for the man who works in the    mine? Nobody has seen him since they locked the mine... Maybe he is trapped inside...
-This saloon was very popular...                 ...before...
-I AM the mayor of this village, and I do NOT    want to talk with you!
-You say that someone is perhaps locked in the   mine?                                                                                           ... ... ...
-Very well, give me 10 rupees and I will allow   you to go into the mine. Ok?                                  [c=2]YES[c=0]              NO
-Very well, give me 10 rupees and I will allow   you to go into the mine. Ok?                                  [c=0]YES              [c=2]NO
-That's a deal, go and talk to the guard, he will let you pass...
-You don't have enough rupees!!!
-One heart for 2 rupees, ok?                                                                                   [c=2]YES[c=0]              NO
-One heart for 2 rupees, ok?                                                                                   [c=0]YES              [c=2]NO
-You don't need this right now.
-A little vial of magic for 10 rupees, ok?                                                                     [c=2]YES[c=0]              NO
-A little vial of magic for 10 rupees, ok?                                                                     [c=0]YES              [c=2]NO
-A big vial of magic for 20 rupees, ok?                                                                        [c=2]YES[c=0]              NO
-A big vial of magic for 20 rupees, ok?                                                                        [c=0]YES              [c=2]NO
-Choose what you want.
-10 arrows for 20 rupees?                                                                                      [c=2]YES[c=0]              NO
-10 arrows for 20 rupees?                                                                                      [c=0]YES              [c=2]NO
-5 bombs for 30 rupees?                                                                                        [c=2]YES[c=0]              NO
-5 bombs for 30 rupees?                                                                                        [c=0]YES              [c=2]NO
-You need a bomb bag to buy this.
-Come back when you have an empty bottle and I will sell you some potions.
-Red potions restore energy and green potions restore magic.
-What do you want?                                                 [c=2]RED POTION[c=0]                                      green potion                                       nothing
-What do you want?                                                 red potion                                      [c=2]GREEN POTION[c=0]                                       nothing
-What do you want?                                                 [c=0]red potion                                      green potion                                       [c=2]NOTHING
-A red potion for 60 rupees?                                                                                   [c=2]YES[c=0]              NO
-A red potion for 60 rupees?                                                                                   [c=0]YES              [c=2]NO
-A green potion for 40 rupees?                                                                                 [c=2]YES[c=0]              NO
-A green potion for 40 rupees?                                                                                 [c=0]YES              [c=2]NO
-SANCTUARYYY!!!!!!!!
-Oh, you too... the hens? -hiccup- !             Terrible those beasties... -hiccup-!
-I used to be a fisherman a long time ago...     -hiccup-! But since I saw IT... -hiccup-!       This terrible beast... -hiccup-!                In the lake... -hiccup-!
-You defeated the monster in the lake???         ... ... ...                                     Anyway I fear water... -hiccup-!                (I prefer wine) -hiccup-!
-He-He-He!
-Hello! I know everything about all what is said in the city, come to see me if you need         information.
-You want to know why the mayor is so silent?    Okay, but I didn't say anything, huh?
-This city has a terrible secret...              During the night, young girls are captured, we  never see them again... I don't dare even to go out...
-Last night, according to the rumours, the       mayor's daughter would have disapeared...
-Hello! Mister-who-fears-the-hens,               He! He! He!
-You are said to have climbed the Flatty         Mountain? Congratulations! He! He! He!
-You... you know about my daughter?              It's terrible... My dear daughter...
-According to the inquiry I conducted since the  beginning of these events, the captured young   girls seem to be brought into the mansion at the north village...
-I already sent the guards there, but no one came back...
-So this morning, when I discovered my own       daughter was not here anymore, I beg my hired   hand to bring her back... He is a perfect       combatant, but he is abnormally slow...
-You look to be a combatant too, do you want to  see what happened there?                        You will have a great reward if you rescue my daughter.
-Go to see the guard at the north-west of the    city, he will let you pass.
-Save my daughter at the mansion, You will be    greatly rewarded!
-My daughter told me everything, I owe you so    much!!!
-Listen carefully, I will teach you a song, it   is an heirloom handed down from generation to   generation:                                     The Elegy of Emptiness!
-You learn the Elegy of Emptiness!!!                                                             Use the Ocarina to play it!
-You learn the Elegy of Emptiness!!!                                                             You need a musical instrument to play it!
-The Elegy of Emptiness has mysterious powers... ...I think.
-Hello mister-my-rescuer!
-One blue potion for 160 rupees?                 You won't be deceived...                                      [c=2]YES[c=0]              NO
-One blue potion for 160 rupees?                 You won't be deceived...                                      [c=0]YES              [c=2]NO
-Good morning, we can't see such a powerful      monster every day, it's a honour...
-You should go to play in the Colosseum at the   south-east village, there is an interesting     prize to win...
-You won the prize of the Colosseum?             Impressive...
-If you think you are the most terrifying monster of Termina, that mean you believe your dreams are reality my poor friend...
-Take my word, the monster of the lake is by far the most terrifying of all monsters. Most of all avoid fighting him, that's my advice.
-The colosseum south of here is the principal    entertainment of the village.                   The goal is to go as far as possible before     being killed.
-But it's always very difficult to find          volunteers, so the chief was obligated to put a very hight valued object inside.
-Do you want to listen to my story for 10 rupees?                                                              [c=2]YES[c=0]              NO
-Do you want to listen to my story for 10 rupees?                                                              [c=0]YES              [c=2]NO
-According to the chief, north of here there is  the Xanto temple, also known as the dead        temple...
-This temple is said to be a way from the world  of living to the world of the deads... But to   reach the world of the deads, you would have to go trough an impassable labyrinth...
-Pay me again if you want me to repeat.
-You are looking for the Spirit Mask?            ... Fancy that...
-No, I don't know where it is, but I know how to use it.                                         Come back if you find it and I will help you.
-You find the Spirit Mask???                     ...                                             Okay, listen carefully, I will teach you how to use it.
-In the presence of a weakened spirit, you will  have to play the Song of Spirit with your       ocarina.                                        Listen the Song of Spirit!
-You learn the Song of Spirit!!!                                                                 Use the Ocarina to play it!
-The Spirit Mask can be used only one time, put  it to good use...
-You locked a terribly powerful spirit...        Make sure that he never falls into bad hands...
-Our village rarely receives visitors...         It's maybe related to the fact we blocked the   entry...
-You are the only visitor I have seen since I    live here...                                    I am an ancient adventurer, I was very talented as a treasure hunter...
-One day I heard the story of the pyramid's      treasure, a magical object...                   But this desert caused my ruin, I could never   cross over it. It is really too dangerous...
-You look as determined as I was in my youth...
-That's a deal, if you bring me the pyramid's    treasure, I will give you my most precious      treasure.
-You found the treasure???                       A fire rod, huh?                                ...                                             ...
-This rod will help you more than me...          You can keep it...
-Accept this reward to show an old man the       treasure he searched for all his life...        The Song of Soaring!!!
-Played with a magical instrument, this song will teleport you. I had hoped I could cross over the desert with this, but I never found the good instrument...
-You learn the Song of Soaring!!!                                                                Use the Ocarina to play it!
-Tutorial : when the gauge of anger is full, you are transformed into Oni-Link.                  Your weapon is extended and your strenght       increases while your defense reduces.
-As Oni-Link, you cannot use objects, but you can teleport yourself to the entry when you are in a dungeon by pressing [TELEPORT].
-Each time Oni-Link defeats an enemy, your gauge decreases. When it's empty, Link regain his normal form.
-It does not work...
-SCORES :
-Time :
-Dead [v=1] time
-Dead [v=1] times
-Pieces of hearts : [v=1] / 16
-Objects : [v=1] / 82
-Defeated enemies : [v=1] / 62
-Congratulations, you completed the game at [v=1] % !
-RANK :
-RANKS :
-- Termina's Hero
-- Heroes of two worlds
-- Big-head
-- Master Swordsman
-- Perfectionist
-- Fan of Zelda
-- Seasoned player
-- Beginner
-- Termina marathon runner
-- Two worlds marathon runner
-- Undead
-- Kamikaze
-Game designer / Developer:
+С : Город Рауру
+Храм Ланайру
+В : Запретный Лес
+С : Восточное Поле[br]З : К Городу Рауру
+З : Западное Поле
+С : Забытые Земли[br]Ю : Город Рауру
+С : Город Рауру[br]Ю : Озеро Ланайру[br]З : Западное Поле[br]В : Восточное Поле
+В : Восточное Поле
+По приказу мэра доступ на эту территорию строго запрещен.
+Вы получили разрешение от мэра?[br]Только будьте осторожны: те, кто отважился отправиться туда, назад уже не возвращаются...
+Я продаю улучшенный щит за 250 рупий, не интересует?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Я продаю улучшенный щит за 250 рупий, не интересует?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Благодарю, вот ваш новый щит.
+Извините, но у меня ничего не осталось в наличии.
+Ты нашел новый Щит!!![br]Твоя защита увеличилась!
+Ну почему я должна заниматься этими курами???[br]Опять!?
+Я люблю подметать!
+Рауру - самый красивый город в стране, каждый день сюда прибывает множество туристов.
+По слухам, где-то в Термине есть волшебный музыкальный инструмент.[br]Интересно, увижу ли я его когда-нибудь...
+Ты нашел волшебный музыкальный инструмент???[br]Я надеялся, что это будет саксофон...
+Мои родители потерялись.
+Я обожаю путешествовать!
+Ю : Город Рауру[br]В : Особняк с привидениями
+Храм Фароре[br][br]Сила фей вознаградит за храбрость!
+Особняк с привидениями[br][br]Приходи пополнить копилку наших душ!
+В : К Храму Ордоны
+З : Кладбище
+З : Деревня Мидо
+Секрет пустыни:[br]Поднимайте птичьи камни по часовой стрелке, заканчивая глазом, чтобы открыть путь.
+Храм Зельды
+Ю : Ведьмино Болото
+В : Город Рауру
+С : Горы Судьбы
+Линк, это Зельда. Поздравляю!!![br]Рауру спасен. Пока что...[br]Отправляйся к Башне Судьбы на вершине горы и останови Ганона!
+Теперь тебе не убежать!
+З : Деревня Касуто[br]В : Хижина Ведьмы
+С : Западное Поле[br]Ю : Хижина Ведьмы
+Хижина Зельевара[br][br]Приходите обменять свои рупии на самые мощные зелья в стране!!!
+В : Озеро Ланайру
+Колизей Чудовищ[br][br]Приходите все!
+С : Кладбище[br]Ю : Деревня Касуто
+Деревня Касуто[br][br]-- Не место для людей (живых) --
+Подсказка: Нажми и удерживай R2, чтобы осмотреться вокруг с помощью СТРЕЛОК.
+С : Деревня Касуто[br]В : Ведьмино Болото
+Похоже, ты довольно силен, тебе стоит попрактиковаться на арене в южной части деревни. Говорят, внутри спрятан очень ценный артефакт...
+Ух?[br]Новый вид?[br][br]Ты вообще разговариваешь?
+Эта деревня - последний оплот против человечества.
+Привет, я просто глупый монстрик.
+Застрял?[br][br][br]Впрочем, выход не так уж и далек.
+Ю : Деревня Касуто
+Храм Занта[br][br]Мертвецы не рассказывают сказки...
+Вы никогда не пробовали использовать молот на черепах?
+В : Западное Поле
+Деревня Мидо
+Неужели все подростки лишены чувства моды, как и вы?
+Добро пожаловать в деревню Мидо, но не забывайте, что вы в гостях.
+Гр-р-р... Я думал, что буду здесь один...
+Путь Судьбы[br][br]Только союзник Добра и Зла сможет преодолеть эту пещеру.
+Храм Нейрю[br][br]Сила фей вознаградит за храбрость!
+Ю : Деревня Мидо
+Храм Элдин
+Сила Титанов достанется легендарному герою...
+Поздравляю![br][br]Тебе удалось взобраться на Плоскую Гору!
+Башня Судьбы[br]Герой Хайрула, берегись, мерзкий Ганон воцарился здесь, и будущее всего мира под угрозой.
+Ю : Западное Поле
+Только безмерная пустота способна убрать этот камень.
+Ты нашел Окарину Времени!!![br][br]Она наделена силой, способной остановить время, если подуть в неё!
+Ты еще не выучил ни единой мелодии.
+[center][c=2]ЭЛЕГИЯ ПУСТОТЫ[c=0][/center][center]Убрать Окарину[/center]
+[center][c=0]Элегия Пустоты[/center][center][c=2]УБРАТЬ ОКАРИНУ[/center]
+[center][c=2]ПЕСНЬ ВОСПАРЕНИЯ[c=0][/center][center]Элегия Пустоты[/center][center]Убрать Окарину[/center]
+[center]Песнь Воспарения[/center][center][c=2]ЭЛЕГИЯ ПУСТОТЫ[c=0][/center][center]Убрать Окарину[/center]
+[center][c=0]Песнь Воспарения[/center][center]Элегия Пустоты[/center][center][c=2]УБРАТЬ ОКАРИНУ[/center]
+[center][c=2]ПЕСНЬ ВОСПАРЕНИЯ[c=0][/center][center]Элегия Пустоты[/center][center]Песнь Духов[/center][center]Убрать Окарину[/center]
+[center]Песнь Воспарения[/center][center][c=2]ЭЛЕГИЯ ПУСТОТЫ[c=0][/center][center]Песнь Духов[/center][center]Убрать Окарину[/center]
+[center]Песнь Воспарения[/center][center]Элегия Пустоты[/center][center][c=2]ПЕСНЬ ДУХОВ[c=0][/center][center]Убрать Окарину[/center]
+[center][c=0]Песнь Воспарения[/center][center]Элегия Пустоты[/center][center]Песнь Духов[/center][center][c=2]УБРАТЬ ОКАРИНУ[/center]
+Тебе не следует перевоплощаться здесь!!!
+В таком обличье тебе нельзя заходить в эту деревню!!!
+Линк! Это Пит. Я говорю с тобой с помощью телепатии. Тебе ни в коем случае нельзя перевоплощаться в деревне![br]Я телепортирую тебя отсюда.
+Руководитель команды, создатель и программист:[br][br]Vincent Jouillat
+Сценарист:[br][br]Lucie Pйnalver (Lobalщz)
+Помощь с Графикой:[br][br]Harvestland
+Иллюстратор:[br][br]Solиne Jouillat
+Карта Термины:[br][br]Adrien Batis (Raiden)
+Храм Фарона
+Шахта Руто
+Храм Ордоны
+Особняк с привидениями
+Храм Элдин
+Колизей Чудовищ
+Храм Ланайру
+Храм Зельды
+Храм Дин
+Храм Нейрю
+Храм Фароре
+Храм Занта
+Тайный Храм
+Башня Судьбы
+Ты нашел Меч Мастера!!![br][br]Его удивительная мощь чувствуется буквально на ощупь!!!
+Ты нашел Грааль!!!
+Ты нашел Новое Сердце!!![br][br]Твое максимальное здоровье увеличилось на одно сердце!!!
+Хочешь сохранить игру сейчас?[br][br][center][c=2]ДА[c=0][/center][center]НЕТ[/center]
+Хочешь сохранить игру сейчас?[br][br][center]ДА[/center][center][c=2]НЕТ[c=0][/center]
+Хочешь вернуться ко входу в подземелье?[br][br][center][c=2]ДА[c=0][/center][center]НЕТ[/center]
+Хочешь вернуться ко входу в подземелье?[br][br][center]ДА[/center][center][c=2]НЕТ[c=0][/center]
+Ты сразил чудовище из шахты???[br]Поздравляю!!!
+Я - начальник шахты. Говоришь, что искал меня?
+Возьми эту сумку, полную бомб, она будет тебе полезна.
+Ты нашел Сумку с Бомбами!!![br]И она полна!!![br]Нажимай [INVENTAIRE], чтобы снарядить ее, после чего нажатием кнопки [OBJECT] cможешь установить одну на земле.
+Ты пришел спасти меня?[br]Спасибо тебе большое!
+Раскапывая эти штольни, мы натолкнулись на логово чудовищ...
+Нас схватили чудовища, живущие в этих пещерах.
+Наш главный где-то этажом ниже, спаси его скорее!
+Я нашел это в шахте, возьми.[br]Думаю, тебе это будет полезнее!
+Я - правая рука мэра, он отправил меня спасти его дочь... Меня ранили... Нет никакой управы на этих призраков...
+Тебе не стоит задерживаться тут, со своим вооружением ты ничего не сможешь сделать...
+Продолжай свое приключение - иди по дороге на запад от города. Возьми этот лук, он поможет тебе переключить сферу и открыть путь...
+Ты победил вампира и пришел спасти меня? Спасибо тебе огромное! Мой отец - мэр города, сходи к нему, я уверена, он тебя вознаградит.
+Не стоит беспокоиться обо мне, я спокойно дойду до дома сама, ведь вампир уже мертв.
+Зал Колизея
+Арена 1
+Арена 2
+Арена 3
+Арена 4
+Выдача Призов
+Особая арена[br][br]Приходи и поборись за особый приз!!!
+Ты нашел Кольчугу!!![br][br]Твоя защита увеличилась!!!
+Ты нашел улучшенную Кольчугу!!![br][br]Твоя защита увеличилась!!!
+Хе-хе-хе-хе!!![br]Поздравляю, Линк! Тебе удалось освободиться от своего проклятия, но тем самым ты освободил меня!!!
+В награду за твои старания я не стану убивать тебя сегодня, у меня есть куда более важное занятие.
+Если ты правда хочешь остановить меня, то встретимся в Храме Мертвых, если же у тебя хватит смелости.[br]Прощай![br]Хи-хи-хи-хи!!!
+Линк, это Зельда. Я обращаюсь к тебе телепатически. Я с Питом, срочно возвращайся к нам, обстановка очень серьезная.
+Я ждал тебя Линк.[br]Я передаю Божественную силу твоему мечу, дабы восстановить силу Меча Мастера.
+Линк, это Зельда. Я говорю с тобой телепатией. Не суйся в это подземелье, если плохо подготовлен, скорее всего, это ловушка Они-Линка.
+Итак, ты пришел?[br]Наверняка ты очень хочешь умереть, и мне будет приятно исполнить твое пожелание.[br]Хе-хе-хе-хе-хе!!!
+Сущность Они-Линка была заперта в Маске Духов!!![br]У тебя получилось!!!
+Г-р-р-р!!! Не могу поверить, что ты победил Они-Линк!!! Впечатляюще...[br]Полагаю, ты не ожидал увидеть меня, несмотря на то, что мы пребываем сейчас в мире мертвых.
+Они-Линк дал мне энергию, необходимую для рематериализации, так что я вернулся раньше, чем ожидал.[br]Муа-ха-ха-ха!!!
+Кстати, может быть, тебе интересно, откуда взялся Они-Линк? Все очень просто. В прошлый раз я захотел убедиться, что ты больше никогда меня не побеспокоишь, поэтому применил
+силу Трифорса, чтобы обратить тебя в монстра моего легиона. Но в твоем сердце было недостаточно тьмы, и поэтому преображение не стало молниеносным...
+Довольно слов, у меня еще много планов...[br]С большим удовольствием я бы уничтожил тебя, но не думаю, что это принесет пользу...
+К твоему сведению, выбраться отсюда могут только порождения тьмы.[br]Так что прощай! Муа-ха-ха-ха!!!
+Onily? Так где мой кофе???[br]Что??? Это ты, Линк???
+[center]Мир Мертвых[/center]
+Линк, это Зельда.[br]Я использую телепатию.[br]Все плохо, Ганон вернулся!!!
+Он восстановил свою армию, и она готовится к нападению на Рауру![br]Ты еще можешь остановить их, скорее отправляйся на Западное Поле и перехвати это войско!
+Гр-р-р...[br]Но как ты смог вырваться из мира мертвых и оказаться здесь???
+Почему ты так упорно пытаешься противостоять мне?[br]Даже если ты сразишь меня, я всегда вернусь к жизни.
+Твои попытки тщетны, оставь все надежды![br][br]Давай зажжем, детка!
+Ты нашел Трифорс!!!
+Избавившись от проклятия Ганона, Линк смог благополучно вернуться в Хайрул.[br][br]Трифорс, Меч Мастера и Окарина были переданы королевской семье Хайрула, а Маска Они-Линка была доверена Феям, дабы быть сокрытой в пространстве и времени...[br][br]Портал, ведущий в Термину, был запечатан принцессой Зельдой и Питом, дабы его больше никогда не смогли открыть, и эта ужасная глава была вычеркнута из легенды...
+Жители Хайрула так и не узнали, что произошло в таинственной стране Термина, как не узнали и о том, как грозный Ганон подготавливал свое возвращение...[br][br]Однако все знали, что в Хайрул вернулся его герой, который всегда будет защищать Королевство от тьмы.
+Обучение: Нажимай [ACTION], чтобы говорить, читать или открывать сундуки, и нажимай [ACTION] повторно, чтобы пропускать текст на экране.
+Нажимай [ACTION], чтобы поднимать легкие предметы.
+Поздравляю, Линк, ты нашел меня. В награду я увеличу твое максимальное количество магии.
+Твое максимальное количество магии удвоено!!!
+Ты нашел Маску Духов!!![br][br]Странная аура окутывает ее...
+Поздравляю, ты нашел меня!!![br][br]Я Великая Фея пустыни, я занимаюсь сбором рупий!
+Скорее отдай мне 100 рупий!!![br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Скорее отдай мне 100 рупий!!![br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Ты тратишь мое время, уходи!
+У тебя не хватает рупий!!![br]Ты отнимаешь мое время, уходи!
+Я увеличиваю максимальное количество бомб, которые ты можешь носить с собой, и все это благодаря кому???
+Я увеличиваю максимальное количество стрел, которые ты можешь носить с собой, и все это благодаря кому???
+У меня достаточно рупий, исчезаю!
+Я пропускаю только злых существ.
+Я пропускаю только добрых существ.
+Ты выглядишь достаточно злым...[br]Хорошо, можешь пройти!
+Ты выглядишь достаточно добрым...[br]Хорошо, можешь пройти!
+Линк! Это Пит!!![br]Ты где???[br]Скорее отправляйся на Западное Поле!!!
+Ты, наверное, задаешься вопросом, где же ты оказался.[br]Это Термина, и тебе незачем знать больше...
+Это тайные земли, которые должны оставаться в секрете, Принцесса Зельда никогда не должна была отправлять тебя сюда...
+Если быть точнее, мы находимся в Терминском лесу. В этом лесу есть храм, а в храме - священный артефакт, способный снять любое злое заклятие...
+Найди этот артефакт и возвращайся ко мне.[br]Я снова открою портал для твоего возвращения домой.
+И последнее: ни в коем случае не покидайте лес! Твое присутствие здесь секретно, и, кроме того, в твоем текущем состоянии ты являешься угрозой для всех встречных...
+Удачи тебе, Линк!
+Что??? Грааль не смог избавить тебя от проклятия???[br]Это...[br]Немыслимо...
+Это проклятие должно быть ужасающе мощным... Но если изучить его внимательнее, то у нас еще есть надежда...
+Грааль все же подействовал на тебя, ты, наверное, заметил это.[br]Отныне тебе требуется меньше времени на превращение.
+Но дилемма в том...[br]Что, когда ты перевоплощаешься, ты дольше остаешься в таком состоянии...
+Слушай меня внимательно, Линк, в храмах Термины существует еще 4 других грааля...[br]Поговаривают, что все 5, собранные вместе, обладают такой же силой, как и сам Трифорс.
+Благодаря найденному граалю ты стал менее опасен, поэтому я позволю тебе свободно исследовать Термину.
+Выбирайся из этого леса, разыщи и собери граали, и ты обретешь спасение.[br]Но ты ни в коем случае не должен заходить в деревню в своем ином обличии.
+Возьми эту карту с собой, она тебе поможет...[br]Удачи!
+Ты нашел карту Термины!!![br]Нажимай [CARTE], находясь снаружи, чтобы посмотреть ее.
+Рада видеть тебя в целости и сохранности! Теперь, когда риска твоего перевоплощения больше нет, думаю, что ты будешь рад снова держать это в руках...
+К сожалению, сейчас он тебе нужен как никогда...[br]Они-Линк свободен...[br]Мы могли это предвидеть...
+С каждым новым, найденным граалем, частота твоих перевоплощений уменьшалась, но время существования Они-Линка увеличивалось...
+К тому же, поведение Они-Линка очень странно...[br]С его разрушительным природой он должен был уже напасть на деревню...
+Мне бы стоило немного отдохнуть, но боюсь, что он задумал что-то серьезное, а это не сулит нам ничего хорошего...
+Тем не менее, мы разработали план, как его одолеть. Слушай меня внимательно...
+Меч Мастера - грозное оружие, но оно не справится с Они-Линком...[br]...пока...
+В Термине сокрыты три секретных храма фей, чья сила способна увеличить мощь твоего меча. Отыщи их все!
+Тогда ты сможешь сразиться с Они-Линком на равных.[br]Однако Они-Линк - это лишь энергия, которую нельзя убить...
+Маска духов сможет запереть его внутри себя навсегда. Для этого тебе придется отыскать эту маску, раздобыть волшебную Окарину и узнать мелодию, способную заточить его внутри...
+Твое приключение лишь только начинается...
+Найди трех фей, маску, Окарину, и Песнь Духов, после чего встреться с Они-Линком!
+Как ты знаешь, Меч Мастера может убивать призраков, отражать магические атаки и разрушать магические преграды...[br]Используй его с умом...
+У тебя получилось![br]Поторопись сразиться с Они-Линком в Храме Занта!
+Они-Линк ждет тебя в Храме Занта на кладбище, что на западе Термины.
+Нельзя терять время![br]Немедленно отправляйся на Западное Поле, чтобы перехватить армию Ганона!
+Поторопись, Линк![br]Чего ты ждешь?[br]Рождества???
+Ээ... А я?[br]Я... ээ... ...защищаю принцессу, вот! Как ты думаешь, кто спас ее от похищения на этот раз? А?
+Линк... С самого начала я должна была сказать тебе одну вещь...[br]Этот мир, Термина...
+Этот мир очень молод, он был создан Трифорсом по желанию... Люди, их воспоминания и их истории также были созданы...
+Да... Как ты уже догадался, это я попросила Трифорс создать этот мир... Этот мир создан таким, чтобы вместить все, что нам может понадобиться.
+Здесь ты нашел граали, Они-Линк - своего хозяина, а Ганон нашел...[br]...Трифорс...
+Я сотворила этот мир, как убежище для Трифорса, но Ганон нашел его...
+Линк! Эта земля и эти люди были сотворены, но теперь они по-настоящему реальны! Если мы ничего не предпримем, эта земля скоро станет похожа на древний Темный Мир!
+Я снова поручаю это тебе, Линк, спаси этот мир!
+Добро пожаловать в центр исследования монстров всевозможных видов!
+Вы, наверное, помните меня? Вы не раз помогали мне в Хайруле.[br]Оу... Вам интересно, каким образом я оказался в Термине? Ох... это не имеет значения!
+Этот огромный мир просто изобилует монстрами и мне пришлось отправиться в путешествие!
+Я занесу всех местных монстров в мою новую энциклопедию![br][br]С вашей помощью, конечно же.
+К сожалению, новых частиц сердца у меня больше нет, но есть рупии![br]Я буду платить вам хорошую сумму за каждый новый вид монстра, добавленный в энциклопедию.
+Регулярно заходите ко мне за своей наградой. Если вы не сможете унести все, я сохраню излишек к вашему следующему визиту.
+Достаточно победить нового врага, чтобы добавить его в энциклопедию.[br]Вы можете посмотреть ее, нажав [MONSTERS]!
+Хмм... А вы - любопытный экземпляр...[br]Я запишу вас в свою энциклопедию!!!
+Хмм... А вы - любопытный экземпляр...
+Я должен вам [v=1] рупий.
+Хотите ли вы получить оплату сейчас?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Хотите ли вы получить оплату сейчас?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+У меня есть для вас сенсация: монстры, которых вы победили в Хайруле, таинственным образом ожили! Они как раз бродят сейчас по Термине...
+По слухам, их всего три вида.[br]Если вы сможете одолеть их всех, я дам вам... особый приз...
+Вы победили трех редких монстров???[br]...[br]Награда ждет вас вниз по лестнице...
+Вы победили всех монстров...[br]Это невероятно...
+Привет, Линк! Как поживают твои бомбы?
+У меня больше нет призов, которые можно было разыграть, извините.
+В одном из этих сундуков лежит частица сердца. Хотите испытать удачу за 10 рупий? Можно открыть только один сундук.[br][center][c=2]ДА[c=0]              НЕТ[/center]
+В одном из этих сундуков лежит частица сердца. Хотите испытать удачу за 10 рупий? Можно открыть только один сундук.[br][center][c=0]ДА              [c=2]НЕТ[/center]
+Выберите сундук.
+Спасибо!
+Что бы вы хотели выпить?
+Вы ищете шахтера? Никто не видел его с тех самых пор, как они закрыли шахту... Может быть, он все еще в ловушке внутри...
+Этот салун был очень популярен...[br]...когда-то...
+Я - ГЛАВА этой деревни, и я НЕ ЖЕЛАЮ с вами разговаривать!
+Вы говорите, что кто-то может быть заперт в шахте?[br][br]... ... ...
+Отлично, заплатите мне 10 рупий, и я разрешу вам пройти в шахту. Идет?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Отлично, заплатите мне 10 рупий, и я разрешу вам пройти в шахту. Идет?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Договорились, идите и поговорите с охранником, он вас пропустит...
+У тебя недостаточно рупий!!!
+Восполнить одно сердце за 2 рупии, хорошо?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Восполнить одно сердце за 2 рупии, хорошо?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Сейчас вам это не нужно.
+Маленький пузырек магии за 10 рупий, ладно?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Маленький пузырек магии за 10 рупий, ладно?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Большой пузырек магии за 20 рупий, договорились?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Большой пузырек магии за 20 рупий, договорились?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Выберите то, что вам нужно.
+10 стрел за 20 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+10 стрел за 20 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+5 бомб за 30 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+5 бомб за 30 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Вам нужна сумка с бомбами, чтобы купить это.
+Возвращайтесь, когда раздобудете пустую бутылку, тогда я смогу продать вам зелья.
+Красные зелья восстанавливают энергию, а зеленые - магию.
+Что вам угодно?[center][c=2]КРАСНОЕ ЗЕЛЬЕ[c=0][/center][center]зеленое зелье[/center][center]ничего[/center]
+Что вам угодно?[center]красное зелье[/center][center][c=2]ЗЕЛЕНОЕ ЗЕЛЬЕ[c=0][/center][center]ничего[/center]
+Что вам угодно?[center][c=0]красное зелье[/center][center]зеленое зелье[/center][center][c=2]НИЧЕГО[/center]
+Красное зелье за 60 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Красное зелье за 60 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+Зеленое зелье за 40 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Зеленое зелье за 40 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+СВЯТЫ-Ы-ЫНЯ!!!!!!!!
+Ох, ты тоже... куры? -и-и-к- ![br]Эти ужасные твари... -И-и-и-к-!
+Когда-то давно я был рыбаком... -и-и-и-к-! Но с тех пор, как я увидел ЭТО... -и-и-и-к-![br]Это жуткое чудовище... -и-и-и-к-![br]В озере... -и-и-и-к-!
+Ты победил чудовище в озере???[br]... ... ...[br]Все равно я боюсь воды... -и-и-и-к-![br](Предпочитаю вино) -и-и-и-к-!
+Хе-Хе-Хе!
+Привет! Я в курсе всех слухов нашей деревни, обращайся, если захочешь что-нибудь узнать.
+Хочешь узнать, почему наш мэр так молчалив?[br]Ладно, но я тебе ничего не говорила! Хорошо?
+У нашей деревни есть страшная тайна...[br]Ночами тут пропадают молоденькие девушки... Бесследно... Я даже не решаюсь выходить на улицу...
+Прошлой ночью, если верить слухам, исчезла дочка нашего мэра...
+Привет! Мистер-Курофоб.[br]Хе! Хе! Хе!
+Говорят, ты смог взобраться на Плоскую Гору? Поздравляю![br]Хе! Хе! Хе!
+Вы... Вы уже знаете про мою дочь?[br]Это ужасно... Моя дорогая доченька...
+С самой первой пропажи я начал вести расследование. Удалось лишь разведать, что пропавших девушек, вероятнее всего, уводят в сторону особняка на север от деревни...
+Я уже отправлял туда стражников, но никто так и не вернулся...
+Так вот, сегодняшним утром я обнаружил, что моя родная дочь пропала из дома. Я попросил своего помощника отыскать ее... Он превосходный боец, но крайне медлителен...
+Вы, я вижу, тоже неплохой боец, не хотите ли разведать этот особняк и узнать, что там происходит? Если сможете спасти и вернуть мою дочь, то я вас щедро награжу.
+Подойдите к стражнику на северо-западе деревни, он пропустит вас.
+Спасите мою дочь из особняка, и вы будете весьма достойно вознаграждены!
+Дочь мне все рассказала, я вам премного благодарен!!!
+Слушайте внимательно, я научу вас одной мелодии, нашей семейной реликвии, передающейся из поколения в поколение:[br]Элегия Пустоты!
+Ты выучил Элегию Пустоты!!![br]Используй Окарину, чтобы сыграть ее!
+Ты выучил Элегию Пустоты!!![br]Тебе нужен музыкальный инструмент, чтобы сыграть ее!
+Элегия Пустоты обладает таинственными силами...[br]...Я так думаю.
+Здравствуйте, мистер-мой-спасатель!
+Одно синее зелье за 160 рупий?[br]Вы не пожалеете...[br][center][c=2]ДА[c=0]              НЕТ[/center]
+Одно синее зелье за 160 рупий?[br]Вы не пожалеете...[br][center][c=0]ДА              [c=2]НЕТ[/center]
+Приветствую вас, не каждый день мы встречаем такое могущественное чудовище, это большая честь для нас...
+Обязательно зайдите на игру в Колизей на юго-востоке деревни, там можно выиграть интересный приз...
+Вы выиграли приз Колизея?[br]Впечатляет...
+Если считаешь себя самым страшным монстром Термины, то ты очень глубоко заблуждаешься, мой бедный друг...
+Поверь мне на слово, озерное чудовище - самое ужасное из всех. Лучше избегать встречи с ним, это мой тебе совет.
+Колизей, расположенный к югу отсюда - главное развлечение деревни.[br]Цель - пройти как можно дальше, прежде чем тебя прикончат.
+Но найти желающих становится все труднее, поэтому наш глава был вынужден поместить внутри очень ценный артефакт.
+Хочешь послушать мою историю за 10 рупий?[br][br][center][c=2]ДА[c=0]              НЕТ[/center]
+Хочешь послушать мою историю за 10 рупий?[br][br][center][c=0]ДА              [c=2]НЕТ[/center]
+По словам главы, к северу отсюда находится Храм Занта, также известный как Храм Мертвых...
+Считается, что этот храм - путь из мира живых в мир мертвых... Но чтобы попасть в мир мертвых, нужно пройти через непроходимый лабиринт...
+Если хочешь услышать мой рассказ снова - заплати мне еще раз.
+Ты ищешь Маску Духов?[br]... Прикольно...
+Нет, я не знаю, где она находится, но я знаю, как ею пользоваться.[br]Возвращайся, когда найдешь ее, и я тебе помогу.
+Ты нашел Маску Духов???[br]...[br]Хорошо, слушай внимательно, я научу тебя, как использовать ее.
+Сыграй на окарине Песнь Духов рядом с ослабевшим духом.[br]Послушай Песнь Духов!
+Ты выучил Песнь Духов!!![br][br]Используй Окарину, чтобы сыграть ее!
+Маска Духов может использоваться только единожды, используй ее с умом...
+Ты заключил внутри маски чудовищно могучий дух...[br]Приложи все усилия, чтобы он никогда не попал в плохие руки...
+В нашей деревне редко бывают гости...[br]Возможно, это связано с тем, что мы закрыли вход...
+Ты единственный турист, которого я видел с тех пор, как живу здесь.[br]Я - древний искатель приключений, я был весьма способным охотником за сокровищами...
+Однажды я услышал историю о сокровище пирамиды, волшебном предмете...[br]Но эта пустыня стала причиной моей погибели, я никогда не смогу пересечь ее. Это действительно слишком опасно...
+Ты выглядишь таким же энергичным, как я в юности...
+Предлагаю сделку, если ты принесешь мне сокровище пирамиды, я отдам тебе свое самое драгоценное из имеющегося.
+Ты нашел сокровище???[br]Огненный жезл, да?[br]...[br]...
+От этого жезла будет больше пользы тебе, чем мне...[br]Можешь оставить его себе...
+Прими эту награду за то, что позволил старику увидеть сокровище, которое он искал всю свою жизнь...[br]Песнь Воспарения!!!
+Будучи сыграной магическим инструментом, она перенесет тебя. Я надеялся, что с ее помощью смогу пересечь пустыню, но так и не нашел подходящего инструмента...
+Ты выучил Песнь Воспарения!!![br][br]Используй Окарину, чтобы сыграть ее!
+Обучение: ка ктолько шкала Ярости будет заполнена, ты превратишься в Они-Линка.[br]Твое оружие станет длиннее, сила возрастет, но защита ослабнет.
+В облике Они-Линка ты не сможешь использовать предметы, но, находясь в подземелье, ты можешь телепортироваться ко входу, нажав [TELEPORT].
+С каждым побежденным Они-Линком врагом, шкала Ярости будет спадать. Как только она опустеет, Линк обретет свою прежнюю форму.
+Это не работает...
+РЕЗУЛЬТАТЫ ИГРЫ:
+Время:
+Погиб [v=1] раз
+Погиб [v=1] раз
+Частиц Сердца: [v=1] / 16
+Предметов: [v=1] / 82
+Побил врагов: [v=1] / 62
+Поздравляю, ты прошел игру на [v=1] % !
+РАНГ:
+РАНГИ:
+- Герой Термины
+- Герой Двух Миров
+- Большеголовый
+- Мастер Меча
+- Перфекционист
+- Фан Зельды
+- Опытный игрок
+- Новичок
+- Марафонец Термины
+- Марафонец Двух Миров
+- Нежить
+- Камикадзе
+Геймдизайнер / Разработчик:
 Vincent Jouillat
-Scriptwriter:
+Сценарист:
 Lucie Pйnalver (Lobalщz)
-Illustrations:
+Иллюстрации:
 Solиne Jouillat
-Termina's map:
+Карта Термины:
 Adrien Baptis
-Graphisms :
+Графика:
 Solиne Jouillat
 Harvestland
-Testers:
+Тестирование:
 Emmanuel Fantapie
 Gaлtan Biccheri
 Alexandre Chevalier
-Thanks:
-to Nintendo for creating the Zelda license
-to zeldaroth.fr forum's community
-for their continuous support!
+Благодарности:
+Nintendo за создание серии игр Zelda,
+сообществу форума zeldaroth.fr
+за постоянную поддержку!
