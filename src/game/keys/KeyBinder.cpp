@@ -48,7 +48,7 @@ Keys KeyBinder::getDefaultKey(BindableType type)
     case BT_OBJET:
         return kLShift;
     case BT_COURSE:
-        return kTab;
+        return kT;
     case BT_UP:
         return kUp;
     case BT_DOWN:
@@ -60,7 +60,7 @@ Keys KeyBinder::getDefaultKey(BindableType type)
     case BT_CAMERA:
         return kBackspace;
     case BT_TELEPORT:
-        return kT;
+        return kLAlt;
     default:
         return kUp;
     }
