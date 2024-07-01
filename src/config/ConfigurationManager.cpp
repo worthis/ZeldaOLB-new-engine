@@ -9,7 +9,7 @@
 ConfigurationManager ConfigurationManager::instance = ConfigurationManager();
 
 ConfigurationManager::ConfigurationManager() : haveToSave(false), file(""),
-                                               volume(64), volson(64), lang(0), skin(1), full(true), audio(0), text(0)
+                                               volume(64), volson(64), lang(1), skin(1), full(true), audio(0), text(0)
 {
 }
 
