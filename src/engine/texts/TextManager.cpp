@@ -331,6 +331,11 @@ void TextManager::drawLetterInternal(char c, int i, int j, int style)
     // cyrillic chars
     if (config->getTextfile() == "data/texts/russian.txt")
     {
+        if (val == 184)
+        {
+            x = w * 68;
+        }
+
         if (val >= 192 && val <= 255)
         {
             x = w * (val - 192);
