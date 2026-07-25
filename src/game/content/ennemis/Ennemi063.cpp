@@ -39,15 +39,15 @@ Ennemi063::Ennemi063(int i, int j) : anim(0), animMax(0), vanim(180)
     startY = y;
     startDir = direction;
 
-    life = 30;
-    maxLife = 30;
+    life = 24;
+    maxLife = 24;
     recul = 8;
     vitesseRecul = 4;
 
     isBoss = true;
     stunnable = false;
 
-    forceEnn = 5;
+    forceEnn = 4;
 }
 
 Ennemi063::~Ennemi063()

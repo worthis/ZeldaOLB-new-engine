@@ -2,15 +2,25 @@
 
 #include "../window/WindowManager.h"
 
-SimpleTransition::SimpleTransition()
+SimpleTransition::SimpleTransition() : texture(0)
 {
-    rect = SDL_CreateRGBSurface(SDL_HWSURFACE, GAME_SIZE_W, GAME_SIZE_H, 32, 0, 0, 0, 0);
     reset();
 }
 
 SimpleTransition::~SimpleTransition()
 {
-    SDL_FreeSurface(rect);
+    SDL_DestroyTexture(texture);
+}
+
+void SimpleTransition::init()
+{
+    if (!texture)
+    {
+        SDL_Surface *tmp = SDL_CreateRGBSurface(0, GAME_SIZE_W, GAME_SIZE_H, 32, 0, 0, 0, 0);
+        texture = SDL_CreateTextureFromSurface(WindowManager::getInstance()->getRenderer(), tmp);
+        SDL_FreeSurface(tmp);
+        SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+    }
 }
 
 void SimpleTransition::loop()
@@ -22,7 +32,7 @@ void SimpleTransition::loop()
         {
             step = 2;
         }
-        SDL_SetAlpha(rect, SDL_SRCALPHA, alpha);
+        SDL_SetTextureAlphaMod(texture, alpha);
     }
     else if (step == 3)
     {
@@ -31,13 +41,13 @@ void SimpleTransition::loop()
         {
             step = 4;
         }
-        SDL_SetAlpha(rect, SDL_SRCALPHA, alpha);
+        SDL_SetTextureAlphaMod(texture, alpha);
     }
 }
 
 void SimpleTransition::draw()
 {
-    WindowManager::getInstance()->draw(rect);
+    WindowManager::getInstance()->draw(texture);
 }
 
 bool SimpleTransition::isRunning()
@@ -47,6 +57,7 @@ bool SimpleTransition::isRunning()
 
 void SimpleTransition::start()
 {
+    init();
     run = true;
     step = 1;
 }

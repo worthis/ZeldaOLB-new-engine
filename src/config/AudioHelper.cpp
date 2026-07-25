@@ -141,6 +141,8 @@ void AudioHelper::loadSounds()
     sounds[TS_STEP_WOOD2] = new WSound("data/sounds/steps/Steps_Wood2.wav");
     sounds[TS_STEP_CARPET1] = new WSound("data/sounds/steps/Steps_Carpet1.wav");
     sounds[TS_STEP_CARPET2] = new WSound("data/sounds/steps/Steps_Carpet2.wav");
+    sounds[TS_STEP_SNOW1] = new WSound("data/sounds/steps/Steps_Snow1.wav");
+    sounds[TS_STEP_SNOW2] = new WSound("data/sounds/steps/Steps_Snow2.wav");
 
     sounds[TS_JUMP] = new WSound("data/sounds/link/jump.wav");
     sounds[TS_NAGE] = new WSound("data/sounds/link/nage.wav");

@@ -1883,6 +1883,9 @@ int Link::getSoundForCollision(Collision c, int id)
     case TAPIS:
         type = id == 0 ? TS_STEP_CARPET1 : TS_STEP_CARPET2;
         break;
+    case NEIGE:
+        type = id == 0 ? TS_STEP_SNOW1 : TS_STEP_SNOW2;
+        break;
     default:
         break;
     }
@@ -1899,47 +1902,22 @@ void Link::jumpInWater()
     toucheX = 0;
     toucheY = 0;
 
-    if ((Collision)map->getMur(x + 8, y + 8) != EAU_PROF)
+    if ((Collision)map->getMur(x + 7, y + 8) != EAU_PROF || (Collision)map->getMur(x + 8, y + 8) != EAU_PROF)
     {
         toucheY = 1;
     }
-    if ((y - 8) % 16 == 0)
+    else if ((Collision)map->getMur(x + 7, y + 23) != EAU_PROF || (Collision)map->getMur(x + 8, y + 23) != EAU_PROF)
     {
-        if ((Collision)map->getMur(x + 8, y + 23) != EAU_PROF ||
-            ((Collision)map->getMur(x + 8 + 16, y + 23 /*+1*/) != EAU_PROF &&
-             (Collision)map->getMur(x + 8 - 16, y + 23 /*+1*/) != EAU_PROF))
-        {
-            toucheY = -1;
-        }
-    }
-    else
-    {
-        if ((Collision)map->getMur(x + 8, y + 24) != EAU_PROF)
-        {
-            toucheY = -1;
-        }
+        toucheY = -1;
     }
 
-    if ((Collision)map->getMur(x, y + 16 /*+ 2*/) != EAU_PROF)
+    if ((Collision)map->getMur(x, y + 15) != EAU_PROF || (Collision)map->getMur(x, y + 16) != EAU_PROF)
     {
         toucheX = 1;
     }
-
-    if (x % 16 == 0)
+    else if ((Collision)map->getMur(x + 16, y + 15) != EAU_PROF || (Collision)map->getMur(x + 16, y + 16) != EAU_PROF)
     {
-        if ((Collision)map->getMur(x + 15, y + 16 /*+ 2*/) != EAU_PROF ||
-            ((Collision)map->getMur(x + 15 /*+1*/, y + 16 - 16 /*+ 2*/) != EAU_PROF &&
-             (Collision)map->getMur(x + 15 /*+1*/, y + 16 + 16 /*+ 2*/) != EAU_PROF))
-        {
-            toucheX = -1;
-        }
-    }
-    else
-    {
-        if ((Collision)map->getMur(x + 16, y + 16 /*+ 2*/) != EAU_PROF)
-        {
-            toucheX = -1;
-        }
+        toucheX = -1;
     }
 
     if (toucheX == 0 && toucheY == 0)
@@ -1976,42 +1954,22 @@ void Link::jumpOutWater()
     toucheX = 0;
     toucheY = 0;
 
-    if ((Collision)map->getMur(x + 8, y + 8) != EAU_PROF)
+    if ((Collision)map->getMur(x + 7, y + 8) != EAU_PROF || (Collision)map->getMur(x + 8, y + 8) != EAU_PROF)
     {
         toucheY = -1;
     }
-    if ((y - 8) % 8 == 0 && (y - 8) % 16 != 0)
+    else if ((Collision)map->getMur(x + 7, y + 23) != EAU_PROF || (Collision)map->getMur(x + 8, y + 23) != EAU_PROF)
     {
-        if ((Collision)map->getMur(x + 8, y + 24) != EAU_PROF)
-        {
-            toucheY = 1;
-        }
-    }
-    else
-    {
-        if ((Collision)map->getMur(x + 8, y + 23) != EAU_PROF)
-        {
-            toucheY = 1;
-        }
+        toucheY = 1;
     }
 
-    if ((Collision)map->getMur(x, y + 16) != EAU_PROF)
+    if ((Collision)map->getMur(x, y + 15) != EAU_PROF || (Collision)map->getMur(x, y + 16) != EAU_PROF)
     {
         toucheX = -1;
     }
-    if (x % 8 == 0 && x % 16 != 0)
+    else if ((Collision)map->getMur(x + 15, y + 15) != EAU_PROF || (Collision)map->getMur(x + 15, y + 16) != EAU_PROF)
     {
-        if ((Collision)map->getMur(x + 16, y + 16) != EAU_PROF)
-        {
-            toucheX = 1;
-        }
-    }
-    else
-    {
-        if ((Collision)map->getMur(x + 15, y + 16) != EAU_PROF)
-        {
-            toucheX = 1;
-        }
+        toucheX = 1;
     }
 
     if (toucheX == 0 && toucheY == 0)
@@ -2167,7 +2125,7 @@ void Link::setBouclier(int i)
 
 bool Link::isAbleToChangeStuff()
 {
-    return (animation == IDLE || animation == WALK) && charge == 0 && !lapin && !status->isOniLink();
+    return animation != TIR_ARC && animation != TIR_GRAPPIN && animation != TIR_BAGUETTE_FEU && animation != TIR_BAGUETTE_GLACE && animation != TIR_LANTERNE && animation != TIR_MARTEAU && animation != BOIT_POTION && animation != JOUE_OCARINA && !lapin && !status->isOniLink();
 }
 
 void Link::trouveObjet(TypeItem type, int id)
@@ -2858,7 +2816,6 @@ void Link::drawTouche(int dstX, int dstY)
 
 void Link::drawChute(int dstX, int dstY)
 {
-
     int srcX;
     int srcY;
     int srcW = 22;
@@ -2867,8 +2824,39 @@ void Link::drawChute(int dstX, int dstY)
     dstX -= 3;
     dstY += 5;
 
-    srcX = 216 + srcW * anim;
-    srcY = 194;
+    if (lapin && anim < 4)
+    {
+        switch (anim)
+        {
+        case 0:
+            srcX = 272;
+            break;
+        case 1:
+            srcX = 294;
+            srcW = 17;
+            dstX += 3;
+            break;
+        case 2:
+            srcX = 311;
+            srcW = 13;
+            dstX += 4;
+            break;
+        case 3:
+            srcX = 324;
+            srcW = 8;
+            dstX += 7;
+            break;
+        default:
+            srcX = 272;
+            break;
+        }
+        srcY = 173;
+    }
+    else
+    {
+        srcX = 216 + srcW * anim;
+        srcY = 194;
+    }
 
     WindowManager::getInstance()->draw(imageLink, srcX, srcY, srcW, srcH, dstX, dstY);
 }

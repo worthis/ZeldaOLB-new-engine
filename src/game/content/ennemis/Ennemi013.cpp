@@ -63,6 +63,7 @@ void Ennemi013::reset()
     anim = 0;
     width = 32;
     height = 15;
+    maxDist = 160;
     checkPosition();
 }
 
@@ -87,21 +88,18 @@ void Ennemi013::ennLoop()
         }
         else
         {
-            for (int i = 0; i < 2; i++)
+            pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
+
+            if (dir.first < 0)
+                direction = W;
+            if (dir.first > 0)
+                direction = E;
+
+            move(dir.first, dir.second);
+
+            if (link->getBoundingBox()->intersect(getBoundingBox()))
             {
-                pair<int, int> dir = AStar::getInstance()->resolvePath(this, dstX, dstY, direction);
-
-                if (dir.first < 0)
-                    direction = W;
-                if (dir.first > 0)
-                    direction = E;
-
-                move(dir.first, dir.second);
-
-                if (link->getBoundingBox()->intersect(getBoundingBox()))
-                {
-                    testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
-                }
+                testDegatOnLink(&box, direction, forceEnn, TA_PHYSIC, TE_NORMAL);
             }
         }
     }

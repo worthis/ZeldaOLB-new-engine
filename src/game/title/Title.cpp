@@ -41,6 +41,7 @@ void Title::init()
     chrono.reset();
     ready = false;
     alpha = 0;
+    wait = 0;
     logo->setAlpha(alpha);
 }
 

@@ -11,7 +11,7 @@
 #ifndef __EVENT_H__
 #define __EVENT_H__
 
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 enum Keys
 {

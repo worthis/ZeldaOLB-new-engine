@@ -173,6 +173,18 @@ void Map::launch()
     {
         Link *link = scene->getLink();
 
+        if (isVillage(link->getBoundingBox()))
+        {
+            if (link->getStatus()->isOniLink() && map != 11 && (map < 62 || map > 66))
+            {
+                link->setOniLink(false, true);
+            }
+            else if (!link->getStatus()->isOniLink() && (map == 11 || (map >= 62 && map <= 66)))
+            {
+                link->setOniLink(true, true);
+            }
+        }
+
         int musicToPlay = music;
 
         int special = scene->getAnimationInGame()->getSpecialMusicId();

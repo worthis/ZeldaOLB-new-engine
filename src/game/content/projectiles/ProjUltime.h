@@ -18,7 +18,7 @@
 class ProjUltime : public Projectile
 {
 public:
-    ProjUltime(int x, int y, Link *link);
+    ProjUltime(int x, int y, Link *link, bool locked = false);
     ~ProjUltime();
 
     void projLoop();
@@ -48,6 +48,8 @@ private:
     bool retour;
 
     Link *link;
+
+    bool locked;
 };
 
 #endif // ProjUltime.h

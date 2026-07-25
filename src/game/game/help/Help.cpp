@@ -237,4 +237,10 @@ void Help::draw()
         texts[25]->display(16 + 288 - 10 - size, y);
         y += 16;
     }
+
+    if (y < 176)
+    {
+        texts[15]->display(24, y);
+        y += 16;
+    }
 }

@@ -8,7 +8,7 @@
 
 #include "../../MainController.h"
 
-ProjUltime::ProjUltime(int i, int j, Link *lk) : dx(0), dy(0), parcouru(0), retour(false), link(lk)
+ProjUltime::ProjUltime(int i, int j, Link *lk, bool l) : dx(0), dy(0), parcouru(0), retour(false), link(lk), locked(l)
 {
     x = i - 8;
     y = j - 8;
@@ -53,7 +53,7 @@ void ProjUltime::projLoop()
         return;
     }
 
-    if (!retour && link->getStatus()->getVirtualLife() > 0)
+    if (locked && !retour && link->getStatus()->getVirtualLife() > 0)
     {
         computeDxDy();
         computeDir();

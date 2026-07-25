@@ -36,7 +36,7 @@ Ennemi011::Ennemi011(int i, int j, bool act) : anim(act ? 3 : 0), animMax(3), va
 
     life = 1;
     maxLife = 1;
-    recul = 32;
+    recul = actif ? 32 : 0;
     vitesseRecul = 4;
     maxDist = 48;
     maxGel = 128;
@@ -61,6 +61,7 @@ void Ennemi011::reset()
     y = startY;
     anim = 0;
     actif = false;
+    recul = 0;
     maxDist = 48;
     checkPosition();
 }
@@ -80,6 +81,7 @@ void Ennemi011::ennLoop()
         if (!actif)
         {
             actif = true;
+            recul = 32;
             maxDist = 200;
             anim = 0;
             chrono.reset();
