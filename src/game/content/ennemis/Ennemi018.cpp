@@ -61,6 +61,7 @@ void Ennemi018::reset()
     anim = 0;
     width = 16;
     height = 14;
+    maxDist = 128;
     checkPosition();
 }
 

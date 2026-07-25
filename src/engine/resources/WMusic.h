@@ -11,7 +11,7 @@
 #ifndef __WMUSIC_H__
 #define __WMUSIC_H__
 
-#include <SDL/SDL_mixer.h>
+#include <SDL2/SDL_mixer.h>
 
 #include "../common/Common.h"
 #include "WResource.h"

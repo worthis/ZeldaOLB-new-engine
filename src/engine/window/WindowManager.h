@@ -11,18 +11,13 @@
 #ifndef __WINDOWMANAGER_H__
 #define __WINDOWMANAGER_H__
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#include <SDL/SDL_rotozoom.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 #include "../common/Common.h"
 #include "Event.h"
 
 #include "../resources/WImage.h"
-
-#define DEFAULT_ALPHA_PIXEL_ROUTINE
-#undef EXPERIMENTAL_ALPHA_PIXEL_ROUTINE
-#define ALPHA_PIXEL_ADDITIVE_BLEND
 
 class WindowManager
 {
@@ -36,8 +31,7 @@ public:
     void display();
 
     void draw(WImage *image, int srcX, int srcY, int srcW, int srcH, int dstX, int dstY, int alpha = 255);
-    void draw(SDL_Surface *object, int srcX, int srcY, int srcW, int srcH, int dstX, int dstY, int alpha = 255);
-    void draw(SDL_Surface *object);
+    void draw(SDL_Texture *object);
 
     int nbJoysticks();
 
@@ -45,6 +39,8 @@ public:
     bool isFullScreen();
 
     void exit();
+
+    SDL_Renderer *getRenderer();
 
     int filledEllipseRGBA(SDL_Surface *dst, Sint16 x, Sint16 y, Sint16 rx, Sint16 ry, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
@@ -66,8 +62,9 @@ private:
     Event *event;
     SDL_Joystick *joystick;
 
-    SDL_Surface *window;
-    SDL_Surface *windowTmp;
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    SDL_Texture *screen;
 
     Uint32 lastAnimTime;
     bool open;

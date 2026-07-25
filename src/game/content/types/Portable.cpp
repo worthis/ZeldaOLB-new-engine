@@ -8,7 +8,7 @@
 #include "../effects/Plouf.h"
 
 Portable::Portable() : carried(false), carriable(true), moving(false), direction(S), dx(0), dy(0), air(0), poids(1),
-                       safeMode(false), maxDist(0), posable(false), speed(0), level(0)
+                       safeMode(false), maxDist(0), posable(false), speed(0), level(0), beforeDown(0)
 {
 }
 
@@ -31,9 +31,16 @@ void Portable::loop()
 
         if (moving)
         {
-            y++;
-            air--;
-            height--;
+            if (beforeDown)
+            {
+                beforeDown--;
+            }
+            else
+            {
+                y++;
+                air--;
+                height--;
+            }
 
             if (safeMode)
             {
@@ -102,7 +109,15 @@ void Portable::loop()
                 {
                     dx = 0;
                     dy = 0;
+                    carriable = true;
                     moving = false;
+                    impact();
+                    if (!alive)
+                    {
+                        height -= air;
+                        air = 0;
+                        beforeDown = 0;
+                    }
                 }
             }
         }
@@ -195,6 +210,8 @@ void Portable::lance(int down, Direction d, int v)
     lache(down);
     direction = d;
     speed = v;
+    if (speed < 4)
+        beforeDown = 16;
 
     switch (direction)
     {
@@ -223,8 +240,8 @@ void Portable::lance(int down, Direction d, int v)
         BoundingBox *b = getHandableBox();
         int oldX = b->getX();
         int oldY = b->getY();
-        b->setX(oldX + dx * air);
-        b->setY(oldY + dy * air);
+        b->setX(oldX + dx * (air + beforeDown));
+        b->setY(oldY + dy * (air + beforeDown));
 
         BoundingBox *secBox = getSecondBoundingBox();
         secBox->setX(b->getX());

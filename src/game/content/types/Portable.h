@@ -84,6 +84,8 @@ private:
     int speed;
 
     int level;
+
+    int beforeDown;
 };
 
 #endif // Portable.h

@@ -6,25 +6,25 @@ WImage::WImage(string filename, bool alpha)
 {
     name = filename;
 
-    image = IMG_Load(name.c_str());
+    SDL_Surface *tmp = IMG_Load(name.c_str());
     if (alpha)
     {
-        SDL_SetColorKey(image, SDL_SRCCOLORKEY, SDL_MapRGB(image->format, 0, 0, 255));
+        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB(tmp->format, 0, 0, 255));
     }
+    image = SDL_CreateTextureFromSurface(WindowManager::getInstance()->getRenderer(), tmp);
+    SDL_FreeSurface(tmp);
 }
 
 WImage::WImage(int w, int h, bool alpha)
 {
+    SDL_Surface *tmp = SDL_CreateRGBSurface(0, w, h, 32, 0, 0, 0, 0);
     if (alpha)
     {
-        image = SDL_CreateRGBSurface(SDL_HWSURFACE, w, h, 32, 0, 0, 0, 0);
-        SDL_FillRect(image, NULL, SDL_MapRGB(image->format, 0, 0, 255));
-        SDL_SetColorKey(image, SDL_SRCCOLORKEY, SDL_MapRGB(image->format, 0, 0, 255));
+        SDL_FillRect(tmp, NULL, SDL_MapRGB(tmp->format, 0, 0, 255));
+        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB(tmp->format, 0, 0, 255));
     }
-    else
-    {
-        image = SDL_CreateRGBSurface(SDL_HWSURFACE, w, h, 32, 0, 0, 0, 0);
-    }
+    image = SDL_CreateTextureFromSurface(WindowManager::getInstance()->getRenderer(), tmp);
+    SDL_FreeSurface(tmp);
 }
 
 WImage::WImage()
@@ -33,15 +33,15 @@ WImage::WImage()
 
 WImage::~WImage()
 {
-    SDL_FreeSurface(image);
+    SDL_DestroyTexture(image);
 }
 
-SDL_Surface *WImage::getImage()
+SDL_Texture *WImage::getImage()
 {
     return image;
 }
 
 void WImage::setAlpha(int alpha)
 {
-    SDL_SetAlpha(image, SDL_SRCALPHA, alpha);
+    SDL_SetTextureAlphaMod(image, alpha);
 }
