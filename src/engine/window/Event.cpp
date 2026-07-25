@@ -75,7 +75,7 @@ void Event::update(const Uint8 *keys, bool capslock)
     current[kLAlt] = keys[SDL_SCANCODE_LALT];
     current[kRAlt] = keys[SDL_SCANCODE_RALT];
     current[kSpace] = keys[SDL_SCANCODE_SPACE];
-    current[kBackspace] = keys[SDLK_SCANCODE_BACKSPACE];
+    current[kBackspace] = keys[SDL_SCANCODE_BACKSPACE];
     current[kReturn] = keys[SDL_SCANCODE_RETURN] || keys[SDL_SCANCODE_KP_ENTER];
 
     current[QUIT] = false;

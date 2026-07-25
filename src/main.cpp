@@ -19,10 +19,23 @@
 
 #include "game/MainController.h"
 
+// --- FIX для Nintendo Switch: предотвращение конфликта имен Event ---
+#ifdef __SWITCH__
+    #define Event libnx_Event
+    #include <switch.h>
+    #undef Event
+#endif
+// --------------------------------------------------------------------
+
 int main(int argc, char **argv)
 {
     if (argc && argv)
         ; // pour �viter un warning.....
+
+    #ifdef __SWITCH__
+        // Инициализация RomFS для чтения файлов из папки data
+        romfsInit();
+    #endif
 
     std::srand(std::time(NULL));
 
@@ -48,23 +61,16 @@ int main(int argc, char **argv)
 
     controller->setInternalStep(LOGO);
 
-    // TODO: to remove : -----------------------------------------
-    // controller->getGameController()->setSave(new Save(0));
-    // controller->setInternalStep(GAME);
-    //------------------------------------------------------------
-
     Event *event;
 
     while (windowManager->isOpened())
     {
-
         event = windowManager->getEvent();
-
         controller->control(event);
+        configurationManager->save();
 
         if (event->isPushed(QUIT) || event->isPushed(kEscape) || event->isPushed(QUIT_FORCED))
         {
-
             windowManager->close();
             continue;
         }
@@ -75,12 +81,15 @@ int main(int argc, char **argv)
     controller->close();
 
     configurationManager->setFull(windowManager->isFullScreen());
-
     configurationManager->save();
     configurationManager->close();
     AudioManager::getInstance()->close();
 
     windowManager->exit();
+
+#ifdef __SWITCH__
+    romfsExit();
+#endif
 
     return 0;
 }

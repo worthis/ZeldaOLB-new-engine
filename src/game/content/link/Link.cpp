@@ -760,7 +760,7 @@ void Link::loop()
     }
 
     // hit
-    if (status->getVirtualLife() > 0 && epee > 0)
+    if (status->getVirtualLife() > 0 && epee != nullptr)
     {
         bool hit = epee->hit(x, y, direction, animation, anim, charge, getForce());
         if (hit && charge)
@@ -1334,12 +1334,12 @@ void Link::draw(int offsetX, int offsetY)
         }
     }
 
-    if (status->getVirtualLife() > 0 && direction == N && bouclier > 0 && animation != HIT_EPEE && !charge && !lapin)
+    if (status->getVirtualLife() > 0 && direction == N && bouclier != nullptr && animation != HIT_EPEE && !charge && !lapin)
     {
         bouclier->draw(dstX2, dstY, direction, animation, anim, 0);
     }
 
-    if (status->getVirtualLife() > 0 && epee > 0 && animation == SPIN_EPEE)
+    if (status->getVirtualLife() > 0 && epee != nullptr && animation == SPIN_EPEE)
     {
         if ((direction == N && anim >= 9 && anim <= 12) || (direction == S && anim >= 5 && anim <= 17) || (direction == W && anim >= 13 && anim <= 16) || (direction == E && anim >= 6 && anim <= 8))
             epee->draw(dstX2, dstY, direction, animation, anim, charge);
@@ -1443,12 +1443,12 @@ void Link::draw(int offsetX, int offsetY)
         }
     }
 
-    if (status->getVirtualLife() > 0 && (direction != N || animation == HIT_EPEE || charge) && bouclier > 0 && !lapin)
+    if (status->getVirtualLife() > 0 && (direction != N || animation == HIT_EPEE || charge) && bouclier != nullptr && !lapin)
     {
         bouclier->draw(dstX2, dstY, direction, animation, anim, charge);
     }
 
-    if (status->getVirtualLife() > 0 && epee > 0)
+    if (status->getVirtualLife() > 0 && epee != nullptr)
     {
         if (animation != SPIN_EPEE || !(
                                           (direction == N && anim >= 9 && anim <= 12) || (direction == S && anim >= 5 && anim <= 17) || (direction == W && anim >= 13 && anim <= 16) || (direction == E && anim >= 6 && anim <= 8)))
@@ -2633,7 +2633,7 @@ void Link::drawForMenu(int dstX, int dstY)
     else
     {
         WindowManager::getInstance()->draw(imageLink, w, 0, w, h, dstX, dstY);
-        if (bouclier > 0)
+        if (bouclier != nullptr)
         {
             bouclier->draw(dstX, dstY, S, IDLE, 0, 0);
         }
