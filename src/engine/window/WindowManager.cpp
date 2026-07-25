@@ -17,6 +17,10 @@ WindowManager::WindowManager() : fullScreen(FULLSCREEN), event(0), joystick(0), 
 	buttonRB = false;
 	buttonLS = false;
 	buttonRS = false;
+	buttonUp = false;
+	buttonDown = false;
+	buttonLeft = false;
+	buttonRight = false;
 }
 
 WindowManager::~WindowManager()
@@ -59,6 +63,8 @@ int WindowManager::createWindow(string title, string iconName, bool full)
 								  SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_FULLSCREEN_DESKTOP);
 
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+		SDL_RenderSetLogicalSize(renderer, 960, 720);  // 4:3 соотношение
+		SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");  // Линейная фильтрация
 
 		screen = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, GAME_SIZE_W, GAME_SIZE_H);
 		SDL_SetRenderTarget(renderer, screen);
@@ -167,18 +173,26 @@ Event *WindowManager::getEvent()
 				buttonX = true;
 			else if (sdlEvent.jbutton.button == 3)
 				buttonY = true;
-			else if (sdlEvent.jbutton.button == 4)
-				buttonLB = true;
-			else if (sdlEvent.jbutton.button == 5)
-				buttonRB = true;
 			else if (sdlEvent.jbutton.button == 6)
-				buttonSelect = true;
+				buttonLB = true;
 			else if (sdlEvent.jbutton.button == 7)
+				buttonRB = true;
+			else if (sdlEvent.jbutton.button == 11)
+				buttonSelect = true;
+			else if (sdlEvent.jbutton.button == 10)
 				buttonStart = true;
-			else if (sdlEvent.jbutton.button == 8)
+			else if (sdlEvent.jbutton.button == 13)
+				buttonUp = true;
+			else if (sdlEvent.jbutton.button == 15)
+				buttonDown = true;
+			else if (sdlEvent.jbutton.button == 12)
+				buttonLeft = true;
+			else if (sdlEvent.jbutton.button == 14)
+				buttonRight = true;
+			/*else if (sdlEvent.jbutton.button == 8)
 				buttonLS = true;
 			else if (sdlEvent.jbutton.button == 9)
-				buttonRS = true;
+				buttonRS = true;*/
 			break;
 		case SDL_JOYBUTTONUP:
 			if (sdlEvent.jbutton.button == 0)
@@ -189,18 +203,26 @@ Event *WindowManager::getEvent()
 				buttonX = false;
 			else if (sdlEvent.jbutton.button == 3)
 				buttonY = false;
-			else if (sdlEvent.jbutton.button == 4)
-				buttonLB = false;
-			else if (sdlEvent.jbutton.button == 5)
-				buttonRB = false;
 			else if (sdlEvent.jbutton.button == 6)
-				buttonSelect = false;
+				buttonLB = false;
 			else if (sdlEvent.jbutton.button == 7)
+				buttonRB = false;
+			else if (sdlEvent.jbutton.button == 11)
+				buttonSelect = false;
+			else if (sdlEvent.jbutton.button == 10)
 				buttonStart = false;
-			else if (sdlEvent.jbutton.button == 8)
+			else if (sdlEvent.jbutton.button == 13)
+				buttonUp = false;
+			else if (sdlEvent.jbutton.button == 15)
+				buttonDown = false;
+			else if (sdlEvent.jbutton.button == 12)
+				buttonLeft = false;
+			else if (sdlEvent.jbutton.button == 14)
+				buttonRight = false;
+			/*else if (sdlEvent.jbutton.button == 8)
 				buttonLS = false;
 			else if (sdlEvent.jbutton.button == 9)
-				buttonRS = false;
+				buttonRS = false;*/
 			break;
 		}
 	}
@@ -227,6 +249,14 @@ Event *WindowManager::getEvent()
 			event->setEvent(jLS, true);
 		if (buttonRS)
 			event->setEvent(jRS, true);
+		if (buttonUp)
+			event->setEvent(jUp, true);
+		if (buttonDown)
+			event->setEvent(jDown, true);
+		if (buttonLeft)
+			event->setEvent(jLeft, true);
+		if (buttonRight)
+			event->setEvent(jRight, true);
 
 		// hats
 		Uint8 hats = SDL_JoystickGetHat(joystick, 0);

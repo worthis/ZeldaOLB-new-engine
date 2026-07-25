@@ -53,7 +53,7 @@ private:
     bool haveToSave;
     string file;
 
-    Keys map[BT_UP];
+    Keys map[NB_BINDABLE];
 };
 
 #endif // JoystickBinder.h

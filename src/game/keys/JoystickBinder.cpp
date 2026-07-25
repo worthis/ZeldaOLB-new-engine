@@ -52,7 +52,7 @@ Keys JoystickBinder::getDefaultKey(BindableType type)
     case BT_TELEPORT:
         return jRS;
     default:
-        return jStart;
+        return NB_KEYS;
     }
 }
 
@@ -255,7 +255,7 @@ void JoystickBinder::setKey(BindableType type, Keys key)
 
 Text *JoystickBinder::getTextForType(BindableType type, int color)
 {
-    return getTextForKey(map[type], color);
+    return getTextForKey(getKey(type), color);
 }
 
 Text *JoystickBinder::getTextForKey(Keys key, int color)

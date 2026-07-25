@@ -79,6 +79,10 @@ private:
     bool buttonRB;
     bool buttonLS;
     bool buttonRS;
+    bool buttonUp;
+    bool buttonDown;
+    bool buttonLeft;
+    bool buttonRight;
 };
 
 #endif // WindowManager.h
