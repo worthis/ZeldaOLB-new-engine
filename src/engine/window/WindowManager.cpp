@@ -189,10 +189,10 @@ Event *WindowManager::getEvent()
 				buttonLeft = true;
 			else if (sdlEvent.jbutton.button == 14)
 				buttonRight = true;
-			/*else if (sdlEvent.jbutton.button == 8)
+			else if (sdlEvent.jbutton.button == 4)
 				buttonLS = true;
-			else if (sdlEvent.jbutton.button == 9)
-				buttonRS = true;*/
+			else if (sdlEvent.jbutton.button == 5)
+				buttonRS = true;
 			break;
 		case SDL_JOYBUTTONUP:
 			if (sdlEvent.jbutton.button == 0)
@@ -219,10 +219,10 @@ Event *WindowManager::getEvent()
 				buttonLeft = false;
 			else if (sdlEvent.jbutton.button == 14)
 				buttonRight = false;
-			/*else if (sdlEvent.jbutton.button == 8)
+			else if (sdlEvent.jbutton.button == 4)
 				buttonLS = false;
-			else if (sdlEvent.jbutton.button == 9)
-				buttonRS = false;*/
+			else if (sdlEvent.jbutton.button == 5)
+				buttonRS = false;
 			break;
 		}
 	}

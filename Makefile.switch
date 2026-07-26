@@ -10,10 +10,10 @@ TOPDIR ?= $(CURDIR)
 
 include $(DEVKITPRO)/libnx/switch_rules
 
-TARGET      :=  ZeldaOLB_nx
+TARGET      := ZeldaOLB_nx
 APP_TITLE   := Zelda - Oni Link Begins
 APP_AUTHOR  := Vincent Jouillat (Switch port by Worthis)
-APP_VERSION := 4.8.0.1
+APP_VERSION := 4.8.0.2
 APP_ICON    := $(TOPDIR)/icon.jpg
 export APP_TITLE APP_AUTHOR APP_VERSION APP_ICON
 

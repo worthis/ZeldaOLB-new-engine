@@ -11,6 +11,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <sys/stat.h>
 
 #include "engine/window/WindowManager.h"
 #include "engine/audio/AudioManager.h"
@@ -45,6 +46,9 @@ int main(int argc, char **argv)
         exit(-1);
     }
 
+    mkdir("config", 0777);
+    mkdir("saves", 0777);
+
     ConfigurationManager *configurationManager = ConfigurationManager::getInstance();
     configurationManager->init("config/system.dat", "config/keys.dat", "config/joystick.dat");
 
@@ -56,9 +60,7 @@ int main(int argc, char **argv)
     configurationManager->initTexts();
 
     MainController *controller = MainController::getInstance();
-
     controller->init();
-
     controller->setInternalStep(LOGO);
 
     Event *event;
